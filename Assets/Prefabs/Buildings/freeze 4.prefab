@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7348218345031596754}
   - component: {fileID: 3248000793684943396}
-  - component: {fileID: 3952637427018876142}
   - component: {fileID: -1314433937954921137}
   m_Layer: 0
   m_Name: freeze 4
@@ -74,8 +73,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 247721471, guid: 421eebbcb354ebf4bbea7ae726e78ed8, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 465dd78eda750244ea01aac3af3a09be, type: 3}
   m_Color: {r: 1, g: 0.74650216, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,26 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &3952637427018876142
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056256240725061661}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 870f7300532df0c4497a8e7ea2a39cd7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &-1314433937954921137
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,14 +9,8 @@ public class TowerBase : MonoBehaviour
     public int level;
     public GameObject curGM;
 
-    void Update()
-    {
-        if (curGM == null)
-        {
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        }
-    }
-    private bool CanPlaceMonster()
+
+    public bool CanPlaceMonster()
     {
         return monster == null;
     }
@@ -61,7 +55,7 @@ public class TowerBase : MonoBehaviour
         if (rollBase.towerPrefab.GetComponent<UpHave>().id == curGM.GetComponent<UpHave>().id && !rollBase.choosing && rollBase.towerPrefab != curGM)
         {
             Debug.Log("Апнул просто");
-            GameObject newVer = Instantiate(curGM.GetComponent<UpHave>().UpVersion, transform.position, Quaternion.identity);
+            GameObject newVer = Instantiate(curGM.GetComponent<UpHave>().UpVersion, new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z), Quaternion.identity);
             Destroy(curGM);
             rollBase.AddTower(newVer.GetComponent<SpriteRenderer>());
             curGM = newVer;
@@ -70,10 +64,10 @@ public class TowerBase : MonoBehaviour
 
             rollBase.choosing = false;
         }
-        else if (rollBase.choosing && rollBase.towerPrefab.GetComponent<UpHave>().id == curGM.GetComponent<UpHave>().id && rollBase.towerPrefab !=curGM)
+        else if (rollBase.choosing && rollBase.towerPrefab.GetComponent<UpHave>().id == curGM.GetComponent<UpHave>().id )
         {
             Debug.Log("Апнул не просто");
-            GameObject newVer = Instantiate(curGM.GetComponent<UpHave>().UpVersion, transform.position, Quaternion.identity);
+            GameObject newVer = Instantiate(curGM.GetComponent<UpHave>().UpVersion, new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z), Quaternion.identity);
             Destroy(curGM);
             rollBase.AddTower(newVer.GetComponent<SpriteRenderer>());
             curGM = newVer;
@@ -91,7 +85,7 @@ public class TowerBase : MonoBehaviour
     {
 
         monster = (gameObject);
-        curGM = Instantiate(rollBase.towerPrefab, transform.position, Quaternion.identity);
+        curGM = Instantiate(rollBase.towerPrefab, new Vector3(transform.position.x, transform.position.y + 0.2f), Quaternion.identity);
         curGM.GetComponent<UpHave>().baseOf = this;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         rollBase.towerPrefab = null;

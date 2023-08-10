@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         {
             if (allTower[i] != null)
             {
-                allTower[i].sortingOrder = 3;
+                allTower[i].sortingOrder = 4;
             }
         }
 
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         {
             if (allTower[i] != null)
             {
-                allTower[i].sortingOrder = 1;
+                allTower[i].sortingOrder = 3;
             }
         }
     }
