@@ -17,10 +17,15 @@ public class Rolling : MonoBehaviour
     public Sprite[] imageidBuilding;
 
     public GameObject towerPrefab;
+    public bool choosing;
     public TowerBase TB;
+    public bool cant;
+    public GameObject unPanel;
+    public GameManager GameM;
 
     public void Roll()
     {
+        cant = true;
         panelChoose.SetActive(true);
         bool[] lockerTower = new bool[towers.Length];
         bool[] lockerHelpers = new bool[helpers.Length];
@@ -98,8 +103,42 @@ public class Rolling : MonoBehaviour
     }
     public void Choose(int i)
     {
-        towerPrefab = slots[i].tower;
-        panelChoose.SetActive(false);
+        if (!choosing)
+        {
+
+            towerPrefab = slots[i].tower;
+            panelChoose.SetActive(false);
+            cant = false;
+        }
+    }
+
+    public void UnChoose()
+    {
+        choosing = false;
+        towerPrefab = null; 
+    }
+    public void AddTower(SpriteRenderer SR)
+    {
+
+        SpriteRenderer[] newArray = new SpriteRenderer[GameM.allTower.Length + 1];
+
+        // Copy elements from the old array to the new one
+        for (int i = 0; i < GameM.allTower.Length; i++)
+        {
+            newArray[i] = GameM.allTower[i];
+        }
+
+        // Assign the new array to the original array variable
+        GameM.allTower = newArray;
+        GameM.allTower[GameM.allTower.Length - 1] = SR;
+    }
+    public void OrderUp()
+    {
+        GameM.UpLay();
+    }
+    public void OrderDown()
+    {
+        GameM.DownLay();
     }
 }
 [System.Serializable]
