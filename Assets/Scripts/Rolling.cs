@@ -74,9 +74,21 @@ public class Rolling : MonoBehaviour
 
         }
     }
-
+    public void RollingThis()
+    {
+        if (GameManager.Instance.Gold >= 100)
+        {
+            GameManager.Instance.Gold -= 100;
+            Roll();
+        }
+        else
+        {
+            GameManager.Instance.needMoreActive();
+        }
+    }
     public void Roll()
     {
+
         cant = true;
         bool[] lockerTower = new bool[towers.Length];
         bool[] lockerHelpers = new bool[helpers.Length];
