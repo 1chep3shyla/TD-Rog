@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 8437195482915574190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.03, y: 5.57, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
-  speed: 1.15
-  maxSpeed: 1.15
+  speed: 0.8
+  maxSpeed: 0.8
   slowTimer: 0
   isSlowed: 0
 --- !u!61 &6189930286903165397
@@ -164,8 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1436599b0926ae4f8aa4515d83644e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  maxHealth: 5
+  health: 25
+  maxHealth: 25
+  goldGive: 0
 --- !u!50 &248614970749484257
 Rigidbody2D:
   serializedVersion: 4

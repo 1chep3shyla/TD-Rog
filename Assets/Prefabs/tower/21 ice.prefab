@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8489601629190039140}
   - component: {fileID: 3248000793684943396}
   - component: {fileID: -8774552743064175658}
+  - component: {fileID: 5698159781660736408}
   m_Layer: 0
   m_Name: 21 ice
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +51,10 @@ MonoBehaviour:
   id: 21
   UpVersion: {fileID: 2056256240725061661, guid: 45938850c621801479e510bad8fbba9b, type: 3}
   baseOf: {fileID: 0}
+  name: Ice Tower
+  attackSpeed: 1.25
+  damage: 6
+  curDamage: 0
 --- !u!212 &3248000793684943396
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -119,7 +124,33 @@ MonoBehaviour:
   damage: 6
   firePoint: {fileID: 2267902603849338513}
   bulletPrefab: {fileID: 6556074294206078149, guid: e6638dd570f322a49a8ee631d36cb30c, type: 3}
-  slowPower: 0.2
+  slowPower: 0.3
+--- !u!61 &5698159781660736408
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.11}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.47761193, y: 0.7761194}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.45, y: 0.53}
+  m_EdgeRadius: 0
 --- !u!1 &4328326297566329966
 GameObject:
   m_ObjectHideFlags: 0

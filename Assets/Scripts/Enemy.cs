@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public int health;
     public int maxHealth;
+    public int goldGive;
     void Update()
     {
         if (health <= 0)
@@ -18,8 +19,9 @@ public class Enemy : MonoBehaviour
         int curhp = health -= dmg;
         if (curhp <= 0)
         {
-            GameManager.Instance.Gold += 10;
+            GameManager.Instance.Gold += goldGive;
             Destroy(gameObject);
+            GameManager.Instance.enemyHave -= 1;
         }
         else
         {

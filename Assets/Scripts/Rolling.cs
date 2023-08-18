@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Tilemaps;
+using TMPro;
 public class Rolling : MonoBehaviour
 {
 
@@ -28,13 +29,16 @@ public class Rolling : MonoBehaviour
 
     public Tilemap tilemap;
     public GameObject objectToInstantiate;
-
+    public TMP_Text[] nameOfTowerText;
+    public int costTower;
+    public TMP_Text costTowerText;
     void Start()
     {
         Roll();
     }
     void Update()
     {
+        costTowerText.text = costTower.ToString("");
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -76,19 +80,21 @@ public class Rolling : MonoBehaviour
     }
     public void RollingThis()
     {
-        if (GameManager.Instance.Gold >= 100)
+        if (GameManager.Instance.Gold >= costTower)
         {
-            GameManager.Instance.Gold -= 100;
+            GameManager.Instance.Gold -= costTower;
+            costTower += 10;
             Roll();
         }
         else
         {
-            GameManager.Instance.needMoreActive();
+            GameManager.Instance.notEnought();
         }
     }
     public void Roll()
     {
 
+        choosing = false;
         cant = true;
         bool[] lockerTower = new bool[towers.Length];
         bool[] lockerHelpers = new bool[helpers.Length];
@@ -110,6 +116,7 @@ public class Rolling : MonoBehaviour
                 slots[i].tower = towers[randomId];
                 slots[i].icon.sprite = imageidTower[slots[i].id];
                 slots[i].tower = towers[randomId];
+                nameOfTowerText[i].text = slots[i].tower.GetComponent<UpHave>().name;
             }
             else if (i >= 3)
             {
@@ -127,6 +134,7 @@ public class Rolling : MonoBehaviour
                     slots[i].id = randomId;
                     slots[i].icon.sprite = imageidTower[slots[i].id];
                     slots[i].tower = towers[randomId];
+                    nameOfTowerText[i].text = slots[i].tower.GetComponent<UpHave>().name;
                 }
 
                 else if(randomType == 1) 
@@ -141,6 +149,7 @@ public class Rolling : MonoBehaviour
                     slots[i].id = randomId;
                     slots[i].icon.sprite = imageidHelper[slots[i].id];
                     slots[i].tower = helpers[randomId];
+                    nameOfTowerText[i].text = slots[i].tower.GetComponent<UpHave>().name;
                 }
 
                 else if (randomType == 2)
@@ -155,8 +164,8 @@ public class Rolling : MonoBehaviour
                     slots[i].id = randomId;
                     slots[i].icon.sprite = imageidBuilding[slots[i].id];
                     slots[i].tower = building[randomId];
+                    nameOfTowerText[i].text = slots[i].tower.GetComponent<UpHave>().name;
                 }
-
 
 
             }

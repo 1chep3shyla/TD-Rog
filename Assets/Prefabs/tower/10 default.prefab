@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: -9076710513994331938}
   - component: {fileID: 3248000793684943396}
   - component: {fileID: 7037598387206558222}
+  - component: {fileID: 8798081732258596357}
   m_Layer: 0
   m_Name: 10 default
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +51,10 @@ MonoBehaviour:
   id: 10
   UpVersion: {fileID: 2056256240725061661, guid: aea5d6a0916126f40a7ee2d5661ae1dc, type: 3}
   baseOf: {fileID: 0}
+  name: Castle Tower
+  attackSpeed: 0.75
+  damage: 5
+  curDamage: 0
 --- !u!212 &3248000793684943396
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -117,8 +122,35 @@ MonoBehaviour:
   attackRadius: 1.5
   attackSpeed: 0.75
   damage: 5
-  bulletPrefab: {fileID: 6556074294206078149, guid: 01ebbaef74323bf47ad0e4adc6ecc886, type: 3}
   firePoint: {fileID: 1615630990437246422}
+  bulletPrefab: {fileID: 6556074294206078149, guid: 01ebbaef74323bf47ad0e4adc6ecc886, type: 3}
+  slowPower: 0
+--- !u!61 &8798081732258596357
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.11}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.47761193, y: 0.7761194}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.45, y: 0.53}
+  m_EdgeRadius: 0
 --- !u!1 &2466880647901358694
 GameObject:
   m_ObjectHideFlags: 0

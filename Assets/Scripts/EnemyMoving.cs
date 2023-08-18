@@ -11,7 +11,6 @@ public class EnemyMoving : MonoBehaviour
     public float maxSpeed = 1.0f;
     public float slowTimer;
     public bool isSlowed;
-    
 
     void Start()
     {
@@ -20,19 +19,15 @@ public class EnemyMoving : MonoBehaviour
 
     void Update()
     {
-        Vector3 startPosition = waypoints[currentWaypoint].transform.position;
-        Vector3 endPosition = waypoints[currentWaypoint + 1].transform.position;
-        // 2 
-        float pathLength = Vector3.Distance(startPosition, endPosition);
+        float distance = Vector3.Distance(transform.position, waypoints[currentWaypoint].transform.position);
 
-        float totalTimeForPath = pathLength / maxSpeed;
-        float currentTimeOnPath = Time.time - lastWaypointSwitchTime;
-        gameObject.transform.position = Vector2.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
-        
+        float step = speed * Time.deltaTime;
 
-        if (gameObject.transform.position.Equals(endPosition))
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].transform.position, step);
+
+        if (distance < step)
         {
-            if (currentWaypoint < waypoints.Length - 2)
+            if (currentWaypoint < waypoints.Length - 1)
             {
                 // 3.a 
                 currentWaypoint++;
@@ -62,18 +57,18 @@ public class EnemyMoving : MonoBehaviour
      
 
     }
-    public void Slow(float slowPower, float time)
+    public void Slow(float time, float slowPower)
     {
 
         float powering = maxSpeed - slowPower;
         if (powering < speed)
         {
             speed = powering;
-            slowTimer = slowPower;
+            slowTimer = time;
         }
         else
         {
-            slowTimer = slowPower;
+            slowTimer = time;
         }
         isSlowed = true;
     }

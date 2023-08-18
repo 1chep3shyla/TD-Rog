@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3965495882952382842}
   - component: {fileID: 3248000793684943396}
   - component: {fileID: -5473015847071402466}
+  - component: {fileID: -7798498524673343445}
   m_Layer: 0
   m_Name: 3 magnet
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +51,10 @@ MonoBehaviour:
   id: 3
   UpVersion: {fileID: 2056256240725061661, guid: 79b53089a6bb5af429c24c9809b6b741, type: 3}
   baseOf: {fileID: 0}
+  name: Magnet Tower
+  attackSpeed: 0.25
+  damage: 12
+  curDamage: 0
 --- !u!212 &3248000793684943396
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -117,8 +122,35 @@ MonoBehaviour:
   attackRadius: 1.9
   attackSpeed: 0.25
   damage: 12
-  bulletPrefab: {fileID: 6556074294206078149, guid: 01ebbaef74323bf47ad0e4adc6ecc886, type: 3}
   firePoint: {fileID: 7064506435605865982}
+  bulletPrefab: {fileID: 6556074294206078149, guid: 12a28676b1ab8824c9400505756f84c9, type: 3}
+  slowPower: 0
+--- !u!61 &-7798498524673343445
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.11}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.47761193, y: 0.7761194}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.45, y: 0.53}
+  m_EdgeRadius: 0
 --- !u!1 &5906889049872377686
 GameObject:
   m_ObjectHideFlags: 0

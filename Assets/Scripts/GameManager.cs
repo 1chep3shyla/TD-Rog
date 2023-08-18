@@ -8,22 +8,24 @@ public class GameManager : MonoBehaviour
 
     public bool gameOver = false;
     public int Gold;
-    private int wave;
     public SpriteRenderer[] allTower;
     public GameObject needMore;
     public TMP_Text goldCount;
     public TMP_Text waveCount;
+    public int curWave;
+    public int enemyHave;
+    private bool anima;
 
     private static GameManager instance;
     void Update()
     {
         goldCount.text = Gold.ToString("");
-        waveCount.text = wave.ToString("") + "/10";
+        waveCount.text = curWave.ToString("") + "/10";
 
     }
     void Start()
     {
-        Wave = 0;
+        curWave = 0;
         if (instance == null)
         {
             instance = this;
@@ -39,11 +41,11 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            return wave;
+            return curWave;
         }
         set
         {
-            wave = value;
+            curWave = value;
             if (!gameOver)
             {
 
@@ -90,10 +92,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void needMoreActive()
+    public void notEnought()
+    {
+        if (!anima)
+        {
+            anima = true;
+            StartCoroutine(needMoreActive());
+        }
+    }
+    public IEnumerator needMoreActive()
     {
         needMore.SetActive(true);
         needMore.GetComponent<Animator>().Play("needMore_anim");
+        yield return new WaitForSeconds(0.52f);
+        anima = false;
+        needMore.SetActive(false);
     }
 
 }

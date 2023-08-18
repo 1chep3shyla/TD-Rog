@@ -16,7 +16,8 @@ public class Default : MonoBehaviour
 
     void Update()
     {
-        // Check if there are enemies within the attack radius
+        damage = gameObject.GetComponent<UpHave>().curDamage;
+        attackSpeed = gameObject.GetComponent<UpHave>().curAttackSpeed;
         if (CanAttack())
         {
             Attack();
@@ -59,6 +60,7 @@ public class Default : MonoBehaviour
                     // Instantiate a bullet at the firePoint position and rotate it towards the enemy
                     GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
                     BulletController bulletController = bullet.GetComponent<BulletController>();
+                    CannonBull bulletCannonController = bullet.GetComponent<CannonBull>();
                     if (bulletController != null)
                     {
                         bulletController.Initialize(target, damage);
@@ -66,6 +68,11 @@ public class Default : MonoBehaviour
                         {
                             bulletController.powerOfIce = slowPower;
                         }
+                    }
+                    else if(bulletCannonController != null)
+                    {
+                        bulletCannonController.enemyTarget = target;
+                        bulletCannonController.dmg = damage;
                     }
 
                     attackCooldown = attackSpeed;
