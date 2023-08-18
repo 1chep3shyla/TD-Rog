@@ -2,25 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
     public bool gameOver = false;
     public int Gold;
+    public int Health;
     public SpriteRenderer[] allTower;
     public GameObject needMore;
     public TMP_Text goldCount;
+    public TMP_Text healthCount;
     public TMP_Text waveCount;
     public int curWave;
     public int enemyHave;
     private bool anima;
-
+    public GameObject menu;
     private static GameManager instance;
     void Update()
     {
         goldCount.text = Gold.ToString("");
-        waveCount.text = curWave.ToString("") + "/10";
+        healthCount.text = Health.ToString("");
+        waveCount.text = curWave.ToString("") + "/30";
+
+        if (Input.GetKeyDown("escape"))
+        {
+            Pause();
+        }
 
     }
     void Start()
@@ -29,7 +37,6 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -59,7 +66,7 @@ public class GameManager : MonoBehaviour
         {
             if (allTower[i] != null)
             {
-                allTower[i].sortingOrder = 4;
+                allTower[i].sortingOrder = 6;
             }
         }
 
@@ -108,5 +115,14 @@ public class GameManager : MonoBehaviour
         anima = false;
         needMore.SetActive(false);
     }
-
+    public void Pause()
+    {
+        menu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+    }
 }

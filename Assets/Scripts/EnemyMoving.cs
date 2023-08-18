@@ -11,7 +11,6 @@ public class EnemyMoving : MonoBehaviour
     public float maxSpeed = 1.0f;
     public float slowTimer;
     public bool isSlowed;
-
     void Start()
     {
         lastWaypointSwitchTime = Time.time;
@@ -37,8 +36,15 @@ public class EnemyMoving : MonoBehaviour
             {
                 // 3.b 
                 Destroy(gameObject);
-
-                // TODO: вычитать здоровье
+                if (GameManager.Instance.Health > 1)
+                {
+                    GameManager.Instance.Health -= 1;
+                }
+                else
+                {
+                    GameManager.Instance.Health -= 0;
+                    GameManager.Instance.Pause();
+                }
             }
         }
 

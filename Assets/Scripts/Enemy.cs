@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public int health;
     public int maxHealth;
     public int goldGive;
+    public ParticleSystem par;
     void Update()
     {
         if (health <= 0)
@@ -22,9 +23,11 @@ public class Enemy : MonoBehaviour
             GameManager.Instance.Gold += goldGive;
             Destroy(gameObject);
             GameManager.Instance.enemyHave -= 1;
+            par.Play();
         }
         else
         {
+            par.Play();
             health = curhp;
         }
     }

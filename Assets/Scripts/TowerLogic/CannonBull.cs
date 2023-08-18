@@ -42,7 +42,7 @@ public class CannonBull : MonoBehaviour
 
             transform.position = parabolicPosition;
 
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.deltaTime * bulletSpeed;
             yield return null;
         }
         InstantiateImpactEffect();

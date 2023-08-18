@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd90d0febec8514a926ab37dcebcb11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbitSpeed: 20
+  orbitSpeed: 40
   dmg: 0
 --- !u!95 &620363979356808984
 Animator:

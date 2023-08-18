@@ -101,3 +101,7 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Statue
+  curAttackSpeed: 0
+  attackSpeed: 0
+  damage: 0
+  curDamage: 0

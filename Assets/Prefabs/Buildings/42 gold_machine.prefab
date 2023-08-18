@@ -103,6 +103,10 @@ MonoBehaviour:
   UpVersion: {fileID: 2056256240725061661, guid: 806251450b3712c4ab3519d5f22fd4c6, type: 3}
   baseOf: {fileID: 0}
   name: Farm
+  curAttackSpeed: 0
+  attackSpeed: 0
+  damage: 0
+  curDamage: 0
 --- !u!114 &-4548780095228774958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldGive: 35
-  timeNeed: 5
+  timeNeed: 1
   waveCount: {fileID: 2637164540689995739}
   addCoin: {fileID: 5791207424000404458}
 --- !u!1 &5105033222445974986

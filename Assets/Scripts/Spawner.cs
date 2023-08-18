@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class Spawner : MonoBehaviour
 {
     public GameObject[] waypoints;
@@ -40,6 +40,24 @@ public class Spawner : MonoBehaviour
             StartCoroutine(StartWave());
             return;
 
+        }
+        for (int i =0; i< wavesMass.Length; i++)
+        {
+            for (int o = 0; o < wavesMass[i].wavesAll.Length; o++)
+            {
+                if (i <= 10)
+                {
+                    wavesMass[i].wavesAll[o].goldWaveGiving = 10 + (2 * i);
+                }
+                else if (i > 10 && i <= 20)
+                {
+                    wavesMass[i].wavesAll[o].goldWaveGiving = (int)(30 * Math.Pow(1.137f, i-10));
+                }
+                else
+                {
+                    wavesMass[i].wavesAll[o].goldWaveGiving = (int)(100 * Math.Pow(1.137f, i-20)); 
+                }
+            }
         }
         GameManager.Instance.curWave = currentWaveIndexMain +1;
     }

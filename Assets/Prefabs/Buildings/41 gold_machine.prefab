@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldGive: 15
-  timeNeed: 5
+  timeNeed: 1
   waveCount: {fileID: 5731814836228688733}
   addCoin: {fileID: 6510170877806620127}
 --- !u!1 &3567831507631930175

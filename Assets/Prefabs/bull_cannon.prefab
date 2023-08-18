@@ -117,5 +117,5 @@ MonoBehaviour:
   impactPrefab: {fileID: 6910336767071730326, guid: 6b62f8f069faf5d4b9ac6d1a4e29b09f, type: 3}
   enemyTarget: {fileID: 0}
   arcHeight: 2
-  bulletSpeed: 0.1
+  bulletSpeed: 1.25
   dmg: 0
