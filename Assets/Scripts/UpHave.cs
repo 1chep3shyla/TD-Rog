@@ -24,6 +24,7 @@ public class UpHave : MonoBehaviour
         {
             timeOff = 0;
             RemoveDamageBoost();
+            RemoveSpeedBoost();
         }
     }
     private void Start()
@@ -53,6 +54,6 @@ public class UpHave : MonoBehaviour
     public void RemoveSpeedBoost()
     {
         isBoosterSpeed = false;
-        curDamage = damage;
+        curAttackSpeed = attackSpeed;
     }
 }

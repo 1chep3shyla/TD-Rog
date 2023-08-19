@@ -9,18 +9,27 @@ public class BatTower : MonoBehaviour
     public Transform orbitTarget; // The target around which objects will orbit
     public float orbitRadius = 5f; // Radius of the orbit
     public int damage;
+    public float speed;
+    public BatController[] allBats;
 
     void Update()
     {
         damage = gameObject.GetComponent<UpHave>().curDamage;
+        for (int i = 0; i < allBats.Length; i++)
+        {
+            allBats[i].orbitSpeed = gameObject.GetComponent<UpHave>().attackSpeed + gameObject.GetComponent<UpHave>().attackSpeed - gameObject.GetComponent<UpHave>().curAttackSpeed;
+            allBats[i].dmg = gameObject.GetComponent<UpHave>().curDamage;
+        }
     }
     private void Start()
     {
         CreateObjects();
+
     }
 
     private void CreateObjects()
     {
+        allBats = new BatController[numberOfObjects];
         for (int i = 0; i < numberOfObjects; i++)
         {
             float angleIncrement = 360f / numberOfObjects;
@@ -34,10 +43,12 @@ public class BatTower : MonoBehaviour
 
             if (batController != null)
             {
+                allBats[i] = batController;
                 batController.SetTarget(orbitTarget);
                 batController.SetOrbitRadius(orbitRadius);
                 batController.SetOrbitAngle(angle); // Pass the angle to the BatController
                 batController.dmg = damage;
+                batController.orbitSpeed = speed;
             }
         }
     }

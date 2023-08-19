@@ -2,8 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnemyType
+{
+    boss,
+    elite,
+    defaultEnemy
+}
+
 public class EnemyMoving : MonoBehaviour
 {
+    public EnemyType typeEnemy;
     public GameObject[] waypoints;
     private int currentWaypoint;
     private float lastWaypointSwitchTime;
@@ -11,9 +19,22 @@ public class EnemyMoving : MonoBehaviour
     public float maxSpeed = 1.0f;
     public float slowTimer;
     public bool isSlowed;
+    private int damageEnemy;
     void Start()
     {
         lastWaypointSwitchTime = Time.time;
+        if (typeEnemy == EnemyType.defaultEnemy)
+        {
+            damageEnemy = 1;
+        }
+        else if (typeEnemy == EnemyType.elite)
+        {
+            damageEnemy = 3;
+        }
+        else if (typeEnemy == EnemyType.boss)
+        {
+            damageEnemy = 5;
+        }
     }
 
     void Update()
@@ -36,13 +57,14 @@ public class EnemyMoving : MonoBehaviour
             {
                 // 3.b 
                 Destroy(gameObject);
-                if (GameManager.Instance.Health > 1)
+                if (GameManager.Instance.Health > damageEnemy)
                 {
-                    GameManager.Instance.Health -= 1;
+                    GameManager.Instance.Health -= damageEnemy;
                 }
+
                 else
                 {
-                    GameManager.Instance.Health -= 0;
+                    GameManager.Instance.Health = 0;
                     GameManager.Instance.Pause();
                 }
             }

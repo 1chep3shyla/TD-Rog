@@ -9,16 +9,18 @@ public class SpeedBuff : MonoBehaviour
 
     private void Update()
     {
-        // Find towers within the boost radius and apply damage boost
-        Collider2D[] towers = Physics2D.OverlapCircleAll(transform.position, boostRadius);
-        foreach (Collider2D towerCollider in towers)
+        // Find towers with the "Tower" tag within the boost radius and apply damage boost
+        GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
+
+        foreach (GameObject tower in towers)
         {
-            if (towerCollider.CompareTag("Tower"))
+            Vector2 towerPosition = tower.transform.position;
+            if (Vector2.Distance(transform.position, towerPosition) <= boostRadius)
             {
-                UpHave tower = towerCollider.GetComponent<UpHave>();
-                if (tower != null)
+                UpHave towerScript = tower.GetComponent<UpHave>();
+                if (towerScript != null)
                 {
-                    tower.ApplyAttackBoost(boostMultiplierSpeed);
+                    towerScript.ApplyAttackBoost(boostMultiplierSpeed);
                 }
             }
         }

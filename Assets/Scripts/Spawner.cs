@@ -48,14 +48,17 @@ public class Spawner : MonoBehaviour
                 if (i <= 10)
                 {
                     wavesMass[i].wavesAll[o].goldWaveGiving = 10 + (2 * i);
+                    wavesMass[i].wavesAll[o].healthEnemy = (int)(wavesMass[i].wavesAll[o].enemyPrefab.GetComponent<Enemy>().maxHealth + wavesMass[i].wavesAll[o].enemyPrefab.GetComponent<Enemy>().maxHealth * (i / 5 ));
                 }
                 else if (i > 10 && i <= 20)
                 {
                     wavesMass[i].wavesAll[o].goldWaveGiving = (int)(30 * Math.Pow(1.137f, i-10));
+                    wavesMass[i].wavesAll[o].healthEnemy = (int)(wavesMass[i].wavesAll[o].enemyPrefab.GetComponent<Enemy>().maxHealth + wavesMass[i].wavesAll[o].enemyPrefab.GetComponent<Enemy>().maxHealth * (i / 5 * 5));
                 }
                 else
                 {
-                    wavesMass[i].wavesAll[o].goldWaveGiving = (int)(100 * Math.Pow(1.137f, i-20)); 
+                    wavesMass[i].wavesAll[o].goldWaveGiving = (int)(100 * Math.Pow(1.137f, i-20));
+                    wavesMass[i].wavesAll[o].healthEnemy = (int)(wavesMass[i].wavesAll[o].enemyPrefab.GetComponent<Enemy>().maxHealth + wavesMass[i].wavesAll[o].enemyPrefab.GetComponent<Enemy>().maxHealth * (i / 5 * 15));
                 }
             }
         }
@@ -111,7 +114,7 @@ public class Wave
     public float TimeToNext;
     public int goldWaveGiving;
     public int healthEnemy;
-    public float spawnInterval = 2;
+    public float spawnInterval;
     public int maxEnemies = 20;
 }
 

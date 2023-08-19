@@ -38,7 +38,7 @@ public class Rolling : MonoBehaviour
     void Update()
     {
         costTowerText.text = costTower.ToString("");
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && choosing == false)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int cellPosition = tilemap.WorldToCell(mousePosition);
@@ -48,6 +48,7 @@ public class Rolling : MonoBehaviour
                 Clicking(mousePosition, cellPosition);
             }
         }
+
         if (Input.GetKeyDown("space"))
         {
             RollingThis();
@@ -68,6 +69,7 @@ public class Rolling : MonoBehaviour
     }
     public void Clicking(Vector3 vec3, Vector3Int vec3Int)
     {
+        unPanel.SetActive(false);
         Vector3 cellCenterPosition = tilemap.GetCellCenterWorld(vec3Int);
         Vector3 spawnPosition = new Vector3(cellCenterPosition.x, cellCenterPosition.y + 0.2f, cellCenterPosition.z);
         int columnIndex = vec3Int.x;
@@ -88,11 +90,21 @@ public class Rolling : MonoBehaviour
             AddTower(towerBase.GetComponent<TowerBase>().curGM.GetComponent<SpriteRenderer>());
             towerBase.GetComponent<TowerBase>().curGM.GetComponent<UpHave>().baseOf = towerBase.GetComponent<TowerBase>();
             towerBase.GetComponent<TowerBase>().monster = newGM;
+            choosing = true;
+            cant = false;
+            towerPrefab = newGM;
+            for (int o = 0; o < slots.Length; o++)
+            {
+                butChoose[o].interactable = false;
+                butChoose[o].gameObject.SetActive(false);
+                pressSpace.SetActive(true);
+            }
         }
         else if (allBases[columnIndex + 10, rowIndex + 3] != null && choosing)
         {
 
         }
+        StartCoroutine(Un());
     }
     public void RollingThis()
     {
@@ -131,22 +143,17 @@ public class Rolling : MonoBehaviour
             nameOfTowerText[i].text = slots[i].tower.GetComponent<UpHave>().name;
 
         }
-
     }
 
     public void Choose(int i)
     {
         if (!choosing)
         {
+            cant = true;
+            unPanel.SetActive(true);
             pressSpace.SetActive(false);
             towerPrefab = slots[i].tower;
-            cant = false;
-            for (int o = 0; o < slots.Length; o++)
-            {
-                butChoose[o].interactable = false;
-                butChoose[o].gameObject.SetActive(false);
-                pressSpace.SetActive(true);
-            }
+
 
         }
     }
@@ -178,6 +185,12 @@ public class Rolling : MonoBehaviour
     public void OrderDown()
     {
         GameM.DownLay();
+    }
+    public IEnumerator Un()
+    {
+        yield return new WaitForSeconds(0.25f);
+        unPanel.SetActive(true);
+
     }
 }
 [System.Serializable]

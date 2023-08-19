@@ -51,7 +51,7 @@ MonoBehaviour:
   baseOf: {fileID: 0}
   name: Dark Forest
   curAttackSpeed: 0
-  attackSpeed: 0
+  attackSpeed: 50
   damage: 10
   curDamage: 0
 --- !u!212 &3248000793684943396
@@ -123,3 +123,5 @@ MonoBehaviour:
   orbitTarget: {fileID: 7348218345031596754}
   orbitRadius: 1
   damage: 10
+  speed: 0
+  allBats: []
