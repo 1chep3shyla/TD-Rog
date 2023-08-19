@@ -111,7 +111,6 @@ public class Rolling : MonoBehaviour
     {
         pressSpace.SetActive(false);
         choosing = false;
-        cant = true;
         bool[] lockerTower = new bool[towers.Length];
 
         for (int i = 0; i < slots.Length; i++)
