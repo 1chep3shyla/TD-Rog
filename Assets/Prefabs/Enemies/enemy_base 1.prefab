@@ -4978,8 +4978,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1436599b0926ae4f8aa4515d83644e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 25
-  maxHealth: 25
+  health: 3
+  maxHealth: 3
   goldGive: 0
   par: {fileID: 736572843130983340}
 --- !u!50 &248614970749484257

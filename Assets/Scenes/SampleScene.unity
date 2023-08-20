@@ -237,6 +237,63 @@ RectTransform:
   m_AnchoredPosition: {x: 780, y: 0}
   m_SizeDelta: {x: 225, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &55759254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 55759256}
+  - component: {fileID: 55759255}
+  m_Layer: 0
+  m_Name: Reader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &55759255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55759254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c3ae26ef222e343bb7a21d42d9868b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tsvFilePath: Assets/StreamingAssets/EnemyStatAll.tsv
+  enemyStat:
+  - {fileID: -2355158425567635141, guid: 70530debd72588a46bec323326dfa881, type: 3}
+  - {fileID: 2780520482085684684, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
+  - {fileID: 2780520482085684684, guid: 505e7d172d7b6c347aef8f1a89f8e675, type: 3}
+  - {fileID: 2780520482085684684, guid: 9e6bfe526d6bc064698c6a4db7138fb5, type: 3}
+  - {fileID: 2780520482085684684, guid: fb761f5bf69bbbb47be0d201ff5b8037, type: 3}
+  enemyMoveStat:
+  - {fileID: 6424373218591284867, guid: 70530debd72588a46bec323326dfa881, type: 3}
+  - {fileID: 6424373218591284867, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
+  - {fileID: 6424373218591284867, guid: 505e7d172d7b6c347aef8f1a89f8e675, type: 3}
+  - {fileID: 6424373218591284867, guid: 9e6bfe526d6bc064698c6a4db7138fb5, type: 3}
+  - {fileID: 6424373218591284867, guid: fb761f5bf69bbbb47be0d201ff5b8037, type: 3}
+--- !u!4 &55759256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55759254}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.4380183, y: 1.4635556, z: -8.949318}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &108949860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1767,8 @@ MonoBehaviour:
   - {fileID: 2056256240725061661, guid: 1841953e77c79a54a9307ca9b7340cdd, type: 3}
   - {fileID: 2056256240725061661, guid: 25e96a99758417547ac9bbe6dcb281af, type: 3}
   - {fileID: 2056256240725061661, guid: e26f1c159ba66ec4998d10cfc1874ebd, type: 3}
+  - {fileID: 2056256240725061661, guid: 0bac3d26016f6b149a5067341213ac9d, type: 3}
+  - {fileID: 2056256240725061661, guid: 72c365b42085e2f47ae86e7e5d7b549d, type: 3}
   butChoose:
   - {fileID: 2117492046}
   - {fileID: 2043843881}
@@ -1727,6 +1786,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 90510dd62cd3fa743ae67bdb8f99155d, type: 3}
   - {fileID: 21300000, guid: 722b5479dcb600d44a4f358c99195008, type: 3}
   - {fileID: 21300000, guid: 4d9a5a70d52fc0147bde31874769e1ab, type: 3}
+  - {fileID: 628568414, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  - {fileID: -832953140, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
   towerPrefab: {fileID: 0}
   choosing: 0
   TB: {fileID: 0}

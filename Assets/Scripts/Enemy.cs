@@ -8,6 +8,10 @@ public class Enemy : MonoBehaviour
     public int maxHealth;
     public int goldGive;
     public ParticleSystem par;
+    void Start()
+    {
+        health = maxHealth;
+    }
     void Update()
     {
         if (health <= 0)

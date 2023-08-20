@@ -1,0 +1,6 @@
+Name	Health	Speed	Type
+Ork	5	1	defaultEnemy
+BigOrk	25	1	elite
+Ogre	150	1	boss
+Dragon	200	0,9	boss
+Octopus	120	1,1	boss
