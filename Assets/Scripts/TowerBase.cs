@@ -24,12 +24,12 @@ public class TowerBase : MonoBehaviour
                 Up();
                 Debug.Log("Up1");
             }
-            else if (!CanPlaceMonster() && curGM.GetComponent<UpHave>().UpVersion != null && rollBase.towerPrefab != null && curGM != null && rollBase.cant)
+            else if (!CanPlaceMonster() && curGM.GetComponent<UpHave>().UpVersion != null && rollBase.towerPrefab != null && curGM != null && !rollBase.choosing)
             {
                 Up();
                 Debug.Log("Up");
             }
-            else if(curGM !=null && !rollBase.cant)
+            else if(curGM !=null)
             {
                 rollBase.towerPrefab = curGM;
                 rollBase.choosing = true;
@@ -63,12 +63,12 @@ public class TowerBase : MonoBehaviour
                 rollBase.AddTower(newVer.GetComponent<SpriteRenderer>());
                 curGM = newVer;
                 curGM.GetComponent<UpHave>().baseOf = this;
-                rollBase.towerPrefab = newVer;
-                rollBase.choosing = true;
+                rollBase.towerPrefab = null;
+                rollBase.choosing = false;
                 rollBase.UpLevelAnim(transform);
                 change = true;
             }
-            else if (rollBase.choosing && rollBase.towerPrefab.GetComponent<UpHave>().id == curGM.GetComponent<UpHave>().id && rollBase.towerPrefab != curGM)
+            else if (!CanPlaceMonster() && curGM.GetComponent<UpHave>().UpVersion != null && rollBase.towerPrefab != null && curGM != null) 
             {
                 Debug.Log("Апнул не просто");
                 GameObject newVer = Instantiate(curGM.GetComponent<UpHave>().UpVersion, new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z), Quaternion.identity);
@@ -81,13 +81,15 @@ public class TowerBase : MonoBehaviour
                 rollBase.UpLevelAnim(transform);
                 Destroy(rollBase.towerPrefab.GetComponent<UpHave>().baseOf.gameObject);
                 Destroy(rollBase.towerPrefab);
-                rollBase.towerPrefab = newVer;
+                rollBase.choosing = false;
+                rollBase.towerPrefab = null;
                 change = true;
             }
         }
-        if (!change &&  !rollBase.cant)
+        else if (curGM != null && !change)
         {
             rollBase.towerPrefab = curGM;
+            rollBase.choosing = true;
         }
         rollBase.StartCoroutine(rollBase.Un());
         rollBase.OrderDown();

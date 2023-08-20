@@ -53,7 +53,7 @@ public class Rolling : MonoBehaviour
         {
             RollingThis();
         }
-        if (choosing)
+        if (choosing && towerPrefab!=null)
         {
             cursor.SetActive(true);
             cursor.transform.position = new Vector2(towerPrefab.transform.position.x, towerPrefab.transform.position.y - 0.12f); 
@@ -90,9 +90,8 @@ public class Rolling : MonoBehaviour
             AddTower(towerBase.GetComponent<TowerBase>().curGM.GetComponent<SpriteRenderer>());
             towerBase.GetComponent<TowerBase>().curGM.GetComponent<UpHave>().baseOf = towerBase.GetComponent<TowerBase>();
             towerBase.GetComponent<TowerBase>().monster = newGM;
-            choosing = true;
-            cant = false;
-            towerPrefab = newGM;
+            choosing = false;
+            towerPrefab = null;
             for (int o = 0; o < slots.Length; o++)
             {
                 butChoose[o].interactable = false;
@@ -104,7 +103,6 @@ public class Rolling : MonoBehaviour
         {
 
         }
-        StartCoroutine(Un());
     }
     public void RollingThis()
     {
@@ -149,7 +147,7 @@ public class Rolling : MonoBehaviour
     {
         if (!choosing)
         {
-            cant = true;
+            
             unPanel.SetActive(true);
             pressSpace.SetActive(false);
             towerPrefab = slots[i].tower;
