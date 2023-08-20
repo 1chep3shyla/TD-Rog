@@ -51,6 +51,12 @@ public class TowerBase : MonoBehaviour
         {
             if (rollBase.towerPrefab.GetComponent<UpHave>().id == curGM.GetComponent<UpHave>().id && !rollBase.choosing && rollBase.towerPrefab != curGM)
             {
+                for (int o = 0; o < rollBase.slots.Length; o++)
+                {
+                    rollBase.butChoose[o].interactable = false;
+                    rollBase.butChoose[o].gameObject.SetActive(false);
+                    rollBase.pressSpace.SetActive(true);
+                }
                 Debug.Log("Апнул просто");
                 GameObject newVer = Instantiate(curGM.GetComponent<UpHave>().UpVersion, new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z), Quaternion.identity);
                 Destroy(curGM);
