@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa5056f641197342a2b4fc8ef92df08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 53
+  id: 57
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Assasin Tower

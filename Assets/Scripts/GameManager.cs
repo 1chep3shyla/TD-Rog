@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool gameOver = false;
     public int Gold;
     public int Health;
+    public int maxHealth;
     public SpriteRenderer[] allTower;
     public GameObject needMore;
     public TMP_Text goldCount;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         curWave = 0;
+        Health = maxHealth;
         if (instance == null)
         {
             instance = this;

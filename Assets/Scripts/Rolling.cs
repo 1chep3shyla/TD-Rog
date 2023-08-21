@@ -68,7 +68,7 @@ public class Rolling : MonoBehaviour
         Instantiate(newLvl, transform.position, Quaternion.identity);
     }
     public void Clicking(Vector3 vec3, Vector3Int vec3Int)
-    {
+    {   
         unPanel.SetActive(false);
         Vector3 cellCenterPosition = tilemap.GetCellCenterWorld(vec3Int);
         Vector3 spawnPosition = new Vector3(cellCenterPosition.x, cellCenterPosition.y + 0.2f, cellCenterPosition.z);
@@ -97,6 +97,7 @@ public class Rolling : MonoBehaviour
                 butChoose[o].interactable = false;
                 butChoose[o].gameObject.SetActive(false);
                 pressSpace.SetActive(true);
+                slots[o].tower = null;
             }
         }
         else if (allBases[columnIndex + 10, rowIndex + 3] != null && choosing)
@@ -145,13 +146,12 @@ public class Rolling : MonoBehaviour
 
     public void Choose(int i)
     {
-        if (!choosing)
+        if (!choosing && slots[i] != null)
         {
             
             unPanel.SetActive(true);
             pressSpace.SetActive(false);
             towerPrefab = slots[i].tower;
-
 
         }
     }

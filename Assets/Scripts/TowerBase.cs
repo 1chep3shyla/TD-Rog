@@ -63,12 +63,13 @@ public class TowerBase : MonoBehaviour
                 rollBase.AddTower(newVer.GetComponent<SpriteRenderer>());
                 curGM = newVer;
                 curGM.GetComponent<UpHave>().baseOf = this;
+                monster = newVer;
                 rollBase.towerPrefab = null;
                 rollBase.choosing = false;
                 rollBase.UpLevelAnim(transform);
                 change = true;
             }
-            else if (!CanPlaceMonster() && curGM.GetComponent<UpHave>().UpVersion != null && rollBase.towerPrefab != null && curGM != null) 
+            else if (rollBase.towerPrefab.GetComponent<UpHave>().id == curGM.GetComponent<UpHave>().id && !CanPlaceMonster() && curGM.GetComponent<UpHave>().UpVersion != null && rollBase.towerPrefab != null && curGM != null) 
             {
                 Debug.Log("Апнул не просто");
                 GameObject newVer = Instantiate(curGM.GetComponent<UpHave>().UpVersion, new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z), Quaternion.identity);
@@ -81,6 +82,7 @@ public class TowerBase : MonoBehaviour
                 rollBase.UpLevelAnim(transform);
                 Destroy(rollBase.towerPrefab.GetComponent<UpHave>().baseOf.gameObject);
                 Destroy(rollBase.towerPrefab);
+                monster = newVer;
                 rollBase.choosing = false;
                 rollBase.towerPrefab = null;
                 change = true;

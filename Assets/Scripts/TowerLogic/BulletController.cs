@@ -6,8 +6,10 @@ public enum TypeBull
 {
     def,
     ice,
-    light,
-    giant
+    fire,
+    minHp, 
+    stan,
+    gladiator
 }
 
 public class BulletController : MonoBehaviour
@@ -19,8 +21,10 @@ public class BulletController : MonoBehaviour
     private Transform target;
     public float powerOfIce;
     public float IceTimer;
-
+    public int powerOfFire; 
+    public float FireTimer;
     private Vector3 direction;
+    public int chanceStan;
 
     public void Initialize(Transform bulletTarget, int bulletDamage)
     {
@@ -46,10 +50,61 @@ public class BulletController : MonoBehaviour
             EnemyMoving enemyMove = target.GetComponent<EnemyMoving>();
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(damage);
                 if (type == TypeBull.ice)
                 {
                     enemyMove.Slow(IceTimer, powerOfIce);
+                    enemyHealth.TakeDamage(damage);
+                }
+                else if (type == TypeBull.def)
+                {
+                    enemyHealth.TakeDamage(damage);
+                }
+                else if (type == TypeBull.fire)
+                {
+                    enemyHealth.SetOnFire(2.5f, powerOfFire); // Specify fire duration and damage
+                    enemyHealth.TakeDamage(damage);
+                }
+                else if (type == TypeBull.minHp)
+                {
+                    if ((int)((float)enemyHealth.maxHealth / (float)enemyHealth.health) > 0)
+                    {
+                        if ((int)((float)damage * ((float)enemyHealth.maxHealth * (float)enemyHealth.health)) > 0 && (int)((float)damage / ((float)enemyHealth.maxHealth * (float)enemyHealth.health)) < damage * 5)
+                        {
+                            enemyHealth.TakeDamage((int)((float)damage * ((float)enemyHealth.maxHealth / (float)enemyHealth.health)));
+                        }
+                        else if ((int)((float)damage * ((float)enemyHealth.maxHealth / (float)enemyHealth.health)) > damage * 5)
+                        {
+                            enemyHealth.TakeDamage(damage * 5);
+                        }
+                        else if ((int)((float)damage * ((float)enemyHealth.maxHealth / (float)enemyHealth.health)) < 0)
+                        {
+                            enemyHealth.TakeDamage(1);
+                        }
+                    }
+                }
+                else if (type == TypeBull.stan)
+                {
+                    int randomPoc = Random.Range(0, 100);
+                    if (randomPoc <= chanceStan)
+                    {
+                        enemyHealth.TakeDamage(damage);
+                        enemyMove.Stun(1.5f);
+                    }
+                    else
+                    {
+                        enemyHealth.TakeDamage(damage);
+                    }
+                }
+                else if (type == TypeBull.gladiator)
+                {
+                    if ((int)(damage * (float)GameManager.Instance.maxHealth / (float)GameManager.Instance.Health) < damage * 5)
+                    {
+                        enemyHealth.TakeDamage((int)(damage * (float)GameManager.Instance.maxHealth / (float)GameManager.Instance.Health));
+                    }
+                    else
+                    {
+                        enemyHealth.TakeDamage(damage * 5);
+                    }
                 }
             }
 

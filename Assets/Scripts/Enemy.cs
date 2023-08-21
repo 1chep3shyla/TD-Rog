@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
     public int maxHealth;
     public int goldGive;
     public ParticleSystem par;
+    public bool inFire;
+    private bool isStunned;
+    private float stunDuration;
     void Start()
     {
         health = maxHealth;
@@ -35,4 +38,28 @@ public class Enemy : MonoBehaviour
             health = curhp;
         }
     }
+    public void SetOnFire(float duration, int damage)
+    {
+        if (!inFire)
+        {
+            Debug.Log("√Œ–»“");
+            inFire = true;
+            StartCoroutine(Burn(duration, damage));
+        }
+    }
+
+    private IEnumerator Burn(float dur, int dmg)
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        while (dur > 0)
+        {
+
+            TakeDamage(dmg);
+            yield return new WaitForSeconds(0.25f); // Apply fire damage every second
+            dur -= 0.25f;
+        }
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        inFire = false;
+    }
+
 }

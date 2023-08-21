@@ -13,12 +13,22 @@ public class Default : MonoBehaviour
     private float attackCooldown = 0f;
     private List<Transform> enemiesInRange = new List<Transform>();
     public float slowPower;
+    public int firePower;
+    public int stanChance;
+    private Transform currentTarget;
 
     void Update()
     {
         damage = gameObject.GetComponent<UpHave>().curDamage;
         attackSpeed = gameObject.GetComponent<UpHave>().curAttackSpeed;
-        if (CanAttack())
+
+        // If there's no current target or the current target is out of range, find a new one
+        if (currentTarget == null || Vector3.Distance(transform.position, currentTarget.position) > attackRadius)
+        {
+            currentTarget = GetNearestEnemy();
+        }
+
+        if (CanAttack() && currentTarget != null)
         {
             Attack();
         }
@@ -49,38 +59,37 @@ public class Default : MonoBehaviour
     {
         if (attackCooldown <= 0f)
         {
-            // Find and attack an enemy within the attack radius
-            Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, attackRadius);
-            foreach (Collider2D enemyCollider in enemies)
+            // Instantiate a bullet at the firePoint position and rotate it towards the enemy
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            BulletController bulletController = bullet.GetComponent<BulletController>();
+            CannonBull bulletCannonController = bullet.GetComponent<CannonBull>();
+
+            if (bulletController != null)
             {
-                if (enemyCollider.CompareTag("Enemy"))
+                bulletController.Initialize(currentTarget, damage);
+                if (bulletController.type == TypeBull.ice)
                 {
-                    Transform target = enemyCollider.transform; // Get the enemy's transform
-
-                    // Instantiate a bullet at the firePoint position and rotate it towards the enemy
-                    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-                    BulletController bulletController = bullet.GetComponent<BulletController>();
-                    CannonBull bulletCannonController = bullet.GetComponent<CannonBull>();
-                    if (bulletController != null)
-                    {
-                        bulletController.Initialize(target, damage);
-                        if (bulletController.type == TypeBull.ice)
-                        {
-                            bulletController.powerOfIce = slowPower;
-                        }
-                    }
-                    else if(bulletCannonController != null)
-                    {
-                        bulletCannonController.enemyTarget = target;
-                        bulletCannonController.dmg = damage;
-                    }
-
-                    attackCooldown = attackSpeed;
-                    break;
+                    bulletController.powerOfIce = slowPower;
+                }
+                else if (bulletController.type == TypeBull.fire)
+                {
+                    bulletController.powerOfFire = firePower;
+                }
+                else if (bulletController.type == TypeBull.stan)
+                {
+                    bulletController.chanceStan = stanChance;
                 }
             }
+            else if (bulletCannonController != null)
+            {
+                bulletCannonController.enemyTarget = currentTarget;
+                bulletCannonController.dmg = damage;
+            }
+
+            attackCooldown = attackSpeed;
         }
     }
+
 
 
     Transform GetNearestEnemy()
@@ -90,6 +99,9 @@ public class Default : MonoBehaviour
 
         foreach (Transform enemy in enemiesInRange)
         {
+            if (enemy == null)
+                continue; // Skip destroyed enemies
+
             float distance = Vector3.Distance(firePoint.position, enemy.position);
             if (distance < minDistance)
             {

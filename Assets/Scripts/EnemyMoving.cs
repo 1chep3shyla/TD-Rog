@@ -20,6 +20,8 @@ public class EnemyMoving : MonoBehaviour
     public float slowTimer;
     public bool isSlowed;
     private int damageEnemy;
+    private bool isStunned;
+    private float stunDuration;
     void Start()
     {
         lastWaypointSwitchTime = Time.time;
@@ -99,5 +101,29 @@ public class EnemyMoving : MonoBehaviour
             slowTimer = time;
         }
         isSlowed = true;
+    }
+
+    public void Stun(float duration)
+    {
+        if (!isStunned)
+        {
+            isStunned = true;
+            stunDuration = duration;
+            StartCoroutine(Stunned());
+        }
+    }
+
+    private IEnumerator Stunned()
+    {
+        float originalSpeed = speed;
+        float maxSpeedNeed = maxSpeed;
+        maxSpeed = 0;
+        speed = 0; // Set speed to 0 to simulate a stunned effect
+
+        yield return new WaitForSeconds(stunDuration);
+
+        maxSpeed = maxSpeedNeed;
+        speed = originalSpeed; // Restore original speed after stun duration
+        isStunned = false;
     }
 }
