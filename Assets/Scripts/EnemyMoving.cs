@@ -41,48 +41,51 @@ public class EnemyMoving : MonoBehaviour
 
     void Update()
     {
-        float distance = Vector3.Distance(transform.position, waypoints[currentWaypoint].transform.position);
-
-        float step = speed * Time.deltaTime;
-
-        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].transform.position, step);
-
-        if (distance < step)
+        if (!isStunned)
         {
-            if (currentWaypoint < waypoints.Length - 1)
-            {
-                // 3.a 
-                currentWaypoint++;
-                lastWaypointSwitchTime = Time.time;
-            }
-            else
-            {
-                // 3.b 
-                Destroy(gameObject);
-                if (GameManager.Instance.Health > damageEnemy)
-                {
-                    GameManager.Instance.Health -= damageEnemy;
-                }
+            float distance = Vector3.Distance(transform.position, waypoints[currentWaypoint].transform.position);
 
+            float step = speed * Time.deltaTime;
+
+            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].transform.position, step);
+
+            if (distance < step)
+            {
+                if (currentWaypoint < waypoints.Length - 1)
+                {
+                    // 3.a 
+                    currentWaypoint++;
+                    lastWaypointSwitchTime = Time.time;
+                }
                 else
                 {
-                    GameManager.Instance.Health = 0;
-                    GameManager.Instance.Pause();
+                    // 3.b 
+                    Destroy(gameObject);
+                    if (GameManager.Instance.Health > damageEnemy)
+                    {
+                        GameManager.Instance.Health -= damageEnemy;
+                    }
+
+                    else
+                    {
+                        GameManager.Instance.Health = 0;
+                        GameManager.Instance.Pause();
+                    }
                 }
             }
         }
-
-        if (isSlowed)
-        {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-            slowTimer -= Time.deltaTime;
-            if (slowTimer <= 0)
+            if (isSlowed &&  gameObject.GetComponent<SpriteRenderer>().color == Color.white)
             {
-                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                isSlowed = false;
-                speed = maxSpeed;
+                gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+                slowTimer -= Time.deltaTime;
+                if (slowTimer <= 0)
+                {
+                    gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                    isSlowed = false;
+                    speed = maxSpeed;
+                }
             }
-        }
+        
 
      
 
@@ -115,15 +118,21 @@ public class EnemyMoving : MonoBehaviour
 
     private IEnumerator Stunned()
     {
-        float originalSpeed = speed;
-        float maxSpeedNeed = maxSpeed;
-        maxSpeed = 0;
-        speed = 0; // Set speed to 0 to simulate a stunned effect
+
 
         yield return new WaitForSeconds(stunDuration);
 
-        maxSpeed = maxSpeedNeed;
-        speed = originalSpeed; // Restore original speed after stun duration
+
         isStunned = false;
+    }
+    public void Portaling(int chance)
+    {
+        int random = Random.Range(0, 100);
+        if (random < chance)
+        {
+            currentWaypoint = 0;
+            transform.position = waypoints[0].transform.position;
+        }
+
     }
 }

@@ -127,6 +127,7 @@ MonoBehaviour:
   slowPower: 0
   firePower: 0
   stanChance: 10
+  charge: 0
 --- !u!1 &2466880647901358694
 GameObject:
   m_ObjectHideFlags: 0

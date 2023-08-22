@@ -9,7 +9,10 @@ public enum TypeBull
     fire,
     minHp, 
     stan,
-    gladiator
+    gladiator, 
+    portal, 
+    radar, 
+    poison
 }
 
 public class BulletController : MonoBehaviour
@@ -23,8 +26,11 @@ public class BulletController : MonoBehaviour
     public float IceTimer;
     public int powerOfFire; 
     public float FireTimer;
+    public int powerOfPoison;
+    public float PoisonTimer;
     private Vector3 direction;
     public int chanceStan;
+    public int chancePortaling;
 
     public void Initialize(Transform bulletTarget, int bulletDamage)
     {
@@ -105,6 +111,28 @@ public class BulletController : MonoBehaviour
                     {
                         enemyHealth.TakeDamage(damage * 5);
                     }
+                }
+                else if (type == TypeBull.portal)
+                {
+                    enemyHealth.TakeDamage(damage);
+                    enemyMove.Portaling(chancePortaling);
+                }
+                else if (type == TypeBull.radar)
+                {
+                    if (enemyMove.isSlowed == false)
+                    {
+                        enemyHealth.TakeDamage(damage);
+                    }
+                    else
+                    {
+                        enemyHealth.TakeDamage(damage * 2);
+                    }
+                }
+                else if (type == TypeBull.poison)
+                {
+
+                    enemyHealth.SetPoison(2.5f, powerOfPoison);
+                    enemyHealth.TakeDamage(damage);
                 }
             }
 

@@ -14,13 +14,21 @@ public class Default : MonoBehaviour
     private List<Transform> enemiesInRange = new List<Transform>();
     public float slowPower;
     public int firePower;
+    public int poisonPower;
     public int stanChance;
+    public int portalChange;
+    public bool charge;
     private Transform currentTarget;
 
     void Update()
     {
+
         damage = gameObject.GetComponent<UpHave>().curDamage;
-        attackSpeed = gameObject.GetComponent<UpHave>().curAttackSpeed;
+        if (!charge)
+        {
+            attackSpeed = gameObject.GetComponent<UpHave>().curAttackSpeed;
+        }
+
 
         // If there's no current target or the current target is out of range, find a new one
         if (currentTarget == null || Vector3.Distance(transform.position, currentTarget.position) > attackRadius)
@@ -78,6 +86,14 @@ public class Default : MonoBehaviour
                 else if (bulletController.type == TypeBull.stan)
                 {
                     bulletController.chanceStan = stanChance;
+                }
+                else if (bulletController.type == TypeBull.portal)
+                {
+                    bulletController.chancePortaling = portalChange;
+                }
+                else if (bulletController.type == TypeBull.poison)
+                {
+                    bulletController.powerOfPoison = poisonPower;
                 }
             }
             else if (bulletCannonController != null)

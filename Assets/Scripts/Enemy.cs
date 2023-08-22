@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public int goldGive;
     public ParticleSystem par;
     public bool inFire;
+    public bool inPoison;
     private bool isStunned;
     private float stunDuration;
     void Start()
@@ -50,7 +51,10 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator Burn(float dur, int dmg)
     {
-        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        if (gameObject.GetComponent<SpriteRenderer>().color == Color.white)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        }
         while (dur > 0)
         {
 
@@ -60,6 +64,33 @@ public class Enemy : MonoBehaviour
         }
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         inFire = false;
+    }
+
+    public void SetPoison(float duration, int damage)
+    {
+        if (!inPoison)
+        {
+            Debug.Log("ßÄ");
+            inPoison = true;
+            StartCoroutine(Poisoned(duration, damage));
+        }
+    }
+
+    private IEnumerator Poisoned(float dur, int dmg)
+    {
+        if (gameObject.GetComponent<SpriteRenderer>().color == Color.white)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        }
+        gameObject.GetComponent<EnemyMoving>().Slow(1f, 0.1f);
+        while (dur > 0)
+        {
+            TakeDamage(dmg);
+            yield return new WaitForSeconds(0.5f); // Apply fire damage every second
+            dur -= 0.5f;
+        }
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        inPoison = false;
     }
 
 }

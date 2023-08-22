@@ -1773,6 +1773,11 @@ MonoBehaviour:
   - {fileID: 2056256240725061661, guid: 6aa15fafe15e2234fb34bee2a086839d, type: 3}
   - {fileID: 2056256240725061661, guid: f76df1e501a76354c91f03aa18286075, type: 3}
   - {fileID: 2056256240725061661, guid: 01eb6cdc461a6574fa225fa1d5dace34, type: 3}
+  - {fileID: 2056256240725061661, guid: f0d694f381eabde46aeaa3338fe8350e, type: 3}
+  - {fileID: 2056256240725061661, guid: 5992a3b9c14764941b483d3566960374, type: 3}
+  - {fileID: 2056256240725061661, guid: 17c93992e56fe5f4193544d301fd0189, type: 3}
+  - {fileID: 2056256240725061661, guid: 8ae1660fe55a5d2429431dddde259189, type: 3}
+  - {fileID: 2056256240725061661, guid: 5f57e619bcce08a4ca5f532989e1746f, type: 3}
   butChoose:
   - {fileID: 2117492046}
   - {fileID: 2043843881}
@@ -1796,6 +1801,11 @@ MonoBehaviour:
   - {fileID: -1973000871, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
   - {fileID: 576241998, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
   - {fileID: 1821021475, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  - {fileID: 662136324, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  - {fileID: 872587357, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  - {fileID: 508242307, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  - {fileID: 1293341914, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  - {fileID: 1674350742, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
   towerPrefab: {fileID: 0}
   choosing: 0
   TB: {fileID: 0}

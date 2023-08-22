@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7348218345031596754}
   - component: {fileID: -9076710513994331938}
   - component: {fileID: 3248000793684943396}
-  - component: {fileID: 7912699240769563161}
+  - component: {fileID: 7037598387206558222}
   m_Layer: 0
-  m_Name: 58 random
+  m_Name: 66 poison
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,12 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa5056f641197342a2b4fc8ef92df08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 58
+  id: 66
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
-  name: Fire Tower
+  name: Poison Tower
   curAttackSpeed: 0
-  attackSpeed: 0.75
+  attackSpeed: 1
   damage: 2
   curDamage: 2
 --- !u!212 &3248000793684943396
@@ -96,7 +96,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 350516271, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  m_Sprite: {fileID: 38254062, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -107,7 +107,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7912699240769563161
+--- !u!114 &7037598387206558222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,13 +120,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRadius: 2
-  attackSpeed: 1
-  damage: 2
+  attackSpeed: 0.7
+  damage: 4
   firePoint: {fileID: 1615630990437246422}
-  bulletPrefab: {fileID: 6556074294206078149, guid: 7f2f3bdee1cf3b24f855f728f0d214de, type: 3}
+  bulletPrefab: {fileID: 6556074294206078149, guid: 73041ae20d8dbd64b9562d2ee7a2c71a, type: 3}
   slowPower: 0
-  firePower: 1
+  firePower: 0
+  poisonPower: 1
   stanChance: 0
+  portalChange: 0
   charge: 0
 --- !u!1 &2466880647901358694
 GameObject:
@@ -152,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2466880647901358694}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.154, z: 0}
+  m_LocalPosition: {x: 0, y: 0.071, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
