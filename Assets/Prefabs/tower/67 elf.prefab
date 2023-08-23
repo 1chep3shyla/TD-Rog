@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7348218345031596754}
   - component: {fileID: -9076710513994331938}
   - component: {fileID: 3248000793684943396}
-  - component: {fileID: 7912699240769563161}
+  - component: {fileID: 3358905503220852777}
   m_Layer: 0
-  m_Name: 59 random 1
+  m_Name: 67 elf
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,14 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa5056f641197342a2b4fc8ef92df08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 59
+  id: 67
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
-  name: Arrogance Tower
+  name: Elf Tower
   curAttackSpeed: 0
-  attackSpeed: 1.1
-  damage: 4
-  curDamage: 4
+  attackSpeed: 0.6
+  damage: 1
+  curDamage: 1
 --- !u!212 &3248000793684943396
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -96,7 +96,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 124213439, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  m_Sprite: {fileID: 1148443998, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -107,7 +107,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7912699240769563161
+--- !u!114 &3358905503220852777
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,16 +116,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2056256240725061661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b81c035f51a10c742bf13658c3f1f46c, type: 3}
+  m_Script: {fileID: 11500000, guid: 75b081ca047cb8549bf092f0e9256b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRadius: 1.75
+  attackRadius: 2
   attackSpeed: 1
-  damage: 2
+  damage: 10
   firePoint: {fileID: 1615630990437246422}
-  bulletPrefab: {fileID: 6556074294206078149, guid: 3691798bd07aca141b272057bd645429, type: 3}
+  bulletPrefab: {fileID: 6556074294206078149, guid: 01ebbaef74323bf47ad0e4adc6ecc886, type: 3}
   slowPower: 0
   firePower: 0
+  poisonPower: 0
+  stanChance: 0
+  portalChange: 0
+  charge: 0
+  maxTargets: 3
 --- !u!1 &2466880647901358694
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2466880647901358694}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.154, z: 0}
+  m_LocalPosition: {x: 0, y: 0.071, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

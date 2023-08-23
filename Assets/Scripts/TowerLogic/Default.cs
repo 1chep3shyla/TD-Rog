@@ -15,6 +15,7 @@ public class Default : MonoBehaviour
     public float slowPower;
     public int firePower;
     public int poisonPower;
+    public int thiefPower;
     public int stanChance;
     public int portalChange;
     public bool charge;
@@ -94,6 +95,10 @@ public class Default : MonoBehaviour
                 else if (bulletController.type == TypeBull.poison)
                 {
                     bulletController.powerOfPoison = poisonPower;
+                }
+                else if (bulletController.type == TypeBull.thief)
+                {
+                    bulletController.ThiefPower = thiefPower;
                 }
             }
             else if (bulletCannonController != null)

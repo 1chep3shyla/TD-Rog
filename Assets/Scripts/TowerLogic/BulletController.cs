@@ -12,7 +12,8 @@ public enum TypeBull
     gladiator, 
     portal, 
     radar, 
-    poison
+    poison,
+    thief
 }
 
 public class BulletController : MonoBehaviour
@@ -28,6 +29,7 @@ public class BulletController : MonoBehaviour
     public float FireTimer;
     public int powerOfPoison;
     public float PoisonTimer;
+    public int ThiefPower;
     private Vector3 direction;
     public int chanceStan;
     public int chancePortaling;
@@ -132,6 +134,11 @@ public class BulletController : MonoBehaviour
                 {
 
                     enemyHealth.SetPoison(2.5f, powerOfPoison);
+                    enemyHealth.TakeDamage(damage);
+                }
+                else if (type == TypeBull.thief)
+                {
+                    enemyHealth.Thiefed(ThiefPower);
                     enemyHealth.TakeDamage(damage);
                 }
             }

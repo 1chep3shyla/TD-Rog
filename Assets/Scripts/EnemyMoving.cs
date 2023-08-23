@@ -118,11 +118,7 @@ public class EnemyMoving : MonoBehaviour
 
     private IEnumerator Stunned()
     {
-
-
         yield return new WaitForSeconds(stunDuration);
-
-
         isStunned = false;
     }
     public void Portaling(int chance)
@@ -135,4 +131,5 @@ public class EnemyMoving : MonoBehaviour
         }
 
     }
+
 }

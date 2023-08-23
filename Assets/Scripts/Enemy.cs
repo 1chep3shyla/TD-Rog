@@ -92,5 +92,13 @@ public class Enemy : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         inPoison = false;
     }
+    public void Thiefed(int power)
+    {
+        int random = Random.Range(0, 100);
+        if (random <= power)
+        {
+            GameManager.Instance.Gold += 5;
+        }
+    }
 
 }
