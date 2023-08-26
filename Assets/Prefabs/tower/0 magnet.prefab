@@ -86,6 +86,7 @@ MonoBehaviour:
   attackSpeed: 0.25
   damage: 2
   curDamage: 0
+  LVL: 0
 --- !u!212 &3248000793684943396
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -156,3 +157,16 @@ MonoBehaviour:
   firePoint: {fileID: 9208529433876124993}
   bulletPrefab: {fileID: 6556074294206078149, guid: 12a28676b1ab8824c9400505756f84c9, type: 3}
   slowPower: 0
+  firePower: 0
+  poisonPower: 0
+  stanChance: 0
+  portalChange: 0
+  charge: 0
+  maxTargets: 1
+  thiefPower: 0
+  dmgBoom: 0
+  reduceArmor: 0
+  chanceDivine: 0
+  dmgDivine: 0
+  countOfAttack: 0
+  DivineAttackGM: {fileID: 0}

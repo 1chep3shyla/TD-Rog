@@ -75,6 +75,7 @@ public class Spawner : MonoBehaviour
             for (int i = 0; i < currentWave[currentWaveIndex].maxEnemies; i++)
             {
                 SpawnEnemy();
+
                 yield return new WaitForSeconds(currentWave[currentWaveIndex].spawnInterval);
             }
 
@@ -97,6 +98,7 @@ public class Spawner : MonoBehaviour
     private void SpawnEnemy()
     {
         GameObject newEnemy = Instantiate(currentWave[currentWaveIndex].enemyPrefab, waypoints[0].transform.position, Quaternion.identity);
+        GameManager.Instance.AddEnemyToList(newEnemy);
         newEnemy.GetComponent<EnemyMoving>().waypoints = waypoints;
         newEnemy.GetComponent<Enemy>().goldGive = currentWave[currentWaveIndex].goldWaveGiving;
         newEnemy.GetComponent<Enemy>().health = currentWave[currentWaveIndex].healthEnemy;

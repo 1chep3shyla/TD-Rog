@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     private bool anima;
     public GameObject menu;
     private static GameManager instance;
+    public List<GameObject> enemiesAll = new List<GameObject>();
     void Update()
     {
         goldCount.text = Gold.ToString("");
@@ -126,5 +127,14 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
+    }
+
+    public void AddEnemyToList(GameObject newEnemy)
+    {
+        enemiesAll.Add(newEnemy);
+    }
+    public void RemoveEnemyFromList(GameObject enemyToRemove)
+    {
+        enemiesAll.Remove(enemyToRemove);
     }
 }

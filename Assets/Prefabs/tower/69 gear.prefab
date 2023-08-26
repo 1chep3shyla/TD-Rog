@@ -124,11 +124,11 @@ MonoBehaviour:
   attackSpeed: 0.7
   damage: 3
   firePoint: {fileID: 1615630990437246422}
-  bulletPrefab: {fileID: 6556074294206078149, guid: bfeb3ba6c24c61e4e846cadb20c1a1f1, type: 3}
+  bulletPrefab: {fileID: 6556074294206078149, guid: 01ebbaef74323bf47ad0e4adc6ecc886, type: 3}
   slowPower: 0
   firePower: 0
   poisonPower: 0
-  thiefPower: 25
+  thiefPower: 0
   stanChance: 0
   portalChange: 0
   charge: 0

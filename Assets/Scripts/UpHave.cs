@@ -12,6 +12,7 @@ public class UpHave : MonoBehaviour
     public float attackSpeed;
     public int damage;
     public int curDamage;
+    public int LVL;
     private bool isBoostedAttack = false;
     private bool isBoosterSpeed;
     private float timeOff;

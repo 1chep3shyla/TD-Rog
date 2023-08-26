@@ -464,6 +464,300 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: card_tower_16
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 0
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a666e167ebb53e4bb22e6932cb474a7
+      internalID: -706316802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: card_tower_17
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 0
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d14ad2d30f740c948a3f9737bbfcc386
+      internalID: 1421303938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: card_tower_18
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 0
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 648ad9127cd43b340a475db03b8e9d90
+      internalID: 1772898722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: card_tower_19
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 0
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a01dcf9251794f498a5b91cde5c7a79
+      internalID: 987037874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: card_tower_20
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 0
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7bd540b1b2fea40b4b5cc10d3a9e68
+      internalID: -1312752330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: card_tower_21
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 0
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d80eaeb2f858347bd0604c17eb5c66
+      internalID: -695891557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: card_tower_22
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 0
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67bd501d8585fa843b5ed3cab4e15a77
+      internalID: 68241394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: card_tower_23
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 0
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e86ec9df748a796448d6459c0407a477
+      internalID: 418914981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: card_tower_24
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 0
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd1d11f9771da24ba85e54aa586864e
+      internalID: 1485247716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: card_tower_25
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 0
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7990feffad4ba444c82351b68ffe8103
+      internalID: 1313097221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: card_tower_26
+      rect:
+        serializedVersion: 2
+        x: 1508
+        y: 0
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59cb625729b7cb648a7ebca9e0e01ab1
+      internalID: -151998515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: card_tower_27
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 0
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65adeb849d933184abbad446182b76b4
+      internalID: 1306806892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: card_tower_28
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 0
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82925964a0c817040bd9e9952840fd4a
+      internalID: -1998663136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: card_tower_29
+      rect:
+        serializedVersion: 2
+        x: 1682
+        y: 0
+        width: 58
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf88fbd3327637e46b88dccf0f13e7a2
+      internalID: 1390867041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -475,21 +769,35 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      card_tower_21: -695891557
       card_tower_1: 662136324
+      card_tower_24: 1485247716
+      card_tower_20: -1312752330
       card_tower_11: -1017457444
       card_tower_9: 1674350742
       card_tower_13: -122562098
+      card_tower_19: 987037874
+      card_tower_16: -706316802
+      card_tower_23: 418914981
       card_tower_5: 872587357
       card_tower_0: 628568414
       card_tower_3: 1821021475
+      card_tower_29: 1390867041
       card_tower_8: 508242307
       card_tower_2: -1973000871
+      card_tower_25: 1313097221
       card_tower_15: -1332576053
+      card_tower_28: -1998663136
       card_tower_4: -832953140
       card_tower_10: 1293341914
+      card_tower_27: 1306806892
       card_tower_12: -786851920
+      card_tower_18: 1772898722
       card_tower_6: 576241998
       card_tower_14: -1694346134
+      card_tower_26: -151998515
+      card_tower_22: 68241394
+      card_tower_17: 1421303938
       card_tower_7: 1387277864
   spritePackingTag: 
   pSDRemoveMatte: 0

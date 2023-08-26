@@ -4982,6 +4982,9 @@ MonoBehaviour:
   maxHealth: 150
   goldGive: 0
   par: {fileID: 6115102256189265410}
+  inFire: 0
+  inPoison: 0
+  BoomGM: {fileID: 6910336767071730326, guid: 6b62f8f069faf5d4b9ac6d1a4e29b09f, type: 3}
 --- !u!50 &248614970749484257
 Rigidbody2D:
   serializedVersion: 4

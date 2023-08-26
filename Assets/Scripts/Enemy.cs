@@ -10,8 +10,14 @@ public class Enemy : MonoBehaviour
     public ParticleSystem par;
     public bool inFire;
     public bool inPoison;
+    public GameObject BoomGM;
     private bool isStunned;
+    public bool cursedBoom;
+    private int damageBoom;
     private float stunDuration;
+    private float armorReduce;
+    private bool armor;
+    private float armorReduceBase = 1f;
     void Start()
     {
         health = maxHealth;
@@ -25,19 +31,48 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage(int dmg)
     {
-        int curhp = health -= dmg;
-        if (curhp <= 0)
+        if (!armor)
         {
-            GameManager.Instance.Gold += goldGive;
-            Destroy(gameObject);
-            GameManager.Instance.enemyHave -= 1;
-            par.Play();
+            int curhp = health -= dmg;
+            if (curhp <= 0)
+            {
+                Death();
+            }
+            else
+            {
+                par.Play();
+                health = curhp;
+            }
         }
         else
         {
-            par.Play();
-            health = curhp;
+            int curhp = health -= (int)((float)dmg * armorReduce);
+            if (curhp <= 0)
+            {
+                Death();
+            }
+            else
+            {
+                par.Play();
+                health = curhp;
+            }
         }
+    }
+    public void BoomOn(int dmg)
+    {
+        StartCoroutine(BoomCor(dmg));
+    }
+    private void Death()
+    {
+        if (cursedBoom)
+        {
+            GameObject boom = Instantiate(BoomGM, transform.position, Quaternion.identity);
+            boom.GetComponent<Radius>().damage = damageBoom;
+        }
+        GameManager.Instance.Gold += goldGive;
+        Destroy(gameObject);
+        GameManager.Instance.enemyHave -= 1;
+        par.Play();
     }
     public void SetOnFire(float duration, int damage)
     {
@@ -91,6 +126,29 @@ public class Enemy : MonoBehaviour
         }
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         inPoison = false;
+    }
+
+    public void ArmorReducePublic(float power)
+    {
+        StartCoroutine(ArmorReducing(power));
+    }
+    private IEnumerator ArmorReducing(float reducing)
+    {
+        armor = true;
+        armorReduce = armorReduceBase + reducing;
+        yield return new WaitForSeconds(2f); // Apply fire damage every second
+        armorReduce = armorReduceBase;
+        armor = false;
+    }
+
+    private IEnumerator BoomCor(int dmgBoom)
+    {
+        cursedBoom = true;
+        damageBoom = dmgBoom;
+        yield return new WaitForSeconds(10f); // Apply fire damage every second
+        cursedBoom = false;
+        damageBoom = 0;
+
     }
     public void Thiefed(int power)
     {

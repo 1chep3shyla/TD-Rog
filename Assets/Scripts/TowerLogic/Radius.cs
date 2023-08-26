@@ -6,7 +6,12 @@ public class Radius : MonoBehaviour
 {
     public int damage ;
     public float explosionRadius = 2f;
+    public GameObject particle;
 
+    void Start()
+    {
+        GameObject boom = Instantiate(particle, transform.position, Quaternion.identity);
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
@@ -28,5 +33,12 @@ public class Radius : MonoBehaviour
 
         // Destroy the bullet after causing damage to all enemies
         Destroy(gameObject);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Visualize the attack radius using Gizmos
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 }

@@ -74,21 +74,22 @@ public class EnemyMoving : MonoBehaviour
                 }
             }
         }
-            if (isSlowed &&  gameObject.GetComponent<SpriteRenderer>().color == Color.white)
+        if (isSlowed)
+        {
+            if (gameObject.GetComponent<SpriteRenderer>().color == Color.white)
             {
+
                 gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-                slowTimer -= Time.deltaTime;
-                if (slowTimer <= 0)
-                {
-                    gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                    isSlowed = false;
-                    speed = maxSpeed;
-                }
             }
+            slowTimer -= Time.deltaTime;
+            if (slowTimer <= 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                isSlowed = false;
+                speed = maxSpeed;
+            }
+        }
         
-
-     
-
     }
     public void Slow(float time, float slowPower)
     {
@@ -131,5 +132,8 @@ public class EnemyMoving : MonoBehaviour
         }
 
     }
-
+    private void OnDestroy()
+    {
+        GameManager.Instance.RemoveEnemyFromList(gameObject);
+    }
 }

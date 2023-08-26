@@ -1655,6 +1655,7 @@ GameObject:
   - component: {fileID: 519420035}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1781,6 +1782,15 @@ MonoBehaviour:
   - {fileID: 2056256240725061661, guid: 5f4992dd8a0347143aa5ea9c92962e35, type: 3}
   - {fileID: 2056256240725061661, guid: 0f848e067fec08f478ddd98847e4478a, type: 3}
   - {fileID: 2056256240725061661, guid: 3b16e42ee818eaa4fb49786866b6dfbe, type: 3}
+  - {fileID: 2056256240725061661, guid: 093526689197c3448b11a09e047d9323, type: 3}
+  - {fileID: 2056256240725061661, guid: 58db632029793c441bbf432c5b581ce0, type: 3}
+  - {fileID: 2056256240725061661, guid: d5cdd2cabaf6f474881a99fc695e3df3, type: 3}
+  - {fileID: 2056256240725061661, guid: 928107622ae7c7b4f89e69661f5ecd31, type: 3}
+  - {fileID: 2056256240725061661, guid: b2568873f97046f45afe665fa98eba1e, type: 3}
+  - {fileID: 2056256240725061661, guid: bb8ad514de2f24f4aa5db5a88e1276bc, type: 3}
+  - {fileID: 2056256240725061661, guid: 54c0133aefb41854a893e8a59b81fd9d, type: 3}
+  - {fileID: 2056256240725061661, guid: e3bd0658ecda2c348907abd8744c63be, type: 3}
+  - {fileID: 2056256240725061661, guid: 00a39f602a7ebf648a8cf233b689e5f1, type: 3}
   butChoose:
   - {fileID: 2117492046}
   - {fileID: 2043843881}
@@ -1812,6 +1822,15 @@ MonoBehaviour:
   - {fileID: -1017457444, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
   - {fileID: -786851920, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
   - {fileID: -122562098, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  - {fileID: -1694346134, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  - {fileID: -1332576053, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  - {fileID: -706316802, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  - {fileID: 1421303938, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  - {fileID: 987037874, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  - {fileID: 418914981, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  - {fileID: 1485247716, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  - {fileID: 68241394, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  - {fileID: -1312752330, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
   towerPrefab: {fileID: 0}
   choosing: 0
   TB: {fileID: 0}
@@ -1845,7 +1864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOver: 0
-  Gold: 100
+  Gold: 12333
   Health: 10
   maxHealth: 10
   allTower: []
@@ -1856,6 +1875,7 @@ MonoBehaviour:
   curWave: 0
   enemyHave: 0
   menu: {fileID: 550865161}
+  enemiesAll: []
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1874,6 +1894,20 @@ MonoBehaviour:
   - {fileID: 2038232660}
   - {fileID: 153271056}
   - {fileID: 579124453}
+--- !u!114 &519420036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbcb7f0edcceb514cb2c4cca823eff3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sunCount: 0
+  moonCount: 0
 --- !u!1 &550865161
 GameObject:
   m_ObjectHideFlags: 0

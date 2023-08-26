@@ -76,6 +76,14 @@ public class Rolling : MonoBehaviour
         int rowIndex = vec3Int.y;
         if (towerPrefab != null && allBases[columnIndex + 10, rowIndex + 3] == null)
         {
+            if (towerPrefab.GetComponent<UpHave>().id == 76)
+            {
+                GameManager.Instance.gameObject.GetComponent<SunMoonScript>().moonCount++;
+            }
+            else if (towerPrefab.GetComponent<UpHave>().id == 77)
+            {
+                GameManager.Instance.gameObject.GetComponent<SunMoonScript>().sunCount++;
+            }
             GameObject newGM = Instantiate(towerPrefab, spawnPosition, Quaternion.identity);
             GameObject towerBase = Instantiate(baseOfTower, spawnPosition = new Vector3(spawnPosition.x, spawnPosition.y - 0.2f, spawnPosition.z), Quaternion.identity);
             towerPrefab = null;

@@ -20,6 +20,16 @@ public class ElfTower : MonoBehaviour
     public bool charge;
     public int maxTargets = 1; // Maximum number of targets that can be attacked simultaneously
     private List<Transform> currentTargets = new List<Transform>();
+    public int thiefPower;
+    public int dmgBoom;
+    public float reduceArmor;
+    public int chanceDivine;
+    public int dmgDivine;
+    public int countOfAttack;
+    private Transform currentTarget;
+    [SerializeField]
+    private GameObject DivineAttackGM;
+    private Transform whichEnemy;
 
     void Update()
     {
@@ -101,16 +111,77 @@ public class ElfTower : MonoBehaviour
                     {
                         bulletController.Initialize(target, damage);
                         // Set other bullet parameters here based on the tower's attributes
+                        if (bulletController.type == TypeBull.ice)
+                        {
+                            bulletController.powerOfIce = slowPower;
+                        }
+                        else if (bulletController.type == TypeBull.fire)
+                        {
+                            bulletController.powerOfFire = firePower;
+                        }
+                        else if (bulletController.type == TypeBull.stan)
+                        {
+                            bulletController.chanceStan = stanChance;
+                        }
+                        else if (bulletController.type == TypeBull.portal)
+                        {
+                            bulletController.chancePortaling = portalChange;
+                        }
+                        else if (bulletController.type == TypeBull.poison)
+                        {
+                            bulletController.powerOfPoison = poisonPower;
+                        }
+                        else if (bulletController.type == TypeBull.thief)
+                        {
+                            bulletController.ThiefPower = thiefPower;
+                        }
+                        else if (bulletController.type == TypeBull.armorReduce)
+                        {
+                            bulletController.armorDis = reduceArmor;
+                        }
+                        else if (bulletController.type == TypeBull.deathBoom)
+                        {
+                            bulletController.boomDamage = dmgBoom;
+                        }
+                        else if (bulletController.type == TypeBull.divine)
+                        {
+                            int random = Random.Range(0, 100);
+                            if (random <= chanceDivine)
+                            {
+                                StartCoroutine(DivineAttack());
+                            }
+                        }
+
+                        else if (bulletController.type == TypeBull.fury)
+                        {
+                            bulletController.furyCount = countOfAttack;
+                        }
+                        else if (bulletController.type == TypeBull.sun)
+                        {
+                            if (GameManager.Instance.gameObject.GetComponent<SunMoonScript>().sunCount >= GameManager.Instance.gameObject.GetComponent<SunMoonScript>().moonCount)
+                            {
+                                bulletController.Initialize(currentTarget, damage * 2);
+                            }
+                        }
                     }
                     else if (bulletCannonController != null)
                     {
                         bulletCannonController.enemyTarget = target;
                         bulletCannonController.dmg = damage;
                     }
+
+                    attackCooldown = attackSpeed;
+                    if (bulletController != null)
+                    {
+                        if (bulletController.type == TypeBull.moon && GameManager.Instance.gameObject.GetComponent<SunMoonScript>().moonCount >= GameManager.Instance.gameObject.GetComponent<SunMoonScript>().sunCount)
+                        {
+                            attackCooldown /= 2;
+                        }
+                    }
+
                 }
             }
 
-            attackCooldown = attackSpeed;
         }
     }
 
@@ -119,5 +190,17 @@ public class ElfTower : MonoBehaviour
         // Visualize the attack radius using Gizmos
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRadius);
+    }
+    private IEnumerator DivineAttack()
+    {
+        int randomIndex = Random.Range(0, GameManager.Instance.enemiesAll.Count);
+        GameObject enemyObject = GameManager.Instance.enemiesAll[randomIndex];
+        if (enemyObject != null)
+        {
+            Transform enemyTransform = enemyObject.transform;
+            GameObject newGm = Instantiate(DivineAttackGM, enemyTransform.position, Quaternion.identity);
+            newGm.GetComponent<Radius>().damage = dmgDivine;
+            yield return null;
+        }
     }
 }

@@ -13,7 +13,13 @@ public enum TypeBull
     portal, 
     radar, 
     poison,
-    thief
+    thief,
+    armorReduce,
+    deathBoom, 
+    divine,
+    fury,
+    moon,
+    sun
 }
 
 public class BulletController : MonoBehaviour
@@ -30,9 +36,12 @@ public class BulletController : MonoBehaviour
     public int powerOfPoison;
     public float PoisonTimer;
     public int ThiefPower;
+    public float armorDis;
+    public int boomDamage;
     private Vector3 direction;
     public int chanceStan;
     public int chancePortaling;
+    public int furyCount;
 
     public void Initialize(Transform bulletTarget, int bulletDamage)
     {
@@ -140,6 +149,25 @@ public class BulletController : MonoBehaviour
                 {
                     enemyHealth.Thiefed(ThiefPower);
                     enemyHealth.TakeDamage(damage);
+                }
+                else if (type == TypeBull.armorReduce)
+                {
+                    enemyHealth.ArmorReducePublic(armorDis);
+                    enemyHealth.TakeDamage(damage);
+                }
+                else if (type == TypeBull.deathBoom)
+                {
+                    enemyHealth.BoomOn(boomDamage);
+                    enemyHealth.TakeDamage(damage);
+                }
+                else if (type == TypeBull.divine)
+                {
+                    enemyHealth.TakeDamage(damage);
+                }
+                else if (type == TypeBull.fury)
+                {
+                    enemyHealth.TakeDamage(damage * furyCount);
+                    Debug.Log(damage * furyCount);
                 }
             }
 
