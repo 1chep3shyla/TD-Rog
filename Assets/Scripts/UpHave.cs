@@ -16,10 +16,12 @@ public class UpHave : MonoBehaviour
     private bool isBoostedAttack = false;
     private bool isBoosterSpeed;
     private float timeOff;
+    public DataTower towerDataCur;
 
     void Update()
     {
-
+        damage = (int)towerDataCur.lvlData[LVL, 1];
+        attackSpeed = towerDataCur.lvlData[LVL, 3];
         timeOff += Time.deltaTime;
         if (timeOff >= 0.5f)
         {

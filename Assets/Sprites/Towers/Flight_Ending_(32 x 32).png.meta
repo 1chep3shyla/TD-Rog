@@ -632,6 +632,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Flight_Ending_(32 x 32)_24
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47bcb74930cb3c04e85e1a08f7d16405
+      internalID: -1021775666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flight_Ending_(32 x 32)_25
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97fa284bdada7284a8afabf71d943071
+      internalID: -742643029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flight_Ending_(32 x 32)_26
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0514e04437513bb4999e8057ada136c1
+      internalID: -1333858212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flight_Ending_(32 x 32)_27
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df34ddfdc8b0f4d48acbb34bfdd2364d
+      internalID: 1376178682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flight_Ending_(32 x 32)_28
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b58dd775badf642bcc4d0b43350a95
+      internalID: 1231418210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -650,6 +755,7 @@ TextureImporter:
       Flight_Ending_(32 x 32)_8: 1795411888
       Flight_Ending_(32 x 32)_19: 1033751279
       Flight_Ending_(32 x 32)_1: -2016346303
+      Flight_Ending_(32 x 32)_28: 1231418210
       Flight_Ending_(32 x 32)_5: 1469381317
       Flight_Ending_(32 x 32)_23: 564453691
       Flight_Ending_(32 x 32)_12: -383383014
@@ -658,10 +764,14 @@ TextureImporter:
       Flight_Ending_(32 x 32)_22: 1517139187
       Flight_Ending_(32 x 32)_2: 124213439
       Flight_Ending_(32 x 32)_16: 1677328183
+      Flight_Ending_(32 x 32)_24: -1021775666
+      Flight_Ending_(32 x 32)_27: 1376178682
       Flight_Ending_(32 x 32)_4: -551593284
       Flight_Ending_(32 x 32)_14: 687284906
+      Flight_Ending_(32 x 32)_26: -1333858212
       Flight_Ending_(32 x 32)_18: -376759512
       Flight_Ending_(32 x 32)_10: 38254062
+      Flight_Ending_(32 x 32)_25: -742643029
       Flight_Ending_(32 x 32)_7: 350516271
       Flight_Ending_(32 x 32)_21: -208333869
       Flight_Ending_(32 x 32)_6: -1609154478

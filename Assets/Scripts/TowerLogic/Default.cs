@@ -30,10 +30,32 @@ public class Default : MonoBehaviour
     [SerializeField]
     private GameObject DivineAttackGM;
     private Transform whichEnemy;
+    public DataTower dt;
+    private int lvl;
 
+    void Start()
+    {
+        dt = gameObject.GetComponent<UpHave>().towerDataCur;
+    }
     void Update()
     {
         damage = gameObject.GetComponent<UpHave>().curDamage;
+        lvl = gameObject.GetComponent<UpHave>().LVL;
+        if (dt != null)
+        {
+            attackRadius = dt.lvlData[lvl, 2];
+            slowPower = dt.lvlData[lvl, 4];
+            firePower = (int)dt.lvlData[lvl, 5];
+            poisonPower = (int)dt.lvlData[lvl, 6];
+            stanChance = (int)dt.lvlData[lvl, 7];
+            portalChange = (int)dt.lvlData[lvl, 8];
+            maxTargets = (int)dt.lvlData[lvl, 9];
+            //maxTargets = (int)dt.lvlData[LVL, 10];
+            dmgBoom = (int)dt.lvlData[lvl, 11];
+            reduceArmor = dt.lvlData[lvl, 12];
+            chanceDivine = (int)dt.lvlData[lvl, 13];
+            dmgDivine = (int)dt.lvlData[lvl, 14];
+        }
         if (!charge)
         {
             attackSpeed = gameObject.GetComponent<UpHave>().curAttackSpeed;
@@ -151,7 +173,6 @@ public class Default : MonoBehaviour
                                 StartCoroutine(DivineAttack());
                             }
                         }
-
                         else if (bulletController.type == TypeBull.fury)
                         {
                             bulletController.furyCount = countOfAttack;
@@ -163,9 +184,13 @@ public class Default : MonoBehaviour
                                 bulletController.Initialize(currentTarget, damage * 2);
                             }
                         }
+                        else if (bulletController.type == TypeBull.cum)
+                        {
+
+                        }
                     }
                     else if (bulletCannonController != null)
-                    {
+                    {   
                         bulletCannonController.enemyTarget = target;
                         bulletCannonController.dmg = damage;
                     }

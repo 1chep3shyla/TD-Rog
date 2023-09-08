@@ -21,9 +21,11 @@ public class GameManager : MonoBehaviour
     public GameObject menu;
     private static GameManager instance;
     public List<GameObject> enemiesAll = new List<GameObject>();
+    public float[] buff; // 0 - global damage, 1- ice buff, 2 - fire damage, 3 - poison, 4 - moneyMine, 5 - AttackSpeed, 6 - moneyThief+Enemy
+    public Evolve[] allEvolution;
+    
     void Update()
     {
-        goldCount.text = Gold.ToString("");
         healthCount.text = Health.ToString("");
         waveCount.text = curWave.ToString("") + "/30";
 
@@ -40,10 +42,6 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
 
@@ -136,5 +134,27 @@ public class GameManager : MonoBehaviour
     public void RemoveEnemyFromList(GameObject enemyToRemove)
     {
         enemiesAll.Remove(enemyToRemove);
+    }
+    public void AddMoney(int add)
+    {
+        Gold += add + (add* (int)(buff[4]/100));
+        goldCount.text = Gold.ToString("");
+    }
+    public void StealMoney(int add)
+    {
+        Gold += add + (add * (int)(buff[6] / 100));
+        goldCount.text = Gold.ToString("");
+    }
+}
+[System.Serializable]
+public class Evolve
+{
+    public GameObject EvolveScript;
+    public bool work;
+    public int index;
+
+    public void WorkThis()
+    {
+        work = true;
     }
 }

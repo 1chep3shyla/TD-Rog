@@ -26,7 +26,7 @@ public class Farm : MonoBehaviour
     }
     private IEnumerator GiveGold()
     {
-        GameManager.Instance.Gold += goldGive;
+        GameManager.Instance.AddMoney(goldGive);
         curTime = timeNeed;
         addCoin.gameObject.SetActive(true);
         addCoin.Play("give_gold_anim");

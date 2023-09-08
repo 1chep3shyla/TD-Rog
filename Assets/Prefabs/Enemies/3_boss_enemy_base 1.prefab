@@ -4979,12 +4979,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 120
-  maxHealth: 120
+  maxHealth: 1500
   goldGive: 0
   par: {fileID: 5441965717882709939}
   inFire: 0
   inPoison: 0
   BoomGM: {fileID: 6910336767071730326, guid: 6b62f8f069faf5d4b9ac6d1a4e29b09f, type: 3}
+  cursedBoom: 0
+  damageText: {fileID: 1876904322461473162, guid: 40f2b4eabbe2c5c4cbc972ef394f739a, type: 3}
 --- !u!50 &248614970749484257
 Rigidbody2D:
   serializedVersion: 4

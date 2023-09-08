@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9208529433876124993
 Transform:
@@ -48,7 +48,7 @@ GameObject:
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7348218345031596754
 Transform:
@@ -87,6 +87,7 @@ MonoBehaviour:
   damage: 2
   curDamage: 0
   LVL: 0
+  towerDataCur: {fileID: 11400000, guid: 4facca50ea6daa84aa4f923ff16bfded, type: 2}
 --- !u!212 &3248000793684943396
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -170,3 +171,4 @@ MonoBehaviour:
   dmgDivine: 0
   countOfAttack: 0
   DivineAttackGM: {fileID: 0}
+  dt: {fileID: 0}

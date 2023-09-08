@@ -15,6 +15,9 @@ public class ReaderFile : MonoBehaviour
     private void Start()
     {
         LoadEnemyData();
+#if UNITY_EDITOR_WIN
+         tsvFilePath = "Assets/StreamingAssets/TowerData.tsv";
+#endif
     }
 
     private void LoadEnemyData()

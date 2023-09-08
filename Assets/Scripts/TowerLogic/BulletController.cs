@@ -4,22 +4,23 @@ using UnityEngine;
 
 public enum TypeBull
 {
-    def,
-    ice,
-    fire,
+    def,//
+    ice,//
+    fire,//
     minHp, 
-    stan,
+    stan,//
     gladiator, 
-    portal, 
+    portal, //
     radar, 
-    poison,
+    poison,//
     thief,
-    armorReduce,
-    deathBoom, 
-    divine,
+    armorReduce,//
+    deathBoom, //
+    divine,//
     fury,
     moon,
-    sun
+    sun, 
+    cum
 }
 
 public class BulletController : MonoBehaviour
@@ -42,6 +43,7 @@ public class BulletController : MonoBehaviour
     public int chanceStan;
     public int chancePortaling;
     public int furyCount;
+    public GameObject cumGM;
 
     public void Initialize(Transform bulletTarget, int bulletDamage)
     {
@@ -168,6 +170,10 @@ public class BulletController : MonoBehaviour
                 {
                     enemyHealth.TakeDamage(damage * furyCount);
                     Debug.Log(damage * furyCount);
+                }
+                else if (type == TypeBull.cum)
+                {
+                    Instantiate(cumGM, target.position, Quaternion.identity);
                 }
             }
 

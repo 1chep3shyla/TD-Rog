@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Enemy : MonoBehaviour
 {
     public int health;
@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     private float armorReduce;
     private bool armor;
     private float armorReduceBase = 1f;
+    public TMP_Text damageText;
     void Start()
     {
         health = maxHealth;
@@ -28,12 +29,28 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (inPoison )
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        }
+        else if (inFire )
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        else if (gameObject.GetComponent<EnemyMoving>().isSlowed) 
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        }
     }
     public void TakeDamage(int dmg)
     {
         if (!armor)
         {
-            int curhp = health -= dmg;
+            int curhp = health - (dmg + (int)GameManager.Instance.buff[0]);
             if (curhp <= 0)
             {
                 Death();
@@ -43,10 +60,12 @@ public class Enemy : MonoBehaviour
                 par.Play();
                 health = curhp;
             }
+            GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
+            dmgText.GetComponent<TMP_Text>().text = "" + (dmg + (int)GameManager.Instance.buff[0]);
         }
         else
         {
-            int curhp = health -= (int)((float)dmg * armorReduce);
+            int curhp = health -= (int)((float)(dmg + (int)GameManager.Instance.buff[0]) * armorReduce);
             if (curhp <= 0)
             {
                 Death();
@@ -56,6 +75,8 @@ public class Enemy : MonoBehaviour
                 par.Play();
                 health = curhp;
             }
+            GameObject dmgText = Instantiate(damageText.gameObject, transform.position , Quaternion.identity);
+            dmgText.GetComponent<TMP_Text>().text = "" + (int)((float)(dmg + (int)GameManager.Instance.buff[0]) * armorReduce);
         }
     }
     public void BoomOn(int dmg)
@@ -69,7 +90,7 @@ public class Enemy : MonoBehaviour
             GameObject boom = Instantiate(BoomGM, transform.position, Quaternion.identity);
             boom.GetComponent<Radius>().damage = damageBoom;
         }
-        GameManager.Instance.Gold += goldGive;
+        GameManager.Instance.StealMoney(goldGive);
         Destroy(gameObject);
         GameManager.Instance.enemyHave -= 1;
         par.Play();
@@ -86,18 +107,13 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator Burn(float dur, int dmg)
     {
-        if (gameObject.GetComponent<SpriteRenderer>().color == Color.white)
-        {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-        }
         while (dur > 0)
         {
 
-            TakeDamage(dmg);
+            TakeDamage(dmg + (int)GameManager.Instance.buff[2]);
             yield return new WaitForSeconds(0.25f); // Apply fire damage every second
             dur -= 0.25f;
         }
-        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         inFire = false;
     }
 
@@ -106,27 +122,34 @@ public class Enemy : MonoBehaviour
         if (!inPoison)
         {
             Debug.Log("ßÄ");
-            inPoison = true;
             StartCoroutine(Poisoned(duration, damage));
         }
     }
 
     private IEnumerator Poisoned(float dur, int dmg)
     {
-        if (gameObject.GetComponent<SpriteRenderer>().color == Color.white)
+        if (inPoison) // Check if already poisoned
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            yield break; // If already poisoned, exit the Coroutine
         }
+
+        inPoison = true; // Set the flag to indicate poisoning
+
         gameObject.GetComponent<EnemyMoving>().Slow(1f, 0.1f);
         while (dur > 0)
         {
-            TakeDamage(dmg);
+            TakeDamage(dmg + (int)GameManager.Instance.buff[3]);
             yield return new WaitForSeconds(0.5f); // Apply fire damage every second
             dur -= 0.5f;
         }
-        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-        inPoison = false;
+
+        // Check if still poisoned (another coroutine may have ended it)
+        if (inPoison)
+        {
+            inPoison = false; // Reset the flag
+        }
     }
+ 
 
     public void ArmorReducePublic(float power)
     {
@@ -155,7 +178,7 @@ public class Enemy : MonoBehaviour
         int random = Random.Range(0, 100);
         if (random <= power)
         {
-            GameManager.Instance.Gold += 5;
+            GameManager.Instance.StealMoney(5+((int)(float)goldGive/10));
         }
     }
 

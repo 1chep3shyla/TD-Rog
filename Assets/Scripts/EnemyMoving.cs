@@ -76,15 +76,9 @@ public class EnemyMoving : MonoBehaviour
         }
         if (isSlowed)
         {
-            if (gameObject.GetComponent<SpriteRenderer>().color == Color.white)
-            {
-
-                gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-            }
             slowTimer -= Time.deltaTime;
             if (slowTimer <= 0)
             {
-                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
                 isSlowed = false;
                 speed = maxSpeed;
             }
@@ -94,13 +88,18 @@ public class EnemyMoving : MonoBehaviour
     public void Slow(float time, float slowPower)
     {
 
-        float powering = maxSpeed - slowPower;
-        if (powering < speed)
+        float powering = maxSpeed - slowPower - GameManager.Instance.buff[1];
+        if (powering < speed && powering > 0f)
         {
             speed = powering;
             slowTimer = time;
         }
-        else
+        else if(powering < speed && powering < 0f)
+        {
+            speed = 0.1f;
+            slowTimer = time;
+        }
+        else if( powering > speed)
         {
             slowTimer = time;
         }
