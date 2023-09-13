@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1000c864b2f1909449ec2e20f044da49, type: 3}
   m_Name: default_perk_20
   m_EditorClassIdentifier: 
-  buffGlobalDamage: 20
+  buffGlobal: 15
   name: Global Damage I
+  disc: Increase Global Damage by
+  indexOfBuff: 0
+  sprite: {fileID: 253086285, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

@@ -11,10 +11,12 @@ public class BatTower : MonoBehaviour
     public int damage;
     public float speed;
     public BatController[] allBats;
+    private UpHave uh;
 
     void Update()
     {
-        damage = gameObject.GetComponent<UpHave>().curDamage;
+        damage = uh.curDamage;
+        speed = uh.attackSpeed;
         for (int i = 0; i < allBats.Length; i++)
         {
             allBats[i].orbitSpeed = gameObject.GetComponent<UpHave>().attackSpeed + gameObject.GetComponent<UpHave>().attackSpeed - gameObject.GetComponent<UpHave>().curAttackSpeed;
@@ -23,8 +25,8 @@ public class BatTower : MonoBehaviour
     }
     private void Start()
     {
+        uh = gameObject.GetComponent<UpHave>();
         CreateObjects();
-
     }
 
     private void CreateObjects()

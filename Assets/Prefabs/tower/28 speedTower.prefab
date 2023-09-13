@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3248000793684943396}
   - component: {fileID: 8185705189692929134}
   - component: {fileID: -538272945515635314}
+  - component: {fileID: 1163305568984272733}
   m_Layer: 0
   m_Name: 28 speedTower
   m_TagString: Tower
@@ -107,7 +108,8 @@ MonoBehaviour:
   damage: 0
   curDamage: 0
   LVL: 0
-  towerDataCur: {fileID: 0}
+  towerDataCur: {fileID: 11400000, guid: ccc3af65019efa34e9c2d29d68a49e9a, type: 2}
+  cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
 --- !u!114 &-538272945515635314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,3 +124,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boostRadius: 2
   boostMultiplierSpeed: 0.25
+--- !u!58 &1163305568984272733
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2

@@ -16,13 +16,13 @@ public class TowerBase : MonoBehaviour
         {
             if (GameManager.Instance.allEvolution[i].index == curGM.GetComponent<UpHave>().id && GameManager.Instance.allEvolution[i].work == true)
             {
+                GameObject newGM = Instantiate(GameManager.Instance.allEvolution[i].EvolveScript, transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f,  curGM.transform.position.z), Quaternion.identity);
                 Destroy(curGM);
-                GameObject newGM = Instantiate(GameManager.Instance.allEvolution[i].EvolveScript, transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z), Quaternion.identity);
                 monster = newGM;
                 curGM = newGM;
                 curGM.GetComponent<UpHave>().baseOf = this;
                 rollBase.AddTower(curGM.GetComponent<SpriteRenderer>());
-    }
+            }
         }
     }
     public bool CanPlaceMonster()
@@ -30,7 +30,7 @@ public class TowerBase : MonoBehaviour
         return monster == null;
     }
 
-    void OnMouseUp()
+    public void OnMouseUpping()
     {
         Debug.Log("œÓÔ‡Î" + " " + gameObject.name);
         if (rollBase.choosing && rollBase.towerPrefab != curGM && rollBase.towerPrefab != null && curGM != null)
@@ -47,9 +47,13 @@ public class TowerBase : MonoBehaviour
         }
         else if (curGM != null)
         {
+            UpHave uh = curGM.GetComponent<UpHave>();
+            rollBase.info.SetActive(true);
+            rollBase.towerInfo[0].text = "" + uh.name;
+            rollBase.towerInfo[2].text = "Damage:" + uh.towerDataCur.lvlData[uh.LVL, 1];
+            rollBase.towerInfo[3].text = "LVL:" + (uh.LVL + 1);
             rollBase.towerPrefab = curGM;
             rollBase.choosing = true;
-            rollBase.unPanel.SetActive(true);
             rollBase.OrderUp();
         }
 
@@ -61,13 +65,12 @@ public class TowerBase : MonoBehaviour
 
     public void Up()
     {
-        rollBase.unPanel.SetActive(false);
         bool change = false;
         if (curGM.GetComponent<UpHave>().LVL <5)
         {
             if (rollBase.towerPrefab.GetComponent<UpHave>().id == -1) // joker
             {
-                if (!rollBase.choosing && rollBase.towerPrefab != curGM)
+                if (!rollBase.choosing && rollBase.towerPrefab != curGM && rollBase.towerPrefab.GetComponent<UpHave>().LVL == curGM.GetComponent<UpHave>().LVL)
                 {
                     JustUp();
                     change = true;
@@ -97,6 +100,33 @@ public class TowerBase : MonoBehaviour
                     change = true;
                 }
             }
+            else if (rollBase.towerPrefab.GetComponent<UpHave>().id == 34) // clone
+            {
+                Debug.Log("cloning");
+                if (rollBase.towerPrefab.GetComponent<UpHave>().id == curGM.GetComponent<UpHave>().id && !rollBase.choosing && rollBase.towerPrefab != curGM)
+                {
+                    JustUp();
+                    change = true;
+                }
+                else if (rollBase.towerPrefab.GetComponent<UpHave>().id == curGM.GetComponent<UpHave>().id && !CanPlaceMonster() && rollBase.towerPrefab != null && curGM != null)
+                {
+                    JustNotUp();
+                    change = true;
+                }
+                else if (rollBase.towerPrefab.GetComponent<UpHave>().LVL == curGM.GetComponent<UpHave>().LVL)
+                {
+                    Debug.Log("Ã≈Õﬂ… Ã≈—“¿Ã»");
+                    GameObject newClone = Instantiate(curGM, rollBase.towerPrefab.GetComponent<UpHave>().baseOf.curGM.transform.position, Quaternion.identity);
+                    rollBase.towerPrefab.GetComponent<UpHave>().baseOf.monster = newClone;
+                    newClone.GetComponent<UpHave>().baseOf = rollBase.towerPrefab.GetComponent<UpHave>().baseOf;
+                    Destroy(rollBase.towerPrefab.GetComponent<UpHave>().baseOf.curGM);
+                    rollBase.towerPrefab.GetComponent<UpHave>().baseOf.curGM = newClone;
+                    rollBase.UnChoose();
+
+
+                    change = true;
+                }
+            }
             else // just up tower
             {
                 if (rollBase.towerPrefab.GetComponent<UpHave>().id == curGM.GetComponent<UpHave>().id && !rollBase.choosing && rollBase.towerPrefab != curGM && curGM.GetComponent<UpHave>().LVL == rollBase.towerPrefab.GetComponent<UpHave>().LVL)
@@ -109,12 +139,29 @@ public class TowerBase : MonoBehaviour
                     JustNotUp();
                     change = true;
                 }
+                else if (curGM != null && !change)
+                {
+                    rollBase.towerPrefab = curGM;
+                    rollBase.choosing = true;
+                    UpHave uh = curGM.GetComponent<UpHave>();
+                    rollBase.info.SetActive(true);
+                    rollBase.towerInfo[0].text = "" + uh.name;
+                    rollBase.towerInfo[2].text = "Damage:" + uh.towerDataCur.lvlData[uh.LVL, 1];
+                    rollBase.towerInfo[3].text = "LVL:" + (uh.LVL + 1);
+
+                }
             }
         }
         else if (curGM != null && !change)
         {
             rollBase.towerPrefab = curGM;
             rollBase.choosing = true;
+            UpHave uh = curGM.GetComponent<UpHave>();
+            rollBase.info.SetActive(true);
+            rollBase.towerInfo[0].text = "" + uh.name;
+            rollBase.towerInfo[2].text = "Damage:" + uh.towerDataCur.lvlData[uh.LVL, 1];
+            rollBase.towerInfo[3].text = "LVL:" + (uh.LVL + 1);
+
         }
         rollBase.StartCoroutine(rollBase.Un());
         rollBase.OrderDown();
@@ -141,6 +188,7 @@ public class TowerBase : MonoBehaviour
     }
     public void JustUp()
     {
+        UpHave uh = curGM.GetComponent<UpHave>();
         for (int o = 0; o < rollBase.slots.Length; o++)
         {
             rollBase.butChoose[o].interactable = false;
@@ -154,20 +202,37 @@ public class TowerBase : MonoBehaviour
         rollBase.towerPrefab = null;
         rollBase.choosing = false;
         rollBase.UpLevelAnim(transform);
+        if (uh.id == 36)
+        {
+            GameManager.Instance.UpSome(uh.LVL - 1, this.gameObject);
+        }
+        GameManager.Instance.Gold -= rollBase.costTower;
+        GameManager.Instance.ChangeMoney();
+    }
+    public void JustUpBoost()
+    {
+        Debug.Log("¿ÔÌÛÎ ÔÓÒÚÓ");
+        curGM.GetComponent<UpHave>().LVL++;
+        rollBase.AddTower(curGM.GetComponent<SpriteRenderer>());
+        curGM.GetComponent<UpHave>().baseOf = this;
+        rollBase.towerPrefab = null;
+        rollBase.choosing = false;
+        rollBase.UpLevelAnim(transform);
     }
 
     public void JustNotUp()
     {
         Debug.Log("¿ÔÌÛÎ ÌÂ ÔÓÒÚÓ");
-        if (rollBase.towerPrefab.GetComponent<UpHave>().id == 76 && curGM.GetComponent<UpHave>().id == 76)
+        UpHave uh = curGM.GetComponent<UpHave>();
+        if (rollBase.towerPrefab.GetComponent<UpHave>().id == 25 && uh.id == 25)
         {
             GameManager.Instance.gameObject.GetComponent<SunMoonScript>().moonCount -= 1;
         }
-        else if (rollBase.towerPrefab.GetComponent<UpHave>().id == 77 && curGM.GetComponent<UpHave>().id == 77)
+        else if (rollBase.towerPrefab.GetComponent<UpHave>().id == 26 && uh.id == 26)
         {
             GameManager.Instance.gameObject.GetComponent<SunMoonScript>().sunCount -= 1;
         }
-        curGM.GetComponent<UpHave>().LVL++;
+        uh.LVL++;
         rollBase.AddTower(curGM.GetComponent<SpriteRenderer>());
         rollBase.towerPrefab.GetComponent<UpHave>().baseOf.monster = null;
         rollBase.towerPrefab.GetComponent<UpHave>().baseOf.curGM = null;
@@ -176,6 +241,10 @@ public class TowerBase : MonoBehaviour
         Destroy(rollBase.towerPrefab);
         rollBase.choosing = false;
         rollBase.towerPrefab = null;
+        if (uh.id == 36)
+        {
+            GameManager.Instance.UpSome(uh.LVL - 1, this.gameObject);
+        }
     }
 
 

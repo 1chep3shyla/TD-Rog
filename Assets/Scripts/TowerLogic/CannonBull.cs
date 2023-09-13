@@ -9,7 +9,8 @@ public class CannonBull : MonoBehaviour
     public float arcHeight = 5.0f;
     public float bulletSpeed = 10.0f;
     public int dmg;
-
+    public int stanChance;
+    public int critChance;
     private Vector3 startPosition;
     private Vector3 endPosition;
     private float horizontalDistance;
@@ -61,6 +62,8 @@ public class CannonBull : MonoBehaviour
     {
         Vector3 impactPosition = Vector3.Lerp(startPosition, endPosition, 1f);
         Instantiate(impactPrefab, impactPosition, Quaternion.identity).GetComponent<Radius>().damage = dmg;
+        impactPrefab.GetComponent<Radius>().stanChance = stanChance;
+        impactPrefab.GetComponent<Radius>().critChance = critChance;
         Destroy(gameObject);
     }
 }

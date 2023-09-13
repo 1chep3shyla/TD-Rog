@@ -17,11 +17,15 @@ public class Enemy : MonoBehaviour
     private float stunDuration;
     private float armorReduce;
     private bool armor;
+    public int dmgFire;
     private float armorReduceBase = 1f;
     public TMP_Text damageText;
+    public float[] resistance; // 0 - ice, 1 - fire, 2 - poison, 3 - stan
+    private SpriteRenderer SR;
     void Start()
     {
         health = maxHealth;
+        SR = gameObject.GetComponent<SpriteRenderer>();
     }
     void Update()
     {
@@ -31,57 +35,74 @@ public class Enemy : MonoBehaviour
         }
         if (inPoison )
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            SR.color = Color.green;
         }
         else if (inFire )
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            SR.color = Color.red;
         }
         else if (gameObject.GetComponent<EnemyMoving>().isSlowed) 
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+            SR.color = Color.blue;
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            SR.color = Color.white;
         }
     }
     public void TakeDamage(int dmg)
     {
-        if (!armor)
+        if (dmg > 0)
         {
-            int curhp = health - (dmg + (int)GameManager.Instance.buff[0]);
-            if (curhp <= 0)
+            if (!armor)
             {
-                Death();
+                int curhp = health - dmg;
+                if (curhp <= 0)
+                {
+                    Death();
+                }
+                else
+                {
+                    par.Play();
+                    health = curhp;
+                }
+                GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
+                dmgText.GetComponent<TMP_Text>().text = "" + dmg;
             }
             else
             {
-                par.Play();
-                health = curhp;
+                int curhp = health -= (int)((float)dmg * armorReduce);
+                if (curhp <= 0)
+                {
+                    Death();
+                }
+                else
+                {
+                    par.Play();
+                    health = curhp;
+                }
+                GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
+                dmgText.GetComponent<TMP_Text>().text = "" + dmg;
             }
-            GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
-            dmgText.GetComponent<TMP_Text>().text = "" + (dmg + (int)GameManager.Instance.buff[0]);
+        }
+    }
+    public void DefaultAttack(int dmg, int critChance)
+    {
+        int randomChance = Random.Range(0, 100);
+        if (randomChance < critChance)
+        {
+            Debug.Log("Крит");
+            float critDamage = 2 + ((2 * (GameManager.Instance.buff[7] / 100)));
+            TakeDamage((int)((float)(dmg + (int)((float)dmg * (GameManager.Instance.buff[0] / 100 + armorReduce / 100))) * critDamage));
         }
         else
         {
-            int curhp = health -= (int)((float)(dmg + (int)GameManager.Instance.buff[0]) * armorReduce);
-            if (curhp <= 0)
-            {
-                Death();
-            }
-            else
-            {
-                par.Play();
-                health = curhp;
-            }
-            GameObject dmgText = Instantiate(damageText.gameObject, transform.position , Quaternion.identity);
-            dmgText.GetComponent<TMP_Text>().text = "" + (int)((float)(dmg + (int)GameManager.Instance.buff[0]) * armorReduce);
+            TakeDamage((int)((float)(dmg + (int)((float)dmg * (GameManager.Instance.buff[0] / 100 + armorReduce / 100)))));
         }
     }
-    public void BoomOn(int dmg)
+    public void BoomOn(int dmg, int fireDmg)
     {
-        StartCoroutine(BoomCor(dmg));
+        StartCoroutine(BoomCor(dmg, fireDmg));
     }
     private void Death()
     {
@@ -89,6 +110,7 @@ public class Enemy : MonoBehaviour
         {
             GameObject boom = Instantiate(BoomGM, transform.position, Quaternion.identity);
             boom.GetComponent<Radius>().damage = damageBoom;
+            boom.GetComponent<Radius>().fireDamage = dmgFire;
         }
         GameManager.Instance.StealMoney(goldGive);
         Destroy(gameObject);
@@ -109,8 +131,9 @@ public class Enemy : MonoBehaviour
     {
         while (dur > 0)
         {
-
-            TakeDamage(dmg + (int)GameManager.Instance.buff[2]);
+            int addDMG = dmg * (int)(GameManager.Instance.buff[2] / 100);
+            int removeDMG = (int)((float)(dmg + addDMG) * resistance[1]);
+            TakeDamage(dmg + addDMG - removeDMG);
             yield return new WaitForSeconds(0.25f); // Apply fire damage every second
             dur -= 0.25f;
         }
@@ -138,7 +161,9 @@ public class Enemy : MonoBehaviour
         gameObject.GetComponent<EnemyMoving>().Slow(1f, 0.1f);
         while (dur > 0)
         {
-            TakeDamage(dmg + (int)GameManager.Instance.buff[3]);
+            int addDMG = dmg * (int)(GameManager.Instance.buff[3] / 100);
+            int removeDMG = (int)((float)(dmg + addDMG) * resistance[2]);
+            TakeDamage(dmg + addDMG);
             yield return new WaitForSeconds(0.5f); // Apply fire damage every second
             dur -= 0.5f;
         }
@@ -164,21 +189,23 @@ public class Enemy : MonoBehaviour
         armor = false;
     }
 
-    private IEnumerator BoomCor(int dmgBoom)
+    private IEnumerator BoomCor(int dmgBoom, int firedDMG)
     {
         cursedBoom = true;
         damageBoom = dmgBoom;
+        dmgFire = firedDMG;
         yield return new WaitForSeconds(10f); // Apply fire damage every second
         cursedBoom = false;
         damageBoom = 0;
+        dmgFire = 0;
 
     }
-    public void Thiefed(int power)
+    public void Thiefed(int power, int countGold)
     {
         int random = Random.Range(0, 100);
         if (random <= power)
         {
-            GameManager.Instance.StealMoney(5+((int)(float)goldGive/10));
+            GameManager.Instance.StealMoney(countGold);
         }
     }
 

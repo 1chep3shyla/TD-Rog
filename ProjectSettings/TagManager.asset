@@ -43,3 +43,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Towers
+    uniqueID: 3140110809
+    locked: 0

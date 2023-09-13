@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffPoisonDamage: 10
   name: Poison Damage I
+  disc: 'Increase Poison Damage by '
+  sprite: {fileID: 212218534, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

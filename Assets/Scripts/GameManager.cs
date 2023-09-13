@@ -21,13 +21,13 @@ public class GameManager : MonoBehaviour
     public GameObject menu;
     private static GameManager instance;
     public List<GameObject> enemiesAll = new List<GameObject>();
-    public float[] buff; // 0 - global damage, 1- ice buff, 2 - fire damage, 3 - poison, 4 - moneyMine, 5 - AttackSpeed, 6 - moneyThief+Enemy
+    public float[] buff; // 0 - global damage, 1- ice buff, 2 - fire damage, 3 - poison, 4 - moneyMine, 5 - AttackSpeed, 6 - moneyThief+Enemy, 7 - crit DMG, 8 - crit Chance
     public Evolve[] allEvolution;
     
     void Update()
     {
         healthCount.text = Health.ToString("");
-        waveCount.text = curWave.ToString("") + "/30";
+        waveCount.text = curWave.ToString("") + "/20";
 
         if (Input.GetKeyDown("escape"))
         {
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
         {
             if (allTower[i] != null)
             {
-                allTower[i].sortingOrder = 6;
+                allTower[i].gameObject.GetComponent<UpHave>().Cursoring();
             }
         }
 
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
         {
             if (allTower[i] != null)
             {
-                allTower[i].sortingOrder = 3;
+                Destroy(allTower[i].gameObject.GetComponent<UpHave>().cursorDelete);
             }
         }
     }
@@ -144,6 +144,21 @@ public class GameManager : MonoBehaviour
     {
         Gold += add + (add * (int)(buff[6] / 100));
         goldCount.text = Gold.ToString("");
+    }
+    public void ChangeMoney()
+    {
+        goldCount.text = Gold.ToString("");
+    }
+    public void UpSome(int lvlUp, GameObject who)
+    {
+        for (int i = 0; i < allTower.Length; i++)
+        {
+            if (allTower[i] != null && allTower[i].gameObject != who && allTower[i].gameObject.GetComponent<UpHave>().LVL == lvlUp)
+            {
+                allTower[i].gameObject.GetComponent<UpHave>().baseOf.JustUpBoost();
+                break;
+            }
+        }
     }
 }
 [System.Serializable]

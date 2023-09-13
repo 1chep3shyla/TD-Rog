@@ -7,6 +7,8 @@ public class PoisonPerks : ScriptableObject, IPerk
 {
     public float buffPoisonDamage;
     public string name;
+    public string disc;
+    public Sprite sprite;
     public void ApplyPerk()
     {
         GameManager.Instance.buff[3] += buffPoisonDamage;
@@ -14,5 +16,14 @@ public class PoisonPerks : ScriptableObject, IPerk
     public string SetData()
     {
         return name;
+    }
+    public string SetDataDis()
+    {
+        string retDis = disc + " " + buffPoisonDamage + "%";
+        return retDis;
+    }
+    public Sprite GetData()
+    {
+        return sprite;
     }
 }

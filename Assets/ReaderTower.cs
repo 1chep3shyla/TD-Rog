@@ -4,15 +4,23 @@ using UnityEngine;
 using System;
 using System.Globalization;
 using System.IO;
+using System.Text.RegularExpressions;
 
 public class ReaderTower : MonoBehaviour
 {
     public string tsvFilePath; // Specify the TSV file path in the Inspector
     public DataTower[] allData;
-
+    public string[] DataTowerName;
+    public int[] countOfSee;
     private void Start()
     {
+#if UNITY_EDITOR
+    tsvFilePath = "Assets/StreamingAssets/TowerData.tsv";
+#else
+        tsvFilePath = System.IO.Path.Combine(Application.dataPath, "StreamingAssets/TowerData.tsv");
+#endif
         LoadTowerData();
+
     }
 
     private void LoadTowerData()
@@ -20,30 +28,50 @@ public class ReaderTower : MonoBehaviour
         if (!string.IsNullOrEmpty(tsvFilePath) && File.Exists(tsvFilePath))
         {
             string[] lines = File.ReadAllLines(tsvFilePath);
-            int lineIndex = 0;
             for (int k = 0; k < allData.Length; k++)
             {
-                int curLineIndex = lineIndex + 5;
-                for (int i = 1; i < lines.Length && lineIndex < curLineIndex; i++) // Skip the header line
+                int curLine = 1;
+                int curIndex = 0;
+                for (int i = 1; i < lines.Length; i++) // Skip the header line
                 {
-                    lineIndex++;
-                    string[] values = lines[lineIndex].Split('\t'); // Changed to '\t' for TSV
-                    for (int o = 1; o < values.Length; o++)
+
+                    if (SearchForWord(lines[i], DataTowerName[k]))
                     {
-                        allData[k].lvlData[i - 1, o] = float.Parse(values[o]);
-                        if (allData[k].lvlData[i - 1, o - 1] != 0)
+
+                        string[] values = lines[curLine].Split('\t'); // Changed to '\t' for TSV
+
+
+                        for (int valueInd = 1; valueInd < values.Length; valueInd++)
                         {
-                            Debug.Log(allData[k].lvlData[i - 1, o - 1]);
+                            if (float.TryParse(values[valueInd], out float parsedValue))
+                            {
+                                Debug.Log(curIndex);
+                                Debug.Log("ƒл€" + DataTowerName[k] + "задали значение" + values[0]);
+                                allData[k].lvlData[curIndex, valueInd] = parsedValue;
+                            }
+                            else
+                            {
+                                Debug.Log("не работает перевод в float" + values[valueInd]);
+                            }
                         }
+                        curIndex++;
+
                     }
-
+                    curLine++;
                 }
-
             }
         }
         else
         {
             Debug.LogError("Enemy data TSV file is not found or path is invalid!");
         }
+    }
+    bool SearchForWord(string input, string word)
+    {
+        // »спользуем регул€рное выражение дл€ поиска слова с возможными изменени€ми
+        string pattern = @"\b" + Regex.Escape(word) + @"\w*"; // »щем слово и любые дополнительные символы после него
+        MatchCollection matches = Regex.Matches(input, pattern, RegexOptions.IgnoreCase);
+
+        return matches.Count > 0;
     }
 }

@@ -13,21 +13,50 @@ public class UpHave : MonoBehaviour
     public int damage;
     public int curDamage;
     public int LVL;
+    public int critChance;
     private bool isBoostedAttack = false;
     private bool isBoosterSpeed;
     private float timeOff;
     public DataTower towerDataCur;
+    public GameObject cursor;
+    public GameObject cursorDelete;
 
     void Update()
     {
         damage = (int)towerDataCur.lvlData[LVL, 1];
         attackSpeed = towerDataCur.lvlData[LVL, 3];
+        critChance = (int)towerDataCur.lvlData[LVL, 18];
         timeOff += Time.deltaTime;
         if (timeOff >= 0.5f)
         {
             timeOff = 0;
             RemoveDamageBoost();
             RemoveSpeedBoost();
+        }
+    }
+    public void Cursoring()
+    {
+        Rolling rb = baseOf.rollBase;
+        UpHave uh = rb.towerPrefab.GetComponent<UpHave>();
+        if (uh.id == id && uh.LVL == LVL && uh.gameObject != gameObject && cursorDelete == null)
+        {
+            GameObject newCursor = Instantiate(cursor, transform.position , Quaternion.identity);
+            newCursor.transform.position = new Vector3(newCursor.transform.position.x, newCursor.transform.position.y + 0.05f, newCursor.transform.position.z);
+            cursorDelete = newCursor;
+        }
+        else if (uh.id == id && uh.LVL == LVL && uh.gameObject != gameObject && cursorDelete != null)
+        {
+            Destroy(cursorDelete);
+            GameObject newCursor = Instantiate(cursor, transform.position, Quaternion.identity);
+            newCursor.transform.position = new Vector3(newCursor.transform.position.x, newCursor.transform.position.y + 0.05f, newCursor.transform.position.z);
+            cursorDelete = newCursor;
+        }
+    }
+    public void DeleteCursor()
+    {
+        if (cursorDelete != null)
+        {
+            Destroy(cursorDelete); 
         }
     }
     private void Start()

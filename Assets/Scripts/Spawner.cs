@@ -41,68 +41,83 @@ public class Spawner : MonoBehaviour
             return;
 
         }
-        for (int i =0; i< wavesMass.Length; i++)
-        {
-            for (int o = 0; o < wavesMass[i].wavesAll.Length; o++)
-            {
-                if (i <= 10)
-                {
-                    wavesMass[i].wavesAll[o].goldWaveGiving = 10 + (2 * i);
-                    wavesMass[i].wavesAll[o].healthEnemy = (int)(wavesMass[i].wavesAll[o].enemyPrefab.GetComponent<Enemy>().maxHealth + wavesMass[i].wavesAll[o].enemyPrefab.GetComponent<Enemy>().maxHealth * (i / 5 ));
-                }
-                else if (i > 10 && i <= 20)
-                {
-                    wavesMass[i].wavesAll[o].goldWaveGiving = (int)(30 * Math.Pow(1.137f, i-10));
-                    wavesMass[i].wavesAll[o].healthEnemy = (int)(wavesMass[i].wavesAll[o].enemyPrefab.GetComponent<Enemy>().maxHealth + wavesMass[i].wavesAll[o].enemyPrefab.GetComponent<Enemy>().maxHealth * (i / 5 * 5));
-                }
-                else
-                {
-                    wavesMass[i].wavesAll[o].goldWaveGiving = (int)(100 * Math.Pow(1.137f, i-20));
-                    wavesMass[i].wavesAll[o].healthEnemy = (int)(wavesMass[i].wavesAll[o].enemyPrefab.GetComponent<Enemy>().maxHealth + wavesMass[i].wavesAll[o].enemyPrefab.GetComponent<Enemy>().maxHealth * (i / 5 * 15));
-                }
-            }
-        }
+
         GameManager.Instance.curWave = currentWaveIndexMain +1;
     }
 
     private IEnumerator StartWave()
     {
-        yield return new WaitForSeconds(timeBetweenWaves);
+        float timeNeed = currentWave[currentWaveIndex].timeAll / currentWave[currentWaveIndex].maxEnemies;
 
         while (currentWaveIndex < currentWave.Length)
         {
-            yield return new WaitForSeconds(currentWave[currentWaveIndex].TimeToNext);
+            yield return new WaitForSeconds(timeNeed);
+            int RandomEnemy = UnityEngine.Random.Range(0, currentWave[currentWaveIndex].enemyPrefab.Length);
             for (int i = 0; i < currentWave[currentWaveIndex].maxEnemies; i++)
             {
-                SpawnEnemy();
 
-                yield return new WaitForSeconds(currentWave[currentWaveIndex].spawnInterval);
+                SpawnEnemy(RandomEnemy);
+
+                yield return new WaitForSeconds(timeNeed);
             }
 
             yield return new WaitUntil(() => enemiesSpawned == 0);
-
-            yield return new WaitForSeconds(currentWave[currentWaveIndex].spawnInterval);
             currentWaveIndex++;
-            if (currentWaveIndex >= wavesMass[currentWaveIndexMain].wavesAll.Length)
-            {
-                currentWaveIndexMain++;
-                currentWaveIndex = 0;
-                currentWave = wavesMass[currentWaveIndexMain].wavesAll;
-            }
         }
-
+        yield return new WaitUntil(() => gameManager.enemiesAll.Count == 0);
+        Debug.Log("Врагов нет");
+        if (wavesMass[currentWaveIndexMain].wavesAll[currentWaveIndex-1].bossWave == true)
+        {
+            Debug.Log("Босс волна");
+            gameManager.gameObject.GetComponent<PerkRoll>().RollPerkEvolve();
+            yield return new WaitForSeconds(0.5f);
+            yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
+            gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve = true;
+            gameManager.gameObject.GetComponent<PerkRoll>().RollPerk();
+        }
+        else
+        {
+            Debug.Log("Волна");
+            gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve = true;
+            gameManager.gameObject.GetComponent<PerkRoll>().RollPerk();
+        }
+        yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
+        if (currentWaveIndex >= wavesMass[currentWaveIndexMain].wavesAll.Length)
+        {
+            currentWaveIndexMain++;
+            currentWaveIndex = 0;
+            currentWave = wavesMass[currentWaveIndexMain].wavesAll;
+        }
+        yield return new WaitForSeconds(10f);
         works = false;
         yield return null;
     }
 
-    private void SpawnEnemy()
+    private void SpawnEnemy(int RandomEnemy)
     {
-        GameObject newEnemy = Instantiate(currentWave[currentWaveIndex].enemyPrefab, waypoints[0].transform.position, Quaternion.identity);
+        GameObject newEnemy = Instantiate(currentWave[currentWaveIndex].enemyPrefab[RandomEnemy], waypoints[0].transform.position, Quaternion.identity);
         GameManager.Instance.AddEnemyToList(newEnemy);
         newEnemy.GetComponent<EnemyMoving>().waypoints = waypoints;
-        newEnemy.GetComponent<Enemy>().goldGive = currentWave[currentWaveIndex].goldWaveGiving;
-        newEnemy.GetComponent<Enemy>().health = currentWave[currentWaveIndex].healthEnemy;
-        newEnemy.GetComponent<Enemy>().maxHealth = currentWave[currentWaveIndex].healthEnemy;
+        newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+        newEnemy.GetComponent<Enemy>().maxHealth = newEnemy.GetComponent<Enemy>().maxHealth + (newEnemy.GetComponent<Enemy>().maxHealth*(currentWaveIndexMain/5));
+        if (currentWaveIndexMain <= 10)
+        {
+            newEnemy.GetComponent<Enemy>().maxHealth = newEnemy.GetComponent<Enemy>().maxHealth + (newEnemy.GetComponent<Enemy>().maxHealth * (currentWaveIndexMain / 5));
+            newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+            newEnemy.GetComponent<Enemy>().goldGive = newEnemy.GetComponent<Enemy>().goldGive + (2 * currentWaveIndexMain);
+        }
+        else if (currentWaveIndexMain > 10 && currentWaveIndexMain <= 20)
+        {
+            newEnemy.GetComponent<Enemy>().maxHealth = newEnemy.GetComponent<Enemy>().maxHealth + (newEnemy.GetComponent<Enemy>().maxHealth * (currentWaveIndexMain / 5 * 5));
+            newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+            newEnemy.GetComponent<Enemy>().goldGive = (int)(newEnemy.GetComponent<Enemy>().goldGive * Math.Pow(1.137f, currentWaveIndexMain - 10));
+        }
+        else
+        {
+            newEnemy.GetComponent<Enemy>().maxHealth = newEnemy.GetComponent<Enemy>().maxHealth + (newEnemy.GetComponent<Enemy>().maxHealth * (currentWaveIndexMain / 5*15));
+            newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+            newEnemy.GetComponent<Enemy>().goldGive = (int)(newEnemy.GetComponent<Enemy>().goldGive * Math.Pow(1.137f, currentWaveIndexMain - 20));
+        }
     }
 
 
@@ -112,12 +127,13 @@ public class Spawner : MonoBehaviour
 [System.Serializable]
 public class Wave
 {
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefab;
     public float TimeToNext;
     public int goldWaveGiving;
     public int healthEnemy;
-    public float spawnInterval;
+    public float timeAll;
     public int maxEnemies = 20;
+    public bool bossWave;
 }
 
 [System.Serializable]

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3248000793684943396}
   - component: {fileID: 2438318080014436613}
   - component: {fileID: 8991686775615759693}
+  - component: {fileID: -1587080816745148821}
   m_Layer: 0
   m_Name: 29 damageTower
   m_TagString: Tower
@@ -107,7 +108,8 @@ MonoBehaviour:
   damage: 0
   curDamage: 0
   LVL: 0
-  towerDataCur: {fileID: 0}
+  towerDataCur: {fileID: 11400000, guid: abe4bd505d570b54ab71e8afec433489, type: 2}
+  cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
 --- !u!114 &8991686775615759693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,3 +124,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boostRadius: 2
   boostMultiplier: 1.25
+--- !u!58 &-1587080816745148821
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2

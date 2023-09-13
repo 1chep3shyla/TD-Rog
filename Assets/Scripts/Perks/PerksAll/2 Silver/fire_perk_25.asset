@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffFireDamage: 25
   name: Fire Damage II
+  disc: 'Increase Fire Damage by '
+  sprite: {fileID: -781868580, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

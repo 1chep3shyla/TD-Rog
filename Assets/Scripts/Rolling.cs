@@ -4,88 +4,172 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 using TMPro;
+using System;
 public class Rolling : MonoBehaviour
 {
-
     public Slot[] slots;
     public TowerBase[,] allBases = new TowerBase[15, 7];
-
     public GameObject[] towers;
     public Button[] butChoose;
-
     public Sprite[] imageidTower;
-
     public GameObject towerPrefab;
-    public bool choosing;
-    public TowerBase TB;
-    public bool cant;
     public GameObject unPanel;
     public GameManager GameM;
     public GameObject baseOfTower;
-
     public Tilemap tilemap;
-    public GameObject objectToInstantiate;
     public TMP_Text[] nameOfTowerText;
-    public int costTower;
     public TMP_Text costTowerText;
     public GameObject pressSpace;
     public GameObject cursor;
     public GameObject newLvl;
+    public GameObject info;
+    public TMP_Text[] towerInfo; // 0 - name, 1 - disc, 2 - damage, 3 - lvl
+    public Text sell;
+    public int curIndex;
+    public int costTower = 100;
+    public bool choosing = false;
+    public bool draging;
+
     void Start()
     {
         Roll();
     }
+
     void Update()
     {
         costTowerText.text = costTower.ToString("");
-        if (Input.GetMouseButtonDown(0) && choosing == false)
+        HandleMouseInput();
+        HandleSpaceKey();
+        UpdateCursorVisibility();
+    }
+    public void Sell()
+    {
+        if (towerPrefab != null && choosing)
+        {
+            UpHave uh = towerPrefab.GetComponent<UpHave>();
+            GameManager.Instance.Gold += (int)Math.Pow(100, uh.LVL+1);
+            Destroy(uh.baseOf.gameObject);
+            Destroy(towerPrefab);
+            GameManager.Instance.ChangeMoney();
+            UnChoose();
+        }
+    }
+    private void HandleMouseInput()
+    {
+        if (Input.GetMouseButtonDown(0) && !choosing)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int cellPosition = tilemap.WorldToCell(mousePosition);
+            // Переводим координаты обратно в мировые координаты, чтобы проверить нажатие по тайлмапу
+            Vector3 cellCenter = tilemap.GetCellCenterWorld(cellPosition);
 
-            if (tilemap.HasTile(cellPosition) && !choosing)
+            // Создаем луч из мировой позиции нажатия
+            Ray ray = new Ray(mousePosition, Vector3.forward);
+
+            // Проверяем пересечение луча с коллайдером тайлмапы
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+
+            // Если луч пересекается с коллайдером тайлмапы
+            if (hit.collider != null && hit.collider.gameObject == tilemap.gameObject)
             {
-                Clicking(mousePosition, cellPosition);
+                if (tilemap.HasTile(cellPosition))
+                {
+                    Clicking(mousePosition, cellPosition, curIndex);
+                }
             }
         }
+        else if (Input.GetMouseButtonDown(0) && choosing)
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3Int cellPosition = tilemap.WorldToCell(mousePosition);
+            int columnIndex = cellPosition.x;
+            int rowIndex = cellPosition.y;
 
+            // Переводим координаты обратно в мировые координаты, чтобы проверить нажатие по тайлмапу
+            Vector3 cellCenter = tilemap.GetCellCenterWorld(cellPosition);
+
+            // Создаем луч из мировой позиции нажатия
+            Ray ray = new Ray(mousePosition, Vector3.forward);
+
+            // Проверяем пересечение луча с коллайдером тайлмапы
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+
+            // Если луч пересекается с коллайдером тайлмапы
+            if (hit.collider != null && hit.collider.gameObject == tilemap.gameObject)
+            {
+                if (tilemap.HasTile(cellPosition) && allBases[columnIndex + 10, rowIndex + 3] == null)
+                {
+                    UnChoose();
+                }
+                else if (!tilemap.HasTile(cellPosition))
+                {
+                    UnChoose();
+                }
+                else if (allBases[columnIndex + 10, rowIndex + 3] != null)
+                {
+                    allBases[columnIndex + 10, rowIndex + 3].OnMouseUpping();
+                }
+            }
+        }
+        else if (Input.GetMouseButtonUp(0) && choosing)
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3Int cellPosition = tilemap.WorldToCell(mousePosition);
+            int columnIndex = cellPosition.x;
+            int rowIndex = cellPosition.y;
+            if (tilemap.HasTile(cellPosition))
+            {
+                if (allBases[columnIndex + 10, rowIndex + 3] != null)
+                {
+                    allBases[columnIndex + 10, rowIndex + 3].OnMouseUpping();
+                }
+            }
+        }
+        
+    }
+
+    private void HandleSpaceKey()
+    {
         if (Input.GetKeyDown("space"))
         {
             RollingThis();
+            UnChoose();
         }
-        if (choosing && towerPrefab!=null)
+    }
+
+    private void UpdateCursorVisibility()
+    {
+        cursor.SetActive(choosing && towerPrefab != null);
+        if (choosing && towerPrefab != null)
         {
-            cursor.SetActive(true);
-            cursor.transform.position = new Vector2(towerPrefab.transform.position.x, towerPrefab.transform.position.y - 0.12f); 
-        }
-        else
-        {
-            cursor.SetActive(false);
+            cursor.transform.position = new Vector2(towerPrefab.transform.position.x, towerPrefab.transform.position.y +0.05f);
         }
     }
     public void UpLevelAnim(Transform transform)
     {
         Instantiate(newLvl, transform.position, Quaternion.identity);
     }
-    public void Clicking(Vector3 vec3, Vector3Int vec3Int)
+    public void Clicking(Vector3 vec3, Vector3Int vec3Int, int indexOfSlot)
     {   
-        unPanel.SetActive(false);
+
         Vector3 cellCenterPosition = tilemap.GetCellCenterWorld(vec3Int);
         Vector3 spawnPosition = new Vector3(cellCenterPosition.x, cellCenterPosition.y + 0.2f, cellCenterPosition.z);
         int columnIndex = vec3Int.x;
         int rowIndex = vec3Int.y;
         if (towerPrefab != null && allBases[columnIndex + 10, rowIndex + 3] == null)
         {
-            if (towerPrefab.GetComponent<UpHave>().id == 76)
+            GameManager.Instance.Gold -= costTower;
+            GameManager.Instance.ChangeMoney();
+            if (towerPrefab.GetComponent<UpHave>().id == 26)
             {
                 GameManager.Instance.gameObject.GetComponent<SunMoonScript>().moonCount++;
             }
-            else if (towerPrefab.GetComponent<UpHave>().id == 77)
+            else if (towerPrefab.GetComponent<UpHave>().id == 27)
             {
                 GameManager.Instance.gameObject.GetComponent<SunMoonScript>().sunCount++;
             }
-            GameObject newGM = Instantiate(towerPrefab, spawnPosition, Quaternion.identity);
-            GameObject towerBase = Instantiate(baseOfTower, spawnPosition = new Vector3(spawnPosition.x, spawnPosition.y - 0.2f, spawnPosition.z), Quaternion.identity);
+            GameObject newGM = Instantiate(towerPrefab, spawnPosition = new Vector3(spawnPosition.x, spawnPosition.y - 0.2f, spawnPosition.z - (rowIndex + 3) * (-0.01f)), Quaternion.identity);
+            GameObject towerBase = Instantiate(baseOfTower, spawnPosition = new Vector3(spawnPosition.x, spawnPosition.y, spawnPosition.z), Quaternion.identity);
             towerPrefab = null;
 
             // Create a new instance of TowerBase and set its position
@@ -100,17 +184,19 @@ public class Rolling : MonoBehaviour
             towerBase.GetComponent<TowerBase>().monster = newGM;
             choosing = false;
             towerPrefab = null;
-            for (int o = 0; o < slots.Length; o++)
-            {
-                butChoose[o].interactable = false;
-                butChoose[o].gameObject.SetActive(false);
-                pressSpace.SetActive(true);
-                slots[o].tower = null;
-            }
-        }
-        else if (allBases[columnIndex + 10, rowIndex + 3] != null && choosing)
-        {
 
+            butChoose[curIndex].interactable = false;
+
+
+            UnChoose();
+        }
+        else if (allBases[columnIndex + 10, rowIndex + 3] != null)
+        {
+            allBases[columnIndex + 10, rowIndex + 3].OnMouseUpping();
+        }
+        else
+        {
+            UnChoose();
         }
     }
     public void RollingThis()
@@ -118,6 +204,7 @@ public class Rolling : MonoBehaviour
         if (GameManager.Instance.Gold >= costTower)
         {
             GameManager.Instance.Gold -= costTower;
+            GameManager.Instance.ChangeMoney();
             costTower += 10;
             Roll();
         }
@@ -128,6 +215,7 @@ public class Rolling : MonoBehaviour
     }
     public void Roll()
     {
+        GameManager.Instance.ChangeMoney();
         pressSpace.SetActive(false);
         choosing = false;
         bool[] lockerTower = new bool[towers.Length];
@@ -137,17 +225,20 @@ public class Rolling : MonoBehaviour
             butChoose[i].interactable = true;
             butChoose[i].gameObject.SetActive(true);
 
-            int randomId = Random.Range(0, towers.Length);
+            int randomId = UnityEngine.Random.Range(0, towers.Length);
             while (lockerTower[randomId])
             {
-                randomId = Random.Range(0, towers.Length);
+                randomId = UnityEngine.Random.Range(0, towers.Length);
             }
 
             lockerTower[randomId] = true;
             slots[i].id = randomId;
             slots[i].icon.sprite = imageidTower[slots[i].id];
             slots[i].tower = towers[randomId];
-            nameOfTowerText[i].text = slots[i].tower.GetComponent<UpHave>().name;
+            if (slots[i].tower != null)
+            {
+                nameOfTowerText[i].text = slots[i].tower.GetComponent<UpHave>().name;
+            }
 
         }
     }
@@ -156,18 +247,23 @@ public class Rolling : MonoBehaviour
     {
         if (!choosing && slots[i] != null)
         {
-            
-            unPanel.SetActive(true);
-            pressSpace.SetActive(false);
+            curIndex = i;
+            info.SetActive(true);
             towerPrefab = slots[i].tower;
-
+            UpHave uh = towerPrefab.GetComponent<UpHave>();
+            sell.text = "Sell:" + (int)Math.Pow(100, uh.LVL+1);
+            towerInfo[0].text  = "" + uh.name;
+            towerInfo[2].text = "Damage:" + uh.towerDataCur.lvlData[uh.LVL, 1];
+            towerInfo[3].text = "LVL:" + (uh.LVL + 1);
         }
     }
 
     public void UnChoose()
     {
+        info.SetActive(false);
         choosing = false;
-        towerPrefab = null; 
+        towerPrefab = null;
+        OrderDown();
     }
     public void AddTower(SpriteRenderer SR)
     {
@@ -187,15 +283,16 @@ public class Rolling : MonoBehaviour
     public void OrderUp()
     {
         GameM.UpLay();
+        Debug.Log("UP");
     }
     public void OrderDown()
     {
         GameM.DownLay();
+        Debug.Log("down");
     }
     public IEnumerator Un()
     {
         yield return new WaitForSeconds(0.25f);
-        unPanel.SetActive(true);
 
     }
 }

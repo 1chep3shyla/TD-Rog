@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7348218345031596754}
   - component: {fileID: -9076710513994331938}
   - component: {fileID: 3248000793684943396}
-  - component: {fileID: 2942912566884776050}
+  - component: {fileID: -4016507510995439363}
+  - component: {fileID: -1634827272546631196}
   m_Layer: 0
   m_Name: 6 random
   m_TagString: Tower
@@ -57,6 +58,7 @@ MonoBehaviour:
   curDamage: 0
   LVL: 0
   towerDataCur: {fileID: 11400000, guid: 42d5d2d8146b2a74cb3e3369976c19db, type: 2}
+  cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
 --- !u!212 &3248000793684943396
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -109,7 +111,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2942912566884776050
+--- !u!58 &-4016507510995439363
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!114 &-1634827272546631196
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,16 +136,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 2056256240725061661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f106c16389e304e8df9971143ee6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: b81c035f51a10c742bf13658c3f1f46c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRadius: 1.5
-  attackSpeed: 1
-  mindamage: 0
-  maxDamage: 0
+  attackRadius: 2
+  attackSpeed: 0.7
+  damage: 4
   firePoint: {fileID: 1615630990437246422}
-  bulletPrefab: {fileID: 6556074294206078149, guid: d3f112ac6dd178040b1a2e273bc61f82, type: 3}
+  bulletPrefab: {fileID: 6556074294206078149, guid: 6af267f628067674891afc8ecd88088c, type: 3}
+  enemiesInRange: []
   slowPower: 0
+  firePower: 0
+  poisonPower: 1
+  stanChance: 0
+  portalChange: 0
+  charge: 0
+  maxTargets: 1
+  currentTargets: []
+  thiefPower: 0
+  dmgBoom: 0
+  reduceArmor: 0
+  chanceDivine: 0
+  dmgDivine: 0
+  countOfAttack: 0
+  SlpashRadius: 0
+  radarIncrease: 0
+  thiefReward: 0
+  magnatPower: 0
+  DivineAttackGM: {fileID: 0}
+  dt: {fileID: 0}
+  chanceAssasin: 0
+  Chain: 0
 --- !u!1 &2466880647901358694
 GameObject:
   m_ObjectHideFlags: 0

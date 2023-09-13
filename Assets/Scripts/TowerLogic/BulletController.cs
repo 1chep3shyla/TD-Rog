@@ -20,7 +20,12 @@ public enum TypeBull
     fury,
     moon,
     sun, 
-    cum
+    cum, 
+    magnat,
+    rage,
+    light, 
+    random,
+    assasin
 }
 
 public class BulletController : MonoBehaviour
@@ -43,6 +48,11 @@ public class BulletController : MonoBehaviour
     public int chanceStan;
     public int chancePortaling;
     public int furyCount;
+    public float buffRadar;
+    public int thiefCount;
+    public float magnatTower;
+    public float chanceAssasin;
+    public int critChance;
     public GameObject cumGM;
 
     public void Initialize(Transform bulletTarget, int bulletDamage)
@@ -72,16 +82,16 @@ public class BulletController : MonoBehaviour
                 if (type == TypeBull.ice)
                 {
                     enemyMove.Slow(IceTimer, powerOfIce);
-                    enemyHealth.TakeDamage(damage);
+                    enemyHealth.DefaultAttack(damage, critChance);
                 }
                 else if (type == TypeBull.def)
                 {
-                    enemyHealth.TakeDamage(damage);
+                    enemyHealth.DefaultAttack(damage, critChance);
                 }
                 else if (type == TypeBull.fire)
                 {
                     enemyHealth.SetOnFire(2.5f, powerOfFire); // Specify fire duration and damage
-                    enemyHealth.TakeDamage(damage);
+                    enemyHealth.DefaultAttack(damage, critChance);
                 }
                 else if (type == TypeBull.minHp)
                 {
@@ -89,15 +99,15 @@ public class BulletController : MonoBehaviour
                     {
                         if ((int)((float)damage * ((float)enemyHealth.maxHealth * (float)enemyHealth.health)) > 0 && (int)((float)damage / ((float)enemyHealth.maxHealth * (float)enemyHealth.health)) < damage * 5)
                         {
-                            enemyHealth.TakeDamage((int)((float)damage * ((float)enemyHealth.maxHealth / (float)enemyHealth.health)));
+                            enemyHealth.DefaultAttack((int)((float)damage * ((float)enemyHealth.maxHealth / (float)enemyHealth.health)), critChance);
                         }
                         else if ((int)((float)damage * ((float)enemyHealth.maxHealth / (float)enemyHealth.health)) > damage * 5)
                         {
-                            enemyHealth.TakeDamage(damage * 5);
+                            enemyHealth.DefaultAttack(damage * 5, critChance);
                         }
                         else if ((int)((float)damage * ((float)enemyHealth.maxHealth / (float)enemyHealth.health)) < 0)
                         {
-                            enemyHealth.TakeDamage(1);
+                            enemyHealth.DefaultAttack(1, critChance);
                         }
                     }
                 }
@@ -106,74 +116,97 @@ public class BulletController : MonoBehaviour
                     int randomPoc = Random.Range(0, 100);
                     if (randomPoc <= chanceStan)
                     {
-                        enemyHealth.TakeDamage(damage);
+                        enemyHealth.DefaultAttack(damage, critChance);
                         enemyMove.Stun(1.5f);
                     }
                     else
                     {
-                        enemyHealth.TakeDamage(damage);
+                        enemyHealth.DefaultAttack(damage, critChance);
                     }
                 }
                 else if (type == TypeBull.gladiator)
                 {
                     if ((int)(damage * (float)GameManager.Instance.maxHealth / (float)GameManager.Instance.Health) < damage * 5)
                     {
-                        enemyHealth.TakeDamage((int)(damage * (float)GameManager.Instance.maxHealth / (float)GameManager.Instance.Health));
+                        enemyHealth.DefaultAttack((int)(damage * (float)GameManager.Instance.maxHealth / (float)GameManager.Instance.Health), critChance);
                     }
                     else
                     {
-                        enemyHealth.TakeDamage(damage * 5);
+                        enemyHealth.DefaultAttack(damage * 5, critChance);
                     }
                 }
                 else if (type == TypeBull.portal)
                 {
-                    enemyHealth.TakeDamage(damage);
+                    enemyHealth.DefaultAttack(damage, critChance);
                     enemyMove.Portaling(chancePortaling);
                 }
                 else if (type == TypeBull.radar)
                 {
                     if (enemyMove.isSlowed == false)
                     {
-                        enemyHealth.TakeDamage(damage);
+                        enemyHealth.DefaultAttack(damage, critChance);
                     }
                     else
                     {
-                        enemyHealth.TakeDamage(damage * 2);
+                        enemyHealth.DefaultAttack(damage + (int)((float)damage * buffRadar / 100), critChance);
                     }
                 }
                 else if (type == TypeBull.poison)
                 {
 
                     enemyHealth.SetPoison(2.5f, powerOfPoison);
-                    enemyHealth.TakeDamage(damage);
+                    enemyHealth.DefaultAttack(damage, critChance);
                 }
                 else if (type == TypeBull.thief)
                 {
-                    enemyHealth.Thiefed(ThiefPower);
-                    enemyHealth.TakeDamage(damage);
+                    enemyHealth.Thiefed(ThiefPower, thiefCount);
+                    enemyHealth.DefaultAttack(damage, critChance);
                 }
                 else if (type == TypeBull.armorReduce)
                 {
                     enemyHealth.ArmorReducePublic(armorDis);
-                    enemyHealth.TakeDamage(damage);
+                    enemyHealth.DefaultAttack(damage, critChance);
                 }
                 else if (type == TypeBull.deathBoom)
                 {
-                    enemyHealth.BoomOn(boomDamage);
-                    enemyHealth.TakeDamage(damage);
+                    enemyHealth.SetOnFire(2.5f, powerOfFire);
+                    enemyHealth.BoomOn(boomDamage, powerOfFire);
+                    enemyHealth.DefaultAttack(damage, critChance);
                 }
                 else if (type == TypeBull.divine)
                 {
-                    enemyHealth.TakeDamage(damage);
+                    enemyHealth.DefaultAttack(damage, critChance);
                 }
                 else if (type == TypeBull.fury)
                 {
-                    enemyHealth.TakeDamage(damage * furyCount);
+                    enemyHealth.DefaultAttack(damage * furyCount, critChance);
                     Debug.Log(damage * furyCount);
                 }
                 else if (type == TypeBull.cum)
                 {
                     Instantiate(cumGM, target.position, Quaternion.identity);
+                    enemyHealth.DefaultAttack(damage, critChance);
+                }
+                else if (type == TypeBull.magnat)
+                {
+                    enemyHealth.DefaultAttack(damage+(int)((float)GameManager.Instance.Gold * magnatTower/100), critChance);
+                }
+                else if (type == TypeBull.assasin)
+                {
+                    enemyHealth.DefaultAttack(damage, critChance);
+                }
+                else if (type == TypeBull.moon)
+                {
+                    enemyHealth.DefaultAttack(damage, critChance);
+                }
+                else if (type == TypeBull.sun)
+                {
+                    enemyHealth.DefaultAttack(damage, critChance);
+                }
+                else if (type == TypeBull.random || type == TypeBull.rage)
+                {
+                    int randomDamage = Random.Range(damage, damage*5);
+                    enemyHealth.DefaultAttack(randomDamage, critChance);
                 }
             }
 

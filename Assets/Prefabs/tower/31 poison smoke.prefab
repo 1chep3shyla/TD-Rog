@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: -9076710513994331938}
   - component: {fileID: 3248000793684943396}
   - component: {fileID: 7037598387206558222}
+  - component: {fileID: 3311991391933865594}
   m_Layer: 0
   m_Name: 31 poison smoke
   m_TagString: Tower
@@ -174,6 +175,7 @@ MonoBehaviour:
   curDamage: 2
   LVL: 0
   towerDataCur: {fileID: 11400000, guid: 57383b3e416671046b20a4c5faf690fb, type: 2}
+  cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
 --- !u!212 &3248000793684943396
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -243,6 +245,7 @@ MonoBehaviour:
   damage: 4
   firePoint: {fileID: 1615630990437246422}
   bulletPrefab: {fileID: 6556074294206078149, guid: 73041ae20d8dbd64b9562d2ee7a2c71a, type: 3}
+  enemiesInRange: []
   slowPower: 0
   firePower: 0
   poisonPower: 1
@@ -250,14 +253,37 @@ MonoBehaviour:
   portalChange: 0
   charge: 0
   maxTargets: 1
+  currentTargets: []
   thiefPower: 0
   dmgBoom: 0
   reduceArmor: 0
   chanceDivine: 0
   dmgDivine: 0
   countOfAttack: 0
+  SlpashRadius: 0
+  radarIncrease: 0
+  thiefReward: 0
+  magnatPower: 0
   DivineAttackGM: {fileID: 0}
   dt: {fileID: 0}
+  chanceAssasin: 0
+  Chain: 0
+--- !u!58 &3311991391933865594
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
 --- !u!1 &2466880647901358694
 GameObject:
   m_ObjectHideFlags: 0

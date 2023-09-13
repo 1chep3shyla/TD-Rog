@@ -42,7 +42,7 @@ public class BatController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(dmg);
+            collision.gameObject.GetComponent<Enemy>().DefaultAttack(dmg, target.gameObject.GetComponent<UpHave>().critChance);
         }
     }
 }

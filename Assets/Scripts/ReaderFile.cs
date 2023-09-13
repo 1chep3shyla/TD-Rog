@@ -14,10 +14,12 @@ public class ReaderFile : MonoBehaviour
 
     private void Start()
     {
-        LoadEnemyData();
-#if UNITY_EDITOR_WIN
-         tsvFilePath = "Assets/StreamingAssets/TowerData.tsv";
+#if UNITY_EDITOR
+    tsvFilePath = "Assets/StreamingAssets/EnemyStatAll.tsv";
+#else
+        tsvFilePath = System.IO.Path.Combine(Application.dataPath, "StreamingAssets/EnemyStatAll.tsv");
 #endif
+        LoadEnemyData();
     }
 
     private void LoadEnemyData()

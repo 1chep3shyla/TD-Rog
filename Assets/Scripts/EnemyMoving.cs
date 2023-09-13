@@ -88,7 +88,7 @@ public class EnemyMoving : MonoBehaviour
     public void Slow(float time, float slowPower)
     {
 
-        float powering = maxSpeed - slowPower - GameManager.Instance.buff[1];
+        float powering = maxSpeed - (maxSpeed * ((slowPower + GameManager.Instance.buff[1])/100));
         if (powering < speed && powering > 0f)
         {
             speed = powering;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7348218345031596754}
   - component: {fileID: 3248000793684943396}
   - component: {fileID: 7447567899705648062}
+  - component: {fileID: 3602384091353451155}
   m_Layer: 0
   m_Name: -1 joker
   m_TagString: Untagged
@@ -27,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 2056256240725061661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.2530296, y: 1.2301576, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.35, y: 1.35, z: 1.35}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,9 +74,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.20392157}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: -376759512, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,8 +102,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.33}
+    oldSize: {x: 0.47761193, y: 0.8208955}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -111,3 +112,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3602384091353451155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa5056f641197342a2b4fc8ef92df08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: -1
+  UpVersion: {fileID: 0}
+  baseOf: {fileID: 0}
+  name: Joker Tower
+  curAttackSpeed: 0
+  attackSpeed: 0
+  damage: 0
+  curDamage: 0
+  LVL: 0
+  towerDataCur: {fileID: 11400000, guid: 3359789ca29a97740a5ab95dbd932068, type: 2}
+  cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}

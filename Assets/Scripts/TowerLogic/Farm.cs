@@ -11,13 +11,18 @@ public class Farm : MonoBehaviour
     private float curTime;
     public TMP_Text waveCount;
     public Animator addCoin;
+    private DataTower basa;
+    private UpHave uh;
     
     void Start()
     {
         curTime = timeNeed;
+        uh = gameObject.GetComponent<UpHave>();
+        basa = uh.towerDataCur;
     }
     void Update()
     {
+        goldGive = (int)basa.lvlData[uh.LVL, 17];
         curTime -= Time.deltaTime;
         if (curTime <= 0f)
         {
@@ -26,11 +31,13 @@ public class Farm : MonoBehaviour
     }
     private IEnumerator GiveGold()
     {
-        GameManager.Instance.AddMoney(goldGive);
+        int givemoney = (int)((float)goldGive * GameManager.Instance.buff[4] / 100);
+        int all = goldGive + givemoney;
+        GameManager.Instance.AddMoney(all);
         curTime = timeNeed;
         addCoin.gameObject.SetActive(true);
         addCoin.Play("give_gold_anim");
-        waveCount.text = goldGive.ToString("");
+        waveCount.text = all.ToString("");
         yield return new WaitForSeconds(0.5f);
         addCoin.gameObject.SetActive(false);
     }

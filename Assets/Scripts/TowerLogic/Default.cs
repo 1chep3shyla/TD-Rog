@@ -5,70 +5,79 @@ using UnityEngine;
 public class Default : MonoBehaviour
 {
     public float attackRadius = 3f;
-    public float attackSpeed = 1f; // Attacks per second
+    public float attackSpeed = 1f;
     public int damage = 10;
     public Transform firePoint;
     public GameObject bulletPrefab;
 
-    private float attackCooldown = 0f;
-    private List<Transform> enemiesInRange = new List<Transform>();
+    private float attackCooldown = 10f;
+     public List<Transform> enemiesInRange = new List<Transform>();
     public float slowPower;
     public int firePower;
     public int poisonPower;
     public int stanChance;
     public int portalChange;
     public bool charge;
-    public int maxTargets = 1; // Maximum number of targets that can be attacked simultaneously
-    private List<Transform> currentTargets = new List<Transform>();
+    public int maxTargets = 1;
+    public List<Transform> currentTargets = new List<Transform>();
     public int thiefPower;
     public int dmgBoom;
     public float reduceArmor;
     public int chanceDivine;
     public int dmgDivine;
     public int countOfAttack;
+    public float SlpashRadius;
+    public float radarIncrease;
+    public int thiefReward;
+    public float magnatPower; 
     private Transform currentTarget;
     [SerializeField]
     private GameObject DivineAttackGM;
-    private Transform whichEnemy;
     public DataTower dt;
     private int lvl;
-
+    private UpHave upHaveScript;
+    private BulletController bc;
+    public int chanceAssasin;
+    public int Chain;
+    public int critChance;
     void Start()
     {
-        dt = gameObject.GetComponent<UpHave>().towerDataCur;
+        upHaveScript = gameObject.GetComponent<UpHave>();
+        dt = upHaveScript.towerDataCur;
+        bc = bulletPrefab.GetComponent<BulletController>();
+
+
+        UpdateStat();
     }
+
     void Update()
     {
-        damage = gameObject.GetComponent<UpHave>().curDamage;
-        lvl = gameObject.GetComponent<UpHave>().LVL;
-        if (dt != null)
-        {
-            attackRadius = dt.lvlData[lvl, 2];
-            slowPower = dt.lvlData[lvl, 4];
-            firePower = (int)dt.lvlData[lvl, 5];
-            poisonPower = (int)dt.lvlData[lvl, 6];
-            stanChance = (int)dt.lvlData[lvl, 7];
-            portalChange = (int)dt.lvlData[lvl, 8];
-            maxTargets = (int)dt.lvlData[lvl, 9];
-            //maxTargets = (int)dt.lvlData[LVL, 10];
-            dmgBoom = (int)dt.lvlData[lvl, 11];
-            reduceArmor = dt.lvlData[lvl, 12];
-            chanceDivine = (int)dt.lvlData[lvl, 13];
-            dmgDivine = (int)dt.lvlData[lvl, 14];
-        }
+        damage = upHaveScript.curDamage;
+        attackSpeed = upHaveScript.curAttackSpeed;
+        lvl = upHaveScript.LVL;
         if (!charge)
         {
-            attackSpeed = gameObject.GetComponent<UpHave>().curAttackSpeed;
+            attackSpeed = upHaveScript.curAttackSpeed;
         }
-
-        // If there are no current targets or the current targets are out of range, find new ones
-
-        FindNewTargets();
 
 
         if (CanAttack() && currentTargets.Count > 0)
         {
-            Attack();
+            if (bulletPrefab.GetComponent<BulletController>() != null)
+            {
+                if (bc.type != TypeBull.rage && bc.type != TypeBull.light)
+                {
+                    Attack();
+                }
+                else if (bc.type == TypeBull.rage)
+                {
+                    AttackRage();
+                }
+            }
+            else if (bulletPrefab.GetComponent<BulletController>() == null)
+            {
+                AttackLight();
+            }
         }
         if (attackCooldown >= 0)
         {
@@ -76,48 +85,87 @@ public class Default : MonoBehaviour
         }
     }
 
+    public void UpdateStat()
+    {
+        if (dt != null)
+        {
+            attackSpeed = upHaveScript.curAttackSpeed;
+            critChance = upHaveScript.critChance;
+            attackRadius = dt.lvlData[lvl, 2];
+            slowPower = dt.lvlData[lvl, 5];
+            firePower = (int)dt.lvlData[lvl, 6];
+            poisonPower = (int)dt.lvlData[lvl, 7];
+            stanChance = (int)dt.lvlData[lvl, 8];
+            portalChange = (int)dt.lvlData[lvl, 9];
+            maxTargets = (int)dt.lvlData[lvl, 10];
+            thiefPower = (int)dt.lvlData[lvl, 11];
+            dmgBoom = (int)dt.lvlData[lvl, 12];
+            reduceArmor = dt.lvlData[lvl, 13];
+            chanceDivine = (int)dt.lvlData[lvl, 14];
+            dmgDivine = (int)dt.lvlData[lvl, 15];
+            magnatPower = dt.lvlData[lvl, 17];
+            Chain = (int)dt.lvlData[lvl, 17];
+            chanceAssasin = (int)dt.lvlData[lvl, 16];
+            attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));
+        }
+        gameObject.GetComponent<CircleCollider2D>().radius = attackRadius - (attackRadius * 0.25f);
+    }
+
     bool CanAttack()
     {
-        // Clean up the enemies list by removing destroyed or out-of-range enemies
-        enemiesInRange.RemoveAll(enemy => enemy == null || Vector3.Distance(transform.position, enemy.position) > attackRadius);
-
         return currentTargets.Count > 0;
     }
 
-    bool AreTargetsInRange()
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        // Check if any of the current targets are in attack range
-        foreach (Transform target in currentTargets)
+        if (collider.CompareTag("Enemy"))
         {
-            if (target != null && Vector3.Distance(transform.position, target.position) <= attackRadius)
+            Transform enemyTransform = collider.transform;
+
+            for (int i = 0; i < currentTargets.Count; i++)
             {
-                return true;
+                if (currentTargets[i] == null)
+                {
+                    currentTargets[i] = enemyTransform;
+                }
             }
+            // Check if there's space for more targets based on maxTargets
+            if (currentTargets.Count < maxTargets)
+            {
+                // Add the enemy to the list of targets
+                currentTargets.Add(enemyTransform);
+            }
+            // Always add the enemy to the list of enemies in range
+            enemiesInRange.Add(enemyTransform);
         }
-        return false;
     }
 
-    void FindNewTargets()
+    void OnTriggerExit2D(Collider2D collider)
     {
-        enemiesInRange.RemoveAll(enemy => enemy == null || Vector3.Distance(transform.position, enemy.position) > attackRadius);
-
-        // Add new enemies that entered the radius up to the max targets
-        int targetsRemaining = maxTargets - currentTargets.Count;
-        foreach (Collider2D enemyCollider in Physics2D.OverlapCircleAll(transform.position, attackRadius))
+        if (collider.CompareTag("Enemy"))
         {
-            if (enemyCollider.CompareTag("Enemy") && !enemiesInRange.Contains(enemyCollider.transform) && targetsRemaining > 0)
+            Transform enemyTransform = collider.transform;
+
+            // Remove the enemy from both lists
+            enemiesInRange.Remove(enemyTransform);
+            currentTargets.Remove(enemyTransform);
+
+            // Check if there are fewer targets than maxTargets
+            if (currentTargets.Count < maxTargets)
             {
-                enemiesInRange.Add(enemyCollider.transform);
-                targetsRemaining--;
+                // If there's space, add another enemy from the range
+                if (enemiesInRange.Count > 0)
+                {
+                    currentTargets.Add(enemiesInRange[0]);
+                    enemiesInRange.Remove(enemiesInRange[0]);
+                }
             }
         }
-
-        currentTargets.Clear();
-        currentTargets.AddRange(enemiesInRange);
     }
 
     void Attack()
     {
+        Debug.Log("ATTACK");
         if (attackCooldown <= 0f)
         {
             foreach (var target in currentTargets)
@@ -132,6 +180,7 @@ public class Default : MonoBehaviour
                     if (bulletController != null)
                     {
                         bulletController.Initialize(target, damage);
+                        bulletController.critChance = critChance;
                         // Set other bullet parameters here based on the tower's attributes
                         if (bulletController.type == TypeBull.ice)
                         {
@@ -156,6 +205,7 @@ public class Default : MonoBehaviour
                         else if (bulletController.type == TypeBull.thief)
                         {
                             bulletController.ThiefPower = thiefPower;
+                            bulletController.thiefCount = thiefReward;
                         }
                         else if (bulletController.type == TypeBull.armorReduce)
                         {
@@ -164,6 +214,7 @@ public class Default : MonoBehaviour
                         else if (bulletController.type == TypeBull.deathBoom)
                         {
                             bulletController.boomDamage = dmgBoom;
+                            bulletController.powerOfFire = firePower;
                         }
                         else if (bulletController.type == TypeBull.divine)
                         {
@@ -188,34 +239,117 @@ public class Default : MonoBehaviour
                         {
 
                         }
+                        else if (bulletController.type == TypeBull.radar)
+                        {
+                            bulletController.buffRadar = radarIncrease;
+                        }
+                        else if (bulletController.type == TypeBull.magnat)
+                        {
+                            bulletController.magnatTower = magnatPower;
+                        }
+                        else if (bulletController.type == TypeBull.assasin)
+                        {
+                            if (target.gameObject.GetComponent<EnemyMoving>().typeEnemy != EnemyType.boss)
+                            {
+                                int random = Random.Range(1, (int)((float)100 / chanceAssasin));
+                                if (bulletController != null && random == 1)
+                                {
+                                    bulletController.Initialize(target, 100000000);
+                                    Debug.Log("ÃŒŸÕ¿ﬂ ¿“¿ ¿");
+                                }
+                                else if (random != 1)
+                                {
+                                    bulletController.Initialize(target, damage);
+                                }
+                            }
+                            else
+                            {
+                                int random = Random.Range(1, (int)(1000 / chanceAssasin));
+                                if (bulletController != null && random == 1)
+                                {
+                                    bulletController.Initialize(target, 100000000);
+                                    Debug.Log("ÃŒŸÕ¿ﬂ ¿“¿ ¿");
+                                }
+                                else if (random != 1)
+                                {
+                                    bulletController.Initialize(target, damage);
+                                }
+                            }
+
+                        }
                     }
                     else if (bulletCannonController != null)
-                    {   
+                    {
                         bulletCannonController.enemyTarget = target;
                         bulletCannonController.dmg = damage;
+                        bulletCannonController.stanChance = stanChance;
+                        bulletCannonController.critChance = critChance;
                     }
 
-                    attackCooldown = attackSpeed;
+                    attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));
                     if (bulletController != null)
                     {
                         if (bulletController.type == TypeBull.moon && GameManager.Instance.gameObject.GetComponent<SunMoonScript>().moonCount >= GameManager.Instance.gameObject.GetComponent<SunMoonScript>().sunCount)
                         {
-                            attackCooldown /= 2;
+                            attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5]/100))/2;
                         }
                     }
 
                 }
             }
-
         }
     }
+    void AttackRage()
+    {
+        if (attackCooldown <= 0f && enemiesInRange.Count > 0)
+        {
+            int randomIndex = Random.Range(0, enemiesInRange.Count);
+            Transform target = enemiesInRange[randomIndex];
 
+            if (target != null)
+            {
+                // Create a bullet and set its parameters
+                GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+                BulletController bulletController = bullet.GetComponent<BulletController>();
+                CannonBull bulletCannonController = bullet.GetComponent<CannonBull>();
+
+                if (bulletController != null)
+                {
+                    bulletController.Initialize(target, damage);
+                }
+
+
+                attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));
+            }
+        }
+    }
+    void AttackLight()
+    {
+        if (attackCooldown <= 0f && enemiesInRange.Count >Chain)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            LightBull bulletScript = bullet.GetComponent<LightBull>();
+            bulletScript.targetEnemies = new Transform[Chain];
+            bulletScript.damage = damage;
+            for (int i = 0; i < Chain; i++)
+            {
+                if (enemiesInRange.Count >= Chain)
+                {
+                    bulletScript.targetEnemies[i] = enemiesInRange[i];
+
+                    attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));
+                    enemiesInRange.RemoveAt(0); // Remove the first enemy from the list
+                }
+            }
+        }
+
+    }
     void OnDrawGizmosSelected()
     {
-        // Visualize the attack radius using Gizmos
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
+
     private IEnumerator DivineAttack()
     {
         int randomIndex = Random.Range(0, GameManager.Instance.enemiesAll.Count);

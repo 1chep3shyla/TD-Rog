@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffIcePower: 0.05
   name: Ice Power I
+  disc: Increase Deceleration  by
+  sprite: {fileID: 792443270, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

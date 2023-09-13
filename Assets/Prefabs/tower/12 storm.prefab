@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3248000793684943396}
   - component: {fileID: 7912699240769563161}
   - component: {fileID: 1082024769813061794}
+  - component: {fileID: 1262755843317064020}
   m_Layer: 0
   m_Name: 12 storm
   m_TagString: Tower
@@ -58,6 +59,7 @@ MonoBehaviour:
   curDamage: 5
   LVL: 0
   towerDataCur: {fileID: 11400000, guid: e22cbc0529f57b94b91b6caeaf076ddb, type: 2}
+  cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
 --- !u!212 &3248000793684943396
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -127,6 +129,7 @@ MonoBehaviour:
   damage: 2
   firePoint: {fileID: 1615630990437246422}
   bulletPrefab: {fileID: 6556074294206078149, guid: 01ebbaef74323bf47ad0e4adc6ecc886, type: 3}
+  enemiesInRange: []
   slowPower: 0
   firePower: 0
   poisonPower: 0
@@ -134,14 +137,21 @@ MonoBehaviour:
   portalChange: 0
   charge: 0
   maxTargets: 1
+  currentTargets: []
   thiefPower: 0
   dmgBoom: 0
   reduceArmor: 0
   chanceDivine: 0
   dmgDivine: 0
   countOfAttack: 0
+  SlpashRadius: 0
+  radarIncrease: 0
+  thiefReward: 0
+  magnatPower: 0
   DivineAttackGM: {fileID: 0}
   dt: {fileID: 0}
+  chanceAssasin: 0
+  Chain: 0
 --- !u!114 &1082024769813061794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +167,22 @@ MonoBehaviour:
   boostDuration: 3
   boostInterval: 8
   boostMultiplier: 4
+--- !u!58 &1262755843317064020
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
 --- !u!1 &2466880647901358694
 GameObject:
   m_ObjectHideFlags: 0

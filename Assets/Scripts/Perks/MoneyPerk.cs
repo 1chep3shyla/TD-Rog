@@ -7,6 +7,8 @@ public class MoneyPerk : ScriptableObject, IPerk
 {
     public float buffMoney;
     public string name;
+    public string disc;
+    public Sprite sprite;
     public void ApplyPerk()
     {
         GameManager.Instance.buff[4] += buffMoney;
@@ -14,5 +16,14 @@ public class MoneyPerk : ScriptableObject, IPerk
     public string SetData()
     {
         return name;
+    }
+    public string SetDataDis()
+    {
+        string retDis = disc + " " + buffMoney + "%";
+        return retDis;
+    }
+    public Sprite GetData()
+    {
+        return sprite;
     }
 }
