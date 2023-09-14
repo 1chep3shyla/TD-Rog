@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> enemiesAll = new List<GameObject>();
     public float[] buff; // 0 - global damage, 1- ice buff, 2 - fire damage, 3 - poison, 4 - moneyMine, 5 - AttackSpeed, 6 - moneyThief+Enemy, 7 - crit DMG, 8 - crit Chance
     public Evolve[] allEvolution;
+    public DMGTower[] allTowerDMG;
     
     void Update()
     {
@@ -160,6 +161,35 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    public void ClearEffects()
+    {
+        for (int i = 0; i < allTower.Length; i++)
+        {
+            if (allTower[i] != null)
+            {
+                allTower[i].gameObject.GetComponent<UpHave>().Clear();
+            }
+        }
+    }
+    public void AddDamageByBulletType(TypeBull bulletType, int damage)
+    {
+        // Найти соответствующий элемент массива allTowerDMG по типу пули и добавить урон
+        foreach (DMGTower towerDamage in allTowerDMG)
+        {
+            if (towerDamage.EvolveScript == bulletType)
+            {
+                towerDamage.countDamage += damage;
+                towerDamage.roundDamage += damage;
+            }
+        }
+    }
+    public void ClearRounds()
+    {
+        for (int i = 0; i < allTowerDMG.Length; i++)
+        {
+            allTowerDMG[i].roundDamage = 0;
+        }
+    }
 }
 [System.Serializable]
 public class Evolve
@@ -172,4 +202,14 @@ public class Evolve
     {
         work = true;
     }
+}
+[System.Serializable]
+public class DMGTower
+{
+    public TypeBull EvolveScript;
+    public int countDamage;
+    public int roundDamage;
+    public string name;
+    public Sprite iconTower;
+
 }

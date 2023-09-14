@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     public TMP_Text damageText;
     public float[] resistance; // 0 - ice, 1 - fire, 2 - poison, 3 - stan
     private SpriteRenderer SR;
+    public TypeBull damageType;
     void Start()
     {
         health = maxHealth;
@@ -52,39 +53,60 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage(int dmg)
     {
-        if (dmg > 0)
+
+        if (!armor)
         {
-            if (!armor)
+            int curhp = health - dmg;
+            if (dmg > 0)
             {
-                int curhp = health - dmg;
-                if (curhp <= 0)
-                {
-                    Death();
-                }
-                else
-                {
-                    par.Play();
-                    health = curhp;
-                }
-                GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
-                dmgText.GetComponent<TMP_Text>().text = "" + dmg;
+                GameManager.Instance.AddDamageByBulletType(damageType, dmg);
+            }
+            if (curhp <= 0)
+            {
+                Death();
             }
             else
             {
-                int curhp = health -= (int)((float)dmg * armorReduce);
-                if (curhp <= 0)
+                par.Play();
+                if (curhp <= maxHealth)
                 {
-                    Death();
+                    health = curhp;
                 }
                 else
                 {
-                    par.Play();
+                    health = maxHealth;
+                }
+            }
+            GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
+            dmgText.GetComponent<TMP_Text>().text = "" + dmg;
+        }
+        else
+        {
+            int curhp = health -= (int)((float)dmg * armorReduce);
+            if (dmg > 0)
+            {
+                GameManager.Instance.AddDamageByBulletType(damageType, (int)((float)dmg * armorReduce));
+            }
+            if (curhp <= 0)
+            {
+                Death();
+            }
+            else
+            {
+                par.Play();
+                if (curhp <= maxHealth)
+                {
                     health = curhp;
                 }
-                GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
-                dmgText.GetComponent<TMP_Text>().text = "" + dmg;
+                else
+                {
+                    health = maxHealth;
+                }
             }
+            GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
+            dmgText.GetComponent<TMP_Text>().text = "" + dmg;
         }
+        
     }
     public void DefaultAttack(int dmg, int critChance)
     {
@@ -132,7 +154,7 @@ public class Enemy : MonoBehaviour
         while (dur > 0)
         {
             int addDMG = dmg * (int)(GameManager.Instance.buff[2] / 100);
-            int removeDMG = (int)((float)(dmg + addDMG) * resistance[1]);
+            int removeDMG = (int)((float)(dmg + addDMG) * resistance[1]/100);
             TakeDamage(dmg + addDMG - removeDMG);
             yield return new WaitForSeconds(0.25f); // Apply fire damage every second
             dur -= 0.25f;
@@ -162,8 +184,8 @@ public class Enemy : MonoBehaviour
         while (dur > 0)
         {
             int addDMG = dmg * (int)(GameManager.Instance.buff[3] / 100);
-            int removeDMG = (int)((float)(dmg + addDMG) * resistance[2]);
-            TakeDamage(dmg + addDMG);
+            int removeDMG = (int)((float)(dmg + addDMG) * resistance[2]/100);
+            TakeDamage(dmg + addDMG - removeDMG);
             yield return new WaitForSeconds(0.5f); // Apply fire damage every second
             dur -= 0.5f;
         }
@@ -207,6 +229,10 @@ public class Enemy : MonoBehaviour
         {
             GameManager.Instance.StealMoney(countGold);
         }
+    }
+    public void SetBulletType(TypeBull bulletType)
+    {
+        this.damageType = bulletType;
     }
 
 }

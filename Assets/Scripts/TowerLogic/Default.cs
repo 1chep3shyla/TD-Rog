@@ -52,7 +52,14 @@ public class Default : MonoBehaviour
 
     void Update()
     {
-        damage = upHaveScript.curDamage;
+        if (upHaveScript.Imposter)
+        {
+            damage = -upHaveScript.curDamage;
+        }
+        else
+        {
+            damage = upHaveScript.curDamage;
+        }
         attackSpeed = upHaveScript.curAttackSpeed;
         lvl = upHaveScript.LVL;
         if (!charge)
@@ -61,7 +68,7 @@ public class Default : MonoBehaviour
         }
 
 
-        if (CanAttack() && currentTargets.Count > 0)
+        if (CanAttack() && currentTargets.Count > 0 && !upHaveScript.Muted)
         {
             if (bulletPrefab.GetComponent<BulletController>() != null)
             {
@@ -109,6 +116,16 @@ public class Default : MonoBehaviour
             attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));
         }
         gameObject.GetComponent<CircleCollider2D>().radius = attackRadius - (attackRadius * 0.25f);
+    }
+    public void UpdateImposter()
+    {
+        if (dt != null)
+        {
+            firePower = -(int)dt.lvlData[lvl, 6];
+            poisonPower = -(int)dt.lvlData[lvl, 7];
+            dmgBoom = -(int)dt.lvlData[lvl, 12];
+            dmgDivine = -(int)dt.lvlData[lvl, 15];
+        }
     }
 
     bool CanAttack()

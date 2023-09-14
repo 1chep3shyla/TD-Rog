@@ -57,8 +57,12 @@ MonoBehaviour:
   damage: 5
   curDamage: 0
   LVL: 0
+  critChance: 0
   towerDataCur: {fileID: 11400000, guid: e209aeb0e240e7c4481c30e5c0d13ef1, type: 2}
   cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
+  cursorDelete: {fileID: 0}
+  Imposter: 0
+  Muted: 0
 --- !u!212 &3248000793684943396
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -127,7 +131,7 @@ MonoBehaviour:
   attackSpeed: 0.6
   damage: 5
   firePoint: {fileID: 1615630990437246422}
-  bulletPrefab: {fileID: 6556074294206078149, guid: 01ebbaef74323bf47ad0e4adc6ecc886, type: 3}
+  bulletPrefab: {fileID: 6556074294206078149, guid: 12642460d5fb1064b8a12c8a000d1141, type: 3}
   enemiesInRange: []
   slowPower: 0
   firePower: 0
@@ -151,6 +155,7 @@ MonoBehaviour:
   dt: {fileID: 0}
   chanceAssasin: 0
   Chain: 0
+  critChance: 0
 --- !u!58 &8759638197534962256
 CircleCollider2D:
   m_ObjectHideFlags: 0

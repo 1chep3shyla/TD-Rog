@@ -35,9 +35,9 @@ public class PerkRoll : MonoBehaviour
     }
     public void RollPerk()
     {
-        List<ScriptableObject> availableBronzePerks = allBronzePerks;
-        List<ScriptableObject> availableSilverPerks = allSilverPerks;
-        List<ScriptableObject> availableGoldenPerks = allGoldenPerks;
+        List<ScriptableObject> availableBronzePerks = new List<ScriptableObject>(allBronzePerks);
+        List<ScriptableObject> availableSilverPerks = new List<ScriptableObject>(allSilverPerks);
+        List<ScriptableObject> availableGoldenPerks = new List<ScriptableObject>(allGoldenPerks);
         for (int i = 0; i < curPerks.Length; i++)
         {
             int random = Random.Range(0, 100);

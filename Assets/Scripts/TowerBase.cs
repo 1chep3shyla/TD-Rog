@@ -16,7 +16,7 @@ public class TowerBase : MonoBehaviour
         {
             if (GameManager.Instance.allEvolution[i].index == curGM.GetComponent<UpHave>().id && GameManager.Instance.allEvolution[i].work == true)
             {
-                GameObject newGM = Instantiate(GameManager.Instance.allEvolution[i].EvolveScript, transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f,  curGM.transform.position.z), Quaternion.identity);
+                GameObject newGM = Instantiate(GameManager.Instance.allEvolution[i].EvolveScript, curGM.transform.position, Quaternion.identity);
                 Destroy(curGM);
                 monster = newGM;
                 curGM = newGM;
@@ -118,6 +118,7 @@ public class TowerBase : MonoBehaviour
                     Debug.Log("Ã≈Õﬂ… Ã≈—“¿Ã»");
                     GameObject newClone = Instantiate(curGM, rollBase.towerPrefab.GetComponent<UpHave>().baseOf.curGM.transform.position, Quaternion.identity);
                     rollBase.towerPrefab.GetComponent<UpHave>().baseOf.monster = newClone;
+                    rollBase.AddTower(newClone.GetComponent<SpriteRenderer>());
                     newClone.GetComponent<UpHave>().baseOf = rollBase.towerPrefab.GetComponent<UpHave>().baseOf;
                     Destroy(rollBase.towerPrefab.GetComponent<UpHave>().baseOf.curGM);
                     rollBase.towerPrefab.GetComponent<UpHave>().baseOf.curGM = newClone;

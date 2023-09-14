@@ -20,6 +20,8 @@ public class UpHave : MonoBehaviour
     public DataTower towerDataCur;
     public GameObject cursor;
     public GameObject cursorDelete;
+    public bool Imposter;
+    public bool Muted;
 
     void Update()
     {
@@ -33,6 +35,23 @@ public class UpHave : MonoBehaviour
             RemoveDamageBoost();
             RemoveSpeedBoost();
         }
+    }
+    public void Clear()
+    {
+        Imposter = false;
+        Muted = false;
+    }
+    public void ImposterEffect()
+    {
+        Imposter = true;
+        if (gameObject.GetComponent<Default>() != null)
+        {
+            gameObject.GetComponent<Default>().UpdateImposter();
+        }
+    }
+    public void MutedEffect()
+    {
+        Muted = true;
     }
     public void Cursoring()
     {

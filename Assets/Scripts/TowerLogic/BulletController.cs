@@ -25,7 +25,12 @@ public enum TypeBull
     rage,
     light, 
     random,
-    assasin
+    assasin,
+    magnet,
+    wind,
+    storm,
+    blockhead,
+    gear
 }
 
 public class BulletController : MonoBehaviour
@@ -79,6 +84,7 @@ public class BulletController : MonoBehaviour
             EnemyMoving enemyMove = target.GetComponent<EnemyMoving>();
             if (enemyHealth != null)
             {
+                enemyHealth.SetBulletType(type);
                 if (type == TypeBull.ice)
                 {
                     enemyMove.Slow(IceTimer, powerOfIce);
@@ -207,6 +213,10 @@ public class BulletController : MonoBehaviour
                 {
                     int randomDamage = Random.Range(damage, damage*5);
                     enemyHealth.DefaultAttack(randomDamage, critChance);
+                }
+                else
+                {
+                    enemyHealth.DefaultAttack(damage, critChance);
                 }
             }
 

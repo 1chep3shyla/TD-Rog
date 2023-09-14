@@ -1343,6 +1343,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15.234076, y: 7.220591}
   m_EdgeRadius: 0
+--- !u!1 &128158990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 128158991}
+  - component: {fileID: 128158993}
+  - component: {fileID: 128158992}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &128158991
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128158990}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 358995186}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &128158992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128158990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0423\u0440\u043E\u043D"
+--- !u!222 &128158993
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128158990}
+  m_CullTransparentMesh: 1
 --- !u!1 &153271052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,6 +2015,242 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &288287165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 288287166}
+  - component: {fileID: 288287168}
+  - component: {fileID: 288287167}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &288287166
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288287165}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 976402069}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 263, y: -539.9999}
+  m_SizeDelta: {x: 399.94, y: 400}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &288287167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288287165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: -100
+    m_Right: 0
+    m_Top: 100
+    m_Bottom: 300
+  m_ChildAlignment: 0
+  m_Spacing: 200
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &288287168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288287165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
+--- !u!1 &358995185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 358995186}
+  - component: {fileID: 358995189}
+  - component: {fileID: 358995188}
+  - component: {fileID: 358995187}
+  m_Layer: 5
+  m_Name: Button (Legacy) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &358995186
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358995185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 128158991}
+  m_Father: {fileID: 1097527229}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 28, y: -0.00001812}
+  m_SizeDelta: {x: 46, y: 46}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &358995187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358995185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 358995188}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 976402068}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 603255297}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 358995185}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &358995188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358995185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 20d3cde4c942d91458b930d438a7d52a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &358995189
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358995185}
+  m_CullTransparentMesh: 1
 --- !u!1 &381508304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2416,6 +2732,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
   - component: {fileID: 519420036}
+  - component: {fileID: 519420038}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2637,7 +2954,7 @@ MonoBehaviour:
   - 0
   allEvolution:
   - EvolveScript: {fileID: 2056256240725061661, guid: 093526689197c3448b11a09e047d9323, type: 3}
-    work: 1
+    work: 0
     index: 2
   - EvolveScript: {fileID: 2056256240725061661, guid: 5f4992dd8a0347143aa5ea9c92962e35, type: 3}
     work: 0
@@ -2681,6 +2998,142 @@ MonoBehaviour:
   - EvolveScript: {fileID: 2056256240725061661, guid: 01eb6cdc461a6574fa225fa1d5dace34, type: 3}
     work: 0
     index: 14
+  allTowerDMG:
+  - EvolveScript: 0
+    countDamage: 0
+    roundDamage: 0
+    name: Default
+    iconTower: {fileID: 21300000, guid: c125df98bf159794283fb2e3f6dfd6c2, type: 3}
+  - EvolveScript: 1
+    countDamage: 0
+    roundDamage: 0
+    name: Ice Tower
+    iconTower: {fileID: 21300000, guid: 431df371d84851c4bbf3fa92698ef303, type: 3}
+  - EvolveScript: 2
+    countDamage: 0
+    roundDamage: 0
+    name: Fire Tower
+    iconTower: {fileID: 350516271, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 3
+    countDamage: 0
+    roundDamage: 0
+    name: "\u041D\u0430\u0434\u043C\u0435\u043D\u043D\u044B\u0439"
+    iconTower: {fileID: 124213439, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 4
+    countDamage: 0
+    roundDamage: 0
+    name: Stan Tower
+    iconTower: {fileID: -1609154478, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 5
+    countDamage: 0
+    roundDamage: 0
+    name: Gladiator Tower
+    iconTower: {fileID: 1055162833, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 6
+    countDamage: 0
+    roundDamage: 0
+    name: Portal Tower
+    iconTower: {fileID: 1469381317, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 7
+    countDamage: 0
+    roundDamage: 0
+    name: Radar Tower
+    iconTower: {fileID: -1103919713, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 8
+    countDamage: 0
+    roundDamage: 0
+    name: Poison Tower
+    iconTower: {fileID: 38254062, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 9
+    countDamage: 0
+    roundDamage: 0
+    name: Thief Tower
+    iconTower: {fileID: -345969105, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 10
+    countDamage: 0
+    roundDamage: 0
+    name: Split Tower
+    iconTower: {fileID: 687284906, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 11
+    countDamage: 0
+    roundDamage: 0
+    name: Boom Tower
+    iconTower: {fileID: 1083987832, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 12
+    countDamage: 0
+    roundDamage: 0
+    name: Divine Tower
+    iconTower: {fileID: -1142422751, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 13
+    countDamage: 0
+    roundDamage: 0
+    name: Fury Tower
+    iconTower: {fileID: 1517139187, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 14
+    countDamage: 0
+    roundDamage: 0
+    name: Moon Tower
+    iconTower: {fileID: 564453691, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 15
+    countDamage: 0
+    roundDamage: 0
+    name: Sun Tower
+    iconTower: {fileID: -208333869, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 16
+    countDamage: 0
+    roundDamage: 0
+    name: Cum Tower
+    iconTower: {fileID: -1021775666, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 17
+    countDamage: 0
+    roundDamage: 0
+    name: Magnat Tower
+    iconTower: {fileID: -1333858212, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 18
+    countDamage: 0
+    roundDamage: 0
+    name: Rage Tower
+    iconTower: {fileID: 1376178682, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 19
+    countDamage: 0
+    roundDamage: 0
+    name: Light Tower
+    iconTower: {fileID: 21300000, guid: cc4e8fc87c1ce7a43bf29a8811592863, type: 3}
+  - EvolveScript: 20
+    countDamage: 0
+    roundDamage: 0
+    name: Random Tower
+    iconTower: {fileID: -440926492, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 21
+    countDamage: 0
+    roundDamage: 0
+    name: Assasin Tower
+    iconTower: {fileID: -551593284, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 22
+    countDamage: 0
+    roundDamage: 0
+    name: MagnetTower
+    iconTower: {fileID: 21300000, guid: 7d62534087c9c854da8354b5ce39dc6f, type: 3}
+  - EvolveScript: 23
+    countDamage: 0
+    roundDamage: 0
+    name: Wind Tower
+    iconTower: {fileID: 21300000, guid: 0f24cb1ea44ab684dadbaa774636a873, type: 3}
+  - EvolveScript: 26
+    countDamage: 0
+    roundDamage: 0
+    name: Gear Tower
+    iconTower: {fileID: -383383014, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 25
+    countDamage: 0
+    roundDamage: 0
+    name: Blockhead
+    iconTower: {fileID: 1795411888, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  - EvolveScript: 24
+    countDamage: 0
+    roundDamage: 0
+    name: Storm Tower
+    iconTower: {fileID: -2016346303, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2798,6 +3251,21 @@ MonoBehaviour:
   - {fileID: 1137181865}
   - {fileID: 1384834939}
   rollingEvolve: 0
+--- !u!114 &519420038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bd62ea3b8d0f44f8f9b6d39521bee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leaderboardText: {fileID: 566610334}
+  leaderboardItemPrefab: {fileID: 6692758145127660458, guid: 5fb75f2e105aa204aab4938dc30649d0, type: 3}
+  leaderboardContainer: {fileID: 288287166}
 --- !u!1 &550865161
 GameObject:
   m_ObjectHideFlags: 0
@@ -3001,6 +3469,141 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &566610332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 566610333}
+  - component: {fileID: 566610335}
+  - component: {fileID: 566610334}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &566610333
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566610332}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1822057826}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -25}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &566610334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566610332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Top Damage
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &566610335
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566610332}
+  m_CullTransparentMesh: 1
 --- !u!1 &579124449
 GameObject:
   m_ObjectHideFlags: 0
@@ -3168,6 +3771,164 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &603255297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603255301}
+  - component: {fileID: 603255300}
+  - component: {fileID: 603255299}
+  - component: {fileID: 603255298}
+  m_Layer: 5
+  m_Name: Button (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &603255298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603255297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 603255299}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 976402068}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 603255297}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 358995185}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &603255299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603255297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 20d3cde4c942d91458b930d438a7d52a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &603255300
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603255297}
+  m_CullTransparentMesh: 1
+--- !u!224 &603255301
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603255297}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1375264087}
+  m_Father: {fileID: 1097527229}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 28, y: -0.00001812}
+  m_SizeDelta: {x: 46, y: 46}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &745523359
 GameObject:
   m_ObjectHideFlags: 0
@@ -4925,6 +5686,114 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &976402068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 976402069}
+  - component: {fileID: 976402073}
+  - component: {fileID: 976402072}
+  - component: {fileID: 976402074}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &976402069
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976402068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 288287166}
+  m_Father: {fileID: 1822057826}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 649.9999, y: 0}
+  m_SizeDelta: {x: -1300.0001, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &976402072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976402068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &976402073
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976402068}
+  m_CullTransparentMesh: 1
+--- !u!114 &976402074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976402068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 288287166}
+  m_Horizontal: 0
+  m_Vertical: 1
+  m_MovementType: 1
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 1
+  m_Viewport: {fileID: 976402069}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 0}
+  m_HorizontalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 0
+  m_HorizontalScrollbarSpacing: 0
+  m_VerticalScrollbarSpacing: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &988490562
 GameObject:
   m_ObjectHideFlags: 0
@@ -5308,6 +6177,8 @@ RectTransform:
   - {fileID: 2080425768}
   - {fileID: 23817117}
   - {fileID: 433882780}
+  - {fileID: 603255301}
+  - {fileID: 358995186}
   m_Father: {fileID: 1822057826}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6414,6 +7285,86 @@ Transform:
   m_Father: {fileID: 1822057826}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1375264086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1375264087}
+  - component: {fileID: 1375264089}
+  - component: {fileID: 1375264088}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1375264087
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375264086}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 603255301}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1375264088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375264086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0423\u0440\u043E\u043D"
+--- !u!222 &1375264089
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375264086}
+  m_CullTransparentMesh: 1
 --- !u!1 &1384834937
 GameObject:
   m_ObjectHideFlags: 0
@@ -7756,13 +8707,249 @@ MonoBehaviour:
   wavesMass:
   - wavesAll:
     - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 30
+      maxEnemies: 50
+      bossWave: 0
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
+      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 3
+      maxEnemies: 5
+      bossWave: 0
+    - enemyPrefab:
       - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 25
+      maxEnemies: 30
+      bossWave: 0
+  - wavesAll:
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 30
+      maxEnemies: 50
+      bossWave: 0
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
+      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 3
+      maxEnemies: 5
+      bossWave: 0
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 25
+      maxEnemies: 30
+      bossWave: 0
+  - wavesAll:
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 30
+      maxEnemies: 50
+      bossWave: 0
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
+      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 3
+      maxEnemies: 5
+      bossWave: 0
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 25
+      maxEnemies: 30
+      bossWave: 0
+  - wavesAll:
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 30
+      maxEnemies: 50
+      bossWave: 0
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
+      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 3
+      maxEnemies: 5
+      bossWave: 0
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 25
+      maxEnemies: 30
+      bossWave: 0
+  - wavesAll:
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 30
+      maxEnemies: 50
+      bossWave: 1
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
+      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 3
+      maxEnemies: 5
+      bossWave: 1
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      TimeToNext: 5
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 20
+      maxEnemies: 20
+      bossWave: 1
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 505e7d172d7b6c347aef8f1a89f8e675, type: 3}
+      - {fileID: 8437195482915574190, guid: 9e6bfe526d6bc064698c6a4db7138fb5, type: 3}
+      - {fileID: 8437195482915574190, guid: fb761f5bf69bbbb47be0d201ff5b8037, type: 3}
+      - {fileID: 8437195482915574190, guid: 5e3715ff3faeb274db57375d9db6ec46, type: 3}
+      - {fileID: 8437195482915574190, guid: 7a517d2708f929e49b154f2faa90b41a, type: 3}
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
       timeAll: 1
+      maxEnemies: 1
+      bossWave: 0
+  - wavesAll:
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 30
+      maxEnemies: 50
+      bossWave: 0
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
+      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 3
       maxEnemies: 5
+      bossWave: 0
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 25
+      maxEnemies: 30
+      bossWave: 0
+  - wavesAll:
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 30
+      maxEnemies: 50
+      bossWave: 0
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
+      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 3
+      maxEnemies: 5
+      bossWave: 0
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 25
+      maxEnemies: 30
+      bossWave: 0
+  - wavesAll:
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 30
+      maxEnemies: 50
+      bossWave: 0
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
+      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 3
+      maxEnemies: 5
+      bossWave: 0
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 25
+      maxEnemies: 30
+      bossWave: 0
+  - wavesAll:
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 30
+      maxEnemies: 50
       bossWave: 1
     - enemyPrefab:
       - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
@@ -7770,27 +8957,36 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 5
+      timeAll: 3
       maxEnemies: 5
       bossWave: 1
     - enemyPrefab:
       - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 25
+      maxEnemies: 30
+      bossWave: 1
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 5e3715ff3faeb274db57375d9db6ec46, type: 3}
+      - {fileID: 8437195482915574190, guid: 7a517d2708f929e49b154f2faa90b41a, type: 3}
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
       timeAll: 1
-      maxEnemies: 10
+      maxEnemies: 1
       bossWave: 1
   - wavesAll:
     - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
+      timeAll: 30
+      maxEnemies: 50
       bossWave: 0
     - enemyPrefab:
       - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
@@ -7798,7 +8994,7 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 5
+      timeAll: 3
       maxEnemies: 5
       bossWave: 0
     - enemyPrefab:
@@ -7807,18 +9003,18 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
+      timeAll: 25
+      maxEnemies: 30
       bossWave: 0
   - wavesAll:
     - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
+      timeAll: 30
+      maxEnemies: 50
       bossWave: 0
     - enemyPrefab:
       - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
@@ -7826,7 +9022,7 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 5
+      timeAll: 3
       maxEnemies: 5
       bossWave: 0
     - enemyPrefab:
@@ -7835,18 +9031,18 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
+      timeAll: 25
+      maxEnemies: 30
       bossWave: 0
   - wavesAll:
     - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
+      timeAll: 30
+      maxEnemies: 50
       bossWave: 0
     - enemyPrefab:
       - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
@@ -7854,7 +9050,7 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 5
+      timeAll: 3
       maxEnemies: 5
       bossWave: 0
     - enemyPrefab:
@@ -7863,18 +9059,18 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
+      timeAll: 25
+      maxEnemies: 30
       bossWave: 0
   - wavesAll:
     - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
+      timeAll: 30
+      maxEnemies: 50
       bossWave: 0
     - enemyPrefab:
       - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
@@ -7882,7 +9078,7 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 5
+      timeAll: 3
       maxEnemies: 5
       bossWave: 0
     - enemyPrefab:
@@ -7891,18 +9087,18 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
+      timeAll: 25
+      maxEnemies: 30
       bossWave: 0
   - wavesAll:
     - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
+      timeAll: 30
+      maxEnemies: 50
       bossWave: 0
     - enemyPrefab:
       - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
@@ -7910,7 +9106,7 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 5
+      timeAll: 3
       maxEnemies: 5
       bossWave: 0
     - enemyPrefab:
@@ -7919,18 +9115,55 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
+      timeAll: 25
+      maxEnemies: 30
       bossWave: 0
   - wavesAll:
     - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 30
+      maxEnemies: 50
+      bossWave: 1
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
+      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 3
+      maxEnemies: 5
+      bossWave: 1
+    - enemyPrefab:
       - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
+      timeAll: 25
+      maxEnemies: 30
+      bossWave: 1
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: fb761f5bf69bbbb47be0d201ff5b8037, type: 3}
+      - {fileID: 8437195482915574190, guid: 7a517d2708f929e49b154f2faa90b41a, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 1
+      maxEnemies: 1
+      bossWave: 1
+  - wavesAll:
+    - enemyPrefab:
+      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
+      TimeToNext: 1
+      goldWaveGiving: 10
+      healthEnemy: 5
+      timeAll: 30
+      maxEnemies: 50
       bossWave: 0
     - enemyPrefab:
       - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
@@ -7938,7 +9171,7 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 5
+      timeAll: 3
       maxEnemies: 5
       bossWave: 0
     - enemyPrefab:
@@ -7947,18 +9180,18 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
+      timeAll: 25
+      maxEnemies: 30
       bossWave: 0
   - wavesAll:
     - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
+      timeAll: 30
+      maxEnemies: 50
       bossWave: 0
     - enemyPrefab:
       - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
@@ -7966,7 +9199,7 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 5
+      timeAll: 3
       maxEnemies: 5
       bossWave: 0
     - enemyPrefab:
@@ -7975,18 +9208,18 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
+      timeAll: 25
+      maxEnemies: 30
       bossWave: 0
   - wavesAll:
     - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
+      timeAll: 30
+      maxEnemies: 50
       bossWave: 0
     - enemyPrefab:
       - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
@@ -7994,7 +9227,7 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 5
+      timeAll: 3
       maxEnemies: 5
       bossWave: 0
     - enemyPrefab:
@@ -8003,18 +9236,18 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
+      timeAll: 25
+      maxEnemies: 30
       bossWave: 0
   - wavesAll:
     - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
+      timeAll: 30
+      maxEnemies: 50
       bossWave: 0
     - enemyPrefab:
       - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
@@ -8022,7 +9255,7 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 5
+      timeAll: 3
       maxEnemies: 5
       bossWave: 0
     - enemyPrefab:
@@ -8031,18 +9264,18 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
+      timeAll: 25
+      maxEnemies: 30
       bossWave: 0
   - wavesAll:
     - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
+      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
+      timeAll: 30
+      maxEnemies: 50
       bossWave: 0
     - enemyPrefab:
       - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
@@ -8050,7 +9283,7 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 5
+      timeAll: 3
       maxEnemies: 5
       bossWave: 0
     - enemyPrefab:
@@ -8059,260 +9292,8 @@ MonoBehaviour:
       TimeToNext: 1
       goldWaveGiving: 10
       healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
-      bossWave: 0
-  - wavesAll:
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
-      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 5
-      maxEnemies: 5
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
-      bossWave: 0
-  - wavesAll:
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
-      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 5
-      maxEnemies: 5
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
-      bossWave: 0
-  - wavesAll:
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
-      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 5
-      maxEnemies: 5
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
-      bossWave: 0
-  - wavesAll:
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
-      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 5
-      maxEnemies: 5
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
-      bossWave: 0
-  - wavesAll:
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
-      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 5
-      maxEnemies: 5
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
-      bossWave: 0
-  - wavesAll:
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
-      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 5
-      maxEnemies: 5
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
-      bossWave: 0
-  - wavesAll:
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
-      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 5
-      maxEnemies: 5
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
-      bossWave: 0
-  - wavesAll:
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
-      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 5
-      maxEnemies: 5
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
-      bossWave: 0
-  - wavesAll:
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 40
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 585f028118218eb4daaeba8edb55010f, type: 3}
-      - {fileID: 8437195482915574190, guid: 2edc1ca533572fa4fac9a74d7b71a87e, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 5
-      maxEnemies: 5
-      bossWave: 0
-    - enemyPrefab:
-      - {fileID: 8437195482915574190, guid: 70530debd72588a46bec323326dfa881, type: 3}
-      - {fileID: 8437195482915574190, guid: 6f2edc549f926f84c88fa672ea0aee9f, type: 3}
-      TimeToNext: 1
-      goldWaveGiving: 10
-      healthEnemy: 5
-      timeAll: 20
-      maxEnemies: 60
+      timeAll: 25
+      maxEnemies: 30
       bossWave: 0
   timeBetweenWaves: 5
   gameManager: {fileID: 519420034}
@@ -8927,6 +9908,8 @@ RectTransform:
   - {fileID: 1800655567}
   - {fileID: 1309151602}
   - {fileID: 1107364145}
+  - {fileID: 976402069}
+  - {fileID: 566610333}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

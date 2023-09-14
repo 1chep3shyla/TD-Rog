@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2442680595166531169}
   - component: {fileID: 8064258519145239989}
   m_Layer: 0
-  m_Name: bull_random
+  m_Name: bull wind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 5290d53e001ef3f4fa7ba1cb4f2007dd, type: 3}
-  m_Color: {r: 0.8632809, g: 0.2747864, b: 0.8962264, a: 1}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 0.31394625, g: 0.7830189, b: 0.59568316, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96db44ab770ff35469899f28937f78e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 20
+  type: 23
   speed: 10
   damage: 10
   hitEffectPrefab: {fileID: 1463427103113876071, guid: 6a379b7b289083d4dbcb3da75e6aad83, type: 3}

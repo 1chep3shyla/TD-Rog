@@ -65,13 +65,15 @@ public class Spawner : MonoBehaviour
             currentWaveIndex++;
         }
         yield return new WaitUntil(() => gameManager.enemiesAll.Count == 0);
+        gameManager.ClearEffects();
         Debug.Log("Врагов нет");
+        yield return new WaitForSeconds(1f);
         if (wavesMass[currentWaveIndexMain].wavesAll[currentWaveIndex-1].bossWave == true)
         {
             Debug.Log("Босс волна");
             gameManager.gameObject.GetComponent<PerkRoll>().RollPerkEvolve();
-            yield return new WaitForSeconds(0.5f);
             yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
+            yield return new WaitForSeconds(0.5f);
             gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve = true;
             gameManager.gameObject.GetComponent<PerkRoll>().RollPerk();
         }
@@ -81,6 +83,7 @@ public class Spawner : MonoBehaviour
             gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve = true;
             gameManager.gameObject.GetComponent<PerkRoll>().RollPerk();
         }
+        Time.timeScale = 0;
         yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
         if (currentWaveIndex >= wavesMass[currentWaveIndexMain].wavesAll.Length)
         {
@@ -88,6 +91,8 @@ public class Spawner : MonoBehaviour
             currentWaveIndex = 0;
             currentWave = wavesMass[currentWaveIndexMain].wavesAll;
         }
+        gameManager.ClearRounds();
+        Time.timeScale = 1f;
         yield return new WaitForSeconds(10f);
         works = false;
         yield return null;
