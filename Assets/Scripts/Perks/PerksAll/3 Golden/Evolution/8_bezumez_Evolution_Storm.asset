@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexCur: 8
   name: Rage Evolution
-  disc: 
+  disc: Evolves a Random Tower into a Rage Tower
   sprite: {fileID: 1641977474, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

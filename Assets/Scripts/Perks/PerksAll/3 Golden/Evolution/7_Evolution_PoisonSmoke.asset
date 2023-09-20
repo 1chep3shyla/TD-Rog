@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexCur: 7
   name: Poison Smoke Evolution
-  disc: 
+  disc: Evolves a Poison Tower into a Poison Smoke Tower
   sprite: {fileID: 464597178, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

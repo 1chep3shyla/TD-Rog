@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexCur: 4
   name: Boom Evolution
-  disc: 
+  disc: Evolves a Fire Tower into a Boom Tower
   sprite: {fileID: -1318246313, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

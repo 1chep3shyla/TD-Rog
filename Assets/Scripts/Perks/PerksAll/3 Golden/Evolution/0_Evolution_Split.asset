@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexCur: 0
   name: Split Evolution
-  disc: 
+  disc: Evolves a Default Tower into a Split Tower
   sprite: {fileID: 2084314889, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexCur: 14
   name: Gladiator Evolution
-  disc: 
+  disc: Evolves an Ancient Tower into a Gladiator Tower
   sprite: {fileID: -313071445, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

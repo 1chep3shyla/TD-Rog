@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 1711774580, guid: cdddab490e244224da716e7e9cd8a9ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -108,8 +108,12 @@ MonoBehaviour:
   damage: 0
   curDamage: 0
   LVL: 0
+  critChance: 0
   towerDataCur: {fileID: 11400000, guid: abe4bd505d570b54ab71e8afec433489, type: 2}
   cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
+  cursorDelete: {fileID: 0}
+  Imposter: 0
+  Muted: 0
 --- !u!114 &8991686775615759693
 MonoBehaviour:
   m_ObjectHideFlags: 0

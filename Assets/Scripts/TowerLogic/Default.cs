@@ -342,15 +342,15 @@ public class Default : MonoBehaviour
     }
     void AttackLight()
     {
-        if (attackCooldown <= 0f && enemiesInRange.Count >Chain)
+        if (attackCooldown <= 0f && enemiesInRange.Count >maxTargets)
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
             LightBull bulletScript = bullet.GetComponent<LightBull>();
-            bulletScript.targetEnemies = new Transform[Chain];
+            bulletScript.targetEnemies = new Transform[maxTargets];
             bulletScript.damage = damage;
-            for (int i = 0; i < Chain; i++)
+            for (int i = 0; i < maxTargets; i++)
             {
-                if (enemiesInRange.Count >= Chain)
+                if (enemiesInRange.Count >= maxTargets)
                 {
                     bulletScript.targetEnemies[i] = enemiesInRange[i];
 

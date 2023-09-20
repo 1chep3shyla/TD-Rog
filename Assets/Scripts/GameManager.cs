@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
@@ -24,7 +25,10 @@ public class GameManager : MonoBehaviour
     public float[] buff; // 0 - global damage, 1- ice buff, 2 - fire damage, 3 - poison, 4 - moneyMine, 5 - AttackSpeed, 6 - moneyThief+Enemy, 7 - crit DMG, 8 - crit Chance
     public Evolve[] allEvolution;
     public DMGTower[] allTowerDMG;
-    
+    public ICharSet charData;
+    public GameObject[] states;
+    public Tilemap[] maps;
+
     void Update()
     {
         healthCount.text = Health.ToString("");
@@ -44,6 +48,10 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+        charData = GameBack.Instance.charData;
+        charData.SetData();
+        states[GameBack.Instance.indexState].SetActive(true);
+        gameObject.GetComponent<Rolling>().tilemap = maps[GameBack.Instance.indexState];
     }
 
     public int Wave

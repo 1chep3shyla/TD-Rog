@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
 
         }
 
-        GameManager.Instance.curWave = currentWaveIndexMain +1;
+        GameManager.Instance.curWave = currentWaveIndexMain + 1;
     }
 
     private IEnumerator StartWave()
@@ -68,7 +68,7 @@ public class Spawner : MonoBehaviour
         gameManager.ClearEffects();
         Debug.Log("Врагов нет");
         yield return new WaitForSeconds(1f);
-        if (wavesMass[currentWaveIndexMain].wavesAll[currentWaveIndex-1].bossWave == true)
+        if (wavesMass[currentWaveIndexMain].wavesAll[currentWaveIndex - 1].bossWave == true)
         {
             Debug.Log("Босс волна");
             gameManager.gameObject.GetComponent<PerkRoll>().RollPerkEvolve();
@@ -93,7 +93,7 @@ public class Spawner : MonoBehaviour
         }
         gameManager.ClearRounds();
         Time.timeScale = 1f;
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(6f);
         works = false;
         yield return null;
     }
@@ -104,30 +104,72 @@ public class Spawner : MonoBehaviour
         GameManager.Instance.AddEnemyToList(newEnemy);
         newEnemy.GetComponent<EnemyMoving>().waypoints = waypoints;
         newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
-        newEnemy.GetComponent<Enemy>().maxHealth = newEnemy.GetComponent<Enemy>().maxHealth + (newEnemy.GetComponent<Enemy>().maxHealth*(currentWaveIndexMain/5));
+
+        GameBack.Instance.curFormula = SubstituteVariables(GameBack.Instance.curFormula, newEnemy.GetComponent<Enemy>().maxHealth, currentWaveIndexMain);
+
+        float result = EvaluateFormula(GameBack.Instance.curFormula);
+
+        Debug.Log($"Result: {result}");
+        newEnemy.GetComponent<Enemy>().maxHealth = (int)result;
+        newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
         if (currentWaveIndexMain <= 10)
         {
-            newEnemy.GetComponent<Enemy>().maxHealth = newEnemy.GetComponent<Enemy>().maxHealth + (newEnemy.GetComponent<Enemy>().maxHealth * (currentWaveIndexMain / 5));
-            newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
             newEnemy.GetComponent<Enemy>().goldGive = newEnemy.GetComponent<Enemy>().goldGive + (2 * currentWaveIndexMain);
         }
         else if (currentWaveIndexMain > 10 && currentWaveIndexMain <= 20)
         {
-            newEnemy.GetComponent<Enemy>().maxHealth = newEnemy.GetComponent<Enemy>().maxHealth + (newEnemy.GetComponent<Enemy>().maxHealth * (currentWaveIndexMain / 5 * 5));
-            newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
             newEnemy.GetComponent<Enemy>().goldGive = (int)(newEnemy.GetComponent<Enemy>().goldGive * Math.Pow(1.137f, currentWaveIndexMain - 10));
         }
         else
         {
-            newEnemy.GetComponent<Enemy>().maxHealth = newEnemy.GetComponent<Enemy>().maxHealth + (newEnemy.GetComponent<Enemy>().maxHealth * (currentWaveIndexMain / 5*15));
-            newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
             newEnemy.GetComponent<Enemy>().goldGive = (int)(newEnemy.GetComponent<Enemy>().goldGive * Math.Pow(1.137f, currentWaveIndexMain - 20));
         }
     }
 
 
+    string SubstituteVariables(string formula, int hpEnemy, int curWave)
+    {
+        formula = formula.Replace("hp", hpEnemy.ToString());
+        formula = formula.Replace("curWave", curWave+1.ToString());
+        return formula;
+    }
 
+    float EvaluateFormula(string formula)
+    {
+        try
+        {
+            Debug.Log($"Formula before evaluation: {formula}");
+            object evalResult = eval(formula);
+            Debug.Log($"Evaluated result: {evalResult}");
+
+            if (evalResult != null)
+            {
+                return Convert.ToSingle(evalResult);
+            }
+            else
+            {
+                return 0.0f;
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("Error evaluating formula: " + ex.Message);
+            return 0.0f; // Handle the error as needed
+        }
+    }
+
+
+    object eval(string expression)
+    {
+        System.Data.DataTable table = new System.Data.DataTable();
+        table.Columns.Add("expression", typeof(string), expression);
+        System.Data.DataRow row = table.NewRow();
+        table.Rows.Add(row);
+        return row["expression"];
+    }
 }
+
+
 
 [System.Serializable]
 public class Wave

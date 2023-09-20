@@ -75,6 +75,7 @@ public class Rolling : MonoBehaviour
                 if (tilemap.HasTile(cellPosition))
                 {
                     Clicking(mousePosition, cellPosition, curIndex);
+                    Debug.Log("Попал По коллайдеру");
                 }
             }
         }

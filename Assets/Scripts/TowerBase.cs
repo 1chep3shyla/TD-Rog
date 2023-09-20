@@ -190,12 +190,7 @@ public class TowerBase : MonoBehaviour
     public void JustUp()
     {
         UpHave uh = curGM.GetComponent<UpHave>();
-        for (int o = 0; o < rollBase.slots.Length; o++)
-        {
-            rollBase.butChoose[o].interactable = false;
-            rollBase.butChoose[o].gameObject.SetActive(false);
-            rollBase.pressSpace.SetActive(true);
-        }
+
         Debug.Log("Апнул просто");
         curGM.GetComponent<UpHave>().LVL++;
         rollBase.AddTower(curGM.GetComponent<SpriteRenderer>());

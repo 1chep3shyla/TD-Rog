@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexCur: 11
   name: Assasin Evolution
-  disc: 
+  disc: Evolves a Thief Tower into a Assasin Tower
   sprite: {fileID: -1008612840, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

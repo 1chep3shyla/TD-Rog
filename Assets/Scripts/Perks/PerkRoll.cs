@@ -21,7 +21,7 @@ public class PerkRoll : MonoBehaviour
 
     void Start()
     {
-        RollPerk();
+        StartCoroutine(StartGame());
     }
     public void ChoosePerk(int index)
     {
@@ -103,6 +103,14 @@ public class PerkRoll : MonoBehaviour
         }
 
     }
-
+    private IEnumerator StartGame()
+    {
+        yield return new WaitForSeconds(0.5f);
+        rollingEvolve = true;
+        RollPerk();
+        Time.timeScale = 0;
+        yield return new WaitUntil(() => rollingEvolve == false);
+        Time.timeScale = 1f;
+    }
 }
 

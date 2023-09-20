@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 13_Evolution_Bat
   m_EditorClassIdentifier: 
   indexCur: 13
-  name: Bat Evolution
-  disc: 
+  name: Magnet Evolution
+  disc: Evolves an Ancient Tower into a Magnet Tower
   sprite: {fileID: 2140273731, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

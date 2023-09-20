@@ -1,0 +1,3 @@
+State Name	Formula
+State One	(hp+(hp*curWave/100))
+State Two	(hp+(hp*curWave/100))*0.5

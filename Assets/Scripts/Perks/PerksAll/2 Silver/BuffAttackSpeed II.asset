@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffGlobal: 30
   name: Attack Speed Buff II
-  disc: 
+  disc: Increase Attack Speed by
   indexOfBuff: 5
   sprite: {fileID: -1942210204, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

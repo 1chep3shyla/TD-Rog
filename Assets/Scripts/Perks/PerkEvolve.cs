@@ -6,6 +6,7 @@ public class PerkEvolve : ScriptableObject, IPerk
 {
     public int indexCur;
     public string name;
+    [TextArea]
     public string disc;
     public Sprite sprite;
     public void ApplyPerk()
