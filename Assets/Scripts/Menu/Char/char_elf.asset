@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexEvolve: 1
   buffs:
-  - 5
-  - 0
-  - 0
-  - 0
-  - 0
-  - 5
-  - 0
-  - 0
-  - 0
-  name: Elf Archer
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  name: Elven Sharpshooter

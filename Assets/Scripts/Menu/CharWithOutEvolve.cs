@@ -27,4 +27,8 @@ public class CharWithOutEvolve : ScriptableObject, ICharSet
     {
         return name;
     }
+    public void SetDataChar(int index, float count)
+    {
+        buffs[index] = count;
+    }
 }

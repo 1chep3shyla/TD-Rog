@@ -11,6 +11,7 @@ public interface ICharSet : IChar
     public void SetData(); // Задать значение для игры
     public float[] GetStat();
     public string GetStatName();
+    public void SetDataChar(int index, float count);
 }
 [CreateAssetMenu(fileName = "NewChar", menuName = "Character/Char")]
 public class Character : ScriptableObject, ICharSet
@@ -37,6 +38,10 @@ public class Character : ScriptableObject, ICharSet
     public string GetStatName()
     {
         return name;
+    }
+    public void SetDataChar(int index, float count)
+    {
+        buffs[index] = count;
     }
 }
 
