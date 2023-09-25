@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da1c6c5330f00714cb17bd065e7a6a60, type: 3}
-  m_Name: char_merch
+  m_Name: char_portal
   m_EditorClassIdentifier: 
-  indexEvolve: -10
+  indexEvolve: 9
   buffs:
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  name: Wealthy Tycoon
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 15
+  - 0
+  - 0
+  - 0
+  name: Warp Navigator
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}

@@ -23,3 +23,15 @@ MonoBehaviour:
   - 0
   - 0
   name: Great Knight
+  towerPull:
+  - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
+  - {fileID: 2056256240725061661, guid: f76df1e501a76354c91f03aa18286075, type: 3}
+  - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}
+  - {fileID: 2056256240725061661, guid: f6d48dcbb854b3d4e8d4e7e4e0916b08, type: 3}
+  - {fileID: 2056256240725061661, guid: 69c3fdbe6d22e4a439aa781b30203258, type: 3}
+  - {fileID: 2056256240725061661, guid: a17ae2e7a25c3ec47b96b6d6efe03078, type: 3}
+  - {fileID: 2056256240725061661, guid: 5f57e619bcce08a4ca5f532989e1746f, type: 3}
+  - {fileID: 2056256240725061661, guid: 8ae1660fe55a5d2429431dddde259189, type: 3}
+  - {fileID: 2056256240725061661, guid: 0bac3d26016f6b149a5067341213ac9d, type: 3}
+  - {fileID: 2056256240725061661, guid: 0f848e067fec08f478ddd98847e4478a, type: 3}
+  - {fileID: 2056256240725061661, guid: bb8ad514de2f24f4aa5db5a88e1276bc, type: 3}

@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 6
+  iconCard: {fileID: 628568414, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
   UpVersion: {fileID: 2056256240725061661, guid: fb5f3d87996dc094c96bc67f282c91f4, type: 3}
   baseOf: {fileID: 0}
   name: Random Tower

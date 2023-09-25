@@ -19,6 +19,7 @@ public class Character : ScriptableObject, ICharSet
     public int indexEvolve; // 0 - split, 1 - elf, 2 - blizzard, 3 - Oil, 4 - Boom, 5 - divine, 6 - storm, 7 - poisonSmoke, 8 - rage, 9 - portal, 10 - gear, 11 - assasin, 12 - cannon, 13 - magnet, 14 - gladiator
     public float[] buffs;
     public string name;
+    public GameObject[] towerPull;
     public void ApplyBuff()
     {
         GameBack.Instance.charData = this;
@@ -29,7 +30,13 @@ public class Character : ScriptableObject, ICharSet
         {
             GameManager.Instance.buff[i] = buffs[i];
         }
-        GameManager.Instance.allEvolution[indexEvolve].work = true;
+        if (indexEvolve != -10)
+        {
+            GameManager.Instance.allEvolution[indexEvolve].work = true;
+        }
+        GameManager.Instance.gameObject.GetComponent<Rolling>().towers = towerPull;
+        GameManager.Instance.gameObject.GetComponent<Rolling>().SetSprite();
+        GameManager.Instance.gameObject.GetComponent<Rolling>().Roll();
     }
     public float[] GetStat()
     {

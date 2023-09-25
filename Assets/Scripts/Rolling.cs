@@ -30,11 +30,16 @@ public class Rolling : MonoBehaviour
     public bool choosing = false;
     public bool draging;
 
-    void Start()
-    {
-        Roll();
-    }
 
+
+    public void SetSprite()
+    {
+        imageidTower = new Sprite[towers.Length];
+        for (int i = 0; i < towers.Length; i++)
+        {
+            imageidTower[i] = towers[i].GetComponent<UpHave>().iconCard;
+        }
+    }
     void Update()
     {
         costTowerText.text = costTower.ToString("");

@@ -8,6 +8,7 @@ public class CharWithOutEvolve : ScriptableObject, ICharSet
 
     public float[] buffs;
     public string name;
+    public GameObject[] towerPull;
     public void ApplyBuff()
     {
         GameBack.Instance.charData = this;

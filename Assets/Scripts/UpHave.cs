@@ -5,6 +5,7 @@ using UnityEngine;
 public class UpHave : MonoBehaviour
 {
     public int id;
+    public Sprite iconCard;
     public GameObject UpVersion;
     public TowerBase baseOf;
     public string name;
