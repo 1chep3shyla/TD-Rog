@@ -6,7 +6,8 @@ public enum EnemyType
 {
     boss,
     elite,
-    defaultEnemy
+    defaultEnemy,
+    flying
 }
 
 public class EnemyMoving : MonoBehaviour
@@ -41,6 +42,10 @@ public class EnemyMoving : MonoBehaviour
 
     void Update()
     {
+        if (typeEnemy == EnemyType.flying)
+        {
+            currentWaypoint = waypoints.Length - 1;
+        }
         if (!isStunned)
         {
             float distance = Vector3.Distance(transform.position, waypoints[currentWaypoint].transform.position);
@@ -87,23 +92,33 @@ public class EnemyMoving : MonoBehaviour
     }
     public void Slow(float time, float slowPower)
     {
+        float powering = maxSpeed - (maxSpeed * (slowPower + (GameManager.Instance.buff[1] / 100)));
+        if (powering < speed && powering > 0f)
+        {
+            StartCoroutine(SlowCoroutine(time, slowPower,powering));
+        }
+    }
 
-        float powering = maxSpeed - (maxSpeed * ((slowPower + GameManager.Instance.buff[1])/100));
+    private IEnumerator SlowCoroutine(float time, float slowPower, float powering)
+    {
         if (powering < speed && powering > 0f)
         {
             speed = powering;
             slowTimer = time;
         }
-        else if(powering < speed && powering < 0f)
+        else if (powering < speed && powering < 0f)
         {
             speed = 0.1f;
             slowTimer = time;
         }
-        else if( powering > speed)
+        else if (powering > speed)
         {
             slowTimer = time;
         }
         isSlowed = true;
+
+        yield return new WaitForSeconds(time);
+
     }
 
     public void Stun(float duration)

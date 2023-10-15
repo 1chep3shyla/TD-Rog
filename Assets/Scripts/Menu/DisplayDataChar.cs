@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Runtime.InteropServices;
 
 public class DisplayDataChar : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class DisplayDataChar : MonoBehaviour
         // Format the buffs with tabulation
         string formattedBuffs = string.Join("\t", buffs);
 
+        charSet.ApplyBuff();
         // Display the formatted buffs in the TextMeshPro component
         buffText.text = formattedBuffs;
         nameText.text = nameChar;

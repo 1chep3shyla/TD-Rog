@@ -7,5 +7,6 @@ public class Achievement : ScriptableObject
     public string id;
     public string title;
     public string description;
+    public Sprite Icon;
     public bool isUnlocked;
 }

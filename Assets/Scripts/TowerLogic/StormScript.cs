@@ -10,7 +10,6 @@ public class StormScript : MonoBehaviour
 
     void Update()
     {
-        enemiesInRange.Clear(); // Clear the list each frame before populating it
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, freezeRadius);
         foreach (Collider2D collider in colliders)

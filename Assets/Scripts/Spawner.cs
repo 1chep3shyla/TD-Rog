@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 public class Spawner : MonoBehaviour
 {
-    public GameObject[] waypoints;
+    public WayScript[] waypoints;
 
     public WaveMass[] wavesMass;
     public int timeBetweenWaves = 5;
@@ -100,29 +100,32 @@ public class Spawner : MonoBehaviour
 
     private void SpawnEnemy(int RandomEnemy)
     {
-        GameObject newEnemy = Instantiate(currentWave[currentWaveIndex].enemyPrefab[RandomEnemy], waypoints[0].transform.position, Quaternion.identity);
-        GameManager.Instance.AddEnemyToList(newEnemy);
-        newEnemy.GetComponent<EnemyMoving>().waypoints = waypoints;
-        newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
-
-        GameBack.Instance.curFormula = SubstituteVariables(GameBack.Instance.curFormula, newEnemy.GetComponent<Enemy>().maxHealth, currentWaveIndexMain);
-
-        float result = EvaluateFormula(GameBack.Instance.curFormula);
-
-        Debug.Log($"Result: {result}");
-        newEnemy.GetComponent<Enemy>().maxHealth = (int)result;
-        newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
-        if (currentWaveIndexMain <= 10)
+        for (int i = 0; i < currentWave[currentWaveIndex].curWave; i++)
         {
-            newEnemy.GetComponent<Enemy>().goldGive = newEnemy.GetComponent<Enemy>().goldGive + (2 * currentWaveIndexMain);
-        }
-        else if (currentWaveIndexMain > 10 && currentWaveIndexMain <= 20)
-        {
-            newEnemy.GetComponent<Enemy>().goldGive = (int)(newEnemy.GetComponent<Enemy>().goldGive * Math.Pow(1.137f, currentWaveIndexMain - 10));
-        }
-        else
-        {
-            newEnemy.GetComponent<Enemy>().goldGive = (int)(newEnemy.GetComponent<Enemy>().goldGive * Math.Pow(1.137f, currentWaveIndexMain - 20));
+            GameObject newEnemy = Instantiate(currentWave[currentWaveIndex].enemyPrefab[RandomEnemy], waypoints[i].waypoints[0].transform.position, Quaternion.identity);
+            GameManager.Instance.AddEnemyToList(newEnemy);
+            newEnemy.GetComponent<EnemyMoving>().waypoints = waypoints[i].waypoints;
+            newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+
+            GameBack.Instance.curFormula = SubstituteVariables(GameBack.Instance.curFormula, newEnemy.GetComponent<Enemy>().maxHealth, currentWaveIndexMain);
+
+            float result = EvaluateFormula(GameBack.Instance.curFormula);
+
+            Debug.Log($"Result: {result}");
+            newEnemy.GetComponent<Enemy>().maxHealth = (int)result;
+            newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+            if (currentWaveIndexMain <= 10)
+            {
+                newEnemy.GetComponent<Enemy>().goldGive = newEnemy.GetComponent<Enemy>().goldGive + (2 * currentWaveIndexMain);
+            }
+            else if (currentWaveIndexMain > 10 && currentWaveIndexMain <= 20)
+            {
+                newEnemy.GetComponent<Enemy>().goldGive = (int)(newEnemy.GetComponent<Enemy>().goldGive * Math.Pow(1.137f, currentWaveIndexMain - 10));
+            }
+            else
+            {
+                newEnemy.GetComponent<Enemy>().goldGive = (int)(newEnemy.GetComponent<Enemy>().goldGive * Math.Pow(1.137f, currentWaveIndexMain - 20));
+            }
         }
     }
 
@@ -181,10 +184,16 @@ public class Wave
     public float timeAll;
     public int maxEnemies = 20;
     public bool bossWave;
+    public int curWave;
 }
 
 [System.Serializable]
 public class WaveMass
 {
     public Wave[] wavesAll;
+}
+[System.Serializable]
+public class WayScript
+{
+    public GameObject[] waypoints;
 }

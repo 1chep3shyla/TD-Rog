@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public ICharSet charData;
     public GameObject[] states;
     public Tilemap[] maps;
+    public Transform goldPos;
 
     void Update()
     {

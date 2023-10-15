@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public bool inFire;
     public bool inPoison;
     public GameObject BoomGM;
+    public GameObject goldPrefab;
     private bool isStunned;
     public bool cursedBoom;
     private int damageBoom;
@@ -137,6 +138,8 @@ public class Enemy : MonoBehaviour
         GameManager.Instance.StealMoney(goldGive);
         Destroy(gameObject);
         GameManager.Instance.enemyHave -= 1;
+        GameObject gold = Instantiate(goldPrefab, transform.position, Quaternion.identity);
+        gold.GetComponent<GoldMoving>().gold = goldGive;
         par.Play();
     }
     public void SetOnFire(float duration, int damage)
@@ -180,7 +183,7 @@ public class Enemy : MonoBehaviour
 
         inPoison = true; // Set the flag to indicate poisoning
 
-        gameObject.GetComponent<EnemyMoving>().Slow(1f, 0.1f);
+        gameObject.GetComponent<EnemyMoving>().Slow(3f, 0.15f);
         while (dur > 0)
         {
             int addDMG = dmg * (int)(GameManager.Instance.buff[3] / 100);
