@@ -38,6 +38,7 @@ public class EnemyMoving : MonoBehaviour
         {
             damageEnemy = 5;
         }
+        speed = maxSpeed;
     }
 
     void Update()
@@ -92,8 +93,8 @@ public class EnemyMoving : MonoBehaviour
     }
     public void Slow(float time, float slowPower)
     {
-        float powering = maxSpeed - (maxSpeed * (slowPower + (GameManager.Instance.buff[1] / 100)));
-        if (powering < speed && powering > 0f)
+        float powering = maxSpeed - (maxSpeed * ((slowPower + GameManager.Instance.buff[1]) / 100));
+        if (powering < speed)
         {
             StartCoroutine(SlowCoroutine(time, slowPower,powering));
         }

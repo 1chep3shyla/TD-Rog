@@ -119,4 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowPower: 0
-  freezeRadius: 1.5
+  freezeRadius: 1.11
+  enemiesInRange: []

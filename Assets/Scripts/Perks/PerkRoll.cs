@@ -105,7 +105,7 @@ public class PerkRoll : MonoBehaviour
     }
     private IEnumerator StartGame()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3f);
         rollingEvolve = true;
         RollPerk();
         Time.timeScale = 0;

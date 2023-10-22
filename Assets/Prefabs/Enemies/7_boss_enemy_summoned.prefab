@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393983694726750439}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.067, y: 0.315, z: 0}
+  m_LocalPosition: {x: 0.022, y: -0.059, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -226,8 +226,8 @@ ParticleSystem:
       maxColor: {r: 0.5943396, g: 0.21026166, b: 0.21026166, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.4728333, g: 0.9607843, b: 0.34117648, a: 1}
-        key1: {r: 0.12526368, g: 0.49019608, b: 0.015686277, a: 1}
+        key0: {r: 0.7830189, g: 0.7353924, b: 0.13665895, a: 1}
+        key1: {r: 1, g: 0.8549223, b: 0, a: 1}
         key2: {r: 0.6698113, g: 0.11690103, b: 0.11690103, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1482,7 +1482,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: 5290d53e001ef3f4fa7ba1cb4f2007dd, type: 3}
+    - sprite: {fileID: 21300000, guid: 6d8159c5bb0897a44a93b196d340ff4e, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4781,7 +4781,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0

@@ -105,6 +105,7 @@ public class Enemy : MonoBehaviour
                 }
             }
             GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
+            par.Play();
             dmgText.GetComponent<TMP_Text>().text = "" + dmg;
         }
         
