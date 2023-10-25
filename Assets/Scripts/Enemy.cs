@@ -24,10 +24,32 @@ public class Enemy : MonoBehaviour
     public float[] resistance; // 0 - ice, 1 - fire, 2 - poison, 3 - stan
     private SpriteRenderer SR;
     public TypeBull damageType;
+    public EnemyMoving EM;
     void Start()
     {
         health = maxHealth;
         SR = gameObject.GetComponent<SpriteRenderer>();
+        EM = gameObject.GetComponent<EnemyMoving>();
+         if (EM.typeEnemy == EnemyType.flying)
+        {
+            goldGive = 30;
+        }
+        else if (EM.typeEnemy == EnemyType.elite)
+        {
+            goldGive = 25;
+        }
+        else if (EM.typeEnemy == EnemyType.fast)
+        {
+            goldGive = 25;
+        }
+        else if (EM.typeEnemy == EnemyType.reduction)
+        {
+            goldGive = 30;
+        }
+        else if (EM.typeEnemy == EnemyType.defaultEnemy)
+        {
+            goldGive = 20;
+        }
     }
     void Update()
     {

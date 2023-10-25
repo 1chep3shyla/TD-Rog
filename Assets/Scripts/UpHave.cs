@@ -15,8 +15,10 @@ public class UpHave : MonoBehaviour
     public int curDamage;
     public int LVL;
     public int critChance;
+    public int critChanceCur;
     private bool isBoostedAttack = false;
     private bool isBoosterSpeed;
+    private bool isBoosterCrit;
     private float timeOff;
     public DataTower towerDataCur;
     public GameObject cursor;
@@ -28,13 +30,14 @@ public class UpHave : MonoBehaviour
     {
         damage = (int)towerDataCur.lvlData[LVL, 1];
         attackSpeed = towerDataCur.lvlData[LVL, 3];
-        critChance = (int)towerDataCur.lvlData[LVL, 18];
+        critChance = (int)(towerDataCur.lvlData[LVL, 18] + GameManager.Instance.buff[8]);
         timeOff += Time.deltaTime;
         if (timeOff >= 0.5f)
         {
             timeOff = 0;
             RemoveDamageBoost();
             RemoveSpeedBoost();
+            RemoveCritBoost();
         }
     }
     public void Clear()
@@ -107,5 +110,17 @@ public class UpHave : MonoBehaviour
     {
         isBoosterSpeed = false;
         curAttackSpeed = attackSpeed;
+    }
+
+    public void ApplyCritBoost(float upSpeed)
+    {
+        isBoosterCrit = true;
+        critChanceCur = (int)(critChance + (float)critChance * upSpeed);
+    }
+
+    public void RemoveCritBoost()
+    {
+        isBoosterCrit = true;
+        critChanceCur = critChance;
     }
 }

@@ -7,7 +7,9 @@ public enum EnemyType
     boss,
     elite,
     defaultEnemy,
-    flying
+    flying,
+    fast,
+    reduction
 }
 
 public class EnemyMoving : MonoBehaviour
@@ -26,7 +28,7 @@ public class EnemyMoving : MonoBehaviour
     void Start()
     {
         lastWaypointSwitchTime = Time.time;
-        if (typeEnemy == EnemyType.defaultEnemy)
+        if (typeEnemy == EnemyType.defaultEnemy || typeEnemy == EnemyType.flying || typeEnemy == EnemyType.fast || typeEnemy == EnemyType.reduction)
         {
             damageEnemy = 1;
         }

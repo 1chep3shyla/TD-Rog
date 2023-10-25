@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int Gold;
     public int Health;
     public int maxHealth;
+    public int restoreHeal;
     public SpriteRenderer[] allTower;
     public GameObject needMore;
     public TMP_Text goldCount;
@@ -54,7 +55,17 @@ public class GameManager : MonoBehaviour
         states[GameBack.Instance.indexState].SetActive(true);
         gameObject.GetComponent<Rolling>().tilemap = maps[GameBack.Instance.indexState];
     }
-
+    public void Heal()
+    {
+        if (Health + restoreHeal > maxHealth)
+        {
+            Health = maxHealth;
+        }
+        else
+        {
+            Health += restoreHeal;
+        }
+    }
     public int Wave
     {
         get
@@ -194,6 +205,7 @@ public class GameManager : MonoBehaviour
     }
     public void ClearRounds()
     {
+        Heal();
         for (int i = 0; i < allTowerDMG.Length; i++)
         {
             allTowerDMG[i].roundDamage = 0;

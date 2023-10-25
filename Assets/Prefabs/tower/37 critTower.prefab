@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7348218345031596754}
   - component: {fileID: 3248000793684943396}
   - component: {fileID: 8185705189692929134}
-  - component: {fileID: -538272945515635314}
   - component: {fileID: 1163305568984272733}
+  - component: {fileID: -6661933582048736768}
   m_Layer: 0
   m_Name: 37 critTower
   m_TagString: Tower
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 1547550477, guid: 0694b1d8860288d4ead4c67d301e8d49, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aadb8c17fd172f748a0a3d4a1ef7535b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,35 +99,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa5056f641197342a2b4fc8ef92df08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 28
+  id: 37
+  iconCard: {fileID: 21300000, guid: 2f303e0472d389a47885aa7a699fbf50, type: 3}
   UpVersion: {fileID: 2056256240725061661, guid: 2e9374acb5491e4498d9c7eb83a824b6, type: 3}
   baseOf: {fileID: 0}
-  name: Castle
+  name: Crit Castle
   curAttackSpeed: 0
   attackSpeed: 0
   damage: 0
   curDamage: 0
   LVL: 0
   critChance: 0
-  towerDataCur: {fileID: 11400000, guid: ccc3af65019efa34e9c2d29d68a49e9a, type: 2}
+  critChanceCur: 0
+  towerDataCur: {fileID: 11400000, guid: 388bb325cefcddc46b2287cc1e6b5e15, type: 2}
   cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
   cursorDelete: {fileID: 0}
   Imposter: 0
   Muted: 0
---- !u!114 &-538272945515635314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056256240725061661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6881567c0e3e85242b4b4a43d9e0f4d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boostRadius: 2
-  boostMultiplierSpeed: 0.25
 --- !u!58 &1163305568984272733
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -144,3 +132,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!114 &-6661933582048736768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a664a34712303f349baf5e36624d75ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boostRadius: 5
+  boostMultiplierCrit: 1.5

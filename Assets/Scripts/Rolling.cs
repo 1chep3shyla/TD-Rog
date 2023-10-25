@@ -42,7 +42,8 @@ public class Rolling : MonoBehaviour
     }
     void Update()
     {
-        costTowerText.text = costTower.ToString("");
+        //costTowerText.text = costTower.ToString("");
+        costTowerText.text = "300";
         HandleMouseInput();
         HandleSpaceKey();
         UpdateCursorVisibility();
@@ -52,7 +53,7 @@ public class Rolling : MonoBehaviour
         if (towerPrefab != null && choosing)
         {
             UpHave uh = towerPrefab.GetComponent<UpHave>();
-            GameManager.Instance.Gold += (int)Math.Pow(100, uh.LVL+1);
+            GameManager.Instance.Gold += (int)Math.Pow(150, uh.LVL+1);
             Destroy(uh.baseOf.gameObject);
             Destroy(towerPrefab);
             GameManager.Instance.ChangeMoney();
@@ -166,7 +167,8 @@ public class Rolling : MonoBehaviour
         {
             if (GameManager.Instance.Gold >= costTower)
             {
-                GameManager.Instance.Gold -= costTower;
+                //GameManager.Instance.Gold -= costTower;
+                GameManager.Instance.Gold -= 150;
                 GameManager.Instance.ChangeMoney();
                 if (towerPrefab.GetComponent<UpHave>().id == 26)
                 {
@@ -212,7 +214,8 @@ public class Rolling : MonoBehaviour
     {
         if (GameManager.Instance.Gold >= costTower)
         {
-            GameManager.Instance.Gold -= costTower;
+            //GameManager.Instance.Gold -= costTower;
+            GameManager.Instance.Gold -= 300;
             GameManager.Instance.ChangeMoney();
             costTower += 10;
             Roll();

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868b7c811d20a6e4794da05eb9572209, type: 3}
+  m_Name: healPer_perk_5
+  m_EditorClassIdentifier: 
+  hpRestore: 5
+  name: Healing I
+  disc: Restores your health on
+  sprite: {fileID: -1040159161, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

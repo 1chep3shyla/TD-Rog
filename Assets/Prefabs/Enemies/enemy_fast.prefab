@@ -4934,7 +4934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5f9997c5ae4a748a781bcb69e50c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeEnemy: 2
+  typeEnemy: 4
   waypoints: []
   speed: 1
   maxSpeed: 1.7
@@ -4996,6 +4996,7 @@ MonoBehaviour:
   - 0
   - 0
   damageType: 0
+  EM: {fileID: 0}
 --- !u!50 &248614970749484257
 Rigidbody2D:
   serializedVersion: 4

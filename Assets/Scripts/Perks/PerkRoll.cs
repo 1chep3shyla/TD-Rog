@@ -83,7 +83,7 @@ public class PerkRoll : MonoBehaviour
     public void RollPerkEvolve()
     {
         rollingEvolve = true;
-        List<ScriptableObject> availablePerks = allEvolutionPerks;
+        List<ScriptableObject> availablePerks = allEvolutionPerks;  
 
         for (int i = 0; i < curPerks.Length; i++)
         {
