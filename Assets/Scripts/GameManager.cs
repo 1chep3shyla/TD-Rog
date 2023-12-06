@@ -211,6 +211,10 @@ public class GameManager : MonoBehaviour
             allTowerDMG[i].roundDamage = 0;
         }
     }
+    public void SetGameSpeed(int speed)
+    {
+        Time.timeScale = speed;
+    }
 }
 [System.Serializable]
 public class Evolve
