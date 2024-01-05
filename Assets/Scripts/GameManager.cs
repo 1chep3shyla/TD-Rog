@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] states;
     public Tilemap[] maps;
     public Transform goldPos;
+    public Spawner spawn;
+    [SerializeField]
+    private int[] giveMoneyCheat;
 
     void Update()
     {
@@ -193,7 +196,7 @@ public class GameManager : MonoBehaviour
     }
     public void AddDamageByBulletType(TypeBull bulletType, int damage)
     {
-        // Найти соответствующий элемент массива allTowerDMG по типу пули и добавить урон
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ allTowerDMG пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         foreach (DMGTower towerDamage in allTowerDMG)
         {
             if (towerDamage.EvolveScript == bulletType)
@@ -214,6 +217,22 @@ public class GameManager : MonoBehaviour
     public void SetGameSpeed(int speed)
     {
         Time.timeScale = speed;
+    }
+    public void NextWave()
+    {
+        AddMoney(giveMoneyCheat[curWave]);
+        spawn.skip = true;
+        for(int i = 0; i < enemiesAll.Count;i++)
+        {
+            if(enemiesAll!=null)
+            {
+            Destroy(enemiesAll[i]);
+            }
+        }
+    }
+    public void Starting()
+    {
+        spawn.StartingGame();
     }
 }
 [System.Serializable]

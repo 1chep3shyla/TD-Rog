@@ -170,12 +170,15 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Poison Tower
+  description: "\u041E\u0442\u0440\u0430\u0432\u043B\u044F\u0435\u0442 \u0436\u0438\u0437\u043D\u044C.
+    \u0412\u0421\u0415\u041C"
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 2
   curDamage: 2
   LVL: 0
   critChance: 0
+  critChanceCur: 0
   towerDataCur: {fileID: 11400000, guid: 57383b3e416671046b20a4c5faf690fb, type: 2}
   cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
   cursorDelete: {fileID: 0}

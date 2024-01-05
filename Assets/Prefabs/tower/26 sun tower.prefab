@@ -53,12 +53,16 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Sun Tower
+  description: "\u0414\u0443\u043C\u0430\u044E, \u044D\u0442\u043E\u0442 \u043A\u0443\u0441\u043E\u0447\u0435\u043A
+    \u0421\u043E\u043B\u043D\u0446\u0430 \u043D\u0435 \u043B\u044E\u0431\u0438\u0442
+    \u041B\u0443\u043D\u0443"
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 3
   curDamage: 3
   LVL: 0
   critChance: 0
+  critChanceCur: 0
   towerDataCur: {fileID: 11400000, guid: a934756ec69e035499d11ce9610b0548, type: 2}
   cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
   cursorDelete: {fileID: 0}

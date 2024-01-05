@@ -32,7 +32,7 @@ public class TowerBase : MonoBehaviour
 
     public void OnMouseUpping()
     {
-        Debug.Log("Попал" + " " + gameObject.name);
+        Debug.Log("пїЅпїЅпїЅпїЅпїЅ" + " " + gameObject.name);
         if (rollBase.choosing && rollBase.towerPrefab != curGM && rollBase.towerPrefab != null && curGM != null)
         {
             Up();
@@ -50,6 +50,7 @@ public class TowerBase : MonoBehaviour
             UpHave uh = curGM.GetComponent<UpHave>();
             rollBase.info.SetActive(true);
             rollBase.towerInfo[0].text = "" + uh.name;
+            rollBase.towerInfo[1].text = uh.description;
             rollBase.towerInfo[2].text = "Damage:" + uh.towerDataCur.lvlData[uh.LVL, 1];
             rollBase.towerInfo[3].text = "LVL:" + (uh.LVL + 1);
             rollBase.towerPrefab = curGM;
@@ -95,7 +96,7 @@ public class TowerBase : MonoBehaviour
                 }
                 else if (rollBase.towerPrefab.GetComponent<UpHave>().LVL == curGM.GetComponent<UpHave>().LVL)
                 {
-                    Debug.Log("МЕНЯЙ МЕСТАМИ");
+                    Debug.Log("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
                     MovingThis();
                     change = true;
                 }
@@ -115,7 +116,7 @@ public class TowerBase : MonoBehaviour
                 }
                 else if (rollBase.towerPrefab.GetComponent<UpHave>().LVL == curGM.GetComponent<UpHave>().LVL)
                 {
-                    Debug.Log("МЕНЯЙ МЕСТАМИ");
+                    Debug.Log("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
                     GameObject newClone = Instantiate(curGM, rollBase.towerPrefab.GetComponent<UpHave>().baseOf.curGM.transform.position, Quaternion.identity);
                     rollBase.towerPrefab.GetComponent<UpHave>().baseOf.monster = newClone;
                     rollBase.AddTower(newClone.GetComponent<SpriteRenderer>());
@@ -191,7 +192,7 @@ public class TowerBase : MonoBehaviour
     {
         UpHave uh = curGM.GetComponent<UpHave>();
 
-        Debug.Log("Апнул просто");
+        Debug.Log("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
         curGM.GetComponent<UpHave>().LVL++;
         rollBase.AddTower(curGM.GetComponent<SpriteRenderer>());
         curGM.GetComponent<UpHave>().baseOf = this;
@@ -202,12 +203,19 @@ public class TowerBase : MonoBehaviour
         {
             GameManager.Instance.UpSome(uh.LVL - 1, this.gameObject);
         }
+        for (int i = 0; i < rollBase.slots.Length; i++)
+        {
+            if (rollBase.slots[i].id == uh.id )
+            {
+                rollBase.OffCard(i);
+            }
+        }
         GameManager.Instance.Gold -= rollBase.costTower;
         GameManager.Instance.ChangeMoney();
     }
     public void JustUpBoost()
     {
-        Debug.Log("Апнул просто");
+        Debug.Log("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
         curGM.GetComponent<UpHave>().LVL++;
         rollBase.AddTower(curGM.GetComponent<SpriteRenderer>());
         curGM.GetComponent<UpHave>().baseOf = this;
@@ -218,7 +226,7 @@ public class TowerBase : MonoBehaviour
 
     public void JustNotUp()
     {
-        Debug.Log("Апнул не просто");
+        Debug.Log("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
         UpHave uh = curGM.GetComponent<UpHave>();
         if (rollBase.towerPrefab.GetComponent<UpHave>().id == 25 && uh.id == 25)
         {

@@ -7,7 +7,8 @@ public class Spawner : MonoBehaviour
     public WayScript[] waypoints;
 
     public WaveMass[] wavesMass;
-    public int timeBetweenWaves = 5;
+    public float timeBetweenWaves = 5;
+    public float timeCur;
     [SerializeField]
     private GameManager gameManager;
 
@@ -18,7 +19,9 @@ public class Spawner : MonoBehaviour
     public int currentWaveIndex = 0;
     public int currentWaveIndexMain = 0;
     public Wave[] currentWave;
-    private bool works;
+    public bool works;
+    public bool skip;
+    private bool start;
 
     private bool shouldStartNextWave = false;
 
@@ -30,10 +33,11 @@ public class Spawner : MonoBehaviour
         {
             currentWave = wavesMass[currentWaveIndex].wavesAll;
         }
+        GameManager.Instance.spawn = this;
     }
     void Update()
     {
-        while (currentWaveIndex < wavesMass.Length && !works)
+        while (currentWaveIndex < wavesMass.Length && !works && start)
         {
             works = true;
 
@@ -45,15 +49,15 @@ public class Spawner : MonoBehaviour
         GameManager.Instance.curWave = currentWaveIndexMain + 1;
     }
 
-    private IEnumerator StartWave()
+    public IEnumerator StartWave()
     {
         float timeNeed = currentWave[currentWaveIndex].timeAll / currentWave[currentWaveIndex].maxEnemies;
 
-        while (currentWaveIndex < currentWave.Length)
+        while (currentWaveIndex < currentWave.Length && !skip)
         {
             yield return new WaitForSeconds(timeNeed);
             int RandomEnemy = UnityEngine.Random.Range(0, currentWave[currentWaveIndex].enemyPrefab.Length);
-            for (int i = 0; i < currentWave[currentWaveIndex].maxEnemies; i++)
+            for (int i = 0; i < currentWave[currentWaveIndex].maxEnemies && !skip; i++)
             {
 
                 SpawnEnemy(RandomEnemy);
@@ -66,11 +70,34 @@ public class Spawner : MonoBehaviour
         }
         yield return new WaitUntil(() => gameManager.enemiesAll.Count == 0);
         gameManager.ClearEffects();
-        Debug.Log("Врагов нет");
-        yield return new WaitForSeconds(1f);
+        Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ");
+        if(!skip)
+        {
+            yield return new WaitForSeconds(1f);
+        }
+        StartCoroutine(ClaimReward());
+        Time.timeScale = 0;
+        yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
+        currentWaveIndexMain++;
+        currentWaveIndex = 0;
+        currentWave = wavesMass[currentWaveIndexMain].wavesAll;
+        gameManager.ClearRounds();
+        Time.timeScale = 1f;
+        yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
+        timeCur = timeBetweenWaves;
+        while(timeCur <=0f)
+        {
+            timeCur -= Time.deltaTime;
+        }
+        works = false;
+        skip = false;
+        yield return null;
+    }
+    public IEnumerator ClaimReward()
+    {
         if (wavesMass[currentWaveIndexMain].wavesAll[currentWaveIndex - 1].bossWave == true)
         {
-            Debug.Log("Босс волна");
+            Debug.Log("пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ");
             gameManager.gameObject.GetComponent<PerkRoll>().RollPerkEvolve();
             yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
             yield return new WaitForSeconds(0.5f);
@@ -79,28 +106,15 @@ public class Spawner : MonoBehaviour
         }
         else
         {
-            Debug.Log("Волна");
+            Debug.Log("пїЅпїЅпїЅпїЅпїЅ");
             gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve = true;
             gameManager.gameObject.GetComponent<PerkRoll>().RollPerk();
         }
-        Time.timeScale = 0;
-        yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
-        if (currentWaveIndex >= wavesMass[currentWaveIndexMain].wavesAll.Length)
-        {
-            currentWaveIndexMain++;
-            currentWaveIndex = 0;
-            currentWave = wavesMass[currentWaveIndexMain].wavesAll;
-        }
-        gameManager.ClearRounds();
-        Time.timeScale = 1f;
-        yield return new WaitForSeconds(6f);
-        works = false;
-        yield return null;
     }
 
     private void SpawnEnemy(int RandomEnemy)
     {
-        for (int i = 0; i < currentWave[currentWaveIndex].curWave; i++)
+        for (int i = 0; i < currentWave[currentWaveIndex].curWave + 1 && !skip; i++)
         {
             GameObject newEnemy = Instantiate(currentWave[currentWaveIndex].enemyPrefab[RandomEnemy], waypoints[i].waypoints[0].transform.position, Quaternion.identity);
             GameManager.Instance.AddEnemyToList(newEnemy);
@@ -128,7 +142,17 @@ public class Spawner : MonoBehaviour
             }
         }
     }
-
+    public void StartingGame()
+    {
+        if(!start)
+        {
+            start = true;
+        }
+        else
+        {
+            timeCur = 0;   
+        }
+    }
 
     string SubstituteVariables(string formula, int hpEnemy, int curWave)
     {

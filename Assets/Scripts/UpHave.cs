@@ -9,6 +9,8 @@ public class UpHave : MonoBehaviour
     public GameObject UpVersion;
     public TowerBase baseOf;
     public string name;
+    [TextArea(minLines: 2, maxLines: 5)]
+    public string description;
     public float curAttackSpeed;
     public float attackSpeed;
     public int damage;

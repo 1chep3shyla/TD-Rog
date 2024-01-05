@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(EnemyMoving))]
 public class Enemy : MonoBehaviour
 {
     public int health;
@@ -25,6 +28,7 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer SR;
     public TypeBull damageType;
     public EnemyMoving EM;
+    public GameObject deathPar;
     void Start()
     {
         health = maxHealth;
@@ -137,7 +141,7 @@ public class Enemy : MonoBehaviour
         int randomChance = Random.Range(0, 100);
         if (randomChance < critChance)
         {
-            Debug.Log("Êðèò");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½");
             float critDamage = 2 + ((2 * (GameManager.Instance.buff[7] / 100)));
             TakeDamage((int)((float)(dmg + (int)((float)dmg * (GameManager.Instance.buff[0] / 100 + armorReduce / 100))) * critDamage));
         }
@@ -160,6 +164,10 @@ public class Enemy : MonoBehaviour
         }
         GameManager.Instance.StealMoney(goldGive);
         Destroy(gameObject);
+        if(deathPar!=null)
+        {
+            Instantiate(deathPar, transform.position, Quaternion.identity);
+        }
         GameManager.Instance.enemyHave -= 1;
         GameObject gold = Instantiate(goldPrefab, transform.position, Quaternion.identity);
         gold.GetComponent<GoldMoving>().gold = goldGive;
@@ -169,7 +177,7 @@ public class Enemy : MonoBehaviour
     {
         if (!inFire)
         {
-            Debug.Log("ÃÎÐÈÒ");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½");
             inFire = true;
             StartCoroutine(Burn(duration, damage));
         }
@@ -192,7 +200,7 @@ public class Enemy : MonoBehaviour
     {
         if (!inPoison)
         {
-            Debug.Log("ßÄ");
+            Debug.Log("ï¿½ï¿½");
             StartCoroutine(Poisoned(duration, damage));
         }
     }

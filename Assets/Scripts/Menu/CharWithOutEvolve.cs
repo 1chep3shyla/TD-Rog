@@ -13,6 +13,10 @@ public class CharWithOutEvolve : ScriptableObject, ICharSet
     {
         GameBack.Instance.charData = this;
     }
+    public GameObject[] SetGameObject()
+    {
+        return towerPull;
+    }
     public void SetData()
     {
         for (int i = 0; i < buffs.Length; i++)

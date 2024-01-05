@@ -53,12 +53,15 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Rage Tower
+  description: "\u041E\u043D \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u0431\u0435\u0437\u0443\u043C\u0435\u043D
+    \u0431\u0435\u0433\u0438\u0442\u0435..."
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 2
   curDamage: 2
   LVL: 0
   critChance: 0
+  critChanceCur: 0
   towerDataCur: {fileID: 11400000, guid: 430d8ea9088ec714b885869b084a2d01, type: 2}
   cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
   cursorDelete: {fileID: 0}

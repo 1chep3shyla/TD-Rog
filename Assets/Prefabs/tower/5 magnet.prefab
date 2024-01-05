@@ -52,12 +52,16 @@ MonoBehaviour:
   UpVersion: {fileID: 2056256240725061661, guid: 16ea796a0f111c244a94ef28a8330131, type: 3}
   baseOf: {fileID: 0}
   name: Magnet Tower
+  description: "\u0417\u0430\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0442 \u043A\u0440\u0443\u0442\u0438\u0442\u044C
+    \u0432\u043E\u043A\u0440\u0443\u0433 \u0441\u0435\u0431\u044F \u0432\u0441\u044F\u043A\u0438\u0435
+    \u0436\u0435\u043B\u0435\u0437\u044F\u043A\u0438"
   curAttackSpeed: 0
   attackSpeed: 45
   damage: 5
   curDamage: 0
   LVL: 0
   critChance: 0
+  critChanceCur: 0
   towerDataCur: {fileID: 11400000, guid: 65dc436d893bc1942b17a500204e26ee, type: 2}
   cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
   cursorDelete: {fileID: 0}

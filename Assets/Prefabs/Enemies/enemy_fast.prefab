@@ -4997,6 +4997,7 @@ MonoBehaviour:
   - 0
   damageType: 0
   EM: {fileID: 0}
+  deathPar: {fileID: 6767275772941406469, guid: 1effd9b62f2cf7a4bb75c82546c5733e, type: 3}
 --- !u!50 &248614970749484257
 Rigidbody2D:
   serializedVersion: 4

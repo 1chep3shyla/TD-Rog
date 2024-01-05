@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3248000793684943396}
   - component: {fileID: 7912699240769563161}
   - component: {fileID: -4042150048931085188}
+  - component: {fileID: 6459266415940732857}
   m_Layer: 0
   m_Name: 10 stan
   m_TagString: Tower
@@ -53,12 +54,16 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Stone Thrower
+  description: "\u0415\u0441\u043B\u0438 \u043F\u043E\u043F\u0430\u0434\u0435\u0442
+    \u043A\u0430\u043C\u043D\u0435\u043C - \u043E\u0433\u043B\u0443\u0448\u0435\u043D
+    \u0431\u0443\u0434\u0435\u0448\u044C"
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 5
   curDamage: 5
   LVL: 0
   critChance: 0
+  critChanceCur: 0
   towerDataCur: {fileID: 11400000, guid: b97969a3f52e23f42937287f5e8a8725, type: 2}
   cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
   cursorDelete: {fileID: 0}
@@ -105,7 +110,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -1609154478, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  m_Sprite: {fileID: -1430890223, guid: 63f1f586767dd29479c8cb93d7300fa9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -173,6 +178,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!95 &6459266415940732857
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d31021468e7be94594507dfdf6edeac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &2466880647901358694
 GameObject:
   m_ObjectHideFlags: 0

@@ -53,12 +53,15 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Magnat Tower
+  description: "\u0414\u0435\u043D\u044C\u0433\u0438 - \u0434\u0435\u043B\u0430\u044E\u0442
+    \u0435\u0433\u043E \u0441\u0438\u043B\u044C\u043D\u0435\u0435"
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 2
   curDamage: 2
   LVL: 0
   critChance: 0
+  critChanceCur: 0
   towerDataCur: {fileID: 11400000, guid: f6cbf8cf5f4fa1e41b88ce18c81d4cea, type: 2}
   cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
   cursorDelete: {fileID: 0}

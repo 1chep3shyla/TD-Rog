@@ -4,13 +4,14 @@ using UnityEngine;
 
 public interface IChar 
 {
-    public void ApplyBuff(); // Задать значение для бека
+    public void ApplyBuff(); // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 }
 public interface ICharSet : IChar
 {
-    public void SetData(); // Задать значение для игры
+    public void SetData(); // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     public float[] GetStat();
     public string GetStatName();
+    public GameObject[] SetGameObject();
     public void SetDataChar(int index, float count);
 }
 [CreateAssetMenu(fileName = "NewChar", menuName = "Character/Char")]
@@ -23,6 +24,10 @@ public class Character : ScriptableObject, ICharSet
     public void ApplyBuff()
     {
         GameBack.Instance.charData = this;
+    }
+    public GameObject[] SetGameObject()
+    {
+        return towerPull;
     }
     public void SetData()
     {

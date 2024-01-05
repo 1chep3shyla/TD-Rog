@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3248000793684943396}
   - component: {fileID: 7037598387206558222}
   - component: {fileID: 6676964629699946377}
+  - component: {fileID: 2735458846861214515}
   m_Layer: 0
   m_Name: 21 boomTower
   m_TagString: Tower
@@ -53,12 +54,16 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Boom Tower
+  description: "\u0412\u0437\u043E\u0432\u0440\u0435\u0442 \u0432\u0440\u0430\u0433\u0430,
+    \u043D\u043E \u0442\u043E\u043B\u044C\u043A\u043E \u0435\u0441\u043B\u0438 \u043E\u043D
+    \u0443\u043C\u0440\u0435\u0442"
   curAttackSpeed: 0
   attackSpeed: 1.1
   damage: 2
   curDamage: 2
   LVL: 0
   critChance: 0
+  critChanceCur: 0
   towerDataCur: {fileID: 11400000, guid: d5c8f6d9615eb7f4fb78df451ea8ac90, type: 2}
   cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
   cursorDelete: {fileID: 0}
@@ -105,7 +110,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 1083987832, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  m_Sprite: {fileID: 1013804653, guid: 9321fdba5a2299541912dde696b3ae2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -173,6 +178,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!95 &2735458846861214515
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78460a6a6f740524f9ddfdfc22e02a1b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &2466880647901358694
 GameObject:
   m_ObjectHideFlags: 0

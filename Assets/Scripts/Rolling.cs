@@ -53,7 +53,7 @@ public class Rolling : MonoBehaviour
         if (towerPrefab != null && choosing)
         {
             UpHave uh = towerPrefab.GetComponent<UpHave>();
-            GameManager.Instance.Gold += (int)Math.Pow(150, uh.LVL+1);
+            GameManager.Instance.Gold += (int)Math.Pow(100, uh.LVL+1);
             Destroy(uh.baseOf.gameObject);
             Destroy(towerPrefab);
             GameManager.Instance.ChangeMoney();
@@ -66,22 +66,18 @@ public class Rolling : MonoBehaviour
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int cellPosition = tilemap.WorldToCell(mousePosition);
-            // Переводим координаты обратно в мировые координаты, чтобы проверить нажатие по тайлмапу
             Vector3 cellCenter = tilemap.GetCellCenterWorld(cellPosition);
 
-            // Создаем луч из мировой позиции нажатия
             Ray ray = new Ray(mousePosition, Vector3.forward);
 
-            // Проверяем пересечение луча с коллайдером тайлмапы
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-            // Если луч пересекается с коллайдером тайлмапы
             if (hit.collider != null && hit.collider.gameObject == tilemap.gameObject)
             {
                 if (tilemap.HasTile(cellPosition))
                 {
                     Clicking(mousePosition, cellPosition, curIndex);
-                    Debug.Log("Попал По коллайдеру");
+                    Debug.Log("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
                 }
             }
         }
@@ -92,16 +88,11 @@ public class Rolling : MonoBehaviour
             int columnIndex = cellPosition.x;
             int rowIndex = cellPosition.y;
 
-            // Переводим координаты обратно в мировые координаты, чтобы проверить нажатие по тайлмапу
             Vector3 cellCenter = tilemap.GetCellCenterWorld(cellPosition);
 
-            // Создаем луч из мировой позиции нажатия
             Ray ray = new Ray(mousePosition, Vector3.forward);
-
-            // Проверяем пересечение луча с коллайдером тайлмапы
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-            // Если луч пересекается с коллайдером тайлмапы
             if (hit.collider != null && hit.collider.gameObject == tilemap.gameObject)
             {
                 if (tilemap.HasTile(cellPosition) && allBases[columnIndex + 10, rowIndex + 3] == null)
@@ -133,6 +124,13 @@ public class Rolling : MonoBehaviour
             }
         }
         
+    }
+
+    public void OffCard(int id)
+    {
+        butChoose[id].interactable = false;
+        towerPrefab = null;
+        choosing = false;
     }
 
     private void HandleSpaceKey()
@@ -192,6 +190,7 @@ public class Rolling : MonoBehaviour
                 AddTower(towerBase.GetComponent<TowerBase>().curGM.GetComponent<SpriteRenderer>());
                 towerBase.GetComponent<TowerBase>().curGM.GetComponent<UpHave>().baseOf = towerBase.GetComponent<TowerBase>();
                 towerBase.GetComponent<TowerBase>().monster = newGM;
+                GameManager.Instance.ChangeMoney();
                 choosing = false;
                 towerPrefab = null;
 
@@ -217,7 +216,7 @@ public class Rolling : MonoBehaviour
             //GameManager.Instance.Gold -= costTower;
             GameManager.Instance.Gold -= 300;
             GameManager.Instance.ChangeMoney();
-            costTower += 10;
+            //costTower += 10;
             Roll();
         }
         else
@@ -265,6 +264,7 @@ public class Rolling : MonoBehaviour
             UpHave uh = towerPrefab.GetComponent<UpHave>();
             sell.text = "Sell:" + (int)Math.Pow(100, uh.LVL+1);
             towerInfo[0].text  = "" + uh.name;
+            towerInfo[1].text = uh.description;
             towerInfo[2].text = "Damage:" + uh.towerDataCur.lvlData[uh.LVL, 1];
             towerInfo[3].text = "LVL:" + (uh.LVL + 1);
         }

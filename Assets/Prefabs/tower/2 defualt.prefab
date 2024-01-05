@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3248000793684943396}
   - component: {fileID: 7037598387206558222}
   - component: {fileID: 2499794001222523621}
+  - component: {fileID: 4608261991726299479}
   m_Layer: 0
   m_Name: 2 defualt
   m_TagString: Tower
@@ -53,12 +54,14 @@ MonoBehaviour:
   UpVersion: {fileID: 2056256240725061661, guid: aea5d6a0916126f40a7ee2d5661ae1dc, type: 3}
   baseOf: {fileID: 0}
   name: Castle Tower
+  description: "\u041F\u0440\u043E\u0441\u0442\u0430\u044F \u0431\u0430\u0448\u043D\u044F"
   curAttackSpeed: 0
   attackSpeed: 0.75
   damage: 5
   curDamage: 0
   LVL: 0
   critChance: 0
+  critChanceCur: 0
   towerDataCur: {fileID: 11400000, guid: 03e19c18ed996104ab3731e96859f3af, type: 2}
   cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
   cursorDelete: {fileID: 0}
@@ -105,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: c125df98bf159794283fb2e3f6dfd6c2, type: 3}
+  m_Sprite: {fileID: -187183731, guid: 0c26bd5809f03434ea9a7f851d51d993, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -173,6 +176,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!95 &4608261991726299479
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 474bea343a0c38740a250be2b076a0f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &2466880647901358694
 GameObject:
   m_ObjectHideFlags: 0

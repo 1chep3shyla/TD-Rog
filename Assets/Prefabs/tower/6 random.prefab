@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3248000793684943396}
   - component: {fileID: -4016507510995439363}
   - component: {fileID: -1634827272546631196}
+  - component: {fileID: 1573813935495691347}
   m_Layer: 0
   m_Name: 6 random
   m_TagString: Tower
@@ -53,12 +54,17 @@ MonoBehaviour:
   UpVersion: {fileID: 2056256240725061661, guid: fb5f3d87996dc094c96bc67f282c91f4, type: 3}
   baseOf: {fileID: 0}
   name: Random Tower
+  description: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u044B\u0439
+    \u0443\u0440\u043E\u043D \u0432\u0440\u0430\u0433\u0430\u043C, \u0438\u043D\u043E\u0433\u0434\u0430
+    \u043F\u043E\u043B\u0435\u0437\u043D\u0430 - \u0438\u043D\u043E\u0433\u0434\u0430
+    \u043D\u0435\u0442"
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 10
   curDamage: 0
   LVL: 0
   critChance: 0
+  critChanceCur: 0
   towerDataCur: {fileID: 11400000, guid: 42d5d2d8146b2a74cb3e3369976c19db, type: 2}
   cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
   cursorDelete: {fileID: 0}
@@ -105,7 +111,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -440926492, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  m_Sprite: {fileID: -625883018, guid: 717d9a54b8206104785cf60a8470760b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -173,6 +179,26 @@ MonoBehaviour:
   chanceAssasin: 0
   Chain: 0
   critChance: 0
+--- !u!95 &1573813935495691347
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd28a951dfc4f7a4281ea5c957352695, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &2466880647901358694
 GameObject:
   m_ObjectHideFlags: 0

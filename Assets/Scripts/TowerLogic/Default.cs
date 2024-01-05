@@ -33,6 +33,7 @@ public class Default : MonoBehaviour
     private Transform currentTarget;
     [SerializeField]
     private GameObject DivineAttackGM;
+    private Animator animator;
     public DataTower dt;
     private int lvl;
     private UpHave upHaveScript;
@@ -45,6 +46,7 @@ public class Default : MonoBehaviour
         upHaveScript = gameObject.GetComponent<UpHave>();
         dt = upHaveScript.towerDataCur;
         bc = bulletPrefab.GetComponent<BulletController>();
+        animator = GetComponent<Animator>();
 
 
         UpdateStat();
@@ -85,6 +87,7 @@ public class Default : MonoBehaviour
             {
                 AttackLight();
             }
+            animator.SetTrigger("Attacking");
         }
         if (attackCooldown >= 0)
         {
@@ -272,7 +275,7 @@ public class Default : MonoBehaviour
                                 if (bulletController != null && random == 1)
                                 {
                                     bulletController.Initialize(target, 100000000);
-                                    Debug.Log("ÌÎÙÍÀß ÀÒÀÊÀ");
+                                    Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½");
                                 }
                                 else if (random != 1)
                                 {
@@ -285,7 +288,7 @@ public class Default : MonoBehaviour
                                 if (bulletController != null && random == 1)
                                 {
                                     bulletController.Initialize(target, 100000000);
-                                    Debug.Log("ÌÎÙÍÀß ÀÒÀÊÀ");
+                                    Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½");
                                 }
                                 else if (random != 1)
                                 {
