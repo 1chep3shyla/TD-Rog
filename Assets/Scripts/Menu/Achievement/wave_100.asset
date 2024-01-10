@@ -15,4 +15,5 @@ MonoBehaviour:
   id: Overlord
   title: Overlord
   description: Go through 100 waves
+  Icon: {fileID: 21300000, guid: c445ed891100621448ba39899d370c42, type: 3}
   isUnlocked: 0

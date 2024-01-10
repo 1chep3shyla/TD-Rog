@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2287685014846977297}
   - component: {fileID: 5796266392278502760}
   - component: {fileID: 2566371805309444605}
+  - component: {fileID: 2566525669503951291}
   m_Layer: 0
   m_Name: 24 furyTower
   m_TagString: Tower
@@ -161,6 +162,7 @@ MonoBehaviour:
   chanceAssasin: 0
   Chain: 0
   critChance: 0
+  hitSFX: {fileID: 8300000, guid: 6917b4d4ed60a4f8eb2f67a0ecd4eac1, type: 3}
 --- !u!58 &5796266392278502760
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -197,6 +199,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &2566525669503951291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f11c86dffb8fc34ebc0724d1e44cbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animClip: {fileID: 7400000, guid: 4e2236626dd49c649b1b79066ea71e47, type: 2}
 --- !u!1 &2466880647901358694
 GameObject:
   m_ObjectHideFlags: 0

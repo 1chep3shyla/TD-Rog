@@ -103,7 +103,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: goldMagnat_tower_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806fb904a76dad24691c6c4962c0e277
+      internalID: -76414358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goldMagnat_tower_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30df5a3e18048ad4fa0f741cedd6d1ff
+      internalID: 400205331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goldMagnat_tower_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33076db281ad02a40ad36da9a2c5393c
+      internalID: 1350647085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goldMagnat_tower_24
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed3373a2e7c53b49849786f9e6039cc
+      internalID: -2077714315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goldMagnat_tower_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3863095fbbaea247892c965c3c8974f
+      internalID: 678480358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goldMagnat_tower_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6851c42e276801d41a2b92099ac820ea
+      internalID: -1992933280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +240,47 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      goldMagnat_tower_39: 928567665
+      goldMagnat_tower_10: -1419064231
+      goldMagnat_tower_14: -1835981857
+      goldMagnat_tower_21: 120606195
+      goldMagnat_tower_36: 1667964528
+      goldMagnat_tower_22: -1591469876
+      goldMagnat_tower_3: 400205331
+      goldMagnat_tower_7: -2084979065
+      goldMagnat_tower_28: 2124200905
+      goldMagnat_tower_16: -1331718984
+      goldMagnat_tower_23: 1350647085
+      goldMagnat_tower_26: -1992933280
+      goldMagnat_tower_17: -1974696337
+      goldMagnat_tower_24: -2077714315
+      goldMagnat_tower_8: 868341659
+      goldMagnat_tower_4: 270421573
+      goldMagnat_tower_9: -98690303
+      goldMagnat_tower_13: -1076989039
+      goldMagnat_tower_25: 678480358
+      goldMagnat_tower_29: 1085540775
+      goldMagnat_tower_1: -1630390249
+      goldMagnat_tower_30: -1375005314
+      goldMagnat_tower_27: -196070621
+      goldMagnat_tower_19: 1581660738
+      goldMagnat_tower_35: -76580204
+      goldMagnat_tower_20: -1249021593
+      goldMagnat_tower_11: 2090143827
+      goldMagnat_tower_37: 1165792169
+      goldMagnat_tower_0: 388622216
+      goldMagnat_tower_12: 186685814
+      goldMagnat_tower_31: -1475796047
+      goldMagnat_tower_38: -141546335
+      goldMagnat_tower_6: -219168001
+      goldMagnat_tower_32: -267411355
+      goldMagnat_tower_2: -76414358
+      goldMagnat_tower_5: 792520542
+      goldMagnat_tower_18: 1338315694
+      goldMagnat_tower_34: -294870675
+      goldMagnat_tower_15: -1230668747
+      goldMagnat_tower_33: 1755478724
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

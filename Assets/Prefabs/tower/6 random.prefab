@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -4016507510995439363}
   - component: {fileID: -1634827272546631196}
   - component: {fileID: 1573813935495691347}
+  - component: {fileID: -6765747397819544900}
   m_Layer: 0
   m_Name: 6 random
   m_TagString: Tower
@@ -179,6 +180,7 @@ MonoBehaviour:
   chanceAssasin: 0
   Chain: 0
   critChance: 0
+  hitSFX: {fileID: 8300000, guid: 6917b4d4ed60a4f8eb2f67a0ecd4eac1, type: 3}
 --- !u!95 &1573813935495691347
 Animator:
   serializedVersion: 5
@@ -199,6 +201,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-6765747397819544900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f11c86dffb8fc34ebc0724d1e44cbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animClip: {fileID: 7400000, guid: db53ad3d01d45a644bf95df04a2c5a40, type: 2}
 --- !u!1 &2466880647901358694
 GameObject:
   m_ObjectHideFlags: 0

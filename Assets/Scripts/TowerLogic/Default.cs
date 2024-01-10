@@ -41,6 +41,7 @@ public class Default : MonoBehaviour
     public int chanceAssasin;
     public int Chain;
     public int critChance;
+    public AudioClip hitSFX;
     void Start()
     {
         upHaveScript = gameObject.GetComponent<UpHave>();
@@ -83,11 +84,14 @@ public class Default : MonoBehaviour
                     AttackRage();
                 }
             }
+            else if (bulletPrefab.GetComponent<CannonBull>() != null)
+            {
+                Attack();
+            }
             else if (bulletPrefab.GetComponent<BulletController>() == null)
             {
                 AttackLight();
             }
-            animator.SetTrigger("Attacking");
         }
         if (attackCooldown >= 0)
         {
@@ -192,6 +196,9 @@ public class Default : MonoBehaviour
             {
                 if (target != null)
                 {
+                    animator.SetTrigger("Attacking");
+                    GameManager.Instance.aS.PlayOneShot(hitSFX);
+                    GameManager.Instance.aS.pitch = Random.Range(0.8f, 1.1f);
                     // Instantiate a bullet at the firePoint position and rotate it towards the enemy
                     GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
                     BulletController bulletController = bullet.GetComponent<BulletController>();
@@ -246,7 +253,7 @@ public class Default : MonoBehaviour
                         }
                         else if (bulletController.type == TypeBull.fury)
                         {
-                            bulletController.furyCount = countOfAttack;
+                            bulletController.furyCount = countOfAttack+1;
                         }
                         else if (bulletController.type == TypeBull.sun)
                         {
@@ -328,6 +335,9 @@ public class Default : MonoBehaviour
 
             if (target != null)
             {
+                animator.SetTrigger("Attacking");
+                    GameManager.Instance.aS.PlayOneShot(hitSFX);
+                    GameManager.Instance.aS.pitch = Random.Range(0.8f, 1.1f);
                 // Create a bullet and set its parameters
                 GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
                 BulletController bulletController = bullet.GetComponent<BulletController>();
@@ -347,6 +357,9 @@ public class Default : MonoBehaviour
     {
         if (attackCooldown <= 0f && enemiesInRange.Count >maxTargets)
         {
+            GameManager.Instance.aS.PlayOneShot(hitSFX);
+            GameManager.Instance.aS.pitch = Random.Range(0.8f, 1.1f);
+            animator.SetTrigger("Attacking");
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
             LightBull bulletScript = bullet.GetComponent<LightBull>();
             bulletScript.targetEnemies = new Transform[maxTargets];

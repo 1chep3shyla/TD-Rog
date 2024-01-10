@@ -15,4 +15,5 @@ MonoBehaviour:
   id: Bourgeois?
   title: Bourgeois?
   description: ACCUMULATE 10000 GOLD
+  Icon: {fileID: 0}
   isUnlocked: 0

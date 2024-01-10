@@ -15,4 +15,5 @@ MonoBehaviour:
   id: Middle class
   title: Middle class
   description: ACCUMULATE 1000 GOLD
+  Icon: {fileID: 21300000, guid: aedfb990ec421994fa253c59ce34334a, type: 3}
   isUnlocked: 0

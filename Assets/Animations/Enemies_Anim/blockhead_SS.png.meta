@@ -103,7 +103,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: blockhead_SS_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da58716a6eff3e44085922d8143e585f
+      internalID: 1920442182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blockhead_SS_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27b72c5274bbca4a99f1869ae437a20
+      internalID: 972614038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blockhead_SS_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a6cd54f2de4884b821c088b21fc893
+      internalID: -258592993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blockhead_SS_24
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4af966cca72de45ba65ac8c7275f0d
+      internalID: 455077854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blockhead_SS_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bee466a0c1efaa45838d7dc395dd72f
+      internalID: 1925086306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blockhead_SS_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04b1225363c772b459f9cfddb0b21e8d
+      internalID: -1207523356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +240,47 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      blockhead_SS_3: 972614038
+      blockhead_SS_18: 442015273
+      blockhead_SS_8: -1423994931
+      blockhead_SS_11: -1152575742
+      blockhead_SS_28: 1917642902
+      blockhead_SS_16: -1453190159
+      blockhead_SS_31: -1359967079
+      blockhead_SS_19: -1034781348
+      blockhead_SS_26: -1207523356
+      blockhead_SS_39: 1178281628
+      blockhead_SS_20: 1587149128
+      blockhead_SS_15: 1346792896
+      blockhead_SS_1: -1454601294
+      blockhead_SS_12: 1475660695
+      blockhead_SS_13: -1993716577
+      blockhead_SS_33: 438938635
+      blockhead_SS_37: 1908772241
+      blockhead_SS_6: -1206464309
+      blockhead_SS_22: 2096438099
+      blockhead_SS_25: 1925086306
+      blockhead_SS_10: 1357393389
+      blockhead_SS_17: 750730732
+      blockhead_SS_30: -299479076
+      blockhead_SS_5: -1941070831
+      blockhead_SS_32: 376470623
+      blockhead_SS_35: 965078211
+      blockhead_SS_0: 22164344
+      blockhead_SS_27: 579748851
+      blockhead_SS_21: 669222026
+      blockhead_SS_34: 113230226
+      blockhead_SS_38: 1826409533
+      blockhead_SS_23: -258592993
+      blockhead_SS_24: 455077854
+      blockhead_SS_29: 777914364
+      blockhead_SS_7: -2040494433
+      blockhead_SS_36: 337001105
+      blockhead_SS_2: 1920442182
+      blockhead_SS_4: -1566827260
+      blockhead_SS_9: -546357134
+      blockhead_SS_14: -1289099441
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

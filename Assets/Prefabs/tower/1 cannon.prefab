@@ -44,6 +44,8 @@ GameObject:
   - component: {fileID: 3248000793684943396}
   - component: {fileID: 1312899617597385144}
   - component: {fileID: 7856858149678934433}
+  - component: {fileID: 4344410116940349891}
+  - component: {fileID: 4574198469011686223}
   m_Layer: 0
   m_Name: 1 cannon
   m_TagString: Tower
@@ -139,7 +141,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 3ad1ea1252648d7458cb08e3f3a33478, type: 3}
+  m_Sprite: {fileID: 1920442182, guid: fe1e1d71bef190340aeb2c7fe2da5e4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -191,6 +193,7 @@ MonoBehaviour:
   chanceAssasin: 0
   Chain: 0
   critChance: 0
+  hitSFX: {fileID: 8300000, guid: 6917b4d4ed60a4f8eb2f67a0ecd4eac1, type: 3}
 --- !u!58 &7856858149678934433
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -207,3 +210,36 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!95 &4344410116940349891
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 76f294fc7777fa14dad71df1ad83da0d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &4574198469011686223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f11c86dffb8fc34ebc0724d1e44cbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animClip: {fileID: 7400000, guid: de45dbc9bb94fb745a689a1128c2810b, type: 2}

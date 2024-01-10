@@ -103,7 +103,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: elf_SS_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9dd62d7b94f1044686378c5cf7527e5
+      internalID: 478923883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elf_SS_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32afd9975591e22499fdeef96d22b1ce
+      internalID: -153899135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elf_SS_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ef85074547092468d6b74ecac8658e
+      internalID: 660854420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elf_SS_29
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01990a3845261554889c460c005251ec
+      internalID: 459914764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elf_SS_30
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96495874bf8891b43b81913f4af31bd2
+      internalID: -1285350523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elf_SS_31
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa4f8eda0afe284f94b0c9dddd3e39b
+      internalID: 831110006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +240,48 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      elf_SS_23: -1029313654
+      elf_SS_4: -2042102119
+      elf_SS_13: -1824571688
+      elf_SS_36: -2105693893
+      elf_SS_40: 1988396634
+      elf_SS_21: 1886541872
+      elf_SS_2: 478923883
+      elf_SS_11: 1469901342
+      elf_SS_34: -843407516
+      elf_SS_25: -1085954362
+      elf_SS_22: -2001880394
+      elf_SS_16: 1391767368
+      elf_SS_19: -345137500
+      elf_SS_8: 1874718488
+      elf_SS_28: 660854420
+      elf_SS_18: -720663832
+      elf_SS_39: 2143329128
+      elf_SS_35: -1543185531
+      elf_SS_3: -153899135
+      elf_SS_14: 1350128948
+      elf_SS_17: -519043310
+      elf_SS_6: -1621861231
+      elf_SS_29: 459914764
+      elf_SS_27: 1670617018
+      elf_SS_9: 52685746
+      elf_SS_15: 1223522561
+      elf_SS_30: -1285350523
+      elf_SS_31: 831110006
+      elf_SS_20: 1824247883
+      elf_SS_0: -1127770515
+      elf_SS_12: -235123051
+      elf_SS_26: 1655000094
+      elf_SS_32: -1948922714
+      elf_SS_33: 270377062
+      elf_SS_7: -875802103
+      elf_SS_5: -1614612249
+      elf_SS_24: 1639857327
+      elf_SS_38: 1992798496
+      elf_SS_1: -945907689
+      elf_SS_10: -1392763453
+      elf_SS_37: -507814319
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

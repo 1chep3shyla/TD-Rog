@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7912699240769563161}
   - component: {fileID: 3464831435600719249}
   - component: {fileID: 4626149464888400075}
+  - component: {fileID: 381382092584466781}
   m_Layer: 0
   m_Name: 8 fire
   m_TagString: Tower
@@ -161,6 +162,7 @@ MonoBehaviour:
   chanceAssasin: 0
   Chain: 0
   critChance: 0
+  hitSFX: {fileID: 8300000, guid: 6917b4d4ed60a4f8eb2f67a0ecd4eac1, type: 3}
 --- !u!58 &3464831435600719249
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -197,6 +199,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &381382092584466781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f11c86dffb8fc34ebc0724d1e44cbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animClip: {fileID: 7400000, guid: 265712e28ab6d5149918c707ef8cbda7, type: 2}
 --- !u!1 &2466880647901358694
 GameObject:
   m_ObjectHideFlags: 0

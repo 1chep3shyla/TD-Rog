@@ -103,7 +103,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: poisonUp_SS_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09362eca8fa2bcc409544ac5f59d2739
+      internalID: -1493442713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poisonUp_SS_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0278eb0410fa6e4ba9e978d43359e65
+      internalID: -537599024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poisonUp_SS_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ca684aa4a03b64893d2dfefbbf0d67
+      internalID: -1305972576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poisonUp_SS_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be8ef04acabea5143bcb70f1239d2568
+      internalID: 1463728374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poisonUp_SS_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faff28d1eac428c4fa8cc3a0a2d041c9
+      internalID: 307439268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +219,47 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      poisonUp_SS_15: 340489716
+      poisonUp_SS_22: -1437308529
+      poisonUp_SS_27: -275366726
+      poisonUp_SS_31: 1308202225
+      poisonUp_SS_16: 1143940940
+      poisonUp_SS_32: 1649436447
+      poisonUp_SS_2: -1493442713
+      poisonUp_SS_35: -1860644224
+      poisonUp_SS_8: -700861593
+      poisonUp_SS_11: 749610979
+      poisonUp_SS_36: -1548005327
+      poisonUp_SS_12: 1929890159
+      poisonUp_SS_26: 1598776571
+      poisonUp_SS_3: -537599024
+      poisonUp_SS_24: -1657636229
+      poisonUp_SS_33: 954161806
+      poisonUp_SS_14: -867696766
+      poisonUp_SS_38: -108486910
+      poisonUp_SS_17: -1305972576
+      poisonUp_SS_0: 143454230
+      poisonUp_SS_9: 1579246290
+      poisonUp_SS_23: 113137537
+      poisonUp_SS_10: -1666539568
+      poisonUp_SS_6: -146935438
+      poisonUp_SS_25: 156971795
+      poisonUp_SS_19: 307439268
+      poisonUp_SS_18: 1463728374
+      poisonUp_SS_34: -813988814
+      poisonUp_SS_39: -1876630165
+      poisonUp_SS_20: -1925346992
+      poisonUp_SS_1: -2345676
+      poisonUp_SS_4: -766985474
+      poisonUp_SS_21: 509113025
+      poisonUp_SS_28: 1247873731
+      poisonUp_SS_30: -409804221
+      poisonUp_SS_37: -881017722
+      poisonUp_SS_29: -620203181
+      poisonUp_SS_7: -2021914024
+      poisonUp_SS_13: 1803570406
+      poisonUp_SS_5: 269907955
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

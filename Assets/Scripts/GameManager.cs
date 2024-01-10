@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public Tilemap[] maps;
     public Transform goldPos;
     public Spawner spawn;
+    public AudioSource aS;
     [SerializeField]
     private int[] giveMoneyCheat;
 

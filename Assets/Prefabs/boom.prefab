@@ -103,7 +103,7 @@ MonoBehaviour:
   fireDamage: 0
   critChance: 0
   explosionRadius: 1
-  particle: {fileID: 1064867209193409781, guid: 62244e38d7433774386d800c96ed8e09, type: 3}
+  particle: {fileID: 6910336767071730326, guid: a387269acd91a6d4c912e8fb56c4ddd8, type: 3}
 --- !u!58 &8477531296299298522
 CircleCollider2D:
   m_ObjectHideFlags: 0

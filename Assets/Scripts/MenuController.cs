@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    public AudioSource aS;
     public void QuitGame()
     {
 #if UNITY_EDITOR
@@ -14,19 +15,24 @@ public class MenuController : MonoBehaviour
 #endif
     }
 
-    // Функция для перехода в следующую сцену
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     public void LoadNextScene(string nameScene)
     {
-        // Получаем индекс текущей активной сцены
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        // Загружаем следующую сцену (индекс + 1)
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅ + 1)
         SceneManager.LoadScene(nameScene);
 
-        // Если это последняя сцена, то переходите на начальную сцену или другую сцену по вашему выбору
+        // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         // if (currentSceneIndex == SceneManager.sceneCountInBuildSettings - 1)
         // {
-        //     SceneManager.LoadScene("MainMenu"); // Пример перехода на главное меню
+        //     SceneManager.LoadScene("MainMenu"); // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         // }
+    }
+    public void PlaySFX(AudioClip clip)
+    {
+        aS.PlayOneShot(clip);
+        aS.pitch = Random.Range(0.9f, 1.1f);
     }
 }
