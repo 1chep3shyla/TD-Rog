@@ -196,6 +196,7 @@ public class Default : MonoBehaviour
             {
                 if (target != null)
                 {
+                    UpdateFlip(target);
                     animator.SetTrigger("Attacking");
                     GameManager.Instance.aS.PlayOneShot(hitSFX);
                     GameManager.Instance.aS.pitch = Random.Range(0.8f, 1.1f);
@@ -326,6 +327,24 @@ public class Default : MonoBehaviour
             }
         }
     }
+    public void UpdateFlip(Transform target)
+    {
+        if(target !=null)
+        {
+            if(target.position.x < transform.position.x)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+    }
     void AttackRage()
     {
         if (attackCooldown <= 0f && enemiesInRange.Count > 0)
@@ -335,6 +354,7 @@ public class Default : MonoBehaviour
 
             if (target != null)
             {
+                 UpdateFlip(target);
                 animator.SetTrigger("Attacking");
                     GameManager.Instance.aS.PlayOneShot(hitSFX);
                     GameManager.Instance.aS.pitch = Random.Range(0.8f, 1.1f);
@@ -374,6 +394,7 @@ public class Default : MonoBehaviour
                     enemiesInRange.RemoveAt(0); // Remove the first enemy from the list
                 }
             }
+            UpdateFlip(enemiesInRange[0]);
         }
 
     }

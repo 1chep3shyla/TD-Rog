@@ -23,7 +23,25 @@ MonoBehaviour:
   - 10
   - 0
   - 0
-  name: Assassin
+  name: Assassina
+  icon: {fileID: 21300000, guid: b1bcb09d72835f24ea05685537a7830a, type: 3}
+  history: "In the depths of the mysterious world of Elistar, where ancient magic
+    lingered in every breath, Assasina was born \u2014 a guardian of shadows and
+    secrets. Her story became a weaving of mystical currents, where every step remained
+    unnoticed.\r\n\r\nUnder the influence of a power whose source was immersed in
+    ancient legends, Assasina gained abilities that transported her between light
+    and darkness. Sheltered by shadows, she became a weapon in the hands of a mysterious
+    entity known as the Shadow, promising her the opportunity for vengeance in exchange
+    for loyalty.\r\n\r\nHer path led through the dense shadows of forgotten corridors
+    and ancient forests, where every leaf was a witness to her invisible presence.
+    Assasina became an executor of secret contracts, an inconspicuous instrument
+    for those who needed her services.\r\n\r\nBut a shadow of questions crept into
+    her heart. She unraveled the secrets of her past to unveil the mysteries of her
+    present. The Shadow granted her power, but also dark secrets that had to be unraveled.\r\n\r\nIn
+    the world of Elistar, where darkness and light danced in the eternal confrontation,
+    Assasina became not only an agent of vengeance but also a guardian of balance.
+    Her fate intertwined with the history of Elistar, remaining unknown and mysterious,
+    like the very shadow that permeated her existence."
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}

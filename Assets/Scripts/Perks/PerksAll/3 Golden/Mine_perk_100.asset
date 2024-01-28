@@ -16,4 +16,4 @@ MonoBehaviour:
   name: Mine Buff II
   disc: 'Increase Mining by '
   indexOfBuff: 4
-  sprite: {fileID: 21300000, guid: b9d3b6af604a085418e1a3bb67470f10, type: 3}
+  sprite: {fileID: 21300000, guid: fa778f545c4af684eb010c8e2bb6d476, type: 3}

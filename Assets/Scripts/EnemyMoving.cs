@@ -16,7 +16,7 @@ public class EnemyMoving : MonoBehaviour
 {
     public EnemyType typeEnemy;
     public GameObject[] waypoints;
-    private int currentWaypoint;
+    public int currentWaypoint;
     private float lastWaypointSwitchTime;
     public float speed = 1.0f;
     public float maxSpeed = 1.0f;

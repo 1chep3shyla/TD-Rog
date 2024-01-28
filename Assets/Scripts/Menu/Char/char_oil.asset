@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexEvolve: 3
   buffs:
-  - 100
-  - 100
-  - 100
+  - 25
+  - 25
+  - 32
   - 100
   - 100
   - 100
@@ -24,6 +24,8 @@ MonoBehaviour:
   - 100
   - 100
   name: Sticky Trapsetter
+  icon: {fileID: 21300000, guid: a5ca7ca8ca8fcb745aad34c56d3b7173, type: 3}
+  history: 
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}

@@ -9,6 +9,8 @@ public class ReaderFile : MonoBehaviour
 {
 
     public string tsvFilePath; // Specify the TSV file path in the Inspector
+    public int[] healthCount;
+    public float[] speedCount;
     public Enemy[] enemyStat;
     public EnemyMoving[] enemyMoveStat;
 
@@ -31,13 +33,11 @@ public class ReaderFile : MonoBehaviour
             for (int i = 1; i < lines.Length; i++) // Skip the header line
             {
                 string[] values = lines[i].Split('\t'); // Changed to '\t' for TSV
-
-                enemyStat[i - 1].maxHealth = int.Parse(values[1]);
-                enemyMoveStat[i - 1].typeEnemy = (EnemyType)Enum.Parse(typeof(EnemyType), values[3]);
+                healthCount[i - 1] = int.Parse(values[2]);
                 float speedValue;
-                if (float.TryParse(values[2], NumberStyles.Float, CultureInfo.InvariantCulture, out speedValue))
+                if (float.TryParse(values[3], NumberStyles.Float, CultureInfo.InvariantCulture, out speedValue))
                 {
-                    enemyMoveStat[i - 1].maxSpeed = speedValue;
+                    speedCount[i - 1] = speedValue;
                 }
 
             }

@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2056256240725061661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.348, y: 1.323, z: 0}
-  m_LocalScale: {x: 1.35, y: 1.35, z: 1.35}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 96405552007491915}
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 4
-  iconCard: {fileID: 21300000, guid: 00f5e2c27796f4240bfc4ec2f67f8ad2, type: 3}
+  iconCard: {fileID: 1205057721, guid: 08ecc7e7742f05740984235f5c36101b, type: 3}
   UpVersion: {fileID: 2056256240725061661, guid: d88434dc39fd87b42ba15915791b9fd3, type: 3}
   baseOf: {fileID: 0}
   name: Ice Tower

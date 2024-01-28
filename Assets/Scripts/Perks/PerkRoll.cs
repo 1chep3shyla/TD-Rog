@@ -15,9 +15,10 @@ public class PerkRoll : MonoBehaviour
     public Image[] cardBack;
     public Image[] cardIcon;
     public GameObject PerkGM;
-    public Sprite[] spritesCard;
     public Text[] discription;
     public bool rollingEvolve;
+    public ParticleSystem[] perkPS;
+    public Color[] colors;
 
     void Start()
     {
@@ -47,22 +48,25 @@ public class PerkRoll : MonoBehaviour
                 {
                     if (o == 0)
                     {
-                        cardBack[i].sprite = spritesCard[0];
+                        cardBack[i].color = colors[0];
                         int randomPerk = Random.Range(0, availableBronzePerks.Count);
+                        perkPS[i].startColor = colors[0];
                         curPerks[i] = availableBronzePerks[randomPerk];
                         availableBronzePerks.Remove(availableBronzePerks[randomPerk]);
                     }
                     else if (o == 1)
                     {
-                        cardBack[i].sprite = spritesCard[1];
+                        cardBack[i].color = colors[1];
                         int randomPerk = Random.Range(0, availableSilverPerks.Count);
+                        perkPS[i].startColor = colors[1];
                         curPerks[i] = availableSilverPerks[randomPerk];
                         availableSilverPerks.Remove(availableSilverPerks[randomPerk]);
                     }
                     else if (o == 2)
                     {
-                        cardBack[i].sprite = spritesCard[2];
+                        cardBack[i].color = colors[2];
                         int randomPerk = Random.Range(0, availableGoldenPerks.Count);
+                        perkPS[i].startColor = colors[2];
                         curPerks[i] = availableGoldenPerks[randomPerk];
                         availableGoldenPerks.Remove(availableGoldenPerks[randomPerk]);
                     }
@@ -87,7 +91,7 @@ public class PerkRoll : MonoBehaviour
 
         for (int i = 0; i < curPerks.Length; i++)
         {
-            cardBack[i].sprite = spritesCard[2];
+            cardBack[i].color = colors[2];
             int randomPerk = Random.Range(0, availablePerks.Count);
             curPerks[i] = availablePerks[randomPerk];
             availablePerks.Remove(availablePerks[randomPerk]);

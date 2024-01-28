@@ -10,18 +10,22 @@ public class SeeText :  MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public TMP_Text descriptionText; // текст описания (если используется текстовое поле)
     public Color descriptionColor = Color.white; // начальный цвет описания
     public string description;
+    public bool need;
+    public bool work;
+    public Vector3 offSet;
 
     private GameObject parentObject; // объект, на котором лежит этот скрипт
 
     private void Start()
     {
         parentObject = this.gameObject;
-
-        if (descriptionObject != null)
+        descriptionObject.SetActive(false);
+        if (descriptionObject != null && !need)
         {
-            descriptionObject.SetActive(false);
-            descriptionObject.transform.SetParent(parentObject.transform);
-            descriptionObject.transform.localPosition = new Vector3(0, 60, 0);
+            //descriptionObject.transform.SetParent(parentObject.transform);
+            descriptionObject.transform.localPosition = new Vector3(transform.localPosition.x - offSet.x, 
+            transform.localPosition.y - offSet.y, 
+            transform.localPosition.z + offSet.z);
         }
 
         UpdateDescriptionColor();
@@ -29,23 +33,27 @@ public class SeeText :  MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (descriptionObject != null)
+        if(!work)
         {
-            descriptionObject.SetActive(true);
-            descriptionObject.transform.SetParent(parentObject.transform);
-            descriptionObject.transform.localPosition = new Vector3(0, 60, 0);
+        if (descriptionObject != null && !need)
+        {
+            //descriptionObject.transform.SetParent(parentObject.transform);
+            descriptionObject.transform.position = new Vector3(transform.position.x + offSet.x, 
+            transform.position.y + offSet.y, 
+            transform.position.z + offSet.z);
         }
-
+        descriptionObject.SetActive(true);
         if (descriptionText != null)
         {
             descriptionText.text = description;
             UpdateDescriptionColor();
         }
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (descriptionObject != null)
+        if (descriptionObject != null && !work)
         {
             descriptionObject.SetActive(false);
         }
@@ -57,6 +65,17 @@ public class SeeText :  MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (descriptionText != null)
         {
             descriptionText.color = descriptionColor;
+        }
+    }
+    public void Work()
+    {
+        if(!work)
+        {
+            work = true;
+        }
+        else
+        {
+            work = false;
         }
     }
 }

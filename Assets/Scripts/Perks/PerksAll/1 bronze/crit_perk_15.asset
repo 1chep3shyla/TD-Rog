@@ -16,4 +16,4 @@ MonoBehaviour:
   name: Crit Damage I
   disc: Increase Crit Damage by
   indexOfBuff: 7
-  sprite: {fileID: -1748518122, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  sprite: {fileID: 21300000, guid: 5de2675f68bba3f47aafa3637729e559, type: 3}

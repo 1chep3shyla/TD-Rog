@@ -14,16 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexEvolve: 0
   buffs:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 15
-  - 0
-  - 0
-  - 0
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
   name: Dimension Voyager
+  icon: {fileID: 21300000, guid: 2b7c8073d2f7d7741b5faba898c30b6d, type: 3}
+  history: 
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}

@@ -12,6 +12,7 @@ public interface ICharSet : IChar
     public float[] GetStat();
     public string GetStatName();
     public GameObject[] SetGameObject();
+    public string GetHistory();
     public void SetDataChar(int index, float count);
 }
 [CreateAssetMenu(fileName = "NewChar", menuName = "Character/Char")]
@@ -20,10 +21,14 @@ public class Character : ScriptableObject, ICharSet
     public int indexEvolve; // 0 - split, 1 - elf, 2 - blizzard, 3 - Oil, 4 - Boom, 5 - divine, 6 - storm, 7 - poisonSmoke, 8 - rage, 9 - portal, 10 - gear, 11 - assasin, 12 - cannon, 13 - magnet, 14 - gladiator
     public float[] buffs;
     public string name;
+    public Sprite icon;
+    [TextArea(15,20)]
+    public string history;
     public GameObject[] towerPull;
     public void ApplyBuff()
     {
         GameBack.Instance.charData = this;
+        GameBack.Instance.iconChar = icon;
     }
     public GameObject[] SetGameObject()
     {
@@ -50,6 +55,10 @@ public class Character : ScriptableObject, ICharSet
     public string GetStatName()
     {
         return name;
+    }
+       public string GetHistory()
+    {
+        return history;
     }
     public void SetDataChar(int index, float count)
     {

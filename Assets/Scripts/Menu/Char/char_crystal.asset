@@ -24,6 +24,38 @@ MonoBehaviour:
   - 0
   - 0
   name: Dwarf Warrior
+  icon: {fileID: 21300000, guid: d97e1192bc50b674f89cc74b493eaa76, type: 3}
+  history: 'Deep in the mountains, in a secluded mountain settlement, lived a gnome
+    named Kragmor. He was a powerhouse and defender of his people. Everyone knew
+    him as an unwavering warrior, battling monsters to ensure the safety of his loved
+    ones.
+
+
+
+    But behind the sturdy armor and steel shield hid a poignant story.
+    In his youth, Kragmor was in love with a beautiful gnome named Phailin. Their
+    love seemed unbreakable, but wars and dangers lurked around every corner.
+
+
+
+    One
+    day, during a brutal attack by the Shadow Servants of the Assassin, Kragmor sent
+    Phailin to a hiding place, promising to return. He fought the assassins, but
+    upon his return, he found their home destroyed, and Phailin gone. He traversed
+    every mountain path, searched every cave, but she was nowhere to be found.
+
+
+
+    The
+    bitter pain of loss stayed with Kragmor, making him internally shattered. He
+    continued to protect his people, but his heart was filled with sorrow. His eyes
+    often flickered with sadness and unspoken grief.
+
+
+
+    Every day, in his ongoing
+    struggle, Kragmor hoped to see his love again. His dream was the heavy burden
+    he carried along with his strength and endless sorrow.'
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}

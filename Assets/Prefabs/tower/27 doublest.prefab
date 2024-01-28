@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2056256240725061661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.348, y: 1.323, z: 0}
-  m_LocalScale: {x: 1.35, y: 1.35, z: 1.35}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1615630990437246422}
@@ -54,12 +54,14 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Double Tower
+  description: 
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 2
   curDamage: 2
   LVL: 0
   critChance: 0
+  critChanceCur: 0
   towerDataCur: {fileID: 11400000, guid: e5cdf5257f90ea2478c1a413895b11e1, type: 2}
   cursor: {fileID: 4165085857138819161, guid: 05a5204c38848ac44874a41b20554ead, type: 3}
   cursorDelete: {fileID: 0}
@@ -158,6 +160,7 @@ MonoBehaviour:
   chanceAssasin: 0
   Chain: 0
   critChance: 0
+  hitSFX: {fileID: 0}
 --- !u!114 &-2444869476186086617
 MonoBehaviour:
   m_ObjectHideFlags: 0

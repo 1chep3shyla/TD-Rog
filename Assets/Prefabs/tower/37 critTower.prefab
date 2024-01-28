@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2056256240725061661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.348, y: 1.323, z: 0}
-  m_LocalScale: {x: 1.35, y: 1.35, z: 1.35}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,6 +104,7 @@ MonoBehaviour:
   UpVersion: {fileID: 2056256240725061661, guid: 2e9374acb5491e4498d9c7eb83a824b6, type: 3}
   baseOf: {fileID: 0}
   name: Crit Castle
+  description: 
   curAttackSpeed: 0
   attackSpeed: 0
   damage: 0

@@ -8,7 +8,7 @@ using System;
 public class Rolling : MonoBehaviour
 {
     public Slot[] slots;
-    public TowerBase[,] allBases = new TowerBase[15, 7];
+    public TowerBase[,] allBases = new TowerBase[20, 7];
     public GameObject[] towers;
     public Button[] butChoose;
     public Sprite[] imageidTower;

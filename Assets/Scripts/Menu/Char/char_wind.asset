@@ -24,6 +24,41 @@ MonoBehaviour:
   - 0
   - 0
   name: Lord of the Wind
+  icon: {fileID: 21300000, guid: 89e0fcedc8fdb264a919abced92e7811, type: 3}
+  history: '
+
+    In the magical realm of Elistar, where winds carried tales of ancient
+    magic and forgotten lands, emerged a legendary figure known as the Lord of the
+    Wind. Born amidst swirling currents of ethereal breezes, his fate intertwined
+    with the very essence of the elements.
+
+
+
+    As a child, he displayed an innate
+    affinity for the winds, playing with zephyrs as if they were his companions.
+    The whispers of air spirits guided him, revealing secrets of vanished lands and
+    age-old enchantments.
+
+
+
+    His first manifestation of power occurred when the
+    winds answered his plea for aid during a great calamity, rising against the magic
+    of dark forces. For this, the hero was embraced by the friendly winds, and in
+    that moment, the Lord of the Wind rose to become the defender of Elistar.
+
+
+
+    His
+    adventures led him through aerial kingdoms, cloud fortresses, and forgotten sanctuaries,
+    where mysterious wind forces presented enigmatic trials. In each new place, he
+    discovered sources of wind wisdom and strength, deepening his connection with
+    the ethereal streams.
+
+
+
+    The Lord of the Wind became a symbol of freedom,
+    strength, and the eternal capriciousness of nature. His appearance heralded changes
+    in a world where aerial whirlwinds served as both weapon and shield.'
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}

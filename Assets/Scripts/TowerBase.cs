@@ -8,6 +8,8 @@ public class TowerBase : MonoBehaviour
     public GameObject monster;
     public int level;
     public GameObject curGM;
+    [SerializeField]
+    private Color[] colors;
 
 
     void Update()
@@ -24,6 +26,7 @@ public class TowerBase : MonoBehaviour
                 rollBase.AddTower(curGM.GetComponent<SpriteRenderer>());
             }
         }
+        GetComponent<SpriteRenderer>().color = colors[level];
     }
     public bool CanPlaceMonster()
     {

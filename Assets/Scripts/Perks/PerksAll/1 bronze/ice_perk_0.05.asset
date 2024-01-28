@@ -15,4 +15,4 @@ MonoBehaviour:
   buffIcePower: 0.05
   name: Ice Power I
   disc: Increase Deceleration  by
-  sprite: {fileID: 792443270, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  sprite: {fileID: 21300000, guid: 555ed813154f25f4cbeffea6638b55af, type: 3}

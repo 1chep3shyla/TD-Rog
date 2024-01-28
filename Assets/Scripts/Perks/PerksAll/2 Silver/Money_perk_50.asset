@@ -16,4 +16,4 @@ MonoBehaviour:
   name: Money Buff I
   disc: 'Increase Rewards by '
   indexOfBuff: 6
-  sprite: {fileID: 21300000, guid: 07a8b6129b0239e43a4a944188fefeea, type: 3}
+  sprite: {fileID: 21300000, guid: 1b0b6c4f096c7354aae865da50a2f7e4, type: 3}

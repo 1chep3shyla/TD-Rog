@@ -16,4 +16,4 @@ MonoBehaviour:
   name: Global Damage III
   disc: Increase Global Damage by
   indexOfBuff: 0
-  sprite: {fileID: 671559841, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  sprite: {fileID: 21300000, guid: c486d9ce568178c4dbd5e932f18377cb, type: 3}

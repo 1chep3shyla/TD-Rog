@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     public int maxHealth;
     public int restoreHeal;
     public SpriteRenderer[] allTower;
+    public Image charIcon;
     public GameObject needMore;
     public TMP_Text goldCount;
     public TMP_Text healthCount;
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
         }
         charData = GameBack.Instance.charData;
         charData.SetData();
+        charIcon.sprite = GameBack.Instance.iconChar;
         states[GameBack.Instance.indexState].SetActive(true);
         gameObject.GetComponent<Rolling>().tilemap = maps[GameBack.Instance.indexState];
     }

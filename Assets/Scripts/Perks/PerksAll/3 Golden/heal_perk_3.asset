@@ -15,4 +15,4 @@ MonoBehaviour:
   hpRestore: 3
   name: Divine Healing II
   disc: Restores your health every wave on
-  sprite: {fileID: -1938932545, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  sprite: {fileID: 21300000, guid: 4f065c050197ebf4fa00544bfee6e354, type: 3}

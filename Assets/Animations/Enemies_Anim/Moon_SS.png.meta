@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -103,7 +103,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Moon_SS_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1806257ee642b7a448fab02a6cce1b84
+      internalID: 1166522977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon_SS_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aabeb27f7c321545a46e271ef9f98e1
+      internalID: 253794088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon_SS_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dea20260ba8aa04b891dceda3f6318d
+      internalID: 883864469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon_SS_24
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc10f4299329304f814f1c2fc2091e0
+      internalID: 1107186776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon_SS_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 973607e2db2b14948841058ab84e0825
+      internalID: 740047227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moon_SS_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36a0af418bfb98a4da280ac22c95a0b7
+      internalID: 1121198148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +240,47 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Moon_SS_25: 740047227
+      Moon_SS_5: -1403734492
+      Moon_SS_7: 736033225
+      Moon_SS_10: 1642262777
+      Moon_SS_34: 1566403347
+      Moon_SS_22: -828437487
+      Moon_SS_38: -1974649095
+      Moon_SS_9: 1627949262
+      Moon_SS_13: 1443010830
+      Moon_SS_16: 1223000558
+      Moon_SS_21: 790423063
+      Moon_SS_29: -1498319414
+      Moon_SS_24: 1107186776
+      Moon_SS_26: 1121198148
+      Moon_SS_27: 2049448122
+      Moon_SS_15: 759965758
+      Moon_SS_35: -1889755870
+      Moon_SS_36: 1501851392
+      Moon_SS_11: 255283445
+      Moon_SS_12: -1438459389
+      Moon_SS_14: -324362836
+      Moon_SS_32: 1730510779
+      Moon_SS_17: -688381442
+      Moon_SS_39: -1577621805
+      Moon_SS_30: 764685568
+      Moon_SS_37: -1298144339
+      Moon_SS_0: 869113248
+      Moon_SS_2: 1166522977
+      Moon_SS_31: -9499806
+      Moon_SS_3: 253794088
+      Moon_SS_8: 553597466
+      Moon_SS_28: 980229451
+      Moon_SS_19: -1528464479
+      Moon_SS_33: 509450794
+      Moon_SS_1: -2070538609
+      Moon_SS_4: 624904180
+      Moon_SS_23: 883864469
+      Moon_SS_6: 1314766403
+      Moon_SS_18: 1455001618
+      Moon_SS_20: -1955949712
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

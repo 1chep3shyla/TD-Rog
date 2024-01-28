@@ -8,10 +8,14 @@ public class CharWithOutEvolve : ScriptableObject, ICharSet
 
     public float[] buffs;
     public string name;
+    public Sprite icon;
     public GameObject[] towerPull;
+    [TextArea(15,20)]
+    public string history;
     public void ApplyBuff()
     {
         GameBack.Instance.charData = this;
+        GameBack.Instance.iconChar = icon;
     }
     public GameObject[] SetGameObject()
     {
@@ -34,6 +38,10 @@ public class CharWithOutEvolve : ScriptableObject, ICharSet
     public string GetStatName()
     {
         return name;
+    }
+    public string GetHistory()
+    {
+        return history;
     }
     public void SetDataChar(int index, float count)
     {

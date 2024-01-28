@@ -23,6 +23,7 @@ MonoBehaviour:
   - 0
   - 0
   name: Great Knight
+  icon: {fileID: 21300000, guid: 02b9aa5cf89f34b46a46c792c4ff7865, type: 3}
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   - {fileID: 2056256240725061661, guid: f76df1e501a76354c91f03aa18286075, type: 3}
@@ -35,3 +36,31 @@ MonoBehaviour:
   - {fileID: 2056256240725061661, guid: 0bac3d26016f6b149a5067341213ac9d, type: 3}
   - {fileID: 2056256240725061661, guid: 0f848e067fec08f478ddd98847e4478a, type: 3}
   - {fileID: 2056256240725061661, guid: bb8ad514de2f24f4aa5db5a88e1276bc, type: 3}
+  history: '
+
+    In the ages of antiquity, when the lands were infused with magic
+    and enchantment, arose the great knight named Sirius Steelheart. His lineage
+    was renowned for their loyalty and service to the kingdom, and Sirius was no
+    exception. He grew up honing the art of martial prowess and justice, adhering
+    to the code of chivalry.
+
+
+
+    With a sword in hand and a heart filled with
+    goodness, Sirius participated in numerous battles, defending his people against
+    dark forces and ominous creatures awakened by dark arcana. He became a symbol
+    of hope for those in distress and a guardian of justice for all who transgressed
+    the laws.
+
+
+
+    Sirius Steelheart became known as the Great Knight, thanks to
+    his magnificence in battles and unwavering honor in every endeavor. He was the
+    best of his kind, and his legend spread throughout the kingdom.
+
+
+
+    Since
+    then, the Great Knight has become a symbol of nobility, justice, and courage.
+    The legend of his exploits continues to inspire new generations of knights and
+    champions of the light.'

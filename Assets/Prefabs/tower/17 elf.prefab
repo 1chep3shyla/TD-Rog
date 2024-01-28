@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2056256240725061661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.348, y: 1.323, z: 0}
-  m_LocalScale: {x: 1.35, y: 1.35, z: 1.35}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1615630990437246422}
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 17
-  iconCard: {fileID: -1017457444, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  iconCard: {fileID: 478923883, guid: 6eebbc98cdf5cdd498f66d7294f7c9ad, type: 3}
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Elf Tower

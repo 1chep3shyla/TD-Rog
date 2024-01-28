@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class GoldMoving : MonoBehaviour
 {
-    public Transform targetObject; // Целевой объект, к которому нужно переместиться
-    public float moveDuration = 2.0f; // Длительность перемещения
-    public iTween.EaseType easeType = iTween.EaseType.easeOutExpo; // Тип кривой
+    public Transform targetObject; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public float moveDuration = 2.0f; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public iTween.EaseType easeType = iTween.EaseType.easeOutExpo; // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     public int gold;
+    public int YoffSet;
 
-    private bool isMoving = false; // Флаг, указывающий, двигается ли объект
+    public float arcHeight = 5.0f;
+    public float bulletSpeed = 10.0f;
+    private Vector3 startPosition;
+    private Vector3 endPosition;
+    private float horizontalDistance;
+    private float totalTime;
 
-    void Start()
-    {
-        targetObject = GameManager.Instance.goldPos;
-    }
+    private bool isMoving = false; // пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    private bool can;
+
+
     private void Update()
     {
-        if (targetObject != null)
+        if (targetObject != null && can)
         {
             MoveToTarget();
         }
@@ -28,7 +34,7 @@ public class GoldMoving : MonoBehaviour
     {
         isMoving = true;
 
-        // Определите параметры для перемещения iTween
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ iTween
         Hashtable moveParams = new Hashtable();
         moveParams.Add("position", targetObject.position);
         moveParams.Add("time", moveDuration);
@@ -36,15 +42,60 @@ public class GoldMoving : MonoBehaviour
         moveParams.Add("oncomplete", "OnMoveComplete");
         moveParams.Add("oncompletetarget", gameObject);
 
-        // Запустите iTween
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ iTween
         iTween.MoveTo(gameObject, moveParams);
     }
 
     private void OnMoveComplete()
     {
         isMoving = false;
-        Debug.Log("Прибыл к целевой позиции!");
+        Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!");
         GameManager.Instance.Gold += gold;
         Destroy(gameObject);
+    }//
+
+    private void Start()
+    {
+        targetObject = GameManager.Instance.goldPos;
+        startPosition = transform.position;
+        int i = Random.Range(0,2);
+        if ( i == 0)
+        {
+            endPosition = transform.position + new Vector3(Random.Range(-1f,-0.4f) , YoffSet,0f);
+        }
+        else if ( i == 1)
+        {
+             endPosition = transform.position + new Vector3(Random.Range(0.4f,1f) , YoffSet,0f);
+        }
+
+    
+
+        horizontalDistance = Vector3.Distance(startPosition, endPosition);
+
+        float yOffset = endPosition.y - startPosition.y;
+        float timeToTop = Mathf.Sqrt((2 * arcHeight) / Mathf.Abs(Physics2D.gravity.y));
+        float timeToTarget = Mathf.Sqrt((2 * (arcHeight - yOffset)) / Mathf.Abs(Physics2D.gravity.y));
+        totalTime = timeToTop + timeToTarget;
+
+        StartCoroutine(MoveAlongArc());
+    }
+
+    private IEnumerator MoveAlongArc()
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < totalTime)
+        {
+            float t = elapsedTime / totalTime;
+            Vector3 parabolicPosition = Vector3.Lerp(startPosition, endPosition, t) + Vector3.up * Mathf.Sin(Mathf.PI * t) * arcHeight;
+
+            transform.position = parabolicPosition;
+
+            elapsedTime += Time.deltaTime * bulletSpeed;
+            yield return null;
+        }
+       yield return new WaitForSeconds(0.25f);
+        can = true;
+        
     }
 }

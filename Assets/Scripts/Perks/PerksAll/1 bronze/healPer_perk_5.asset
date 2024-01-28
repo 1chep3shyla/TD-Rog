@@ -15,4 +15,4 @@ MonoBehaviour:
   hpRestore: 5
   name: Healing I
   disc: Restores your health on
-  sprite: {fileID: -1040159161, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  sprite: {fileID: 21300000, guid: 272fa4d5be31552449bc726b7768f195, type: 3}

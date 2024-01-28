@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -103,7 +103,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Magnet_SS_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f05f223c4f9d94dbb7ff6341999455
+      internalID: -1234601226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magnet_SS_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 512
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f39af1582ea8c47acf3150e2134b16
+      internalID: 810179514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magnet_SS_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 456787b81bede914b8a4cba25bc091fb
+      internalID: -1976254329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magnet_SS_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75012852c7ea4694793d4517430cf7eb
+      internalID: 1132230339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magnet_SS_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abdcf0dfe95a8a04c892ee66517fc8ee
+      internalID: 1425068588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +219,47 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Magnet_SS_14: -1234601226
+      Magnet_SS_18: 875386707
+      Magnet_SS_5: 1302967337
+      Magnet_SS_6: 1818142287
+      Magnet_SS_12: 1427596867
+      Magnet_SS_34: -1065675570
+      Magnet_SS_28: -180052796
+      Magnet_SS_3: -845280923
+      Magnet_SS_4: 1559475987
+      Magnet_SS_37: 1119589036
+      Magnet_SS_11: -269801875
+      Magnet_SS_23: -680284571
+      Magnet_SS_25: 24754696
+      Magnet_SS_32: -120997623
+      Magnet_SS_1: 1425068588
+      Magnet_SS_15: 810179514
+      Magnet_SS_7: 1525695527
+      Magnet_SS_20: 216163720
+      Magnet_SS_16: -1976254329
+      Magnet_SS_9: 1739420563
+      Magnet_SS_21: -189153302
+      Magnet_SS_19: 1931155591
+      Magnet_SS_31: -695463679
+      Magnet_SS_27: -485293389
+      Magnet_SS_33: 1125950523
+      Magnet_SS_13: -1593036464
+      Magnet_SS_38: -1451516565
+      Magnet_SS_22: 1958190229
+      Magnet_SS_24: -884587572
+      Magnet_SS_29: -184585182
+      Magnet_SS_17: 165252366
+      Magnet_SS_2: -10335565
+      Magnet_SS_8: -520165926
+      Magnet_SS_36: 1772881229
+      Magnet_SS_35: -923847441
+      Magnet_SS_30: 1378666112
+      Magnet_SS_0: 1132230339
+      Magnet_SS_26: -1490393617
+      Magnet_SS_39: -1348977666
+      Magnet_SS_10: 1598242847
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

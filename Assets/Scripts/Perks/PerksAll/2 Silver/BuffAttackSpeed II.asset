@@ -16,4 +16,4 @@ MonoBehaviour:
   name: Attack Speed Buff II
   disc: Increase Attack Speed by
   indexOfBuff: 5
-  sprite: {fileID: -1942210204, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  sprite: {fileID: 21300000, guid: 02d7092fee1d6e04bbdc51870d97fc9c, type: 3}

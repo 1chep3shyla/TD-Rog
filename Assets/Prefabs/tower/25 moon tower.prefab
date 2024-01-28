@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3248000793684943396}
   - component: {fileID: 2287685014846977297}
   - component: {fileID: 6607009438923849754}
+  - component: {fileID: 2858739538782513862}
+  - component: {fileID: 2447794399144427601}
   m_Layer: 0
   m_Name: 25 moon tower
   m_TagString: Tower
@@ -29,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2056256240725061661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.348, y: 1.323, z: 0}
-  m_LocalScale: {x: 1.35, y: 1.35, z: 1.35}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1615630990437246422}
@@ -49,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 25
-  iconCard: {fileID: 1485247716, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
+  iconCard: {fileID: 1166522977, guid: 3826ccee5c207bf4f96067318e97982f, type: 3}
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Moon Tower
@@ -108,7 +110,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 564453691, guid: 7b92f4884a6b35b448f8448a48e8b6bb, type: 3}
+  m_Sprite: {fileID: 1166522977, guid: 3826ccee5c207bf4f96067318e97982f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -177,6 +179,39 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!95 &2858739538782513862
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 49813e5bd563cbd4b88efd9bece99ebc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &2447794399144427601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f11c86dffb8fc34ebc0724d1e44cbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animClip: {fileID: 7400000, guid: 24b8a3231a04c2b4da5ded66532ac725, type: 2}
 --- !u!1 &2466880647901358694
 GameObject:
   m_ObjectHideFlags: 0

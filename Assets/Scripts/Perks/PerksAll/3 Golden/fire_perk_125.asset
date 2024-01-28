@@ -15,4 +15,4 @@ MonoBehaviour:
   buffFireDamage: 125
   name: Fire Damage III
   disc: 'Increase Fire Damage by '
-  sprite: {fileID: 1007315235, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  sprite: {fileID: 21300000, guid: 749ce9de44b4a5b44b60e5e70025191b, type: 3}
