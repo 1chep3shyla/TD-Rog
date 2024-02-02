@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Ice Mage Seal
   icon: {fileID: 21300000, guid: 439ff63e9f95d9444b4d3a7578fd2e96, type: 3}
+  iconTrans: {fileID: 21300000, guid: 2cb8a14411d8e414ba3743b42646505c, type: 3}
   buff:
   - 0
   - 15

@@ -4999,8 +4999,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5f9997c5ae4a748a781bcb69e50c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeEnemy: 2
+  typeEnemy: 4
   waypoints: []
+  currentWaypoint: 0
   speed: 1
   maxSpeed: 1.7
   slowTimer: 0
@@ -5046,6 +5047,7 @@ MonoBehaviour:
   health: 3
   maxHealth: 125
   goldGive: 10
+  chanceDrop: 2
   par: {fileID: 736572843130983340}
   inFire: 0
   inPoison: 0

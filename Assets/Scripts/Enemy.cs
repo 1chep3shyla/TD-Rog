@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public int health;
     public int maxHealth;
     public int goldGive;
+    public int chanceDrop;
     public ParticleSystem par;
     public bool inFire;
     public bool inPoison;
@@ -172,6 +173,11 @@ public class Enemy : MonoBehaviour
         GameObject gold = Instantiate(goldPrefab, transform.position, Quaternion.identity);
         gold.GetComponent<GoldMoving>().gold = goldGive;
         par.Play();
+        int randomDrop = Random.Range(0,100);
+        if(randomDrop > chanceDrop)
+        {
+            GameManager.Instance.ChestClaim();
+        }
     }
     public void SetOnFire(float duration, int damage)
     {

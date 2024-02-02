@@ -7,5 +7,6 @@ public class Item : ScriptableObject
 {
     public string name;
     public Sprite icon;
+    public Sprite iconTrans;
     public float[] buff;
 }

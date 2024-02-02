@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeEnemy: 2
   waypoints: []
+  currentWaypoint: 0
   speed: 1
   maxSpeed: 1
   slowTimer: 0
@@ -150,6 +151,7 @@ MonoBehaviour:
   health: 5
   maxHealth: 100
   goldGive: 5
+  chanceDrop: 1
   par: {fileID: 6088354569721911533}
   inFire: 0
   inPoison: 0

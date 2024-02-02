@@ -3076,6 +3076,7 @@ MonoBehaviour:
   description: Money Buff
   need: 0
   work: 0
+  offSet: {x: 0, y: 0, z: 0}
 --- !u!1 &284051194
 GameObject:
   m_ObjectHideFlags: 0
@@ -3573,6 +3574,7 @@ MonoBehaviour:
   description: Crit Chance Buff
   need: 0
   work: 0
+  offSet: {x: 0, y: 0, z: 0}
 --- !u!1 &363492627
 GameObject:
   m_ObjectHideFlags: 0
@@ -5707,6 +5709,7 @@ MonoBehaviour:
   description: Poison Buff
   need: 0
   work: 0
+  offSet: {x: 0, y: 0, z: 0}
 --- !u!1 &583823159
 GameObject:
   m_ObjectHideFlags: 0
@@ -5937,6 +5940,7 @@ MonoBehaviour:
   description: Ice Buff
   need: 0
   work: 0
+  offSet: {x: 0, y: 0, z: 0}
 --- !u!1 &651111556
 GameObject:
   m_ObjectHideFlags: 0
@@ -7075,6 +7079,7 @@ MonoBehaviour:
   description: Fire Buff
   need: 0
   work: 0
+  offSet: {x: 0, y: 0, z: 0}
 --- !u!1 &810605995
 GameObject:
   m_ObjectHideFlags: 0
@@ -7508,6 +7513,7 @@ MonoBehaviour:
   description: Crit Buff
   need: 0
   work: 0
+  offSet: {x: 0, y: 0, z: 0}
 --- !u!1 &852673815
 GameObject:
   m_ObjectHideFlags: 0
@@ -10622,6 +10628,7 @@ MonoBehaviour:
   description: Damage Buff
   need: 0
   work: 0
+  offSet: {x: 0, y: 0, z: 0}
 --- !u!1 &1269177287
 GameObject:
   m_ObjectHideFlags: 0
@@ -17802,6 +17809,7 @@ MonoBehaviour:
   description: Attack Speed Buff
   need: 0
   work: 0
+  offSet: {x: 0, y: 0, z: 0}
 --- !u!1 &2082001456
 GameObject:
   m_ObjectHideFlags: 0
@@ -18377,3 +18385,4 @@ MonoBehaviour:
   description: Stealing Buff
   need: 0
   work: 0
+  offSet: {x: 0, y: 0, z: 0}

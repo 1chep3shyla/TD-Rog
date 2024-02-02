@@ -19,6 +19,7 @@ public class Spawner : MonoBehaviour
     public int currentWaveIndex = 0;
     public int currentWaveIndexMain = 0;
     public Wave[] currentWave;
+    public ReaderFile datas;
     public bool works;
     public bool skip;
     private bool start;
@@ -121,13 +122,38 @@ public class Spawner : MonoBehaviour
             newEnemy.GetComponent<EnemyMoving>().waypoints = waypoints[i].waypoints;
             newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
 
-            GameBack.Instance.curFormula = SubstituteVariables(GameBack.Instance.curFormula, newEnemy.GetComponent<Enemy>().maxHealth, currentWaveIndexMain);
+            //GameBack.Instance.curFormula = SubstituteVariables(GameBack.Instance.curFormula, newEnemy.GetComponent<Enemy>().maxHealth, currentWaveIndexMain);
 
-            float result = EvaluateFormula(GameBack.Instance.curFormula);
-
-            Debug.Log($"Result: {result}");
-            newEnemy.GetComponent<Enemy>().maxHealth = (int)result;
-            newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+            //float result = EvaluateFormula(GameBack.Instance.curFormula);
+            if(newEnemy.GetComponent<EnemyMoving>().typeEnemy == EnemyType.defaultEnemy)
+            {
+                newEnemy.GetComponent<Enemy>().maxHealth = datas.healthCount[currentWaveIndexMain];
+                newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+            }
+            else if(newEnemy.GetComponent<EnemyMoving>().typeEnemy == EnemyType.elite) 
+            {
+                newEnemy.GetComponent<Enemy>().maxHealth = (int)((float)datas.healthCount[currentWaveIndexMain]* datas.multiplaerHealth[0]);
+                newEnemy.GetComponent<EnemyMoving>().maxSpeed = datas.speedCount[currentWaveIndexMain] * datas.multiplaerSpeed[0];
+                newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+            }
+             else if(newEnemy.GetComponent<EnemyMoving>().typeEnemy == EnemyType.fast) 
+            {
+                newEnemy.GetComponent<Enemy>().maxHealth = (int)((float)datas.healthCount[currentWaveIndexMain]* datas.multiplaerHealth[1]);
+                newEnemy.GetComponent<EnemyMoving>().maxSpeed = datas.speedCount[currentWaveIndexMain] * datas.multiplaerSpeed[1];
+                newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+            }
+             else if(newEnemy.GetComponent<EnemyMoving>().typeEnemy == EnemyType.reduction) 
+            {
+                newEnemy.GetComponent<Enemy>().maxHealth = (int)((float)datas.healthCount[currentWaveIndexMain]* datas.multiplaerHealth[2]);
+                newEnemy.GetComponent<EnemyMoving>().maxSpeed = datas.speedCount[currentWaveIndexMain] * datas.multiplaerSpeed[2];
+                newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+            }
+             else if(newEnemy.GetComponent<EnemyMoving>().typeEnemy == EnemyType.flying) 
+            {
+                newEnemy.GetComponent<Enemy>().maxHealth = (int)((float)datas.healthCount[currentWaveIndexMain]* datas.multiplaerHealth[3]);
+                newEnemy.GetComponent<EnemyMoving>().maxSpeed = datas.speedCount[currentWaveIndexMain] * datas.multiplaerSpeed[3];
+                newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+            }
             if (currentWaveIndexMain <= 10)
             {
                // newEnemy.GetComponent<Enemy>().goldGive = newEnemy.GetComponent<Enemy>().goldGive + (2 * currentWaveIndexMain);

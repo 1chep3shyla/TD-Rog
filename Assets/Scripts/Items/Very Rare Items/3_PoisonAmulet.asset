@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Poison Amulet
   icon: {fileID: 21300000, guid: 23f7178ef57f2e846bc101dc1772127b, type: 3}
+  iconTrans: {fileID: 21300000, guid: 0986e10b6b5500a449f69a410b7029fa, type: 3}
   buff:
   - 0
   - 0

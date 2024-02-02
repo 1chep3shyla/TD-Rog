@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text waveCount;
     public int curWave;
     public int enemyHave;
+    public ItemOpenner itemOpenner;
     private bool anima;
     public GameObject menu;
     private static GameManager instance;
@@ -237,6 +238,11 @@ public class GameManager : MonoBehaviour
     public void Starting()
     {
         spawn.StartingGame();
+    }
+
+    public void ChestClaim()
+    {
+        itemOpenner.countChest++;
     }
 }
 [System.Serializable]
