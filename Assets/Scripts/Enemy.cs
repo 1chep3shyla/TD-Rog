@@ -7,6 +7,9 @@ using TMPro;
 [RequireComponent(typeof(EnemyMoving))]
 public class Enemy : MonoBehaviour
 {
+    public int index;
+    [Space]
+    
     public int health;
     public int maxHealth;
     public int goldGive;
@@ -155,7 +158,7 @@ public class Enemy : MonoBehaviour
     {
         StartCoroutine(BoomCor(dmg, fireDmg));
     }
-    private void Death()
+    public void Death()
     {
         if (cursedBoom)
         {

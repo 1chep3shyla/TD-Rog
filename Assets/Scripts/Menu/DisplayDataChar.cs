@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System.Runtime.InteropServices;
 
@@ -8,7 +9,9 @@ public class DisplayDataChar : MonoBehaviour
 {
     public TextMeshProUGUI buffText;
     public TextMeshProUGUI nameText;
+    public TextMeshProUGUI disText;
     public ScriptableObject charCur;
+    public Image icon;
     private ICharSet charSet;
     void Start()
     {
@@ -34,16 +37,18 @@ public class DisplayDataChar : MonoBehaviour
             // Attempt to cast charData to ICharSet
             if (GameBack.Instance.charData is ICharSet charSet)
             {
-                // Access the character's stats using GetStat()
                 float[] buffs = charSet.GetStat();
                 string nameChar = charSet.GetStatName();
+                string history = charSet.GetHistory();
+                Sprite iconSprite = charSet.GetIcon();
 
                 // Format the buffs with tabulation
                 string formattedBuffs = string.Join("\t", buffs);
 
-                // Display the formatted buffs in the TextMeshPro component
                 buffText.text = formattedBuffs;
                 nameText.text = nameChar;
+                disText.text = history;
+                icon.sprite = iconSprite;
             }
             else
             {

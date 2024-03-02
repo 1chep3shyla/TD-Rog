@@ -14,6 +14,7 @@ public class PerkRoll : MonoBehaviour
     public Text[] perkText;
     public Image[] cardBack;
     public Image[] cardIcon;
+    public Button[] buttons;
     public GameObject PerkGM;
     public Text[] discription;
     public bool rollingEvolve;

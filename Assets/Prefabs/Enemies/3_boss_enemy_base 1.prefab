@@ -4911,6 +4911,7 @@ GameObject:
   - component: {fileID: 2780520482085684684}
   - component: {fileID: 248614970749484257}
   - component: {fileID: 2385045245447312585}
+  - component: {fileID: 8616986626262399384}
   m_Layer: 0
   m_Name: 3_boss_enemy_base 1
   m_TagString: Enemy
@@ -5044,6 +5045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1436599b0926ae4f8aa4515d83644e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 11
   health: 120
   maxHealth: 1500
   goldGive: 0
@@ -5106,3 +5108,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &8616986626262399384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8437195482915574190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2722792402391fd4290f7c1974dcb2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reload: 5
+  upSpeed: 3

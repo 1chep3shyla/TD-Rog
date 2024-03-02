@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a2955a1e84a50c489f06741ec7170da, type: 3}
+  m_Name: 5_iceSpirit
+  m_EditorClassIdentifier: 
+  name: Icy creation
+  count: 0
+  icon: {fileID: 21300000, guid: 082bed8fb2bbd4c4e8bfe97c6fb57fa3, type: 3}
+  iconTrans: {fileID: 21300000, guid: 082bed8fb2bbd4c4e8bfe97c6fb57fa3, type: 3}
+  buff:
+  - 0
+  - 5
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  indexThing: 1
+  meteorController: {fileID: 7835118847764763805, guid: fdc6be495856d69409265ffe3d7e4bea, type: 3}
+  generatingObject: {fileID: 0}

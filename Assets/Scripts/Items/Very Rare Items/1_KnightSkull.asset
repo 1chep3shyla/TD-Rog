@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 1_KnightSkull
   m_EditorClassIdentifier: 
   name: Great Knight Skull
+  count: 0
   icon: {fileID: 21300000, guid: 96864570a3801784c85ba704d7ac3d3d, type: 3}
   iconTrans: {fileID: 21300000, guid: 0110cf9a947feaf438ebae5b85515213, type: 3}
   buff:
@@ -23,4 +24,6 @@ MonoBehaviour:
   - 5
   - 5
   - 5
-  - 5
+  - 0
+  - 0
+  - 0

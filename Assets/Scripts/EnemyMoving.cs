@@ -15,7 +15,7 @@ public enum EnemyType
 public class EnemyMoving : MonoBehaviour
 {
     public EnemyType typeEnemy;
-    public GameObject[] waypoints;
+    public Transform[] waypoints;
     public int currentWaypoint;
     private float lastWaypointSwitchTime;
     public float speed = 1.0f;
@@ -69,16 +69,7 @@ public class EnemyMoving : MonoBehaviour
                 {
                     // 3.b 
                     Destroy(gameObject);
-                    if (GameManager.Instance.Health > damageEnemy)
-                    {
-                        GameManager.Instance.Health -= damageEnemy;
-                    }
-
-                    else
-                    {
-                        GameManager.Instance.Health = 0;
-                        GameManager.Instance.Pause();
-                    }
+                  GameManager.Instance.TakeDamageHealth(damageEnemy);
                 }
             }
         }

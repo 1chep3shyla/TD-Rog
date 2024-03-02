@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 1_Beer
   m_EditorClassIdentifier: 
   name: Beer
+  count: 0
   icon: {fileID: 21300000, guid: 70b7da1610aa4954eb42adb06c9fab1a, type: 3}
   iconTrans: {fileID: 21300000, guid: 3c93dfab0cc14a34db3cdfc6acac5364, type: 3}
   buff:
@@ -22,5 +23,7 @@ MonoBehaviour:
   - 0
   - 0
   - 10
+  - 0
+  - 0
   - 0
   - 0

@@ -22,6 +22,7 @@ public class ItemOpenner : MonoBehaviour
     public Image iconImage;
     public ParticleSystem[] ps;
     public Transform headPrefab;
+    public bool allOpen;
 
     private Item curItem;
 
@@ -50,35 +51,49 @@ public class ItemOpenner : MonoBehaviour
 
     public void OpenChest()
     {
-        StartCoroutine(OpenChestCoroutine());
+        if(countChest > 0)
+        {
+            StartCoroutine(OpenChestCoroutine());
+            countChest -=1;
+            allOpen = false;
+        }
+        else
+        {
+            allOpen = true;
+            ps[4].gameObject.SetActive(false);
+            Light.SetActive(false);
+            panelOpen.SetActive(false);
+            iconImage.gameObject.SetActive(false);
+        }
     }
 
     IEnumerator OpenChestCoroutine()
     {
-        // Play chest opening animation
+        chestAnimator.Play("chest_start");
+        ps[4].gameObject.SetActive(false);
         Light.SetActive(false);
         panelOpen.SetActive(true);
         iconImage.gameObject.SetActive(false);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(0.5f);
         chestAnimator.SetTrigger("Open");
         ps[0].Play();
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSecondsRealtime(0.25f);
         ps[1].Play();
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSecondsRealtime(0.25f);
         ps[5].Play();
         ps[2].Play();
         Light.SetActive(true);
-        yield return new WaitForSeconds(1.7f);
+        yield return new WaitForSecondsRealtime(1.7f);
         ps[3].Play();
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
         ps[4].gameObject.SetActive(true);
         iconImage.gameObject.SetActive(true);
         Item selectedItem = GetRandomItem();
         curItem = selectedItem;
         iconImage.sprite = selectedItem.iconTrans;
         nameText.text = selectedItem.name;
-        yield return new WaitForSeconds(1.8f);
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSecondsRealtime(1.8f);
+        yield return new WaitForSecondsRealtime(0.25f);
         ps[5].Stop();
         nameText.gameObject.SetActive(true);
         Light.SetActive(false);
@@ -91,19 +106,40 @@ public class ItemOpenner : MonoBehaviour
     {
         // Logic for selling the item
         curItem = null;
+        OpenChest();
     }
 
     public void Claim()
+{
+    // Logic for claiming the item
+    // Add your logic here
+    if (curItem != null)
     {
-        // Logic for claiming the item
-        // Add your logic here
-        if(curItem!=null)
+
+        bool itemExists = false;
+        foreach (Item item in items)
         {
+            if (item == curItem)
+            {
+                item.count++;
+                item.GetBuff();
+                itemExists = true;
+                break;
+            }
+            itemExists = false;
+        }
+
+        if (!itemExists)
+        {
+            Debug.Log("Up Count");
             System.Array.Resize(ref items, items.Length + 1);
             items[items.Length - 1] = curItem;
             CreateItem();
+            items[items.Length - 1].GetBuff();
         }
     }
+    OpenChest();
+}
 
     public void CreateItem()
     {

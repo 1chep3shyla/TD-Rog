@@ -5044,6 +5044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1436599b0926ae4f8aa4515d83644e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 12
   health: 200
   maxHealth: 3000
   goldGive: 0

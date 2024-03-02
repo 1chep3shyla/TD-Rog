@@ -8,6 +8,7 @@ public class StoneScript : MonoBehaviour
     public ParticleSystem ps;
     public float detectionRadius = 5f; // Радиус обнаружения
     public LayerMask enemyLayer; // Слой врагов
+    public Sprite[] spriteStone;
    
     private void Update()
     {
@@ -34,6 +35,7 @@ public class StoneScript : MonoBehaviour
                     {
                         Destroy(collider.gameObject);
                         healthStone -= 1;
+                        GetComponent<SpriteRenderer>().sprite = spriteStone[healthStone];
                         ps.Play();
                         if (healthStone <= 0)
                         {

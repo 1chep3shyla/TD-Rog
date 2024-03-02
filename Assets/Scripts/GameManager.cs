@@ -27,21 +27,27 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     public List<GameObject> enemiesAll = new List<GameObject>();
     public float[] buff; // 0 - global damage, 1- ice buff, 2 - fire damage, 3 - poison, 4 - moneyMine, 5 - AttackSpeed, 6 - moneyThief+Enemy, 7 - crit DMG, 8 - crit Chance
+    public float[] newBuff;
     public Evolve[] allEvolution;
     public DMGTower[] allTowerDMG;
     public ICharSet charData;
     public GameObject[] states;
+    public Transform enemyWhichGM;
     public Tilemap[] maps;
     public Transform goldPos;
     public Spawner spawn;
     public AudioSource aS;
+    public Item item;
+    public ParticleSystem takeDamagePS;
+    public BoxCollider2D tilemapCollider;
+    public BoxCollider2D[] collidersTile;
     [SerializeField]
     private int[] giveMoneyCheat;
 
     void Update()
     {
         healthCount.text = Health.ToString("");
-        waveCount.text = curWave.ToString("") + "/20";
+        waveCount.text = curWave.ToString("") + "/30";
 
         if (Input.GetKeyDown("escape"))
         {
@@ -61,6 +67,8 @@ public class GameManager : MonoBehaviour
         charData.SetData();
         charIcon.sprite = GameBack.Instance.iconChar;
         states[GameBack.Instance.indexState].SetActive(true);
+        tilemapCollider = collidersTile[GameBack.Instance.indexState];
+        
         gameObject.GetComponent<Rolling>().tilemap = maps[GameBack.Instance.indexState];
     }
     public void Heal()
@@ -73,6 +81,20 @@ public class GameManager : MonoBehaviour
         {
             Health += restoreHeal;
         }
+    }
+    public void TakeDamageHealth(int dmg)
+    {
+          if (Health > dmg)
+            {
+                Health -= dmg;
+            }
+
+            else
+            {
+                Health = 0;
+                Pause();
+            }
+    
     }
     public int Wave
     {
@@ -100,6 +122,10 @@ public class GameManager : MonoBehaviour
             }
         }
 
+    }
+    public void TakeDamagePlayer()
+    {
+        takeDamagePS.Play();
     }
     public void DownLay()
     {

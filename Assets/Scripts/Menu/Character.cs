@@ -13,6 +13,7 @@ public interface ICharSet : IChar
     public string GetStatName();
     public GameObject[] SetGameObject();
     public string GetHistory();
+    public Sprite GetIcon();
     public void SetDataChar(int index, float count);
 }
 [CreateAssetMenu(fileName = "NewChar", menuName = "Character/Char")]
@@ -24,6 +25,7 @@ public class Character : ScriptableObject, ICharSet
     public Sprite icon;
     [TextArea(15,20)]
     public string history;
+    public bool has;
     public GameObject[] towerPull;
     public void ApplyBuff()
     {
@@ -59,6 +61,10 @@ public class Character : ScriptableObject, ICharSet
        public string GetHistory()
     {
         return history;
+    }
+    public Sprite GetIcon()
+    {
+        return icon;
     }
     public void SetDataChar(int index, float count)
     {

@@ -1,32 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class AchievementManager : MonoBehaviour
 {
     public static AchievementManager Instance;
-
-    // Список всех доступных достижений
     public List<Achievement> achievements;
+    public TMP_Text descriptionText;
+    public TMP_Text nameText;
+    public Image icon;
     public GameObject prefab;
+    public GameObject prefabCursor;
     public Transform trans;
 
-    private void Awake()
+    private void Start()
     {
-        for (int i = 0; i < achievements.Count; i++)
-        {
-            // Создаем префаб
-            GameObject achievementPrefab = Instantiate(prefab);
-
-            // Устанавливаем родителя
-            achievementPrefab.transform.SetParent(trans);
-
-            AchiContainer ac = achievementPrefab.GetComponent<AchiContainer>();
-            ac.icon.sprite = achievements[i].Icon;
-            ac.discription.text = achievements[i].description;
-            ac.name.text = achievements[i].title;
-            ac.achievement = achievements[i];
-        }
         if (Instance == null)
         {
             Instance = this;
@@ -34,9 +23,54 @@ public class AchievementManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
 
         DontDestroyOnLoad(gameObject);
+
+        // РЎРѕР·РґР°РµРј Р°С‡РёРІРєРё
+        CreateAchievements();
+    }
+
+    private void CreateAchievements()
+    {
+        GameObject CursorAchiGM = new GameObject("CursorAchi");
+        CursorAchiGM.AddComponent<CursorWork>();
+        CursorAchiGM.GetComponent<CursorWork>().buttons = new Button[achievements.Count];
+        for (int i = 0; i < achievements.Count; i++)
+        {
+            GameObject achievementPrefab = Instantiate(prefab);
+            achievementPrefab.transform.SetParent(trans);
+            if(i == 0)
+            {
+                GameObject cursorPrefab = Instantiate(prefabCursor, new Vector3(0,0,0), Quaternion.identity, achievementPrefab.transform);
+                CursorAchiGM.GetComponent<CursorWork>().cursor = cursorPrefab.transform;
+            }
+
+            // РџРѕР»СѓС‡Р°РµРј РєРЅРѕРїРєСѓ РІРЅСѓС‚СЂРё РїСЂРµС„Р°Р±Р° Р°С‡РёРІРєРё
+            Button button = achievementPrefab.GetComponent<Button>();
+            CursorAchiGM.GetComponent<CursorWork>().buttons[i] = button;
+            if (button != null)
+            {
+                int index = i; // СЃРѕС…СЂР°РЅСЏРµРј РёРЅРґРµРєСЃ РґР»СЏ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РІРЅСѓС‚СЂРё РѕР±СЂР°С‚РЅРѕРіРѕ РІС‹Р·РѕРІР°
+                button.onClick.AddListener(() => SetAchi(index));
+            }
+            AchiContainer ac = achievementPrefab.GetComponent<AchiContainer>();
+            ac.icon.sprite = achievements[i].Icon;
+            ac.achievement = achievements[i];
+        }
+        SetAchi(0);
+    }
+
+    public void SetAchi(int index)
+    {
+        if (index >= 0 && index < achievements.Count)
+        {
+            Achievement achievement = achievements[index];
+            descriptionText.text = achievement.description;
+            nameText.text = achievement.title;
+            icon.sprite = achievement.Icon;
+        }
     }
 
     public void UnlockAchievement(string achievementID)
@@ -45,9 +79,8 @@ public class AchievementManager : MonoBehaviour
         if (achievement != null && !achievement.isUnlocked)
         {
             achievement.isUnlocked = true;
-            Debug.Log("Достижение разблокировано: " + achievement.title);
-
-            // Здесь можно добавить код для отображения уведомления или награды
+            Debug.Log("Unlocked Achievement: " + achievement.title);
         }
     }
 }
+

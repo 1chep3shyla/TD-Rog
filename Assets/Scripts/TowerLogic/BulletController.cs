@@ -30,7 +30,8 @@ public enum TypeBull
     wind,
     storm,
     blockhead,
-    gear
+    gear,
+    fairy
 }
 
 public class BulletController : MonoBehaviour
@@ -213,6 +214,10 @@ public class BulletController : MonoBehaviour
                 {
                     int randomDamage = Random.Range(damage, damage*5);
                     enemyHealth.DefaultAttack(randomDamage, critChance);
+                }
+                else if( type == TypeBull.fairy)
+                {
+                    enemyHealth.DefaultAttack((int)((float)damage * 1.5f * (float)GameManager.Instance.curWave), critChance);
                 }
                 else
                 {
