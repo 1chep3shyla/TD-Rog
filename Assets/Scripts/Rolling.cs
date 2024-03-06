@@ -211,7 +211,7 @@ public class Rolling : MonoBehaviour
     }
     public void RollingThis()
     {
-        if (GameManager.Instance.Gold >= costTower)
+        if (GameManager.Instance.Gold >= 300)
         {
             //GameManager.Instance.Gold -= costTower;
             GameManager.Instance.Gold -= 300;

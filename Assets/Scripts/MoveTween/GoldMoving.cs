@@ -50,7 +50,7 @@ public class GoldMoving : MonoBehaviour
     {
         isMoving = false;
         Debug.Log("������ � ������� �������!");
-        GameManager.Instance.Gold += gold;
+        GameManager.Instance.AddMoney(gold);
         Destroy(gameObject);
     }//
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1308691305919778427}
   - component: {fileID: 2442680595166531169}
   - component: {fileID: 8064258519145239989}
+  - component: {fileID: 1268579668430605122}
   m_Layer: 0
   m_Name: bull_min
   m_TagString: Untagged
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 5290d53e001ef3f4fa7ba1cb4f2007dd, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 1981307173, guid: 1ee7cc30fa8e2724cb159396b5207916, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -122,3 +123,30 @@ MonoBehaviour:
   IceTimer: 0
   powerOfFire: 0
   FireTimer: 0
+  powerOfPoison: 0
+  PoisonTimer: 0
+  ThiefPower: 0
+  armorDis: 0
+  boomDamage: 0
+  chanceStan: 0
+  chancePortaling: 0
+  furyCount: 0
+  buffRadar: 0
+  thiefCount: 0
+  magnatTower: 0
+  chanceAssasin: 0
+  critChance: 0
+  cumGM: {fileID: 0}
+--- !u!114 &1268579668430605122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6556074294206078149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57a0852a860c3f499bc4d33f27b3cfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 180

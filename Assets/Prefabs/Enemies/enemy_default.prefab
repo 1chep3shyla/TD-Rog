@@ -151,7 +151,7 @@ MonoBehaviour:
   index: 1
   health: 5
   maxHealth: 100
-  goldGive: 5
+  goldGive: 20
   chanceDrop: 1
   par: {fileID: 6088354569721911533}
   inFire: 0

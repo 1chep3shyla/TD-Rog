@@ -26,7 +26,7 @@ public class TowerBase : MonoBehaviour
                 rollBase.AddTower(curGM.GetComponent<SpriteRenderer>());
             }
         }
-        GetComponent<SpriteRenderer>().color = colors[level];
+        GetComponent<SpriteRenderer>().color = colors[monster.GetComponent<UpHave>().LVL];
     }
     public bool CanPlaceMonster()
     {

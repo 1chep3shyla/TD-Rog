@@ -103,7 +103,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: arrogance_SS_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0ce068e351e9f04d8f5dfedd30f5755
+      internalID: -1447855858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrogance_SS_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 585fba23a84a5a946a590cf39960da97
+      internalID: -2002012084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrogance_SS_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a3fc30ac4310144b9d324f0860658e
+      internalID: -1749169678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrogance_SS_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 512
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94c842beb12b0234fbe49e46d7152854
+      internalID: 899537960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrogance_SS_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79cf4124d29c2246baa690f298323c4
+      internalID: -1947247977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +219,47 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      arrogance_SS_30: 768705642
+      arrogance_SS_2: -1447855858
+      arrogance_SS_4: 1637507005
+      arrogance_SS_33: 281056882
+      arrogance_SS_32: -1169134340
+      arrogance_SS_8: 951595880
+      arrogance_SS_34: -144765989
+      arrogance_SS_15: 899537960
+      arrogance_SS_18: 811792959
+      arrogance_SS_20: 1630228636
+      arrogance_SS_0: -166251975
+      arrogance_SS_5: 301056541
+      arrogance_SS_24: 1631459621
+      arrogance_SS_21: 1380699503
+      arrogance_SS_37: -755942287
+      arrogance_SS_14: -1749169678
+      arrogance_SS_9: -1247079447
+      arrogance_SS_12: 301284724
+      arrogance_SS_13: -602103938
+      arrogance_SS_27: 1863419113
+      arrogance_SS_1: -1661080053
+      arrogance_SS_38: -176711906
+      arrogance_SS_26: 731506501
+      arrogance_SS_28: -1820339019
+      arrogance_SS_25: 2003956004
+      arrogance_SS_29: -1892776942
+      arrogance_SS_6: -79108125
+      arrogance_SS_23: -979339037
+      arrogance_SS_22: 1683777245
+      arrogance_SS_36: -244410832
+      arrogance_SS_10: 462757208
+      arrogance_SS_17: 1034360403
+      arrogance_SS_3: -2002012084
+      arrogance_SS_19: 1823169835
+      arrogance_SS_31: 1058947783
+      arrogance_SS_7: 836843463
+      arrogance_SS_39: -1998679417
+      arrogance_SS_11: 512911799
+      arrogance_SS_16: -1947247977
+      arrogance_SS_35: 1439971300
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

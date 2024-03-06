@@ -151,7 +151,7 @@ MonoBehaviour:
   index: 2
   health: 5
   maxHealth: 100
-  goldGive: 5
+  goldGive: 30
   chanceDrop: 1
   par: {fileID: 6088354569721911533}
   inFire: 0
@@ -162,11 +162,11 @@ MonoBehaviour:
   dmgFire: 0
   damageText: {fileID: 1876904322461473162, guid: 40f2b4eabbe2c5c4cbc972ef394f739a, type: 3}
   resistance:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 15
+  - 15
+  - 15
+  - 15
+  - 15
   damageType: 0
   EM: {fileID: 0}
   deathPar: {fileID: 4785898893450429910, guid: b08ad19a8488bf947b648481e31c3f5b, type: 3}

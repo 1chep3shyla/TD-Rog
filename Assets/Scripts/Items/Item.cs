@@ -15,7 +15,7 @@ public class Item : ScriptableObject
     {
         for (int i = 0; i < GameManager.Instance.newBuff.Length; i++)
         {
-            GameManager.Instance.newBuff[i] += buff[i];
+            GameManager.Instance.buff[i] += buff[i];
         }
     }
 }

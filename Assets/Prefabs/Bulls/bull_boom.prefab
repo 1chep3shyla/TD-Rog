@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -1442237939, guid: 1ee7cc30fa8e2724cb159396b5207916, type: 3}
   m_Color: {r: 0.8113208, g: 0.06505875, b: 0.06505875, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,3 +129,10 @@ MonoBehaviour:
   boomDamage: 0
   chanceStan: 0
   chancePortaling: 0
+  furyCount: 0
+  buffRadar: 0
+  thiefCount: 0
+  magnatTower: 0
+  chanceAssasin: 0
+  critChance: 0
+  cumGM: {fileID: 0}

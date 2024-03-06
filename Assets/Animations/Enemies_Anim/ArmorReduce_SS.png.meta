@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -103,7 +103,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ArmorReduce_SS_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957083629d41a85468d260e58c06ff93
+      internalID: 1538218602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmorReduce_SS_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34616b89f2350b8408e64f1bb9c84993
+      internalID: -1379419629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmorReduce_SS_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d219e7c53938c5a409d88da2a1f0bbfc
+      internalID: 253672192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmorReduce_SS_24
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91302d7c629594e448edce2ab7887fa3
+      internalID: -340511396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmorReduce_SS_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 774b8cf9094c2194e9b4731bc9bb26f1
+      internalID: 379862353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmorReduce_SS_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec4754a1b7e36d24f90814d1b9d19992
+      internalID: 774823589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +240,47 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ArmorReduce_SS_21: 637036811
+      ArmorReduce_SS_30: -1391052098
+      ArmorReduce_SS_5: 1234874252
+      ArmorReduce_SS_14: -1280814769
+      ArmorReduce_SS_0: -958156441
+      ArmorReduce_SS_26: 774823589
+      ArmorReduce_SS_32: 632236294
+      ArmorReduce_SS_12: -630707919
+      ArmorReduce_SS_3: -1379419629
+      ArmorReduce_SS_7: -1307061399
+      ArmorReduce_SS_20: 1378405781
+      ArmorReduce_SS_18: 1833133134
+      ArmorReduce_SS_34: 1820151095
+      ArmorReduce_SS_28: 454893462
+      ArmorReduce_SS_17: -724115673
+      ArmorReduce_SS_15: -1178803325
+      ArmorReduce_SS_8: 372351309
+      ArmorReduce_SS_22: -1851605802
+      ArmorReduce_SS_24: -340511396
+      ArmorReduce_SS_1: -1166366612
+      ArmorReduce_SS_6: -1330703147
+      ArmorReduce_SS_25: 379862353
+      ArmorReduce_SS_23: 253672192
+      ArmorReduce_SS_11: 168158820
+      ArmorReduce_SS_13: -1928213014
+      ArmorReduce_SS_10: -1741284694
+      ArmorReduce_SS_31: 2139378130
+      ArmorReduce_SS_38: 1823042169
+      ArmorReduce_SS_33: -979192894
+      ArmorReduce_SS_16: -1901773614
+      ArmorReduce_SS_27: 1769752649
+      ArmorReduce_SS_35: 1883004120
+      ArmorReduce_SS_36: -2094712170
+      ArmorReduce_SS_29: -926022954
+      ArmorReduce_SS_4: 668104702
+      ArmorReduce_SS_39: -1621474930
+      ArmorReduce_SS_9: -345581291
+      ArmorReduce_SS_37: 354281732
+      ArmorReduce_SS_2: 1538218602
+      ArmorReduce_SS_19: -555687592
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -103,7 +103,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: assasin_SS_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 023f697b1e68526449376d468a03da57
+      internalID: -1426788435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assasin_SS_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9211b39eb5da9bd4c875dd9dfa77ca13
+      internalID: 867894557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assasin_SS_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dff4db6778bc974c8eb9763895d48a8
+      internalID: 619826838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assasin_SS_24
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0681bedf0c68e549afd25adc0033cf4
+      internalID: 233177546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assasin_SS_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f3a9693136c2e4dadd28357ab6a007
+      internalID: 81711873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assasin_SS_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 284d6a8509a080542a636c4415442b48
+      internalID: 1641716209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +240,47 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      assasin_SS_13: -1683866808
+      assasin_SS_22: 1474738278
+      assasin_SS_2: -1426788435
+      assasin_SS_4: 1853022915
+      assasin_SS_17: 2105834914
+      assasin_SS_30: -291062994
+      assasin_SS_25: 81711873
+      assasin_SS_9: 1084740828
+      assasin_SS_18: 1460838394
+      assasin_SS_39: -1301287088
+      assasin_SS_0: 1018355170
+      assasin_SS_6: -1744765498
+      assasin_SS_8: -1078894165
+      assasin_SS_5: -162960802
+      assasin_SS_27: 699703123
+      assasin_SS_7: 1699730792
+      assasin_SS_34: -634310646
+      assasin_SS_36: -2041161743
+      assasin_SS_12: 233642702
+      assasin_SS_16: -1355547992
+      assasin_SS_10: -456571594
+      assasin_SS_32: -1269099984
+      assasin_SS_20: 1897835174
+      assasin_SS_37: -194815112
+      assasin_SS_35: 186840298
+      assasin_SS_28: 2090907607
+      assasin_SS_33: -611305933
+      assasin_SS_24: 233177546
+      assasin_SS_31: -435011262
+      assasin_SS_1: -627714477
+      assasin_SS_19: 1646950453
+      assasin_SS_3: 867894557
+      assasin_SS_29: -1521050810
+      assasin_SS_23: 619826838
+      assasin_SS_26: 1641716209
+      assasin_SS_21: -1636814146
+      assasin_SS_15: 627052314
+      assasin_SS_14: 1225345530
+      assasin_SS_38: 2060816320
+      assasin_SS_11: 1761687526
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7348218345031596754}
   - component: {fileID: 3248000793684943396}
   - component: {fileID: -1314433937954921137}
+  - component: {fileID: 385005208648125705}
+  - component: {fileID: 4524163564923035146}
   m_Layer: 0
   m_Name: 34 tower
   m_TagString: Tower
@@ -74,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 465dd78eda750244ea01aac3af3a09be, type: 3}
+  m_Sprite: {fileID: -1920819910, guid: b17b8d9d0542439409da13358b0cca2d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -117,3 +119,36 @@ MonoBehaviour:
   cursorDelete: {fileID: 0}
   Imposter: 0
   Muted: 0
+--- !u!95 &385005208648125705
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d87c39f76576f1e47b7348654f868a7a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &4524163564923035146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f11c86dffb8fc34ebc0724d1e44cbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animClip: {fileID: 7400000, guid: 75a7fc18afa74bb48a08db58c185f8d9, type: 2}

@@ -166,7 +166,7 @@ public class Enemy : MonoBehaviour
             boom.GetComponent<Radius>().damage = damageBoom;
             boom.GetComponent<Radius>().fireDamage = dmgFire;
         }
-        GameManager.Instance.StealMoney(goldGive);
+        //GameManager.Instance.AddMoney(goldGive);
         Destroy(gameObject);
         if(deathPar!=null)
         {
@@ -177,7 +177,7 @@ public class Enemy : MonoBehaviour
         gold.GetComponent<GoldMoving>().gold = goldGive;
         par.Play();
         int randomDrop = Random.Range(0,100);
-        if(randomDrop > chanceDrop)
+        if(randomDrop <= chanceDrop)
         {
             GameManager.Instance.ChestClaim();
         }
