@@ -9830,7 +9830,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 6
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 4
@@ -14714,6 +14714,7 @@ GameObject:
   - component: {fileID: 6688582469313875266}
   - component: {fileID: 6688582469313875265}
   - component: {fileID: 6688582469313875264}
+  - component: {fileID: -3821928056278947849}
   m_Layer: 0
   m_Name: ice_spirit
   m_TagString: Untagged
@@ -14866,3 +14867,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-3821928056278947849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6688582469313875271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f5a4380ca4904343a8eca6b299beffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTime: 7

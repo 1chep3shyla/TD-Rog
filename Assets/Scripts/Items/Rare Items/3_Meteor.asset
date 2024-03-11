@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Meteor
   count: 0
+  Rarity: 1
   icon: {fileID: 21300000, guid: 78bdbd788ea2f5140a814e3a036c92ba, type: 3}
   iconTrans: {fileID: 21300000, guid: c7e4694638dde31439a8cd87302379d0, type: 3}
   buff:
@@ -27,7 +28,6 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  getMeteor: 1
   indexThing: 0
   meteorController: {fileID: 7835118847764763805, guid: 9ee9d5797c4865b4da61d9bf1be04f1e, type: 3}
   generatingObject: {fileID: 0}

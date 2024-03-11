@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c9ad14db2df3b4597e3b50f028344b, type: 3}
   m_Name: ice_perk_0.2
   m_EditorClassIdentifier: 
-  buffIcePower: 0.2
+  buffIcePower: 30
   name: Ice Power III
   disc: Increase Deceleration  by
   sprite: {fileID: 21300000, guid: 19ee7dd21b932ac46b1ca1085d8679f3, type: 3}

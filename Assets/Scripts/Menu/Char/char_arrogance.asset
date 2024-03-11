@@ -26,6 +26,7 @@ MonoBehaviour:
   name: Haughty Sovereign
   icon: {fileID: 21300000, guid: b6bd2f2e0da61694aa06a4b449a667cd, type: 3}
   history: 
+  has: 0
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}
@@ -39,3 +40,4 @@ MonoBehaviour:
   - {fileID: 2056256240725061661, guid: 0f848e067fec08f478ddd98847e4478a, type: 3}
   - {fileID: 2056256240725061661, guid: bb8ad514de2f24f4aa5db5a88e1276bc, type: 3}
   - {fileID: 2056256240725061661, guid: 6aa15fafe15e2234fb34bee2a086839d, type: 3}
+  - {fileID: 2056256240725061661, guid: e26f1c159ba66ec4998d10cfc1874ebd, type: 3}

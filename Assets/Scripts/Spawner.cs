@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class Spawner : MonoBehaviour
 {
-    public WayScript[] waypoints;
+   public WayScript[] waypoints;
 
     public WaveMass[] wavesMass;
     public float timeBetweenWaves = 5;
@@ -31,91 +31,97 @@ public class Spawner : MonoBehaviour
 
     public delegate IEnumerator WaveCoroutine();
 
-    // Определение события для начала волны
     public event Action waveStart;
 
-
-
-    private void Start()
+   private void Start()
     {
         if (wavesMass.Length > 0)
         {
-            currentWave = wavesMass[currentWaveIndex].wavesAll;
+            // Убедитесь, что currentWaveIndex не выходит за пределы wavesMass
+            currentWave = wavesMass[Mathf.Clamp(currentWaveIndex, 0, wavesMass.Length - 1)].wavesAll;
         }
         SetEnemyInWave();
         GameManager.Instance.spawn = this;
     }
+
     void Update()
     {
-        while (currentWaveIndex < wavesMass.Length && !works && start)
+        if (currentWaveIndex < wavesMass.Length && !works && start) // Использование if вместо while предотвращает бесконечный цикл
         {
             works = true;
-
             StartCoroutine(StartWave());
-            return;
-
         }
 
         GameManager.Instance.curWave = currentWaveIndexMain + 1;
     }
+
     public void SetEnemyInWave()
     {
         ClearChildren();
+
+        // Добавлена проверка, чтобы убедиться, что currentWaveIndex не выходит за границы массива currentWave
+        if (currentWaveIndex >= currentWave.Length) return; 
+
         waveEnemySet = new int[currentWave.Length];
         Sprite[] allSprites = new Sprite[currentWave.Length];
 
         for (int i = 0; i < waveEnemySet.Length; i++)
         {
-            waveEnemySet[i] = UnityEngine.Random.Range(0, currentWave[currentWaveIndex].enemyPrefab.Length);
-            Sprite currentSprite = currentWave[i].enemyPrefab[waveEnemySet[i]].GetComponent<SpriteRenderer>().sprite;
-
-            bool spriteExists = false;
-            foreach (Sprite sprite in allSprites)
+            if (i < currentWave.Length && currentWave[i].enemyPrefab.Length > 0) // Проверка, что мы не выходим за границы массива
             {
-                if (sprite == currentSprite)
-                {
-                    spriteExists = true;
-                    break;
-                }
-            }
+                waveEnemySet[i] = UnityEngine.Random.Range(0, currentWave[i].enemyPrefab.Length); // Исправлено: использование полной длины массива
+                Sprite currentSprite = currentWave[i].enemyPrefab[waveEnemySet[i]].GetComponent<SpriteRenderer>().sprite;
 
-            if (!spriteExists)
-            {
-                allSprites[i] = currentSprite;
-
-                GameObject whichEnemy = new GameObject("whichEnemy");
-                whichEnemy.transform.localScale = new Vector3(1f / 108f, 1f / 108f, 1f / 108f);
-                whichEnemy.AddComponent<UnityEngine.UI.Image>();
-                whichEnemy.GetComponent<UnityEngine.UI.Image>().sprite = currentSprite;
-                if(Beastiar.Instance.seeThis[currentWave[i].enemyPrefab[waveEnemySet[i]].GetComponent<Enemy>().index] == false)
+                bool spriteExists = false;
+                foreach (Sprite sprite in allSprites)
                 {
-                    whichEnemy.GetComponent<UnityEngine.UI.Image>().color = new Color(0,0,0);
+                    if (sprite == currentSprite)
+                    {
+                        spriteExists = true;
+                        break;
+                    }
                 }
-                whichEnemy.transform.SetParent(GameManager.Instance.enemyWhichGM);
+
+                if (!spriteExists)
+                {
+                    allSprites[i] = currentSprite;
+
+                    GameObject whichEnemy = new GameObject("whichEnemy");
+                    whichEnemy.transform.localScale = new Vector3(1f / 108f, 1f / 108f, 1f / 108f);
+                    whichEnemy.AddComponent<UnityEngine.UI.Image>();
+                    whichEnemy.GetComponent<UnityEngine.UI.Image>().sprite = currentSprite;
+                    if(Beastiar.Instance.seeThis[currentWave[i].enemyPrefab[waveEnemySet[i]].GetComponent<Enemy>().index] == false)
+                    {
+                        whichEnemy.GetComponent<UnityEngine.UI.Image>().color = new Color(0,0,0);
+                    }
+                    whichEnemy.transform.SetParent(GameManager.Instance.enemyWhichGM);
+                }
             }
         }
     }
     public IEnumerator StartWave()
     {
         Debug.Log("Начало волны");
-        float timeNeed = currentWave[currentWaveIndex].timeAll / currentWave[currentWaveIndex].maxEnemies;
-        waveStart?.Invoke();
-        while (currentWaveIndex < currentWave.Length && !skip)
+        if (currentWaveIndex < currentWave.Length) // Добавлена проверка
         {
-            yield return new WaitForSeconds(timeNeed);
-            int RandomEnemy = waveEnemySet[currentWaveIndex];
-            for (int i = 0; i < currentWave[currentWaveIndex].maxEnemies && !skip; i++)
+            float timeNeed = currentWave[currentWaveIndex].timeAll / currentWave[currentWaveIndex].maxEnemies;
+            waveStart?.Invoke();
+            while (currentWaveIndex < currentWave.Length && !skip)
             {
-                SpawnEnemy(RandomEnemy);
                 yield return new WaitForSeconds(timeNeed);
-            }
+                int RandomEnemy = waveEnemySet[currentWaveIndex];
+                for (int i = 0; i < currentWave[currentWaveIndex].maxEnemies && !skip; i++)
+                {
+                    SpawnEnemy(RandomEnemy);
+                    yield return new WaitForSeconds(timeNeed);
+                }
 
-            yield return new WaitUntil(() => enemiesSpawned == 0);
-            currentWaveIndex++;
+                yield return new WaitUntil(() => enemiesSpawned == 0);
+                currentWaveIndex++;
+            }
         }
         yield return new WaitUntil(() => gameManager.enemiesAll.Count == 0);
         gameManager.ClearEffects();
-        Debug.Log("������ ���");
         if(!skip)
         {
             yield return new WaitForSeconds(1f);
@@ -126,7 +132,10 @@ public class Spawner : MonoBehaviour
         yield return new WaitUntil(()=> gameManager.itemOpenner.allOpen == true);
         currentWaveIndexMain++;
         currentWaveIndex = 0;
-        currentWave = wavesMass[currentWaveIndexMain].wavesAll;
+        if (currentWaveIndexMain < wavesMass.Length) // Добавлена проверка
+        {
+            currentWave = wavesMass[currentWaveIndexMain].wavesAll; // Изменено
+        }
         gameManager.ClearRounds();
         SetEnemyInWave();
         Time.timeScale = 1f;

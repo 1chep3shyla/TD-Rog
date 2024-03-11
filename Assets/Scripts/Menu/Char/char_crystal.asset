@@ -56,6 +56,7 @@ MonoBehaviour:
     Every day, in his ongoing
     struggle, Kragmor hoped to see his love again. His dream was the heavy burden
     he carried along with his strength and endless sorrow.'
+  has: 0
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}
@@ -68,3 +69,4 @@ MonoBehaviour:
   - {fileID: 2056256240725061661, guid: 5f57e619bcce08a4ca5f532989e1746f, type: 3}
   - {fileID: 2056256240725061661, guid: 0f848e067fec08f478ddd98847e4478a, type: 3}
   - {fileID: 2056256240725061661, guid: bb8ad514de2f24f4aa5db5a88e1276bc, type: 3}
+  - {fileID: 2056256240725061661, guid: e26f1c159ba66ec4998d10cfc1874ebd, type: 3}

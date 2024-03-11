@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public interface IChar 
@@ -46,7 +47,9 @@ public class Character : ScriptableObject, ICharSet
         {
             GameManager.Instance.allEvolution[indexEvolve].work = true;
         }
-        GameManager.Instance.gameObject.GetComponent<Rolling>().towers = towerPull;
+        GameObject[] newArrayTowers = new GameObject[towerPull.Length];
+        Array.Copy(towerPull, newArrayTowers, towerPull.Length);
+        GameManager.Instance.gameObject.GetComponent<Rolling>().towers = newArrayTowers;
         GameManager.Instance.gameObject.GetComponent<Rolling>().SetSprite();
         GameManager.Instance.gameObject.GetComponent<Rolling>().Roll();
     }

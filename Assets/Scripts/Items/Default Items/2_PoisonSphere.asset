@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2_PoisonSphere
   m_EditorClassIdentifier: 
   name: Poison Sphere
-  count: 24
+  count: 0
   icon: {fileID: 21300000, guid: 114a224553bba064d897f0673bfc2833, type: 3}
   iconTrans: {fileID: 21300000, guid: c94151d5e797d924ea67a3f7d551f28f, type: 3}
   buff:

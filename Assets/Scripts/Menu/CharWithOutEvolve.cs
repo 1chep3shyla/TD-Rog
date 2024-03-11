@@ -28,7 +28,8 @@ public class CharWithOutEvolve : ScriptableObject, ICharSet
         {
             GameManager.Instance.buff[i] = buffs[i];
         }
-        GameManager.Instance.gameObject.GetComponent<Rolling>().towers = towerPull;
+        GameObject[] newArrayTowers = towerPull;
+        GameManager.Instance.gameObject.GetComponent<Rolling>().towers = newArrayTowers;
         GameManager.Instance.gameObject.GetComponent<Rolling>().SetSprite();
         GameManager.Instance.gameObject.GetComponent<Rolling>().Roll();
     }

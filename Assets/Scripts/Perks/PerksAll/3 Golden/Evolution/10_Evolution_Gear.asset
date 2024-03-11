@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 10_Evolution_Gear
   m_EditorClassIdentifier: 
   indexCur: 10
+  changeGM: {fileID: 2056256240725061661, guid: bb8ad514de2f24f4aa5db5a88e1276bc, type: 3}
+  evolveGM: {fileID: 2056256240725061661, guid: 3b16e42ee818eaa4fb49786866b6dfbe, type: 3}
   name: Gear Evolution
   disc: Evolves a Fury Tower into a Gear Tower
   sprite: {fileID: -1586740121, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

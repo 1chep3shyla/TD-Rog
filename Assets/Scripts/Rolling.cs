@@ -37,7 +37,7 @@ public class Rolling : MonoBehaviour
         imageidTower = new Sprite[towers.Length];
         for (int i = 0; i < towers.Length; i++)
         {
-            imageidTower[i] = towers[i].GetComponent<UpHave>().iconCard;
+            imageidTower[i] = towers[i].GetComponent<SpriteRenderer>().sprite;
         }
     }
     void Update()

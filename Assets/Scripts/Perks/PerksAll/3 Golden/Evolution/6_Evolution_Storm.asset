@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 6_Evolution_Storm
   m_EditorClassIdentifier: 
   indexCur: 6
+  changeGM: {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
+  evolveGM: {fileID: 2056256240725061661, guid: f0d694f381eabde46aeaa3338fe8350e, type: 3}
   name: Storm Evolution
   disc: Evolves a Wind Tower into a Storm Tower
   sprite: {fileID: -1832518227, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

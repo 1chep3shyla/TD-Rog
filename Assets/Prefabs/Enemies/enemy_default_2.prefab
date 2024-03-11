@@ -162,11 +162,11 @@ MonoBehaviour:
   dmgFire: 0
   damageText: {fileID: 1876904322461473162, guid: 40f2b4eabbe2c5c4cbc972ef394f739a, type: 3}
   resistance:
-  - 15
-  - 15
-  - 15
-  - 15
-  - 15
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   damageType: 0
   EM: {fileID: 0}
   deathPar: {fileID: 4785898893450429910, guid: b08ad19a8488bf947b648481e31c3f5b, type: 3}

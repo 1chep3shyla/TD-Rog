@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 545f5c4de7324624c8b1be7f6d3d0981, type: 3}
   m_Name: fire_perk_25
   m_EditorClassIdentifier: 
-  buffFireDamage: 25
+  buffFireDamage: 15
   name: Fire Damage II
   disc: 'Increase Fire Damage by '
   sprite: {fileID: 21300000, guid: 10548806bcac2024a8b42724f67647ef, type: 3}

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 7_Evolution_PoisonSmoke
   m_EditorClassIdentifier: 
   indexCur: 7
+  changeGM: {fileID: 2056256240725061661, guid: 5f57e619bcce08a4ca5f532989e1746f, type: 3}
+  evolveGM: {fileID: 2056256240725061661, guid: 30951b09f72fcc043bb24f0e76284f34, type: 3}
   name: Poison Smoke Evolution
   disc: Evolves a Poison Tower into a Poison Smoke Tower
   sprite: {fileID: 464597178, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

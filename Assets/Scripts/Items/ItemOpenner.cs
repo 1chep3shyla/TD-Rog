@@ -22,6 +22,8 @@ public class ItemOpenner : MonoBehaviour
     public Image iconImage;
     public ParticleSystem[] ps;
     public Transform headPrefab;
+    public Text sellText;
+    public int sellCost;
     public bool allOpen;
 
     private Item curItem;
@@ -69,6 +71,9 @@ public class ItemOpenner : MonoBehaviour
 
     IEnumerator OpenChestCoroutine()
     {
+         nameText.text = "";
+        sellButton.interactable = false;
+        claimButton.interactable = false;
         chestAnimator.Play("chest_start");
         ps[4].gameObject.SetActive(false);
         Light.SetActive(false);
@@ -95,6 +100,21 @@ public class ItemOpenner : MonoBehaviour
         yield return new WaitForSecondsRealtime(1.8f);
         yield return new WaitForSecondsRealtime(0.25f);
         ps[5].Stop();
+        if(selectedItem.Rarity == typeItem.def)
+        {
+            sellCost = 150;
+            sellText.text = "Sell for " + sellCost;
+        }
+        else if(selectedItem.Rarity == typeItem.rare)
+        {
+            sellCost = 450;
+            sellText.text = "Sell for " + sellCost;
+        }
+        else if(selectedItem.Rarity == typeItem.mythic)
+        {
+            sellCost = 750;
+            sellText.text = "Sell for " + sellCost;
+        }
         nameText.gameObject.SetActive(true);
         Light.SetActive(false);
 
@@ -104,7 +124,7 @@ public class ItemOpenner : MonoBehaviour
 
     public void Sell()
     {
-        // Logic for selling the item
+        GameManager.Instance.AddMoney(sellCost);
         curItem = null;
         OpenChest();
     }

@@ -181,7 +181,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
-
     public void AddEnemyToList(GameObject newEnemy)
     {
         enemiesAll.Add(newEnemy);

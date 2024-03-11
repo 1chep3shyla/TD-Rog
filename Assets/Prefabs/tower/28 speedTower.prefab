@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8185705189692929134}
   - component: {fileID: -538272945515635314}
   - component: {fileID: 1163305568984272733}
+  - component: {fileID: 4921444714972018839}
   m_Layer: 0
   m_Name: 28 speedTower
   m_TagString: Tower
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 1547550477, guid: 0694b1d8860288d4ead4c67d301e8d49, type: 3}
+  m_Sprite: {fileID: -1846488299, guid: 49a6831a53352534fa2ddff27513ff08, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,3 +149,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!95 &4921444714972018839
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a454c5579c9b6374a86197030f0028c9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

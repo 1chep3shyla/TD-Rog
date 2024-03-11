@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Evil Mage Skull
   count: 0
+  Rarity: 2
   icon: {fileID: 21300000, guid: bb2f26b7854079d49adb8e3c43e62e35, type: 3}
   iconTrans: {fileID: 21300000, guid: d29a82d50761feb4a9577418d1e09fb0, type: 3}
   buff:

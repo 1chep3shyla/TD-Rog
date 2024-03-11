@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2438318080014436613}
   - component: {fileID: 8991686775615759693}
   - component: {fileID: -1587080816745148821}
+  - component: {fileID: 3364381934215360441}
   m_Layer: 0
   m_Name: 29 damageTower
   m_TagString: Tower
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 1711774580, guid: cdddab490e244224da716e7e9cd8a9ae, type: 3}
+  m_Sprite: {fileID: 2065739906, guid: 2d06290443aaa4840a0d55fa79977fc0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,3 +149,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!95 &3364381934215360441
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056256240725061661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 333a3766c0ba6a648a7b266e69067ddb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

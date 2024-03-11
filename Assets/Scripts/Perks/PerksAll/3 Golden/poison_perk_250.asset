@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5fa79c5172b0d4d828b6522eb740d6, type: 3}
   m_Name: poison_perk_250
   m_EditorClassIdentifier: 
-  buffPoisonDamage: 250
+  buffPoisonDamage: 30
   name: Poison Damage III
   disc: 'Increase Poison Damage by '
   sprite: {fileID: 21300000, guid: c3164658c1c9a0448a19f8288bc01726, type: 3}

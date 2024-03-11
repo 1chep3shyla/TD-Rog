@@ -19,6 +19,7 @@ public class TowerBase : MonoBehaviour
             if (GameManager.Instance.allEvolution[i].index == curGM.GetComponent<UpHave>().id && GameManager.Instance.allEvolution[i].work == true)
             {
                 GameObject newGM = Instantiate(GameManager.Instance.allEvolution[i].EvolveScript, curGM.transform.position, Quaternion.identity);
+                newGM.GetComponent<UpHave>().LVL = curGM.GetComponent<UpHave>().LVL;
                 Destroy(curGM);
                 monster = newGM;
                 curGM = newGM;

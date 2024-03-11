@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 3_Evolution_Pitch
   m_EditorClassIdentifier: 
   indexCur: 3
+  changeGM: {fileID: 2056256240725061661, guid: a17ae2e7a25c3ec47b96b6d6efe03078, type: 3}
+  evolveGM: {fileID: 2056256240725061661, guid: dc29738782d172443bb041b3ec645a31, type: 3}
   name: Pitch Evolution
   disc: Evolves a Fire Tower into a Pitch Tower
   sprite: {fileID: 1583188029, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

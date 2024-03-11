@@ -4999,7 +4999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5f9997c5ae4a748a781bcb69e50c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeEnemy: 1
+  typeEnemy: 2
   waypoints: []
   currentWaypoint: 0
   speed: 1

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1000c864b2f1909449ec2e20f044da49, type: 3}
   m_Name: crit_perk_15
   m_EditorClassIdentifier: 
-  buffGlobal: 15
+  buffGlobal: 5
   name: Crit Damage I
   disc: Increase Crit Damage by
   indexOfBuff: 7

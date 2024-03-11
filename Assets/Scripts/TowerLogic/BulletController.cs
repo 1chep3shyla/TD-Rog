@@ -67,7 +67,7 @@ public class BulletController : MonoBehaviour
         damage = bulletDamage;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (target == null)
         {

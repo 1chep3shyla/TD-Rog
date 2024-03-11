@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 0_Evolution_Split
   m_EditorClassIdentifier: 
   indexCur: 0
+  changeGM: {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}
+  evolveGM: {fileID: 2056256240725061661, guid: 093526689197c3448b11a09e047d9323, type: 3}
   name: Split Evolution
   disc: Evolves a Default Tower into a Split Tower
   sprite: {fileID: 2084314889, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
