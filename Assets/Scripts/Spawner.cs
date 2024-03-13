@@ -138,14 +138,15 @@ public class Spawner : MonoBehaviour
         }
         gameManager.ClearRounds();
         SetEnemyInWave();
-        Time.timeScale = 1f;
         yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
+        Time.timeScale = 1f;
         timeCur = timeBetweenWaves;
         while(timeCur <=0f)
         {
             timeCur -= Time.deltaTime;
         }
         works = false;
+        start = false;
         skip = false;
         yield return null;
     }

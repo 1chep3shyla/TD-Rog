@@ -194,28 +194,32 @@ public class TowerBase : MonoBehaviour
     }
     public void JustUp()
     {
-        UpHave uh = curGM.GetComponent<UpHave>();
+        if (GameManager.Instance.Gold >= GameManager.Instance.gameObject.GetComponent<Rolling>().costTower)// Здесь
+        {
+            UpHave uh = curGM.GetComponent<UpHave>();
 
-        Debug.Log("����� ������");
-        curGM.GetComponent<UpHave>().LVL++;
-        rollBase.AddTower(curGM.GetComponent<SpriteRenderer>());
-        curGM.GetComponent<UpHave>().baseOf = this;
-        rollBase.towerPrefab = null;
-        rollBase.choosing = false;
-        rollBase.UpLevelAnim(transform);
-        if (uh.id == 36)
-        {
-            GameManager.Instance.UpSome(uh.LVL - 1, this.gameObject);
-        }
-        for (int i = 0; i < rollBase.slots.Length; i++)
-        {
-            if (rollBase.slots[i].id == uh.id )
+            Debug.Log("����� ������");
+            curGM.GetComponent<UpHave>().LVL++;
+            rollBase.AddTower(curGM.GetComponent<SpriteRenderer>());
+            curGM.GetComponent<UpHave>().baseOf = this;
+            rollBase.towerPrefab = null;
+            rollBase.choosing = false;
+            rollBase.butChoose[rollBase.curIndex].interactable = false;
+            rollBase.UpLevelAnim(transform);
+            if (uh.id == 36)
             {
-                rollBase.OffCard(i);
+                GameManager.Instance.UpSome(uh.LVL - 1, this.gameObject);
             }
+            for (int i = 0; i < rollBase.slots.Length; i++)
+            {
+                if (rollBase.slots[i].id == uh.id )
+                {
+                    rollBase.OffCard(i);
+                }
+            }
+            GameManager.Instance.Gold -= rollBase.costTower;
+            GameManager.Instance.ChangeMoney();
         }
-        GameManager.Instance.Gold -= rollBase.costTower;
-        GameManager.Instance.ChangeMoney();
     }
     public void JustUpBoost()
     {

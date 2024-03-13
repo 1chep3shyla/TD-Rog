@@ -33,6 +33,9 @@ public class Enemy : MonoBehaviour
     public TypeBull damageType;
     public EnemyMoving EM;
     public GameObject deathPar;
+    public GameObject firePart;
+    public GameObject poisonPart;
+    public GameObject icePart;
     void Start()
     {
         health = maxHealth;
@@ -108,8 +111,7 @@ public class Enemy : MonoBehaviour
                     health = maxHealth;
                 }
             }
-            GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
-            dmgText.GetComponent<TMP_Text>().text = "" + dmg;
+
         }
         else
         {
@@ -134,9 +136,7 @@ public class Enemy : MonoBehaviour
                     health = maxHealth;
                 }
             }
-            GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
             par.Play();
-            dmgText.GetComponent<TMP_Text>().text = "" + dmg;
         }
         
     }
@@ -147,11 +147,19 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("����");
             float critDamage = 2 + ((2 * (GameManager.Instance.buff[7] / 100)));
-            TakeDamage((int)((float)(dmg + (int)((float)dmg * (GameManager.Instance.buff[0] / 100 + armorReduce / 100))) * critDamage));
+            int curDmg = (int)((float)(dmg + (int)((float)dmg * (GameManager.Instance.buff[0] / 100 + armorReduce / 100))) * critDamage);
+            TakeDamage(curDmg);
+            GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
+            dmgText.GetComponent<TMP_Text>().text = "" + curDmg;
+            dmgText.GetComponent<TMP_Text>().color = Color.red;
+            dmgText.GetComponent<Transform>().localScale = new Vector3(2.5f, 2.5f, 2.5f);
         }
         else
         {
-            TakeDamage((int)((float)(dmg + (int)((float)dmg * (GameManager.Instance.buff[0] / 100 + armorReduce / 100)))));
+            int curDmg = (int)((float)(dmg + (int)((float)dmg * (GameManager.Instance.buff[0] / 100 + armorReduce / 100))));
+            TakeDamage(curDmg);
+            GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
+            dmgText.GetComponent<TMP_Text>().text = "" + curDmg;
         }
     }
     public void BoomOn(int dmg, int fireDmg)
@@ -194,14 +202,20 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator Burn(float dur, int dmg)
     {
+         firePart.GetComponent<ParticleSystem>().Play();
         while (dur > 0)
         {
             int addDMG = dmg * (int)(GameManager.Instance.buff[2] / 100);
             int removeDMG = (int)((float)(dmg + addDMG) * resistance[1]/100);
             TakeDamage(dmg + addDMG - removeDMG);
+            GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
+            int curDMG = dmg + addDMG - removeDMG;
+            dmgText.GetComponent<TMP_Text>().text = "" + curDMG;
+            dmgText.GetComponent<TMP_Text>().color = new Color(255f / 255f, 120f / 255f, 0);
             yield return new WaitForSeconds(0.25f); // Apply fire damage every second
             dur -= 0.25f;
         }
+        firePart.GetComponent<ParticleSystem>().Stop();
         inFire = false;
     }
 
@@ -224,11 +238,16 @@ public class Enemy : MonoBehaviour
         inPoison = true; // Set the flag to indicate poisoning
 
         gameObject.GetComponent<EnemyMoving>().Slow(3f, 0.15f);
+        poisonPart.GetComponent<ParticleSystem>().Play();
         while (dur > 0)
         {
             int addDMG = dmg * (int)(GameManager.Instance.buff[3] / 100);
             int removeDMG = (int)((float)(dmg + addDMG) * resistance[2]/100);
             TakeDamage(dmg + addDMG - removeDMG);
+            GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
+            int curDMG = dmg + addDMG - removeDMG;
+            dmgText.GetComponent<TMP_Text>().text = "" + curDMG;
+            dmgText.GetComponent<TMP_Text>().color = new Color(0, 161 / 255f, 8f / 255f);
             yield return new WaitForSeconds(0.5f); // Apply fire damage every second
             dur -= 0.5f;
         }
@@ -237,6 +256,7 @@ public class Enemy : MonoBehaviour
         if (inPoison)
         {
             inPoison = false; // Reset the flag
+            poisonPart.GetComponent<ParticleSystem>().Stop();
         }
     }
  

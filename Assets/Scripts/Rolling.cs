@@ -64,22 +64,19 @@ public class Rolling : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !choosing)
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+           Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int cellPosition = tilemap.WorldToCell(mousePosition);
-            Vector3 cellCenter = tilemap.GetCellCenterWorld(cellPosition);
+            int columnIndex = cellPosition.x;
+            int rowIndex = cellPosition.y;
 
-            Ray ray = new Ray(mousePosition, Vector3.forward);
-
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-            if (hit.collider != null && hit.collider.gameObject == tilemap.gameObject)
-            {
+            //if (hit.collider != null && hit.collider.gameObject == tilemap.gameObject)
+            //{
                 if (tilemap.HasTile(cellPosition))
                 {
                     Clicking(mousePosition, cellPosition, curIndex);
                     Debug.Log("����� �� ����������");
                 }
-            }
+            //}
         }
         else if (Input.GetMouseButtonDown(0) && choosing)
         {

@@ -9,8 +9,7 @@ public class Farm : MonoBehaviour
     public int goldGive;
     public float timeNeed;
     private float curTime;
-    public TMP_Text waveCount;
-    public Animator addCoin;
+    public GameObject addCoin;
     private DataTower basa;
     private UpHave uh;
     
@@ -23,7 +22,10 @@ public class Farm : MonoBehaviour
     void Update()
     {
         goldGive = (int)basa.lvlData[uh.LVL, 17];
-        curTime -= Time.deltaTime;
+        if(GameManager.Instance.spawn.works)
+        {
+            curTime -= Time.deltaTime;
+        }
         if (curTime <= 0f)
         {
             StartCoroutine(GiveGold());
@@ -33,12 +35,10 @@ public class Farm : MonoBehaviour
     {
         int givemoney = (int)((float)goldGive * GameManager.Instance.buff[4] / 100);
         int all = goldGive + givemoney;
-        GameManager.Instance.AddMoney(all);
         curTime = timeNeed;
-        addCoin.gameObject.SetActive(true);
-        addCoin.Play("give_gold_anim");
-        waveCount.text = all.ToString("");
-        yield return new WaitForSeconds(0.5f);
-        addCoin.gameObject.SetActive(false);
+        GameObject coin = Instantiate(addCoin, transform.position, Quaternion.identity);
+        coin.GetComponent<GoldMoving>().gold = all;
+        coin.transform.GetChild(0).GetComponent<TMP_Text>().text = all.ToString("");
+        yield return null;
     }
 }

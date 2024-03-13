@@ -75,11 +75,13 @@ public class EnemyMoving : MonoBehaviour
         }
         if (isSlowed)
         {
+            GetComponent<Enemy>().icePart.GetComponent<ParticleSystem>().Play();
             slowTimer -= Time.deltaTime;
             if (slowTimer <= 0)
             {
                 isSlowed = false;
                 speed = maxSpeed;
+                GetComponent<Enemy>().icePart.GetComponent<ParticleSystem>().Stop();
             }
         }
         

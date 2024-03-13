@@ -19,6 +19,7 @@ public class MenuController : MonoBehaviour
     public void LoadNextScene(string nameScene)
     {
         // �������� ������ ������� �������� �����
+        Time.timeScale = 1f;
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         // ��������� ��������� ����� (������ + 1)

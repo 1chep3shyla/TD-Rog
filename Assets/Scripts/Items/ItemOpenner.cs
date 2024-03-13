@@ -25,6 +25,8 @@ public class ItemOpenner : MonoBehaviour
     public Text sellText;
     public int sellCost;
     public bool allOpen;
+    public bool openning;
+    public bool claimReward;
 
     private Item curItem;
 
@@ -53,13 +55,13 @@ public class ItemOpenner : MonoBehaviour
 
     public void OpenChest()
     {
-        if(countChest > 0)
+        if(countChest > 0 && !openning && !claimReward)
         {
             StartCoroutine(OpenChestCoroutine());
             countChest -=1;
             allOpen = false;
         }
-        else
+        else if (countChest <= 0 && !openning && !claimReward)
         {
             allOpen = true;
             ps[4].gameObject.SetActive(false);
@@ -67,11 +69,43 @@ public class ItemOpenner : MonoBehaviour
             panelOpen.SetActive(false);
             iconImage.gameObject.SetActive(false);
         }
+        else if (openning && !claimReward)
+        {
+            StopCoroutine(OpenChestCoroutine());
+            claimReward = true;
+            iconImage.gameObject.SetActive(true);
+            Item selectedItem = GetRandomItem();
+            curItem = selectedItem;
+            iconImage.sprite = selectedItem.iconTrans;
+            nameText.text = selectedItem.name;
+            ps[5].Stop();
+            if(selectedItem.Rarity == typeItem.def)
+            {
+                sellCost = 150;
+                sellText.text = "Sell for " + sellCost;
+            }
+            else if(selectedItem.Rarity == typeItem.rare)
+            {
+                sellCost = 450;
+                sellText.text = "Sell for " + sellCost;
+            }
+            else if(selectedItem.Rarity == typeItem.mythic)
+            {
+                sellCost = 750;
+                sellText.text = "Sell for " + sellCost;
+            }
+            nameText.gameObject.SetActive(true);
+            Light.SetActive(false);
+
+            sellButton.interactable = true;
+            claimButton.interactable = true;
+        }
     }
 
     IEnumerator OpenChestCoroutine()
     {
-         nameText.text = "";
+        openning = true;
+        nameText.text = "";
         sellButton.interactable = false;
         claimButton.interactable = false;
         chestAnimator.Play("chest_start");
@@ -92,6 +126,9 @@ public class ItemOpenner : MonoBehaviour
         ps[3].Play();
         yield return new WaitForSecondsRealtime(0.1f);
         ps[4].gameObject.SetActive(true);
+        if(!claimReward)
+        {
+        claimReward = true;
         iconImage.gameObject.SetActive(true);
         Item selectedItem = GetRandomItem();
         curItem = selectedItem;
@@ -120,10 +157,13 @@ public class ItemOpenner : MonoBehaviour
 
         sellButton.interactable = true;
         claimButton.interactable = true;
+        }
     }
 
     public void Sell()
     {
+        openning = false;
+        claimReward = false;
         GameManager.Instance.AddMoney(sellCost);
         curItem = null;
         OpenChest();
@@ -131,7 +171,8 @@ public class ItemOpenner : MonoBehaviour
 
     public void Claim()
 {
-    // Logic for claiming the item
+    openning = false;
+    claimReward = false;
     // Add your logic here
     if (curItem != null)
     {

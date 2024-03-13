@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 0}
-  moveDuration: 100
+  moveDuration: 1.5
   easeType: 17
   gold: 0
   YoffSet: 0
