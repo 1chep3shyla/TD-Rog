@@ -28,6 +28,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  disc: Creates {0} Ice Spirits every {1} seconds that freeze enemies
   indexThing: 1
   meteorController: {fileID: 7835118847764763805, guid: fdc6be495856d69409265ffe3d7e4bea, type: 3}
   generatingObject: {fileID: 0}

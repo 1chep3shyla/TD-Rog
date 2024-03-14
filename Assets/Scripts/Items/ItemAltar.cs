@@ -29,7 +29,12 @@ public class ItemAltar : Item
             altar.goldGive += goldGive;
             altar.healthRemove += removeHealth;
         }
-
         base.GetBuff();
+        GetDescription();
+    }
+    public override void GetDescription()
+    {
+        base.GetDescription();
+        GameManager.Instance.DiscriptionText.text = string.Format(disc , goldGive * count, removeHealth * count);
     }
 }

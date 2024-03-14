@@ -55,6 +55,7 @@ public class ItemOpenner : MonoBehaviour
 
     public void OpenChest()
     {
+        chestAnimatorObject.SetActive(false);
         if(countChest > 0 && !openning && !claimReward)
         {
             StartCoroutine(OpenChestCoroutine());
@@ -104,6 +105,7 @@ public class ItemOpenner : MonoBehaviour
 
     IEnumerator OpenChestCoroutine()
     {
+        chestAnimatorObject.SetActive(true);
         openning = true;
         nameText.text = "";
         sellButton.interactable = false;
@@ -182,7 +184,6 @@ public class ItemOpenner : MonoBehaviour
         {
             if (item == curItem)
             {
-                item.count++;
                 item.GetBuff();
                 itemExists = true;
                 break;
@@ -199,7 +200,6 @@ public class ItemOpenner : MonoBehaviour
             items[items.Length - 1].GetBuff();
         }
     }
-    OpenChest();
 }
 
     public void CreateItem()
@@ -216,17 +216,25 @@ public class ItemOpenner : MonoBehaviour
                 imageComponent.sprite = curItem.icon;
             }
 
+            // Получаем скрипт ItemSee и устанавливаем itemIs
+            ItemSee itemSee = newItem.GetComponent<ItemSee>();
+            if (itemSee != null)
+            {
+                itemSee.itemIs = curItem;
+            }
+
             curItem = null;
         }
+        OpenChest();
     }
 
     private Item GetRandomItem()
     {
         float randomValue = Random.value;
 
-        if (randomValue < 0.70f) // 70% chance for default item
+        if (randomValue < 0.65f) // 70% chance for default item
             return defItem[Random.Range(0, defItem.Length)];
-        else if (randomValue < 0.95f) // 25% chance for rare item
+        else if (randomValue < 0.85f) // 25% chance for rare item
             return rareItem[Random.Range(0, rareItem.Length)];
         else // 5% chance for epic item
             return epicItem[Random.Range(0, epicItem.Length)];

@@ -35,4 +35,9 @@ public class ItemMeat : Item
         }
         
     }
+     public override void GetDescription()
+    {
+        base.GetDescription();
+        GameManager.Instance.DiscriptionText.text = string.Format(disc , newHp * count, count);
+    }
 }

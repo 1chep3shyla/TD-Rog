@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Ice Sphere
   count: 0
+  Rarity: 0
   icon: {fileID: 21300000, guid: 0b3db8596bb2e934e8a2abe081f3206e, type: 3}
   iconTrans: {fileID: 21300000, guid: ddf56eb776600f549a3f51819c9bdecd, type: 3}
   buff:
@@ -27,3 +28,4 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  disc: Increases Ice Deceleration

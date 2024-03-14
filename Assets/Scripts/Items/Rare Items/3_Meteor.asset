@@ -28,6 +28,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  disc: Creates a rain of {0} meteorite every {1} seconds
   indexThing: 0
   meteorController: {fileID: 7835118847764763805, guid: 9ee9d5797c4865b4da61d9bf1be04f1e, type: 3}
   generatingObject: {fileID: 0}

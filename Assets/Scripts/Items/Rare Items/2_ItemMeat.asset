@@ -28,4 +28,5 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  disc: Adds {0} max health, but lock {1}  perk choice
   newHp: 25

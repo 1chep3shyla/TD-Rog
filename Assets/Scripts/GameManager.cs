@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
     public TMP_Text goldCount;
     public TMP_Text healthCount;
     public TMP_Text waveCount;
+    public TMP_Text DiscriptionText;
+    public TMP_Text NameText;
+    public TMP_Text[] DiscriptionStatText;
+    public GameObject discItemGM;
     public int curWave;
     public int enemyHave;
     public ItemOpenner itemOpenner;

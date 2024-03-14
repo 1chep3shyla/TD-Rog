@@ -10,4 +10,9 @@ public class ItemOnWave : Item
     {
          GameObject meteorCon = Instantiate(gameObjectCreate, new Vector3(Random.Range(-4f,4f), Random.Range(-4f,4f), 0), Quaternion.identity);
     }
+    public override void GetDescription()
+    {
+        base.GetDescription();
+        GameManager.Instance.DiscriptionText.text = string.Format(disc , count);
+    }
 }

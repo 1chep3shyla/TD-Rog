@@ -28,6 +28,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  disc: Each round gives {0} gold, but takes away {1} health.
   goldGive: 300
   removeHealth: 1
   indexThing: 1

@@ -9,7 +9,10 @@ public class BestiarSee : MonoBehaviour
     public Image[] icons;
     public Button[] buttons;
     public string[] descrip;
+    public string[] nameEnemy;
+    public string[] typeEnemy;
     public Image icon;
+    public TMP_Text nameText;
     public TMP_Text descripText;
     public TMP_Text typeText;
 
@@ -43,16 +46,17 @@ public class BestiarSee : MonoBehaviour
         Debug.Log("Работает");
         if (Beastiar.Instance.seeThis[which] == true)
         {
-            typeText.text = "???";
-            descripText.text = "???";
             descripText.text = descrip[which];
+            nameText.text = nameEnemy[which];
+            typeText.text = "Type: " + typeEnemy[which];
             icon.color = Color.white;
             icon.sprite = icons[which].sprite;
         }
         else
         {
-            typeText.text = "???";
+            typeText.text = "Type: ???";
             descripText.text = "???";
+            nameText.text = "???";
             icon.color = Color.black;
             icon.sprite = icons[which].sprite;
         }

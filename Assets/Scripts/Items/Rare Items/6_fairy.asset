@@ -28,4 +28,5 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  disc: Creates {0} Fairies that destroy enemies
   gameObjectCreate: {fileID: 3655074521595308433, guid: cc286fd8e3e136542aeceb6f69e9d3ba, type: 3}

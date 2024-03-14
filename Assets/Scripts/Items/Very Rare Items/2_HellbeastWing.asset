@@ -20,7 +20,7 @@ MonoBehaviour:
   buff:
   - 0
   - -5
-  - 15
+  - 20
   - 0
   - 0
   - 0
@@ -28,3 +28,4 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  disc: Greatly increases Fire Damage
