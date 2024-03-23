@@ -20,10 +20,16 @@ public class PerkRoll : MonoBehaviour
     public bool rollingEvolve;
     public ParticleSystem[] perkPS;
     public Color[] colors;
+    public Sprite[] iconSprites;
+    public GameObject iconPrefab;
+    private GameObject[] icons = new GameObject[5];
 
     void Start()
     {
-        StartCoroutine(StartGame());
+        //StartCoroutine("StartGame");
+    }
+    void Update()
+    {
     }
     public void ChoosePerk(int index)
     {
@@ -37,6 +43,8 @@ public class PerkRoll : MonoBehaviour
     }
     public void RollPerk()
     {
+        chancePerk[0] = 100 - (int)System.Math.Log(GameManager.Instance.curWave * GameManager.Instance.curWave, 1.1f);
+        chancePerk[1] = 100 - (int)System.Math.Log(GameManager.Instance.curWave * GameManager.Instance.curWave, 1.4f);
         List<ScriptableObject> availableBronzePerks = new List<ScriptableObject>(allBronzePerks);
         List<ScriptableObject> availableSilverPerks = new List<ScriptableObject>(allSilverPerks);
         List<ScriptableObject> availableGoldenPerks = new List<ScriptableObject>(allGoldenPerks);
@@ -71,13 +79,31 @@ public class PerkRoll : MonoBehaviour
                         curPerks[i] = availableGoldenPerks[randomPerk];
                         availableGoldenPerks.Remove(availableGoldenPerks[randomPerk]);
                     }
+                    
                     o = 1000;
                 }
             }
 
-            if (curPerks[i] is IPerk perk)
+            if (curPerks[i] is Perks perk)
             {
                 // Call the ApplyPerk method on the concrete type
+                if(icons[i] != null)
+                {
+                    Destroy(icons[i]);
+                }
+                GameObject cardBackInstance = Instantiate(iconPrefab, cardBack[i].gameObject.transform.position, Quaternion.identity);
+                icons[i] = cardBackInstance;
+                cardBackInstance.transform.localScale = new Vector3(
+                    cardBackInstance.transform.localScale.x / 108f,
+                    cardBackInstance.transform.localScale.y / 108f,
+                    cardBackInstance.transform.localScale.z / 108f
+                    );
+                cardBackInstance.transform.position -= new Vector3(0.1f,1.3f,0);
+                cardBackInstance.transform.parent = cardBack[i].transform;
+                Image cardImage = cardBackInstance.GetComponent<Image>();
+                TMPro.TMP_Text cardText = cardBackInstance.GetComponentInChildren<TMPro.TMP_Text>();
+                cardText.text = "+ " +perk.ReturnUpBuff().ToString("");
+                cardImage.sprite = iconSprites[perk.indexOfBuff];
                 perkText[i].text = perk.SetData();
                 cardIcon[i].sprite = perk.GetData();
                 discription[i].text = perk.SetDataDis();
@@ -92,11 +118,10 @@ public class PerkRoll : MonoBehaviour
 
         for (int i = 0; i < curPerks.Length; i++)
         {
-            cardBack[i].color = colors[2];
             int randomPerk = Random.Range(0, availablePerks.Count);
             curPerks[i] = availablePerks[randomPerk];
             availablePerks.Remove(availablePerks[randomPerk]);
-
+            perkPS[i].startColor = colors[3];
             if (curPerks[i] is IPerk perk)
             {
                 // Call the ApplyPerk method on the concrete type
@@ -107,6 +132,14 @@ public class PerkRoll : MonoBehaviour
             PerkGM.SetActive(true);
         }
 
+    }
+    public void RerollPerk()
+    {
+        if(GameManager.Instance.Gold >= 300)
+        {
+            RollPerk();
+            GameManager.Instance.Gold -=300;
+        }
     }
     private IEnumerator StartGame()
     {

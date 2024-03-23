@@ -30,6 +30,6 @@ public class ItemMeteor : Item
     public override void GetDescription()
     {
         base.GetDescription();
-        GameManager.Instance.DiscriptionText.text = string.Format(disc , generatingObject.numberOfObjects, generatingObject.delayBetweenRepeats);
+        GameManager.Instance.DiscriptionText.text = string.Format( count.ToString(""), generatingObject.delayBetweenRepeats);
     }
 }

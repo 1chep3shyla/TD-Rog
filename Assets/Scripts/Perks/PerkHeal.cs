@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewHealPerkDefault", menuName = "Perks/PerkHeal")]
-public class PerkHeal : ScriptableObject, IPerk
+public class PerkHeal :  Perks
 {
     public int hpRestore;
     public string name;
     public string disc;
     public Sprite sprite;
-    public void ApplyPerk()
+    public override void ApplyPerk()
     {
         GameManager.Instance.restoreHeal += hpRestore;
     }
@@ -17,7 +17,7 @@ public class PerkHeal : ScriptableObject, IPerk
     {
         return name;
     }
-    public string SetDataDis()
+    public override string SetDataDis()
     {
         string retDis = disc + " " + hpRestore + "";
         return retDis;
@@ -25,5 +25,9 @@ public class PerkHeal : ScriptableObject, IPerk
     public Sprite GetData()
     {
         return sprite;
+    }
+    public override int ReturnUpBuff()
+    {
+        return hpRestore;
     }
 }

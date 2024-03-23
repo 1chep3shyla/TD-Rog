@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "NewDefaultPerkDefault", menuName = "Perks/PerkDefault")]
-public class Perks : ScriptableObject, IPerk
+public class Perks : ScriptableObject
 {
     public float buffGlobal;
     public string name;
     public string disc;
     public int indexOfBuff;
     public Sprite sprite;
-    public void ApplyPerk()
+    public virtual void ApplyPerk()
     {
         GameManager.Instance.buff[indexOfBuff] += buffGlobal;
     }
@@ -17,7 +17,8 @@ public class Perks : ScriptableObject, IPerk
     {
         return name;
     }
-    public string SetDataDis()
+
+    public virtual string SetDataDis()
     {
         string retDis = disc + " " + buffGlobal + "%";
         return retDis;
@@ -25,5 +26,9 @@ public class Perks : ScriptableObject, IPerk
     public Sprite GetData()
     {
         return sprite;
+    }
+    public virtual int ReturnUpBuff()
+    {
+        return (int)buffGlobal;
     }
 }

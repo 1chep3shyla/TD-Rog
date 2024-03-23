@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868b7c811d20a6e4794da05eb9572209, type: 3}
   m_Name: healPer_perk_5
   m_EditorClassIdentifier: 
+  buffGlobal: 0
+  name: Healing I
+  disc: Restores your health on
+  indexOfBuff: 9
+  sprite: {fileID: 21300000, guid: 272fa4d5be31552449bc726b7768f195, type: 3}
   hpRestore: 5
   name: Healing I
   disc: Restores your health on

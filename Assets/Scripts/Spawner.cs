@@ -152,6 +152,7 @@ public class Spawner : MonoBehaviour
     }
     public IEnumerator ClaimReward()
     {
+        GameManager.Instance.gameObject.GetComponent<Rolling>().UnChoose();
         if (wavesMass[currentWaveIndexMain].wavesAll[currentWaveIndex - 1].bossWave == true)
         {
             Debug.Log("���� �����");

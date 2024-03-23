@@ -7,4 +7,5 @@ public interface IPerk
     Sprite GetData();
     string SetData();
     string SetDataDis();
+    int SetIconIndex();
 }

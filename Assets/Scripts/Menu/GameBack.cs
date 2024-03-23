@@ -6,6 +6,8 @@ public class GameBack
     public ICharSet charData;
     public string curFormula;
     public int indexState = 1;
+    public float volumeMusic;
+    public float volumeSFX;
     public static GameBack Instance
     {
         get

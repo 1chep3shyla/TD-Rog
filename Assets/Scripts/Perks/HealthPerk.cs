@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewHealPermanentPerkDefault", menuName = "Perks/PerkHealPermanent")]
-public class HealthPerk : ScriptableObject, IPerk
+public class HealthPerk : Perks
 {
     public int hpRestore;
     public string name;
     public string disc;
     public Sprite sprite;
-    public void ApplyPerk()
+    public override void ApplyPerk()
     {
         if (GameManager.Instance.Health + hpRestore > GameManager.Instance.maxHealth)
         {
@@ -18,7 +18,7 @@ public class HealthPerk : ScriptableObject, IPerk
         else
         {
             GameManager.Instance.Health += hpRestore;
-            Debug.Log("Õèë0");
+            Debug.Log("ï¿½ï¿½ï¿½0");
 
         }
     }
@@ -26,7 +26,7 @@ public class HealthPerk : ScriptableObject, IPerk
     {
         return name;
     }
-    public string SetDataDis()
+    public override string SetDataDis()
     {
         string retDis = disc + " " + hpRestore + "";
         return retDis;
@@ -34,5 +34,9 @@ public class HealthPerk : ScriptableObject, IPerk
     public Sprite GetData()
     {
         return sprite;
+    }
+    public override int ReturnUpBuff()
+    {
+        return hpRestore;
     }
 }

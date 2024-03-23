@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a901c427740fa74f948dfd88a97e049, type: 3}
   m_Name: heal_perk_3
   m_EditorClassIdentifier: 
+  buffGlobal: 0
+  name: Divine Healing II
+  disc: Restores your health every wave on
+  indexOfBuff: 9
+  sprite: {fileID: 21300000, guid: 4f065c050197ebf4fa00544bfee6e354, type: 3}
   hpRestore: 3
   name: Divine Healing II
   disc: Restores your health every wave on

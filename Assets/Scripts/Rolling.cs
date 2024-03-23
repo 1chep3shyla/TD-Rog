@@ -53,7 +53,7 @@ public class Rolling : MonoBehaviour
         if (towerPrefab != null && choosing)
         {
             UpHave uh = towerPrefab.GetComponent<UpHave>();
-            GameManager.Instance.Gold += (int)Math.Pow(100, uh.LVL+1);
+            GameManager.Instance.Gold += 100 * (int)Math.Pow(2,  uh.LVL);
             Destroy(uh.baseOf.gameObject);
             Destroy(towerPrefab);
             GameManager.Instance.ChangeMoney();
@@ -200,6 +200,8 @@ public class Rolling : MonoBehaviour
         else if (allBases[columnIndex + 10, rowIndex + 3] != null)
         {
             allBases[columnIndex + 10, rowIndex + 3].OnMouseUpping();
+            sell.text = (100 * Math.Pow(2, allBases[columnIndex + 10, rowIndex + 3].curGM.GetComponent<UpHave>().LVL)).ToString("");
+            sell.transform.parent.gameObject.SetActive(true);
         }
         else
         {
@@ -270,6 +272,7 @@ public class Rolling : MonoBehaviour
     public void UnChoose()
     {
         info.SetActive(false);
+            sell.transform.parent.gameObject.SetActive(false);
         choosing = false;
         towerPrefab = null;
         OrderDown();

@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public ItemOpenner itemOpenner;
     private bool anima;
     public GameObject menu;
+    public GameObject con;
+    public GameObject losing;
     private static GameManager instance;
     public List<GameObject> enemiesAll = new List<GameObject>();
     public float[] buff; // 0 - global damage, 1- ice buff, 2 - fire damage, 3 - poison, 4 - moneyMine, 5 - AttackSpeed, 6 - moneyThief+Enemy, 7 - crit DMG, 8 - crit Chance
@@ -96,7 +98,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 Health = 0;
-                Pause();
+                Losing();
             }
     
     }
@@ -177,7 +179,17 @@ public class GameManager : MonoBehaviour
     }
     public void Pause()
     {
+        if(losing.activeSelf == false)
+        {
+            menu.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    }
+    public void Losing()
+    {
         menu.SetActive(true);
+        con.SetActive(false);
+        losing.SetActive(true);
         Time.timeScale = 0f;
     }
     public void RestartGame()
@@ -195,7 +207,7 @@ public class GameManager : MonoBehaviour
     }
     public void AddMoney(int add)
     {
-        Gold += add + (add* (int)(buff[4]/100));
+        Gold += add + (int)((float)add* (buff[4]/100));
         goldCount.text = Gold.ToString("");
     }
     public void StealMoney(int add)

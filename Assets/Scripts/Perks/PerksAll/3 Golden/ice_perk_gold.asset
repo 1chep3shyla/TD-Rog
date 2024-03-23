@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1000c864b2f1909449ec2e20f044da49, type: 3}
+  m_Name: ice_perk_gold
+  m_EditorClassIdentifier: 
+  buffGlobal: 30
+  name: Ice Power III
+  disc: Increase Deceleration  by
+  indexOfBuff: 1
+  sprite: {fileID: 21300000, guid: 19ee7dd21b932ac46b1ca1085d8679f3, type: 3}

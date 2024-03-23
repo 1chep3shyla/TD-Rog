@@ -71,7 +71,7 @@ public class TowerBase : MonoBehaviour
     public void Up()
     {
         bool change = false;
-        if (curGM.GetComponent<UpHave>().LVL <5)
+        if (curGM.GetComponent<UpHave>().LVL <4)
         {
             if (rollBase.towerPrefab.GetComponent<UpHave>().id == -1) // joker
             {
