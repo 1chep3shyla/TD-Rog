@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 21
+  SaveID: 24
   iconCard: {fileID: -1332576053, guid: 135ebe08e9efc9f468e6ad56080f0e53, type: 3}
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}

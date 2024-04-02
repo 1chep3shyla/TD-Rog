@@ -12,20 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1c6c5330f00714cb17bd065e7a6a60, type: 3}
   m_Name: char_astrolog
   m_EditorClassIdentifier: 
+  indexChar: 1
   indexEvolve: -10
   buffs:
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
+  - 15
+  - 0
+  - 0
+  - 0
+  - 0
+  - 15
+  - 0
+  - 0
+  - 0
   name: Celestial Seer
   icon: {fileID: 21300000, guid: db622396334429040ab25949c88e238e, type: 3}
-  history: 
+  history: Sometimes the answers aren't just on earth.
   has: 0
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}

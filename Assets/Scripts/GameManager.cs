@@ -5,13 +5,18 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
+[System.Serializable]
 public class GameManager : MonoBehaviour
 {
 
     public bool gameOver = false;
+    [SerializeField]
     public int Gold;
+    [SerializeField]
     public int Health;
+    [SerializeField]
     public int maxHealth;
+    [SerializeField]
     public int restoreHeal;
     public SpriteRenderer[] allTower;
     public Image charIcon;
@@ -32,6 +37,7 @@ public class GameManager : MonoBehaviour
     public GameObject losing;
     private static GameManager instance;
     public List<GameObject> enemiesAll = new List<GameObject>();
+    [SerializeField]
     public float[] buff; // 0 - global damage, 1- ice buff, 2 - fire damage, 3 - poison, 4 - moneyMine, 5 - AttackSpeed, 6 - moneyThief+Enemy, 7 - crit DMG, 8 - crit Chance
     public float[] newBuff;
     public Evolve[] allEvolution;
@@ -69,12 +75,23 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+        if(GameBack.Instance.charData != null)
+        {
+            charData = GameBack.Instance.charData;
+            charData.SetData();
+            charIcon.sprite = GameBack.Instance.iconChar;
+            states[GameBack.Instance.indexState].SetActive(true);
+            tilemapCollider = collidersTile[GameBack.Instance.indexState];
+            gameObject.GetComponent<Rolling>().tilemap = maps[GameBack.Instance.indexState];
+        }
+    }
+    public void SetDataBack()
+    {
         charData = GameBack.Instance.charData;
         charData.SetData();
         charIcon.sprite = GameBack.Instance.iconChar;
         states[GameBack.Instance.indexState].SetActive(true);
         tilemapCollider = collidersTile[GameBack.Instance.indexState];
-        
         gameObject.GetComponent<Rolling>().tilemap = maps[GameBack.Instance.indexState];
     }
     public void Heal()
@@ -150,12 +167,6 @@ public class GameManager : MonoBehaviour
             if (instance == null)
             {
                 instance = FindObjectOfType<GameManager>();
-                if (instance == null)
-                {
-                    GameObject singletonObject = new GameObject();
-                    instance = singletonObject.AddComponent<GameManager>();
-                    singletonObject.name = "GameManagerSingleton";
-                }
             }
             return instance;
         }
@@ -284,6 +295,10 @@ public class GameManager : MonoBehaviour
     public void ChestClaim()
     {
         itemOpenner.countChest++;
+    }
+    void OnDestroy()
+    {
+       Destroy(GameManager.Instance.gameObject);
     }
 }
 [System.Serializable]

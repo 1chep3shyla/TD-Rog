@@ -21,7 +21,7 @@ public class Farm : MonoBehaviour
     }
     void Update()
     {
-        goldGive = (int)basa.lvlData[uh.LVL, 17];
+        goldGive = (int)basa.lvlData[uh.LVL, 1];
         if(GameManager.Instance.spawn.works)
         {
             curTime -= Time.deltaTime;

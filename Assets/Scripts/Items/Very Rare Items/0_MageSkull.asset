@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8883625bc9d8e4042b0db044900aabad, type: 3}
   m_Name: 0_MageSkull
   m_EditorClassIdentifier: 
+  index: 12
   name: Evil Mage Skull
   count: 0
   Rarity: 2

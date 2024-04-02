@@ -12,20 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1c6c5330f00714cb17bd065e7a6a60, type: 3}
   m_Name: char_merch
   m_EditorClassIdentifier: 
+  indexChar: 12
   indexEvolve: -10
   buffs:
+  - -25
+  - -25
+  - -25
+  - -25
   - 100
+  - -25
   - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
+  - -25
+  - -25
   name: Wealthy Tycoon
   icon: {fileID: 21300000, guid: 9dc8ff9a3c0003147b09fb5ec66aa0ed, type: 3}
-  history: 
+  history: Wealth is not a sin.
+  has: 0
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}
@@ -38,3 +40,5 @@ MonoBehaviour:
   - {fileID: 2056256240725061661, guid: 5f57e619bcce08a4ca5f532989e1746f, type: 3}
   - {fileID: 2056256240725061661, guid: 0f848e067fec08f478ddd98847e4478a, type: 3}
   - {fileID: 2056256240725061661, guid: bb8ad514de2f24f4aa5db5a88e1276bc, type: 3}
+  - {fileID: 2056256240725061661, guid: d113d94f9c4bf954395ee3a5424556d0, type: 3}
+  - {fileID: 2056256240725061661, guid: e26f1c159ba66ec4998d10cfc1874ebd, type: 3}

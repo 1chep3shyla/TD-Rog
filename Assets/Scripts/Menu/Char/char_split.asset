@@ -12,23 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1c6c5330f00714cb17bd065e7a6a60, type: 3}
   m_Name: char_split
   m_EditorClassIdentifier: 
+  indexChar: 19
   indexEvolve: 0
   buffs:
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 30
   name: Dimension Voyager
   icon: {fileID: 21300000, guid: 2b7c8073d2f7d7741b5faba898c30b6d, type: 3}
-  history: 
+  history: Forging armor all your life - you can find out all their weaknesses.
+  has: 0
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
-  - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}
+  - {fileID: 2056256240725061661, guid: 093526689197c3448b11a09e047d9323, type: 3}
   - {fileID: 2056256240725061661, guid: f6d48dcbb854b3d4e8d4e7e4e0916b08, type: 3}
   - {fileID: 2056256240725061661, guid: 69c3fdbe6d22e4a439aa781b30203258, type: 3}
   - {fileID: 2056256240725061661, guid: 0bac3d26016f6b149a5067341213ac9d, type: 3}
@@ -38,3 +40,4 @@ MonoBehaviour:
   - {fileID: 2056256240725061661, guid: 5f57e619bcce08a4ca5f532989e1746f, type: 3}
   - {fileID: 2056256240725061661, guid: 0f848e067fec08f478ddd98847e4478a, type: 3}
   - {fileID: 2056256240725061661, guid: bb8ad514de2f24f4aa5db5a88e1276bc, type: 3}
+  - {fileID: 2056256240725061661, guid: e26f1c159ba66ec4998d10cfc1874ebd, type: 3}

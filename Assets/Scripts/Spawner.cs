@@ -19,6 +19,7 @@ public class Spawner : MonoBehaviour
     private int enemiesSpawned = 0;
 
     public int currentWaveIndex = 0;
+    [SerializeField]
     public int currentWaveIndexMain = 0;
     public Wave[] currentWave;
     public ReaderFile datas;

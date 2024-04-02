@@ -8,9 +8,18 @@ public class VolumeChanger : MonoBehaviour
     public AudioSource sfxAs;
     public Slider musicSlider;
     public Slider sfxSlider;
+    public bool gameIs;
     void Start()
     {
-        ChangeVolume();
+        if(!gameIs)
+        {
+            ChangeVolume();
+        }
+        else
+        {
+            ChangeVolumeGame();
+        }
+
     }
 
     // Update is called once per frame
@@ -20,5 +29,11 @@ public class VolumeChanger : MonoBehaviour
         GameBack.Instance.volumeSFX = sfxSlider.value;
         musicAs.volume = GameBack.Instance.volumeMusic;
         sfxAs.volume = GameBack.Instance.volumeSFX/1.6f;
+    }
+
+    public void ChangeVolumeGame()
+    {
+        musicSlider.value = GameBack.Instance.volumeMusic;
+        sfxSlider.value = GameBack.Instance.volumeSFX;
     }
 }

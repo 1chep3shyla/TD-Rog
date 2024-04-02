@@ -8,6 +8,7 @@ using System;
 public class Rolling : MonoBehaviour
 {
     public Slot[] slots;
+    [SerializeField]
     public TowerBase[,] allBases = new TowerBase[20, 7];
     public GameObject[] towers;
     public Button[] butChoose;
@@ -15,6 +16,7 @@ public class Rolling : MonoBehaviour
     public GameObject towerPrefab;
     public GameObject unPanel;
     public GameManager GameM;
+    public GameObject perk;
     public GameObject baseOfTower;
     public Tilemap tilemap;
     public TMP_Text[] nameOfTowerText;
@@ -62,61 +64,64 @@ public class Rolling : MonoBehaviour
     }
     private void HandleMouseInput()
     {
-        if (Input.GetMouseButtonDown(0) && !choosing)
+        if(!perk.activeSelf)
         {
-           Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int cellPosition = tilemap.WorldToCell(mousePosition);
-            int columnIndex = cellPosition.x;
-            int rowIndex = cellPosition.y;
-
-            //if (hit.collider != null && hit.collider.gameObject == tilemap.gameObject)
-            //{
-                if (tilemap.HasTile(cellPosition))
-                {
-                    Clicking(mousePosition, cellPosition, curIndex);
-                    Debug.Log("����� �� ����������");
-                }
-            //}
-        }
-        else if (Input.GetMouseButtonDown(0) && choosing)
-        {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int cellPosition = tilemap.WorldToCell(mousePosition);
-            int columnIndex = cellPosition.x;
-            int rowIndex = cellPosition.y;
-
-            Vector3 cellCenter = tilemap.GetCellCenterWorld(cellPosition);
-
-            Ray ray = new Ray(mousePosition, Vector3.forward);
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-            if (hit.collider != null && hit.collider.gameObject == tilemap.gameObject)
+            if (Input.GetMouseButtonDown(0) && !choosing)
             {
-                if (tilemap.HasTile(cellPosition) && allBases[columnIndex + 10, rowIndex + 3] == null)
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector3Int cellPosition = tilemap.WorldToCell(mousePosition);
+                int columnIndex = cellPosition.x;
+                int rowIndex = cellPosition.y;
+
+                //if (hit.collider != null && hit.collider.gameObject == tilemap.gameObject)
+                //{
+                    if (tilemap.HasTile(cellPosition))
+                    {
+                        Clicking(mousePosition, cellPosition, curIndex);
+                        Debug.Log("����� �� ����������");
+                    }
+                //}
+            }
+            else if (Input.GetMouseButtonDown(0) && choosing)
+            {
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector3Int cellPosition = tilemap.WorldToCell(mousePosition);
+                int columnIndex = cellPosition.x;
+                int rowIndex = cellPosition.y;
+
+                Vector3 cellCenter = tilemap.GetCellCenterWorld(cellPosition);
+
+                Ray ray = new Ray(mousePosition, Vector3.forward);
+                RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+
+                if (hit.collider != null && hit.collider.gameObject == tilemap.gameObject)
                 {
-                    UnChoose();
-                }
-                else if (!tilemap.HasTile(cellPosition))
-                {
-                    UnChoose();
-                }
-                else if (allBases[columnIndex + 10, rowIndex + 3] != null)
-                {
-                    allBases[columnIndex + 10, rowIndex + 3].OnMouseUpping();
+                    if (tilemap.HasTile(cellPosition) && allBases[columnIndex + 10, rowIndex + 3] == null)
+                    {
+                        UnChoose();
+                    }
+                    else if (!tilemap.HasTile(cellPosition))
+                    {
+                        UnChoose();
+                    }
+                    else if (allBases[columnIndex + 10, rowIndex + 3] != null)
+                    {
+                        allBases[columnIndex + 10, rowIndex + 3].OnMouseUpping();
+                    }
                 }
             }
-        }
-        else if (Input.GetMouseButtonUp(0) && choosing)
-        {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int cellPosition = tilemap.WorldToCell(mousePosition);
-            int columnIndex = cellPosition.x;
-            int rowIndex = cellPosition.y;
-            if (tilemap.HasTile(cellPosition))
+            else if (Input.GetMouseButtonUp(0) && choosing)
             {
-                if (allBases[columnIndex + 10, rowIndex + 3] != null)
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector3Int cellPosition = tilemap.WorldToCell(mousePosition);
+                int columnIndex = cellPosition.x;
+                int rowIndex = cellPosition.y;
+                if (tilemap.HasTile(cellPosition))
                 {
-                    allBases[columnIndex + 10, rowIndex + 3].OnMouseUpping();
+                    if (allBases[columnIndex + 10, rowIndex + 3] != null)
+                    {
+                        allBases[columnIndex + 10, rowIndex + 3].OnMouseUpping();
+                    }
                 }
             }
         }
@@ -234,7 +239,6 @@ public class Rolling : MonoBehaviour
         {
             butChoose[i].interactable = true;
             butChoose[i].gameObject.SetActive(true);
-
             int randomId = UnityEngine.Random.Range(0, towers.Length);
             while (lockerTower[randomId])
             {

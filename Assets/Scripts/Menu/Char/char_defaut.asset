@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8985121a7cba0374a8eceb24eed82d5b, type: 3}
   m_Name: char_defaut
   m_EditorClassIdentifier: 
+  indexChar: 4
   buffs:
   - 10
   - 0

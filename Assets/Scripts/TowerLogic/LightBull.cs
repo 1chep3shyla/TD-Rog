@@ -6,6 +6,7 @@ public class LightBull : MonoBehaviour
 {
     public float speed = 10f;
     public int damage = 10;
+    public int critChance;
     public Transform[] targetEnemies; // Array of target enemies
 
     private int currentTargetIndex = 0;
@@ -36,7 +37,7 @@ public class LightBull : MonoBehaviour
         if (collision.CompareTag("Enemy") && currentTargetIndex < targetEnemies.Length && collision.transform == targetEnemies[currentTargetIndex])
         {
             currentTargetIndex++; // Move to the next target
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            collision.gameObject.GetComponent<Enemy>().DefaultAttack(damage,critChance);
         }
 
     }

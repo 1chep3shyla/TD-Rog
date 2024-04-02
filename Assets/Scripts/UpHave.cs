@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class UpHave : MonoBehaviour
 {
+    [SerializeField]
     public int id;
+    [SerializeField]
+    public int SaveID;
     public Sprite iconCard;
     public GameObject UpVersion;
     public TowerBase baseOf;
@@ -15,6 +18,7 @@ public class UpHave : MonoBehaviour
     public float attackSpeed;
     public int damage;
     public int curDamage;
+    [SerializeField]
     public int LVL;
     public int critChance;
     public int critChanceCur;

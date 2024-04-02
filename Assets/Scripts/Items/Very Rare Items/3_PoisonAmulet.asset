@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8883625bc9d8e4042b0db044900aabad, type: 3}
   m_Name: 3_PoisonAmulet
   m_EditorClassIdentifier: 
+  index: 15
   name: Poison Amulet
   count: 0
   Rarity: 2

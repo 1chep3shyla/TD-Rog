@@ -28,6 +28,11 @@ public class Item : ScriptableObject
         }
         GetDescription();
     }
+    public virtual void  GetBuffSave()
+    {
+        count++;
+        GetDescription();
+    }
     public virtual void GetDescription()
     {
         GameManager.Instance.NameText.text = name;
@@ -44,5 +49,9 @@ public class Item : ScriptableObject
                 GameManager.Instance.DiscriptionStatText[i].gameObject.transform.parent.gameObject.SetActive(false);
             }
         }
+    }
+      public virtual string GetDescriptionItem()
+    {
+        return disc;
     }
 }

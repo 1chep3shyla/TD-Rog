@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2955a1e84a50c489f06741ec7170da, type: 3}
   m_Name: 7_Mushrooms
   m_EditorClassIdentifier: 
+  index: 11
   name: Strange Mushrooms
   count: 0
   Rarity: 1
@@ -28,7 +29,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  disc: Creates {0} Strange Mushrooms every {1} seconds that poison enemies
+  disc: Creates {0} Strange Mushrooms that poison enemies
   indexThing: 3
   meteorController: {fileID: 7835118847764763805, guid: 26cfb82c72f626346a8b95cf4cdb8c4e, type: 3}
   generatingObject: {fileID: 0}

@@ -12,50 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1c6c5330f00714cb17bd065e7a6a60, type: 3}
   m_Name: char_crystal
   m_EditorClassIdentifier: 
+  indexChar: 3
   indexEvolve: 12
   buffs:
+  - 15
+  - 0
+  - 5
   - 0
   - 0
   - 0
-  - 0
-  - 10
-  - 0
+  - 5
   - 0
   - 0
-  - 0
-  name: Dwarf Warrior
-  icon: {fileID: 21300000, guid: d97e1192bc50b674f89cc74b493eaa76, type: 3}
-  history: 'Deep in the mountains, in a secluded mountain settlement, lived a gnome
-    named Kragmor. He was a powerhouse and defender of his people. Everyone knew
-    him as an unwavering warrior, battling monsters to ensure the safety of his loved
-    ones.
-
-
-
-    But behind the sturdy armor and steel shield hid a poignant story.
-    In his youth, Kragmor was in love with a beautiful gnome named Phailin. Their
-    love seemed unbreakable, but wars and dangers lurked around every corner.
-
-
-
-    One
-    day, during a brutal attack by the Shadow Servants of the Assassin, Kragmor sent
-    Phailin to a hiding place, promising to return. He fought the assassins, but
-    upon his return, he found their home destroyed, and Phailin gone. He traversed
-    every mountain path, searched every cave, but she was nowhere to be found.
-
-
-
-    The
-    bitter pain of loss stayed with Kragmor, making him internally shattered. He
-    continued to protect his people, but his heart was filled with sorrow. His eyes
-    often flickered with sadness and unspoken grief.
-
-
-
-    Every day, in his ongoing
-    struggle, Kragmor hoped to see his love again. His dream was the heavy burden
-    he carried along with his strength and endless sorrow.'
+  name: Dwarf
+  icon: {fileID: 21300000, guid: c0f99e4c5049bc843b6349d2e3004af4, type: 3}
+  history: Gunpowder is a favorite thing of dwarves.
   has: 0
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
@@ -64,7 +35,7 @@ MonoBehaviour:
   - {fileID: 2056256240725061661, guid: 69c3fdbe6d22e4a439aa781b30203258, type: 3}
   - {fileID: 2056256240725061661, guid: 0bac3d26016f6b149a5067341213ac9d, type: 3}
   - {fileID: 2056256240725061661, guid: a17ae2e7a25c3ec47b96b6d6efe03078, type: 3}
-  - {fileID: 2056256240725061661, guid: f76df1e501a76354c91f03aa18286075, type: 3}
+  - {fileID: 2056256240725061661, guid: c8b72a4173a9df44db3e1699759397d2, type: 3}
   - {fileID: 2056256240725061661, guid: 8ae1660fe55a5d2429431dddde259189, type: 3}
   - {fileID: 2056256240725061661, guid: 5f57e619bcce08a4ca5f532989e1746f, type: 3}
   - {fileID: 2056256240725061661, guid: 0f848e067fec08f478ddd98847e4478a, type: 3}

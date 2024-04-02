@@ -122,7 +122,7 @@ public class Default : MonoBehaviour
             chanceAssasin = (int)dt.lvlData[lvl, 16];
             attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));
         }
-        gameObject.GetComponent<CircleCollider2D>().radius = attackRadius - (attackRadius * 0.25f);
+        gameObject.GetComponent<CircleCollider2D>().radius = attackRadius - (attackRadius * 0.35f);
     }
     public void UpdateImposter()
     {
@@ -375,7 +375,7 @@ public class Default : MonoBehaviour
     }
     void AttackLight()
     {
-        if (attackCooldown <= 0f && enemiesInRange.Count >maxTargets)
+        if (attackCooldown <= 0f && currentTargets.Count >= maxTargets)
         {
             GameManager.Instance.aS.PlayOneShot(hitSFX);
             GameManager.Instance.aS.pitch = Random.Range(0.8f, 1.1f);
@@ -384,14 +384,14 @@ public class Default : MonoBehaviour
             LightBull bulletScript = bullet.GetComponent<LightBull>();
             bulletScript.targetEnemies = new Transform[maxTargets];
             bulletScript.damage = damage;
+            bulletScript.critChance = critChance;
             for (int i = 0; i < maxTargets; i++)
             {
-                if (enemiesInRange.Count >= maxTargets)
+                if (currentTargets.Count >= maxTargets)
                 {
                     bulletScript.targetEnemies[i] = enemiesInRange[i];
 
                     attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));
-                    enemiesInRange.RemoveAt(0); // Remove the first enemy from the list
                 }
             }
             UpdateFlip(enemiesInRange[0]);

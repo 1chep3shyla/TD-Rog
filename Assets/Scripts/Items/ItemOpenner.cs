@@ -27,8 +27,11 @@ public class ItemOpenner : MonoBehaviour
     public bool allOpen;
     public bool openning;
     public bool claimReward;
+    public GameObject discriptionGM;
+    public TMP_Text discriptionText;
+    public TMP_Text[] statText;
 
-    private Item curItem;
+    public Item curItem;
 
     private Animator chestAnimator;
     private Animator iconAnimator;
@@ -51,8 +54,19 @@ public class ItemOpenner : MonoBehaviour
         // Disable animations initially
         chestAnimator.SetBool("SellHover", false);
         chestAnimator.SetBool("ClaimHover", false);
+        for(int i =0; i < defItem.Length;i++)
+        {
+            defItem[i].count = 0;
+        }
+        for(int i =0; i < rareItem.Length;i++)
+        {
+            rareItem[i].count = 0;
+        }
+        for(int i =0; i < epicItem.Length;i++)
+        {
+            epicItem[i].count = 0;
+        }
     }
-
     public void OpenChest()
     {
         chestAnimatorObject.SetActive(false);
@@ -77,6 +91,21 @@ public class ItemOpenner : MonoBehaviour
             iconImage.gameObject.SetActive(true);
             Item selectedItem = GetRandomItem();
             curItem = selectedItem;
+            discriptionGM.SetActive(true);
+            discriptionGM.GetComponent<Animator>().Play("dis_anim");
+            discriptionText.text = selectedItem.GetDescriptionItem();
+            for(int i = 0;i < statText.Length;i++)
+            {
+                if(selectedItem.buff[i] == 0)
+                {
+                    statText[i].gameObject.transform.parent.gameObject.SetActive(false);
+                }
+                else
+                {
+                    statText[i].gameObject.transform.parent.gameObject.SetActive(true);
+                     statText[i].text = selectedItem.buff[i] + "%";
+                }
+            }
             iconImage.sprite = selectedItem.iconTrans;
             nameText.text = selectedItem.name;
             ps[5].Stop();
@@ -105,6 +134,7 @@ public class ItemOpenner : MonoBehaviour
 
     IEnumerator OpenChestCoroutine()
     {
+        discriptionGM.SetActive(false);
         chestAnimatorObject.SetActive(true);
         openning = true;
         nameText.text = "";
@@ -133,6 +163,21 @@ public class ItemOpenner : MonoBehaviour
         claimReward = true;
         iconImage.gameObject.SetActive(true);
         Item selectedItem = GetRandomItem();
+        discriptionGM.SetActive(true);
+        discriptionGM.GetComponent<Animator>().Play("dis_anim");
+        discriptionText.text = selectedItem.GetDescriptionItem();
+         for(int i = 0;i < statText.Length;i++)
+            {
+                if(selectedItem.buff[i] == 0)
+                {
+                    statText[i].gameObject.transform.parent.gameObject.SetActive(false);
+                }
+                else
+                {
+                    statText[i].gameObject.transform.parent.gameObject.SetActive(true);
+                     statText[i].text = " " + selectedItem.buff[i] + "%";
+                }
+            }
         curItem = selectedItem;
         iconImage.sprite = selectedItem.iconTrans;
         nameText.text = selectedItem.name;
@@ -160,6 +205,10 @@ public class ItemOpenner : MonoBehaviour
         sellButton.interactable = true;
         claimButton.interactable = true;
         }
+        else
+        {
+            yield return null;
+        }
     }
 
     public void Sell()
@@ -172,36 +221,63 @@ public class ItemOpenner : MonoBehaviour
     }
 
     public void Claim()
-{
-    openning = false;
-    claimReward = false;
-    // Add your logic here
-    if (curItem != null)
     {
-
-        bool itemExists = false;
-        foreach (Item item in items)
+        if(claimReward)
         {
-            if (item == curItem)
+            openning = false;
+            claimReward = false;
+            if (curItem != null)
             {
-                item.GetBuff();
-                itemExists = true;
-                break;
-            }
-            itemExists = false;
-        }
 
-        if (!itemExists)
+                bool itemExists = false;
+                foreach (Item item in items)
+                {
+                    if (item == curItem)
+                    {
+                        item.GetBuff();
+                        itemExists = true;
+                        break;
+                    }
+                }
+
+                if (!itemExists)
+                {
+                    Debug.Log("Up Count");
+                    System.Array.Resize(ref items, items.Length + 1);
+                    items[items.Length - 1] = curItem;
+                    CreateItem();
+                    items[items.Length - 1].GetBuff();
+                }
+            }
+        }
+        OpenChest();
+    }
+    public void ClaimSave()
+    {
+        if (curItem != null)
         {
-            Debug.Log("Up Count");
-            System.Array.Resize(ref items, items.Length + 1);
-            items[items.Length - 1] = curItem;
-            CreateItem();
-            items[items.Length - 1].GetBuff();
+
+            bool itemExists = false;
+            foreach (Item item in items)
+            {
+                if (item == curItem)
+                {
+                    item.GetBuffSave();
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            if (!itemExists)
+            {
+                Debug.Log("Up Count");
+                System.Array.Resize(ref items, items.Length + 1);
+                items[items.Length - 1] = curItem;
+                CreateItem();
+                items[items.Length - 1].GetBuffSave();
+            }
         }
     }
-}
-
     public void CreateItem()
     {
         if (prefabItem != null)
@@ -225,7 +301,6 @@ public class ItemOpenner : MonoBehaviour
 
             curItem = null;
         }
-        OpenChest();
     }
 
     private Item GetRandomItem()
@@ -240,17 +315,5 @@ public class ItemOpenner : MonoBehaviour
             return epicItem[Random.Range(0, epicItem.Length)];
     }
 
-    private void Update()
-    {
-        iconAnimator.SetBool("Sell", sellButtonHoverDetector.IsHovered);
-        if(!sellButtonHoverDetector.IsHovered && !claimButtonHoverDetector.IsHovered)
-        {
-            ps[4].gameObject.SetActive(true);
-        }
-        else
-        {
-            ps[4].gameObject.SetActive(false);
-        }
-        iconAnimator.SetBool("Claim", claimButtonHoverDetector.IsHovered);
-    }
+
 }

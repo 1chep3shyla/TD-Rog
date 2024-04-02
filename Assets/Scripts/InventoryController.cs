@@ -8,7 +8,7 @@ public class InventoryController : MonoBehaviour
 
     public GameObject[] things;
 
-    private void Awake()
+    private void Start()
     {
         if (Instance == null)
         {

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2beec35d1bf4248a30e47c69447da5, type: 3}
   m_Name: 6_fairy
   m_EditorClassIdentifier: 
+  index: 10
   name: Fairy Summoner
   count: 0
   Rarity: 1

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1c6c5330f00714cb17bd065e7a6a60, type: 3}
   m_Name: char_wind
   m_EditorClassIdentifier: 
+  indexChar: 21
   indexEvolve: 6
   buffs:
   - 0
@@ -19,48 +20,16 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  - 15
+  - 25
   - 0
   - 0
   - 0
   name: Lord of the Wind
   icon: {fileID: 21300000, guid: 89e0fcedc8fdb264a919abced92e7811, type: 3}
-  history: '
-
-    In the magical realm of Elistar, where winds carried tales of ancient
-    magic and forgotten lands, emerged a legendary figure known as the Lord of the
-    Wind. Born amidst swirling currents of ethereal breezes, his fate intertwined
-    with the very essence of the elements.
-
-
-
-    As a child, he displayed an innate
-    affinity for the winds, playing with zephyrs as if they were his companions.
-    The whispers of air spirits guided him, revealing secrets of vanished lands and
-    age-old enchantments.
-
-
-
-    His first manifestation of power occurred when the
-    winds answered his plea for aid during a great calamity, rising against the magic
-    of dark forces. For this, the hero was embraced by the friendly winds, and in
-    that moment, the Lord of the Wind rose to become the defender of Elistar.
-
-
-
-    His
-    adventures led him through aerial kingdoms, cloud fortresses, and forgotten sanctuaries,
-    where mysterious wind forces presented enigmatic trials. In each new place, he
-    discovered sources of wind wisdom and strength, deepening his connection with
-    the ethereal streams.
-
-
-
-    The Lord of the Wind became a symbol of freedom,
-    strength, and the eternal capriciousness of nature. His appearance heralded changes
-    in a world where aerial whirlwinds served as both weapon and shield.'
+  history: Returning from the Desert of Death, you inadvertently receive its power.
+  has: 0
   towerPull:
-  - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
+  - {fileID: 2056256240725061661, guid: f0d694f381eabde46aeaa3338fe8350e, type: 3}
   - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}
   - {fileID: 2056256240725061661, guid: f6d48dcbb854b3d4e8d4e7e4e0916b08, type: 3}
   - {fileID: 2056256240725061661, guid: 69c3fdbe6d22e4a439aa781b30203258, type: 3}
@@ -71,3 +40,4 @@ MonoBehaviour:
   - {fileID: 2056256240725061661, guid: 5f57e619bcce08a4ca5f532989e1746f, type: 3}
   - {fileID: 2056256240725061661, guid: 0f848e067fec08f478ddd98847e4478a, type: 3}
   - {fileID: 2056256240725061661, guid: bb8ad514de2f24f4aa5db5a88e1276bc, type: 3}
+  - {fileID: 2056256240725061661, guid: e26f1c159ba66ec4998d10cfc1874ebd, type: 3}

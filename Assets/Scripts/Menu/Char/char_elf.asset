@@ -12,64 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1c6c5330f00714cb17bd065e7a6a60, type: 3}
   m_Name: char_elf
   m_EditorClassIdentifier: 
+  indexChar: 6
   indexEvolve: 1
   buffs:
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
+  - 10
+  - -5
+  - -5
+  - -5
+  - -5
+  - 25
+  - -5
+  - -5
+  - -5
   name: Elven Sharpshooter
   icon: {fileID: 21300000, guid: b289ae25f10b4ca4fa8587224284a953, type: 3}
-  history: 'In the enchanted realm of Elistar, where magic wove its threads around
-    every leaf and branch, flourishing kingdoms and mystical abodes coexisted. Among
-    the elves residing in the ancient forests, there emerged a sharpshooter named
-    Tarelia. She was renowned for her unparalleled precision and connection with
-    the spirits of the forest.
-
-
-
-    Tarelia grew up amidst the trees, absorbing
-    the wisdom of ancient woods and mastering the art of archery. One day, ominous
-    shadows crept into Elistar, awakening ancient malevolent forces that threatened
-    order and prosperity. In this dark hour, Tarelia Steelheart emerged as a defender,
-    ready to protect her world from the encroaching darkness.
-
-
-
-    Leading her
-    loyal archers, Tarelia engaged in numerous battles against the forces of darkness.
-    Her feats and honor turned her into a legend, but her disappearance after the
-    battle against the demonic lord left a legacy of a great protector.
-
-
-
-    Since
-    then, the world of Elistar continued to exist under the protection of those who
-    called for justice and goodness. The legend of the great archer is passed down
-    through generations, a reminder of the need to stand united against the forces
-    of darkness.
-
-
-
-    Now, within the elven forests, Tarelia''s legend lives on.
-    She becomes the symbol of resilience, justice, and the eternal struggle against
-    the shadows that threaten the balance of nature.
-
-
-
-    In each shot, there is
-    a whispered prayer to nature, a plea for restoration, and a commitment to right
-    the wrongs inflicted upon the sacred forests. Tarelia Steelheart stands as a
-    beacon of hope and a testament to the resilience of the elven spirit in the face
-    of adversity.'
+  history: Sometimes skill is talent.
+  has: 0
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
-  - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}
+  - {fileID: 2056256240725061661, guid: 5f4992dd8a0347143aa5ea9c92962e35, type: 3}
   - {fileID: 2056256240725061661, guid: f6d48dcbb854b3d4e8d4e7e4e0916b08, type: 3}
   - {fileID: 2056256240725061661, guid: 69c3fdbe6d22e4a439aa781b30203258, type: 3}
   - {fileID: 2056256240725061661, guid: 0bac3d26016f6b149a5067341213ac9d, type: 3}
@@ -79,4 +40,4 @@ MonoBehaviour:
   - {fileID: 2056256240725061661, guid: 5f57e619bcce08a4ca5f532989e1746f, type: 3}
   - {fileID: 2056256240725061661, guid: 0f848e067fec08f478ddd98847e4478a, type: 3}
   - {fileID: 2056256240725061661, guid: bb8ad514de2f24f4aa5db5a88e1276bc, type: 3}
-  - {fileID: 2056256240725061661, guid: 43a1d03ae0bc4c444a73d9f7890a5c1e, type: 3}
+  - {fileID: 2056256240725061661, guid: e26f1c159ba66ec4998d10cfc1874ebd, type: 3}

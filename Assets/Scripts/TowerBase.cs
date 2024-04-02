@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class TowerBase : MonoBehaviour
 {
     public Rolling rollBase;
     public GameObject monster;
+    [SerializeField]
     public int level;
+    [SerializeField]
     public GameObject curGM;
     [SerializeField]
     private Color[] colors;

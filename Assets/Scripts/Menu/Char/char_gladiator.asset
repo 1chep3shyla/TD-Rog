@@ -12,20 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1c6c5330f00714cb17bd065e7a6a60, type: 3}
   m_Name: char_gladiator
   m_EditorClassIdentifier: 
+  indexChar: 9
   indexEvolve: 14
   buffs:
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
-  - 100
+  - 30
+  - -10
+  - -10
+  - -10
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   name: Arena Conqueror
   icon: {fileID: 21300000, guid: 4f549f9ea61f73a4fac4ba00d972da3d, type: 3}
-  history: 
+  history: THIS! IS! gladiator.
+  has: 0
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}
@@ -34,7 +36,8 @@ MonoBehaviour:
   - {fileID: 2056256240725061661, guid: 0bac3d26016f6b149a5067341213ac9d, type: 3}
   - {fileID: 2056256240725061661, guid: a17ae2e7a25c3ec47b96b6d6efe03078, type: 3}
   - {fileID: 2056256240725061661, guid: f76df1e501a76354c91f03aa18286075, type: 3}
-  - {fileID: 2056256240725061661, guid: 8ae1660fe55a5d2429431dddde259189, type: 3}
+  - {fileID: 2056256240725061661, guid: 01eb6cdc461a6574fa225fa1d5dace34, type: 3}
   - {fileID: 2056256240725061661, guid: 5f57e619bcce08a4ca5f532989e1746f, type: 3}
   - {fileID: 2056256240725061661, guid: 0f848e067fec08f478ddd98847e4478a, type: 3}
   - {fileID: 2056256240725061661, guid: bb8ad514de2f24f4aa5db5a88e1276bc, type: 3}
+  - {fileID: 2056256240725061661, guid: e26f1c159ba66ec4998d10cfc1874ebd, type: 3}

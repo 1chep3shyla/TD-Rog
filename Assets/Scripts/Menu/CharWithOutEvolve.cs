@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewChar", menuName = "Character/CharWithOutEvolve")]
 public class CharWithOutEvolve : ScriptableObject, ICharSet
 {
-
+    public int indexChar;
     public float[] buffs;
     public string name;
     public Sprite icon;
@@ -21,6 +21,10 @@ public class CharWithOutEvolve : ScriptableObject, ICharSet
     public GameObject[] SetGameObject()
     {
         return towerPull;
+    }
+    public int GetIndex()
+    {
+        return indexChar;
     }
     public void SetData()
     {
