@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c4c12075dece914a97284d2fd646fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chest: 0
   targetObject: {fileID: 0}
   moveDuration: 1.5
   easeType: 17
@@ -117,6 +118,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5674932184174495009}
     m_Modifications:
+    - target: {fileID: 2466795971392127082, guid: 823b63e33e3d7804280b8f99ba3ed342, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.19
+      objectReference: {fileID: 0}
     - target: {fileID: 4938522187229127949, guid: 823b63e33e3d7804280b8f99ba3ed342, type: 3}
       propertyPath: m_RootOrder
       value: 0

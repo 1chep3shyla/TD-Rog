@@ -58,6 +58,7 @@ MonoBehaviour:
   name: Fire Tower
   description: "\u041F\u043E\u0434\u0436\u0438\u0433\u0430\u0435\u0442 \u043F\u0443\u043A\u0430\u043D\u044B
     \u0432\u0440\u0430\u0436\u0438\u043D"
+  discInfo: 'Damage:'
   curAttackSpeed: 0
   attackSpeed: 0.75
   damage: 2

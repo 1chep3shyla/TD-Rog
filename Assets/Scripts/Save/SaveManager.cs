@@ -56,11 +56,11 @@ public class SaveManager : MonoBehaviour
 
     void Start()
     {
-        LoadData();
     }
 
     private void Awake()
     {
+    
         if (instance == null)
         {
             instance = this;

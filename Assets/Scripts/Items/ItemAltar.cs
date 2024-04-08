@@ -60,6 +60,6 @@ public class ItemAltar : Item
     }
     public override string GetDescriptionItem()
     {
-        return string.Format(disc , goldGive * count, removeHealth * count);
+        return string.Format(disc , goldGive * (count+1), removeHealth * count);
     }
 }

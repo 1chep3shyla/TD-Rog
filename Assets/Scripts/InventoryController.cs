@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
-    public static InventoryController Instance;
+    private static InventoryController instance;
 
     public GameObject[] things;
 
-    private void Start()
+    public static InventoryController Instance
     {
-        if (Instance == null)
+        get
         {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
+            if (instance == null)
+            {
+                instance = FindObjectOfType<InventoryController>();
+            }
+            return instance;
         }
     }
 }

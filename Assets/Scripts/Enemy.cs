@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     public bool inFire;
     public bool inPoison;
     public GameObject BoomGM;
+    public GameObject chestPrefab;
     public GameObject goldPrefab;
     private bool isStunned;
     public bool cursedBoom;
@@ -174,7 +175,7 @@ public class Enemy : MonoBehaviour
             boom.GetComponent<Radius>().damage = damageBoom;
             boom.GetComponent<Radius>().fireDamage = dmgFire;
         }
-        //GameManager.Instance.AddMoney(goldGive);
+        GameManager.Instance.whichEnemyKill++;
         Destroy(gameObject);
         if(deathPar!=null)
         {
@@ -187,7 +188,7 @@ public class Enemy : MonoBehaviour
         int randomDrop = Random.Range(0,100);
         if(randomDrop <= chanceDrop)
         {
-            GameManager.Instance.ChestClaim();
+            GameObject chest = Instantiate(chestPrefab, transform.position, Quaternion.identity);
         }
     }
     public void SetOnFire(float duration, int damage)

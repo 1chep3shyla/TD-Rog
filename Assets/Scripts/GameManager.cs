@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public int maxHealth;
     [SerializeField]
     public int restoreHeal;
+    public int whichEnemyKill;
     public SpriteRenderer[] allTower;
     public Image charIcon;
     public GameObject needMore;
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
     public Transform enemyWhichGM;
     public Tilemap[] maps;
     public Transform goldPos;
+    public Transform chestPos;
     public Spawner spawn;
     public AudioSource aS;
     public Item item;
@@ -60,7 +62,14 @@ public class GameManager : MonoBehaviour
     {
         healthCount.text = Health.ToString("");
         waveCount.text = curWave.ToString("") + "/30";
-
+        if(itemOpenner.countChest > 0)
+        {
+            chestPos.parent.gameObject.SetActive(true);
+        }
+        else
+        {
+            chestPos.parent.gameObject.SetActive(false);
+        }
         if (Input.GetKeyDown("escape"))
         {
             Pause();
@@ -84,6 +93,7 @@ public class GameManager : MonoBehaviour
             tilemapCollider = collidersTile[GameBack.Instance.indexState];
             gameObject.GetComponent<Rolling>().tilemap = maps[GameBack.Instance.indexState];
         }
+
     }
     public void SetDataBack()
     {
@@ -193,12 +203,15 @@ public class GameManager : MonoBehaviour
         if(losing.activeSelf == false)
         {
             menu.SetActive(true);
+            
+            GetComponent<LoseWinScript>().pauseGM.SetActive(true);
             Time.timeScale = 0f;
         }
     }
     public void Losing()
     {
         menu.SetActive(true);
+        gameObject.GetComponent<LoseWinScript>().Result(false);
         con.SetActive(false);
         losing.SetActive(true);
         Time.timeScale = 0f;

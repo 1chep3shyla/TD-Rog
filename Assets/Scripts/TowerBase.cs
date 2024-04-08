@@ -57,7 +57,10 @@ public class TowerBase : MonoBehaviour
             rollBase.info.SetActive(true);
             rollBase.towerInfo[0].text = "" + uh.name;
             rollBase.towerInfo[1].text = uh.description;
-            rollBase.towerInfo[2].text = "Damage:" + uh.towerDataCur.lvlData[uh.LVL, 1];
+            if(uh.discInfo != null)
+            {
+                rollBase.towerInfo[2].text = uh.discInfo  + uh.towerDataCur.lvlData[uh.LVL, 1];
+            }
             rollBase.towerInfo[3].text = "LVL:" + (uh.LVL + 1);
             rollBase.towerPrefab = curGM;
             rollBase.choosing = true;

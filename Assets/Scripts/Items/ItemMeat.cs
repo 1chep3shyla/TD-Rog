@@ -67,6 +67,6 @@ public class ItemMeat : Item
     }
     public override string GetDescriptionItem()
     {
-        return string.Format(disc , newHp * count, count);
+        return string.Format(disc , newHp * (count+1), (count+1));
     }
 }

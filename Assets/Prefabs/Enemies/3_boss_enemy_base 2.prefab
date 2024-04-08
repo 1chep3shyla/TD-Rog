@@ -5053,6 +5053,7 @@ MonoBehaviour:
   inFire: 0
   inPoison: 0
   BoomGM: {fileID: 6910336767071730326, guid: 6b62f8f069faf5d4b9ac6d1a4e29b09f, type: 3}
+  chestPrefab: {fileID: 5674932184174495012, guid: 629e9bd11afa519438ec18c527f5256c, type: 3}
   goldPrefab: {fileID: 5674932184174495012, guid: 7a56d647875ca13498e0c19fed577c58, type: 3}
   cursedBoom: 0
   dmgFire: 0
@@ -5066,6 +5067,9 @@ MonoBehaviour:
   damageType: 0
   EM: {fileID: 0}
   deathPar: {fileID: 0}
+  firePart: {fileID: 0}
+  poisonPart: {fileID: 0}
+  icePart: {fileID: 0}
 --- !u!50 &248614970749484257
 Rigidbody2D:
   serializedVersion: 4

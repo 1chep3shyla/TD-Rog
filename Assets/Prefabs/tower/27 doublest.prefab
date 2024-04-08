@@ -58,6 +58,7 @@ MonoBehaviour:
   baseOf: {fileID: 0}
   name: Double Tower
   description: 
+  discInfo: 'Damage:'
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 2

@@ -58,6 +58,7 @@ MonoBehaviour:
   baseOf: {fileID: 0}
   name: Gear Tower
   description: "\u0412\u041C\u0415\u0421\u0422\u0415 - \u043C\u044B \u0441\u0438\u043B\u0430"
+  discInfo: 'Damage:'
   curAttackSpeed: 0
   attackSpeed: 1.25
   damage: 4

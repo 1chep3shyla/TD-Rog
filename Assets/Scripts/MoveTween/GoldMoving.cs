@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GoldMoving : MonoBehaviour
 {
+    public bool chest;
     public Transform targetObject;
     public float moveDuration = 2.0f;
     public iTween.EaseType easeType = iTween.EaseType.easeOutExpo;
@@ -20,7 +21,14 @@ public class GoldMoving : MonoBehaviour
 
     private void Start()
     {
-        targetObject = GameManager.Instance.goldPos;
+        if(!chest)
+        {
+            targetObject = GameManager.Instance.goldPos;
+        }
+        else
+        {
+            targetObject = GameManager.Instance.chestPos;
+        }
         startPosition = transform.position;
         int i = Random.Range(0, 2);
         if (i == 0)
@@ -82,7 +90,14 @@ public class GoldMoving : MonoBehaviour
     private void OnMoveComplete()
     {
         Debug.Log("Gold reached target!");
-        GameManager.Instance.AddMoney(gold);
+        if(!chest)
+        {
+            GameManager.Instance.AddMoney(gold);
+        }
+        else
+        {
+            GameManager.Instance.ChestClaim();
+        }
         Destroy(gameObject);
     }
 }

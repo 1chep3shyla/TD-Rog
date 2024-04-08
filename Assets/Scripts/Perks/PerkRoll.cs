@@ -26,16 +26,16 @@ public class PerkRoll : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine("StartGame");
+        StartCoroutine("StartGame");
     }
     void Update()
     {
     }
     public void ChoosePerk(int index)
     {
-        if (curPerks[index] is IPerk perk)
+        if (curPerks[index] is Perks perk)
         {
-            // Call the ApplyPerk method on the concrete type
+            Debug.Log("Perked");
             perk.ApplyPerk();
         }
         rollingEvolve = false;
@@ -43,6 +43,7 @@ public class PerkRoll : MonoBehaviour
     }
     public void RollPerk()
     {
+        PerkGM.SetActive(false);
         chancePerk[0] = 100 - (int)System.Math.Log(GameManager.Instance.curWave * GameManager.Instance.curWave, 1.1f);
         chancePerk[1] = 100 - (int)System.Math.Log(GameManager.Instance.curWave * GameManager.Instance.curWave, 1.4f);
         List<ScriptableObject> availableBronzePerks = new List<ScriptableObject>(allBronzePerks);
@@ -122,7 +123,7 @@ public class PerkRoll : MonoBehaviour
             curPerks[i] = availablePerks[randomPerk];
             availablePerks.Remove(availablePerks[randomPerk]);
             perkPS[i].startColor = colors[3];
-            if (curPerks[i] is IPerk perk)
+            if (curPerks[i] is Perks perk)
             {
                 // Call the ApplyPerk method on the concrete type
                 perkText[i].text = perk.SetData();
@@ -139,6 +140,7 @@ public class PerkRoll : MonoBehaviour
         {
             RollPerk();
             GameManager.Instance.Gold -=300;
+            GameManager.Instance.goldCount.text = GameManager.Instance.Gold.ToString("");
         }
     }
     private IEnumerator StartGame()

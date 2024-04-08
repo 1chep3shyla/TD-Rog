@@ -17,6 +17,7 @@ public class ItemOpenner : MonoBehaviour
     public GameObject Light;
     public GameObject prefabItem;
     public TMP_Text nameText;
+    public TMP_Text countText;
     public Button sellButton;
     public Button claimButton;
     public Image iconImage;
@@ -39,6 +40,10 @@ public class ItemOpenner : MonoBehaviour
     private HoverDetector sellButtonHoverDetector;
     private HoverDetector claimButtonHoverDetector;
 
+    void Update()
+    {
+        countText.text = countChest.ToString("");
+    }
     private void Start()
     {
         chestAnimator = chestAnimatorObject.GetComponent<Animator>();

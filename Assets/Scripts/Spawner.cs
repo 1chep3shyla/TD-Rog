@@ -43,6 +43,10 @@ public class Spawner : MonoBehaviour
         }
         SetEnemyInWave();
         GameManager.Instance.spawn = this;
+        if(GameBack.Instance.saveThis == true)
+        {
+            SaveManager.instance.LoadData();
+        }
     }
 
     void Update()
@@ -51,6 +55,7 @@ public class Spawner : MonoBehaviour
         {
             works = true;
             StartCoroutine(StartWave());
+            SaveManager.instance.SaveData();
         }
 
         GameManager.Instance.curWave = currentWaveIndexMain + 1;
@@ -127,29 +132,38 @@ public class Spawner : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
         }
-        StartCoroutine(ClaimReward());
-        Time.timeScale = 0;
-        yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
-        yield return new WaitUntil(()=> gameManager.itemOpenner.allOpen == true);
-        currentWaveIndexMain++;
-        currentWaveIndex = 0;
-        if (currentWaveIndexMain < wavesMass.Length) // Добавлена проверка
+        if(currentWaveIndexMain + 1 < wavesMass.Length)
         {
-            currentWave = wavesMass[currentWaveIndexMain].wavesAll; // Изменено
+            StartCoroutine(ClaimReward());
+            Time.timeScale = 0;
+            yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
+            yield return new WaitUntil(()=> gameManager.itemOpenner.allOpen == true);
+            currentWaveIndexMain++;
+            currentWaveIndex = 0;
+            if (currentWaveIndexMain < wavesMass.Length) // Добавлена проверка
+            {
+                currentWave = wavesMass[currentWaveIndexMain].wavesAll; // Изменено
+            }
+            gameManager.ClearRounds();
+            SetEnemyInWave();
+            yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
+                    Time.timeScale = 1f;
+            timeCur = timeBetweenWaves;
+            while(timeCur <=0f)
+            {
+                timeCur -= Time.deltaTime;
+            }
+            works = false;
+            start = false;
+            skip = false;
+            yield return null;
         }
-        gameManager.ClearRounds();
-        SetEnemyInWave();
-        yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
-        Time.timeScale = 1f;
-        timeCur = timeBetweenWaves;
-        while(timeCur <=0f)
+        else if(GameManager.Instance.Health > 0)
         {
-            timeCur -= Time.deltaTime;
+            GameManager.Instance.gameObject.GetComponent<LoseWinScript>().Result(true);
+            GameManager.Instance.menu.SetActive(true);
+            gameManager.ClearRounds();
         }
-        works = false;
-        start = false;
-        skip = false;
-        yield return null;
     }
     public IEnumerator ClaimReward()
     {

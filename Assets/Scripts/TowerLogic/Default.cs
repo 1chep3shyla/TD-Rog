@@ -146,21 +146,19 @@ public class Default : MonoBehaviour
         {
             Transform enemyTransform = collider.transform;
 
-            for (int i = 0; i < currentTargets.Count; i++)
+            // Проверяем, есть ли враг уже в массиве currentTargets
+            if (!currentTargets.Contains(enemyTransform))
             {
-                if (currentTargets[i] == null)
+                // Проверяем, есть ли место для большего количества целей на основе maxTargets
+                if (currentTargets.Count < maxTargets)
                 {
-                    currentTargets[i] = enemyTransform;
+                    // Добавляем врага в список целей
+                    currentTargets.Add(enemyTransform);
                 }
+
+                // Всегда добавляем врага в список врагов в радиусе действия
+                enemiesInRange.Add(enemyTransform);
             }
-            // Check if there's space for more targets based on maxTargets
-            if (currentTargets.Count < maxTargets)
-            {
-                // Add the enemy to the list of targets
-                currentTargets.Add(enemyTransform);
-            }
-            // Always add the enemy to the list of enemies in range
-            enemiesInRange.Add(enemyTransform);
         }
     }
 
@@ -170,14 +168,14 @@ public class Default : MonoBehaviour
         {
             Transform enemyTransform = collider.transform;
 
-            // Remove the enemy from both lists
+            // Удаляем врага из обоих списков
             enemiesInRange.Remove(enemyTransform);
             currentTargets.Remove(enemyTransform);
 
-            // Check if there are fewer targets than maxTargets
+            // Проверяем, осталось ли меньше целей, чем maxTargets
             if (currentTargets.Count < maxTargets)
             {
-                // If there's space, add another enemy from the range
+                // Если есть место, добавляем другого врага из области действия
                 if (enemiesInRange.Count > 0)
                 {
                     currentTargets.Add(enemiesInRange[0]);
@@ -189,18 +187,20 @@ public class Default : MonoBehaviour
 
     void Attack()
     {
-        Debug.Log("ATTACK");
+       Debug.Log("ATTACK");
         if (attackCooldown <= 0f)
         {
+            HashSet<Transform> attackedTargets = new HashSet<Transform>();
+
             foreach (var target in currentTargets)
             {
-                if (target != null)
+                if (target != null && !attackedTargets.Contains(target))
                 {
                     UpdateFlip(target);
                     animator.SetTrigger("Attacking");
                     GameManager.Instance.aS.PlayOneShot(hitSFX);
                     GameManager.Instance.aS.pitch = Random.Range(0.8f, 1.1f);
-                    // Instantiate a bullet at the firePoint position and rotate it towards the enemy
+
                     GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
                     BulletController bulletController = bullet.GetComponent<BulletController>();
                     CannonBull bulletCannonController = bullet.GetComponent<CannonBull>();
@@ -375,7 +375,7 @@ public class Default : MonoBehaviour
     }
     void AttackLight()
     {
-        if (attackCooldown <= 0f && currentTargets.Count >= maxTargets)
+        if (attackCooldown <= 0f && currentTargets.Count >= 3 && enemiesInRange.Count >= maxTargets)
         {
             GameManager.Instance.aS.PlayOneShot(hitSFX);
             GameManager.Instance.aS.pitch = Random.Range(0.8f, 1.1f);
@@ -387,16 +387,11 @@ public class Default : MonoBehaviour
             bulletScript.critChance = critChance;
             for (int i = 0; i < maxTargets; i++)
             {
-                if (currentTargets.Count >= maxTargets)
-                {
-                    bulletScript.targetEnemies[i] = enemiesInRange[i];
-
-                    attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));
-                }
+                bulletScript.targetEnemies[i] = enemiesInRange[i];
             }
             UpdateFlip(enemiesInRange[0]);
+            attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));
         }
-
     }
     void OnDrawGizmosSelected()
     {

@@ -59,6 +59,7 @@ MonoBehaviour:
   description: "\u041F\u0440\u0438 \u043F\u043E\u0432\u044B\u0448\u0435\u043D\u0438\u0438
     \u0443\u0440\u043E\u0432\u043D\u044F, \u0443\u043B\u0443\u0447\u0448\u0438\u0442
     \u043A\u043E\u0433\u043E-\u0442\u043E \u0435\u0449\u0451"
+  discInfo: 'Damage:'
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 2

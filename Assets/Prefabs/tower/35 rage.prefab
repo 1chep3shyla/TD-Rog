@@ -58,6 +58,7 @@ MonoBehaviour:
   name: Rage Tower
   description: "\u041E\u043D \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u0431\u0435\u0437\u0443\u043C\u0435\u043D
     \u0431\u0435\u0433\u0438\u0442\u0435..."
+  discInfo: 'Damage:'
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 2

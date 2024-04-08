@@ -51,6 +51,6 @@ public class ItemMeteor : Item
     }
       public override string GetDescriptionItem()
     {
-        return string.Format( count.ToString(""));
+        return string.Format(disc, (count+1).ToString(""));
     }
 }

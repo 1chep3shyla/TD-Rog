@@ -168,6 +168,10 @@ public class Rolling : MonoBehaviour
             if (GameManager.Instance.Gold >= costTower)
             {
                 //GameManager.Instance.Gold -= costTower;
+                for(int i =0; i < 5;i ++)
+                {
+                    GameManager.Instance.gameObject.GetComponent<GameController>().OffBut(i);
+                }
                 GameManager.Instance.Gold -= 150;
                 GameManager.Instance.ChangeMoney();
                 if (towerPrefab.GetComponent<UpHave>().id == 26)
@@ -201,9 +205,17 @@ public class Rolling : MonoBehaviour
 
                 UnChoose();
             }
+            else
+            {
+                GameManager.Instance.notEnought();
+            }
         }
         else if (allBases[columnIndex + 10, rowIndex + 3] != null)
         {
+             for(int i =0; i < 5;i ++)
+                {
+                    GameManager.Instance.gameObject.GetComponent<GameController>().OffBut(i);
+                }
             allBases[columnIndex + 10, rowIndex + 3].OnMouseUpping();
             sell.text = (100 * Math.Pow(2, allBases[columnIndex + 10, rowIndex + 3].curGM.GetComponent<UpHave>().LVL)).ToString("");
             sell.transform.parent.gameObject.SetActive(true);
@@ -259,24 +271,29 @@ public class Rolling : MonoBehaviour
 
     public void Choose(int i)
     {
+        GameManager.Instance.DownLay();
         if (!choosing && slots[i] != null)
         {
             curIndex = i;
             info.SetActive(true);
             towerPrefab = slots[i].tower;
             UpHave uh = towerPrefab.GetComponent<UpHave>();
-            sell.text = "Sell:" + (int)Math.Pow(100, uh.LVL+1);
+            sell.text = "Sell: " + (int)Math.Pow(100, uh.LVL+1);
             towerInfo[0].text  = "" + uh.name;
             towerInfo[1].text = uh.description;
-            towerInfo[2].text = "Damage:" + uh.towerDataCur.lvlData[uh.LVL, 1];
+            if(uh.discInfo != null)
+            {
+                towerInfo[2].text = uh.discInfo + uh.towerDataCur.lvlData[uh.LVL, 1];
+            }
             towerInfo[3].text = "LVL:" + (uh.LVL + 1);
+            OrderUp();
         }
     }
 
     public void UnChoose()
     {
         info.SetActive(false);
-            sell.transform.parent.gameObject.SetActive(false);
+        sell.transform.parent.gameObject.SetActive(false);
         choosing = false;
         towerPrefab = null;
         OrderDown();

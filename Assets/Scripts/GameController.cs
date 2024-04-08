@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
         {
             if (Input.GetKeyDown((i + 1).ToString()))
             {
+                GameManager.Instance.DownLay();
                 SelectButton(i);
             }
         }
@@ -32,6 +33,7 @@ public class GameController : MonoBehaviour
                 buttonAnimator.SetBool("Selected", i == selectedIndex);
                 buttonAnimator.SetBool("Normal", i != selectedIndex);
             }
+            
 
             // Simulate button click for the selected button
             if (i == selectedIndex && button.interactable)

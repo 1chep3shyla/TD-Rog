@@ -14,6 +14,7 @@ public class UpHave : MonoBehaviour
     public string name;
     [TextArea(minLines: 2, maxLines: 5)]
     public string description;
+    public string discInfo;
     public float curAttackSpeed;
     public float attackSpeed;
     public int damage;
@@ -67,18 +68,21 @@ public class UpHave : MonoBehaviour
     {
         Rolling rb = baseOf.rollBase;
         UpHave uh = rb.towerPrefab.GetComponent<UpHave>();
-        if (uh.id == id && uh.LVL == LVL && uh.gameObject != gameObject && cursorDelete == null)
+        if(uh.LVL < 4)
         {
-            GameObject newCursor = Instantiate(cursor, transform.position , Quaternion.identity);
-            newCursor.transform.position = new Vector3(newCursor.transform.position.x, newCursor.transform.position.y + 0.05f, newCursor.transform.position.z);
-            cursorDelete = newCursor;
-        }
-        else if (uh.id == id && uh.LVL == LVL && uh.gameObject != gameObject && cursorDelete != null)
-        {
-            Destroy(cursorDelete);
-            GameObject newCursor = Instantiate(cursor, transform.position, Quaternion.identity);
-            newCursor.transform.position = new Vector3(newCursor.transform.position.x, newCursor.transform.position.y + 0.05f, newCursor.transform.position.z);
-            cursorDelete = newCursor;
+            if (uh.id == id && uh.LVL == LVL && uh.gameObject != gameObject && cursorDelete == null)
+            {
+                GameObject newCursor = Instantiate(cursor, transform.position , Quaternion.identity);
+                newCursor.transform.position = new Vector3(newCursor.transform.position.x, newCursor.transform.position.y + 0.05f, newCursor.transform.position.z);
+                cursorDelete = newCursor;
+            }
+            else if (uh.id == id && uh.LVL == LVL && uh.gameObject != gameObject && cursorDelete != null)
+            {
+                Destroy(cursorDelete);
+                GameObject newCursor = Instantiate(cursor, transform.position, Quaternion.identity);
+                newCursor.transform.position = new Vector3(newCursor.transform.position.x, newCursor.transform.position.y + 0.05f, newCursor.transform.position.z);
+                cursorDelete = newCursor;
+            }
         }
     }
     public void DeleteCursor()

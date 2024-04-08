@@ -8,6 +8,8 @@ public class GameBack
     public int indexState = 1;
     public float volumeMusic;
     public float volumeSFX;
+    [SerializeField]
+    public bool saveThis;
     public static GameBack Instance
     {
         get
