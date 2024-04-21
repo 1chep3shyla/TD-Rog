@@ -52,7 +52,7 @@ public class ReaderFile : MonoBehaviour
                     multiplaerHealth[a - 1] = multy;
                 }
                 float multySpeed;
-                if (float.TryParse(values[10], NumberStyles.Float, CultureInfo.InvariantCulture, out multySpeed))
+                if (float.TryParse(values[11], NumberStyles.Float, CultureInfo.InvariantCulture, out multySpeed))
                 {
                     multiplaerSpeed[a - 1] = multySpeed;
                 }

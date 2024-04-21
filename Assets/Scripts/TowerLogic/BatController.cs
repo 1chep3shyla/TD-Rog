@@ -36,7 +36,7 @@ public class BatController : MonoBehaviour
         Vector2 orbitPosition = targetPosition + new Vector2(Mathf.Cos(orbitAngle * Mathf.Deg2Rad), Mathf.Sin(orbitAngle * Mathf.Deg2Rad)) * orbitRadius;
 
         transform.position = orbitPosition;
-        orbitAngle += orbitSpeed * Time.deltaTime;
+        orbitAngle += orbitSpeed *25 * Time.deltaTime;
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {

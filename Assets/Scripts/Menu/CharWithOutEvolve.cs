@@ -53,6 +53,10 @@ public class CharWithOutEvolve : ScriptableObject, ICharSet
     {
         return icon;
     }
+    public int GetIndexEvolve()
+    {
+        return -10;
+    }
     public void SetDataChar(int index, float count)
     {
         buffs[index] = count;

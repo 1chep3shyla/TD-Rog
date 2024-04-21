@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1c6c5330f00714cb17bd065e7a6a60, type: 3}
+  m_Name: char_podlec_22
+  m_EditorClassIdentifier: 
+  indexChar: 22
+  indexEvolve: -10
+  buffs:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 20
+  - 0
+  - 0
+  - 0
+  name: Shadow Deceiver
+  icon: {fileID: 21300000, guid: 5471e5ce87707484082b15e56ca77930, type: 3}
+  history: The really bad guy.
+  has: 0
+  perkEvolveNo: {fileID: 0}
+  towerPull:
+  - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
+  - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}
+  - {fileID: 2056256240725061661, guid: f6d48dcbb854b3d4e8d4e7e4e0916b08, type: 3}
+  - {fileID: 2056256240725061661, guid: 69c3fdbe6d22e4a439aa781b30203258, type: 3}
+  - {fileID: 2056256240725061661, guid: 0bac3d26016f6b149a5067341213ac9d, type: 3}
+  - {fileID: 2056256240725061661, guid: a17ae2e7a25c3ec47b96b6d6efe03078, type: 3}
+  - {fileID: 2056256240725061661, guid: f76df1e501a76354c91f03aa18286075, type: 3}
+  - {fileID: 2056256240725061661, guid: 8ae1660fe55a5d2429431dddde259189, type: 3}
+  - {fileID: 2056256240725061661, guid: 5f57e619bcce08a4ca5f532989e1746f, type: 3}
+  - {fileID: 2056256240725061661, guid: 0f848e067fec08f478ddd98847e4478a, type: 3}
+  - {fileID: 2056256240725061661, guid: bb8ad514de2f24f4aa5db5a88e1276bc, type: 3}
+  - {fileID: 2056256240725061661, guid: e26f1c159ba66ec4998d10cfc1874ebd, type: 3}
+  - {fileID: 2056256240725061661, guid: 2645a30fc776980459df4af4ce9805ba, type: 3}
+  - {fileID: 2056256240725061661, guid: 1841953e77c79a54a9307ca9b7340cdd, type: 3}
+  - {fileID: 2056256240725061661, guid: 2e531bb13c42f5241a02fecb6f47b299, type: 3}

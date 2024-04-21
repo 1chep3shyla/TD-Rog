@@ -7,7 +7,7 @@ public class GearTower : MonoBehaviour
     public string targetTag = "YourTargetTag"; // The tag to search for
     public float searchRadius = 5f; // The radius to search within
 
-    private int objectCount = 0;
+    public int objectCount = 0;
 
     private void Update()
     {
@@ -28,11 +28,6 @@ public class GearTower : MonoBehaviour
             }
         }
 
-        if (objectCount > 1)
-        {
-            gameObject.GetComponent<UpHave>().curDamage = gameObject.GetComponent<UpHave>().damage * objectCount;
-            gameObject.GetComponent<UpHave>().curAttackSpeed = gameObject.GetComponent<UpHave>().attackSpeed / (objectCount / 2);
-        }
 
     }
 

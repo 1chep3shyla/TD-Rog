@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldGive: 3
-  timeNeed: 1
+  timeNeed: 3
   addCoin: {fileID: 5329093715101487786, guid: 50468b7f0b31af846a07e33021619fe6, type: 3}
 --- !u!95 &159124850555574940
 Animator:

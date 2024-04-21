@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e0eb08f519ca13419389fe3509345e6, type: 3}
-  m_Name: wave_5
+  m_Name: win_1
   m_EditorClassIdentifier: 
-  id: Survivor
-  title: Survivor
-  description: Go through 5 waves
-  Icon: {fileID: 21300000, guid: 2dc8127f9c2b4344eaf5b32f5be32058, type: 3}
+  id: winGameAchievement_1
+  title: Is that all?
+  description: WIN 1 TIME
+  Icon: {fileID: 21300000, guid: 8c040b27f69b93640b357aae5a72f187, type: 3}
   isUnlocked: 0

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0eb08f519ca13419389fe3509345e6, type: 3}
   m_Name: gold_100000
   m_EditorClassIdentifier: 
-  id: Real Capitalist
+  id: goldAchievement_100000
   title: Real Capitalist
   description: ACCUMULATE 100000 GOLD
+  nameData: gold
+  Icon: {fileID: 21300000, guid: b843aac0c62993847b679abd831ab122, type: 3}
   isUnlocked: 0

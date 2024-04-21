@@ -15,19 +15,20 @@ MonoBehaviour:
   indexChar: 10
   indexEvolve: -10
   buffs:
-  - 5
-  - 5
-  - 5
-  - 5
-  - 5
-  - 5
-  - 5
-  - 5
-  - 5
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
   name: Circus clown
   icon: {fileID: 21300000, guid: 1dc02758218f7654392065c34547d253, type: 3}
   history: They say they were kicked out of the circus, wait... them?
   has: 0
+  perkEvolveNo: {fileID: 0}
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}
@@ -42,3 +43,5 @@ MonoBehaviour:
   - {fileID: 2056256240725061661, guid: bb8ad514de2f24f4aa5db5a88e1276bc, type: 3}
   - {fileID: 2056256240725061661, guid: b2568873f97046f45afe665fa98eba1e, type: 3}
   - {fileID: 2056256240725061661, guid: e26f1c159ba66ec4998d10cfc1874ebd, type: 3}
+  - {fileID: 2056256240725061661, guid: 2645a30fc776980459df4af4ce9805ba, type: 3}
+  - {fileID: 2056256240725061661, guid: 1841953e77c79a54a9307ca9b7340cdd, type: 3}

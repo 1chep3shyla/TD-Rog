@@ -31,7 +31,8 @@ public enum TypeBull
     storm,
     blockhead,
     gear,
-    fairy
+    fairy,
+    rascal
 }
 
 public class BulletController : MonoBehaviour
@@ -219,9 +220,13 @@ public class BulletController : MonoBehaviour
                 {
                     enemyHealth.DefaultAttack((int)((float)damage * 1.5f * (float)GameManager.Instance.curWave), critChance);
                 }
+                else if( type == TypeBull.rascal)
+                {
+                    enemyHealth.DefaultAttack(damage + (int)((float)damage * (0.25f * (float)enemyHealth.debuffCount)), critChance);
+                }
                 else
                 {
-                    enemyHealth.DefaultAttack(damage, critChance);
+                     enemyHealth.DefaultAttack(damage, critChance);
                 }
             }
 

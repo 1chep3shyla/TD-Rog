@@ -31,6 +31,7 @@ public class ItemOpenner : MonoBehaviour
     public GameObject discriptionGM;
     public TMP_Text discriptionText;
     public TMP_Text[] statText;
+    public TMP_Text[] countTextItems;
 
     public Item curItem;
 
@@ -43,6 +44,13 @@ public class ItemOpenner : MonoBehaviour
     void Update()
     {
         countText.text = countChest.ToString("");
+        for(int i = 0; i < countTextItems.Length; i++)
+        {
+            if(countTextItems[i] != null)
+            {
+                countTextItems[i].text = "x" + items[i].count;
+            }
+        }
     }
     private void Start()
     {
@@ -75,6 +83,10 @@ public class ItemOpenner : MonoBehaviour
     public void OpenChest()
     {
         chestAnimatorObject.SetActive(false);
+        if(countChest >0)
+        {
+            panelOpen.SetActive(true);
+        }
         if(countChest > 0 && !openning && !claimReward)
         {
             StartCoroutine(OpenChestCoroutine());
@@ -292,6 +304,8 @@ public class ItemOpenner : MonoBehaviour
             newItem.transform.localScale = new Vector3(1, 1, 1);
 
             Image imageComponent = newItem.transform.GetChild(0).GetComponent<Image>();
+            System.Array.Resize(ref countTextItems, countTextItems.Length + 1);
+            countTextItems[countTextItems.Length -1] = newItem.transform.GetChild(0).transform.GetChild(0).GetComponent<TMP_Text>();
             if (imageComponent != null)
             {
                 imageComponent.sprite = curItem.icon;

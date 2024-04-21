@@ -15,6 +15,7 @@ public interface ICharSet : IChar
     public GameObject[] SetGameObject();
     public string GetHistory();
     public int GetIndex();
+    public int GetIndexEvolve();
     public Sprite GetIcon();
     public void SetDataChar(int index, float count);
 }
@@ -29,6 +30,7 @@ public class Character : ScriptableObject, ICharSet
     [TextArea(15,20)]
     public string history;
     public bool has;
+    public Perks perkEvolveNo;
     public GameObject[] towerPull;
     public void ApplyBuff()
     {
@@ -48,6 +50,10 @@ public class Character : ScriptableObject, ICharSet
         if (indexEvolve != -10)
         {
             GameManager.Instance.allEvolution[indexEvolve].work = true;
+            if(perkEvolveNo != null)
+            {
+                GameManager.Instance.gameObject.GetComponent<PerkRoll>().allEvolutionPerks.Remove(perkEvolveNo);
+            }
         }
         GameObject[] newArrayTowers = new GameObject[towerPull.Length];
         Array.Copy(towerPull, newArrayTowers, towerPull.Length);
@@ -70,6 +76,10 @@ public class Character : ScriptableObject, ICharSet
        public string GetHistory()
     {
         return history;
+    }
+    public int GetIndexEvolve()
+    {
+        return indexEvolve;
     }
     public Sprite GetIcon()
     {

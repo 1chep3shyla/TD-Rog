@@ -6,7 +6,7 @@ public class PoisonSmoke : MonoBehaviour
 {
     public Default tower;
     public int damage;
-    void Start()
+    void Update()
     {
         damage = tower.poisonPower;
     }

@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1403505117b8488ee1d6de8670276, type: 3}
   m_Name: 8_bezumez_Evolution_Storm
   m_EditorClassIdentifier: 
+  buffGlobal: 0
+  name: Rage Evolution
+  disc: Evolves a Random Tower into a Rage Tower
+  indexOfBuff: 0
+  sprite: {fileID: 1641977474, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
   indexCur: 8
   changeGM: {fileID: 2056256240725061661, guid: 0bac3d26016f6b149a5067341213ac9d, type: 3}
   evolveGM: {fileID: 2056256240725061661, guid: 886678fe11ed18b4eb3b1434a2c7eada, type: 3}
+  perkNo: {fileID: 11400000, guid: bcc45b8793b847c449b74d3f5b4dce7e, type: 2}
   name: Rage Evolution
   disc: Evolves a Random Tower into a Rage Tower
   sprite: {fileID: 1641977474, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

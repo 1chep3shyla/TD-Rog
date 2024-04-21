@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 [System.Serializable]
 public class PerkRoll : MonoBehaviour
 {
     public int[] chancePerk;
+    public int costReroll;
     public List<ScriptableObject> allBronzePerks; // Use a List instead of an array for flexibility
     public List<ScriptableObject> allSilverPerks; // Use a List instead of an array for flexibility
     public List<ScriptableObject> allGoldenPerks; // Use a List instead of an array for flexibility
@@ -18,10 +20,14 @@ public class PerkRoll : MonoBehaviour
     public GameObject PerkGM;
     public Text[] discription;
     public bool rollingEvolve;
+    private bool evolutionBool;
     public ParticleSystem[] perkPS;
     public Color[] colors;
     public Sprite[] iconSprites;
     public GameObject iconPrefab;
+    public Button rerollBut;
+    public TMP_Text rerollText;
+    [SerializeField]
     private GameObject[] icons = new GameObject[5];
 
     void Start()
@@ -30,14 +36,43 @@ public class PerkRoll : MonoBehaviour
     }
     void Update()
     {
+        if(evolutionBool)
+        {
+            rerollBut.gameObject.SetActive(false);
+        }
+        else
+        {
+            rerollBut.gameObject.SetActive(true);
+        }
+        if(GameManager.Instance.Gold >= costReroll)
+        {
+            rerollBut.interactable = true;
+        }
+        else
+        {
+             rerollBut.interactable = false;
+        }
     }
     public void ChoosePerk(int index)
     {
         if (curPerks[index] is Perks perk)
         {
             Debug.Log("Perked");
+
             perk.ApplyPerk();
         }
+        if (curPerks[index] is PerkEvolve perkEv)
+        {
+            if(evolutionBool)
+            {
+                allEvolutionPerks.Remove(perkEv);
+                if(perkEv.perkNo !=null)
+                {
+                    allEvolutionPerks.Remove(perkEv.perkNo);
+                }
+            }
+        }
+        evolutionBool = false;
         rollingEvolve = false;
         PerkGM.SetActive(false);
     }
@@ -115,14 +150,37 @@ public class PerkRoll : MonoBehaviour
     public void RollPerkEvolve()
     {
         rollingEvolve = true;
-        List<ScriptableObject> availablePerks = allEvolutionPerks;  
+        evolutionBool = true;
+        List<ScriptableObject> availablePerks = new List<ScriptableObject>(allEvolutionPerks);  // Создаем копию списка
+
+        for(int i = 0; i < availablePerks.Count; i++)
+        {
+            if (availablePerks[i] is PerkEvolve perk)
+            {
+                for(int a = 0; a < GameManager.Instance.gameObject.GetComponent<Rolling>().towers.Length; a++)
+                {
+                    if(perk.evolveGM == GameManager.Instance.gameObject.GetComponent<Rolling>().towers[a])
+                    {
+                        availablePerks.Remove(perk);
+                        allEvolutionPerks.Remove(perk);
+                        break; // Выходим из цикла, так как элемент уже удален
+                    }
+                }
+            }
+            
+        }
 
         for (int i = 0; i < curPerks.Length; i++)
         {
+            if(icons[i] != null)
+            {
+                Destroy(icons[i]);
+            }
             int randomPerk = Random.Range(0, availablePerks.Count);
             curPerks[i] = availablePerks[randomPerk];
             availablePerks.Remove(availablePerks[randomPerk]);
             perkPS[i].startColor = colors[3];
+            cardBack[i].color = colors[3];
             if (curPerks[i] is Perks perk)
             {
                 // Call the ApplyPerk method on the concrete type
@@ -132,21 +190,21 @@ public class PerkRoll : MonoBehaviour
             }
             PerkGM.SetActive(true);
         }
-
     }
     public void RerollPerk()
     {
-        if(GameManager.Instance.Gold >= 300)
+        if(GameManager.Instance.Gold >= costReroll)
         {
             RollPerk();
-            GameManager.Instance.Gold -=300;
+            GameManager.Instance.Gold -=costReroll;
+            costReroll *= 2;
+            rerollText.text = costReroll.ToString("");
             GameManager.Instance.goldCount.text = GameManager.Instance.Gold.ToString("");
         }
     }
     private IEnumerator StartGame()
     {
         yield return new WaitForSeconds(3f);
-        rollingEvolve = true;
         RollPerk();
         Time.timeScale = 0;
         yield return new WaitUntil(() => rollingEvolve == false);

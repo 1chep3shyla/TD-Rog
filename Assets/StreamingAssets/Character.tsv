@@ -1,24 +1,22 @@
 Name	Damage	Ice Power	Fire Damage	Poison Damage	Mine Power	AttackSpeed	ThiefPower+Enemy	Crit Damage	Crit Chance
-Watchful Sentinel	100	100	100	100	100	100	100	100	100
-Haughty Sovereign	100	100	100	100	100	100	100	100	100
-Celestial Seer	15	0	0	0	0	15	0	0	0
-Tempest Summoner	-5	35	0	0	0	0	0	0	0
-Wealthy Tycoon	-25	-25	-25	-25	100	-25	100	-25	-25
-Shadow Deceiver	100	100	100	100	100	100	100	100	100
-Dimension Voyager	100	100	100	100	100	100	100	100	100
 Arena Conqueror	50	-10	-10	-10	0	0	0	0	0
-Blasting Engineer	100	100	100	100	100	100	100	100	100
-Divine Paladin	25	0	0	0	0	-5	0	0	0
-Toxic Herbalist	0	0	0	35	0	0	0	0	0
+Assasin	0	0	0	0	0	-5	0	25	15
+Celestial Seer	15	0	0	0	0	15	0	0	0
 Chaotic Whisperer	100	100	100	100	100	100	100	100	100
-Old Watchmaker	5	0	0	0	5	0	0	0	0
-Energy Amplifier	100	100	100	100	100	100	100	100	100
-Fortune Trickster	100	100	100	100	100	100	100	100	100
-Elven Sharpshooter	35	-5	-5	-5	0	25	0	0	0
-Livestock Dealer	0	0	0	0	0	0	0	15	15
-Sticky Trapsetter	0	-5	35	0	0	0	0	0	0
-Warp Navigator	100	100	100	100	100	100	100	100	100
-Overlord	0	0	0	-10	0	0	0	25	25
-Kind creature	1	1	1	1	1	1	1	1	1
-Dwarf	15	0	5	0	0	0	5	0	0
 Circus clown	5	5	5	5	5	5	5	5	5
+Dimension Voyager	100	100	100	100	100	100	100	100	100
+Divine Paladin	25	0	0	0	0	-5	0	0	0
+Dwarf	15	0	5	0	0	0	5	0	0
+Elven Sharpshooter	35	-5	-5	-5	0	25	0	0	0
+Kind creature	1	1	1	1	1	1	1	1	1
+Livestock Dealer	0	0	0	0	0	0	0	15	15
+Lord of Fiery Abyss	-5	-5	40	-5	0	0	0	0	0
+Old Watchmaker	5	0	0	0	5	0	0	0	0
+Overlord	0	0	0	-10	0	0	0	25	25
+Shadow Deceiver	100	100	100	100	100	100	100	100	100
+Sticky Trapsetter	0	-5	35	0	0	0	0	0	0
+Tempest Summoner	-5	35	0	0	0	0	0	0	0
+Toxic Herbalist	0	0	0	35	0	0	0	0	0
+Warp Navigator	100	100	100	100	100	100	100	100	100
+Watchful Sentinel	100	100	100	100	100	100	100	100	100
+Wealthy Tycoon	-25	-25	-25	-25	100	-25	100	-25	-25

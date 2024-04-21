@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1403505117b8488ee1d6de8670276, type: 3}
   m_Name: 3_Evolution_Pitch
   m_EditorClassIdentifier: 
+  buffGlobal: 0
+  name: Pitch Evolution
+  disc: Evolves a Fire Tower into a Pitch Tower
+  indexOfBuff: 0
+  sprite: {fileID: 1583188029, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
   indexCur: 3
   changeGM: {fileID: 2056256240725061661, guid: a17ae2e7a25c3ec47b96b6d6efe03078, type: 3}
   evolveGM: {fileID: 2056256240725061661, guid: dc29738782d172443bb041b3ec645a31, type: 3}
+  perkNo: {fileID: 11400000, guid: f984dfa7f7b99e24bb8ab2e74843abf7, type: 2}
   name: Pitch Evolution
   disc: Evolves a Fire Tower into a Pitch Tower
   sprite: {fileID: 1583188029, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

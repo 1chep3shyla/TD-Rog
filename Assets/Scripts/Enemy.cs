@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
     private float armorReduce;
     private bool armor;
     public int dmgFire;
+    public int debuffCount;
     private float armorReduceBase = 1f;
     public TMP_Text damageText;
     public float[] resistance; // 0 - ice, 1 - fire, 2 - poison, 3 - stan
@@ -37,6 +38,7 @@ public class Enemy : MonoBehaviour
     public GameObject firePart;
     public GameObject poisonPart;
     public GameObject icePart;
+    public GameObject shieldBreak;
     void Start()
     {
         health = maxHealth;
@@ -203,6 +205,7 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator Burn(float dur, int dmg)
     {
+        debuffCount++;
          firePart.GetComponent<ParticleSystem>().Play();
         while (dur > 0)
         {
@@ -216,6 +219,7 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(0.25f); // Apply fire damage every second
             dur -= 0.25f;
         }
+        debuffCount-=1;
         firePart.GetComponent<ParticleSystem>().Stop();
         inFire = false;
     }
@@ -235,6 +239,7 @@ public class Enemy : MonoBehaviour
         {
             yield break; // If already poisoned, exit the Coroutine
         }
+        debuffCount++;
 
         inPoison = true; // Set the flag to indicate poisoning
 
@@ -257,6 +262,7 @@ public class Enemy : MonoBehaviour
         if (inPoison)
         {
             inPoison = false; // Reset the flag
+            debuffCount -=1;
             poisonPart.GetComponent<ParticleSystem>().Stop();
         }
     }
@@ -268,9 +274,13 @@ public class Enemy : MonoBehaviour
     }
     private IEnumerator ArmorReducing(float reducing)
     {
+        debuffCount++;
+        shieldBreak.SetActive(true);
         armor = true;
         armorReduce = armorReduceBase + reducing;
         yield return new WaitForSeconds(2f); // Apply fire damage every second
+        shieldBreak.SetActive(false);
+        debuffCount -=1;
         armorReduce = armorReduceBase;
         armor = false;
     }
@@ -278,9 +288,11 @@ public class Enemy : MonoBehaviour
     private IEnumerator BoomCor(int dmgBoom, int firedDMG)
     {
         cursedBoom = true;
+        debuffCount++;
         damageBoom = dmgBoom;
         dmgFire = firedDMG;
         yield return new WaitForSeconds(10f); // Apply fire damage every second
+        debuffCount-=1;
         cursedBoom = false;
         damageBoom = 0;
         dmgFire = 0;

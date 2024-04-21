@@ -229,6 +229,39 @@ public class Spawner : MonoBehaviour
                 newEnemy.GetComponent<EnemyMoving>().maxSpeed = datas.speedCount[currentWaveIndexMain] * datas.multiplaerSpeed[3];
                 newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
             }
+            else if(newEnemy.GetComponent<EnemyMoving>().typeEnemy == EnemyType.boss) 
+            {
+                if(newEnemy.GetComponent<EnemyMoving>().typeBoss == BossType.Golem)
+                {
+                    newEnemy.GetComponent<Enemy>().maxHealth = (int)((float)datas.healthCount[currentWaveIndexMain]* datas.multiplaerHealth[7]);
+                    newEnemy.GetComponent<EnemyMoving>().maxSpeed = datas.speedCount[currentWaveIndexMain] * datas.multiplaerSpeed[7];
+                    newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+                }
+                else if(newEnemy.GetComponent<EnemyMoving>().typeBoss == BossType.Dragon)
+                {
+                    newEnemy.GetComponent<Enemy>().maxHealth = (int)((float)datas.healthCount[currentWaveIndexMain]* datas.multiplaerHealth[5]);
+                    newEnemy.GetComponent<EnemyMoving>().maxSpeed = datas.speedCount[currentWaveIndexMain] * datas.multiplaerSpeed[5];
+                    newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+                }
+                else if(newEnemy.GetComponent<EnemyMoving>().typeBoss == BossType.Healboss)
+                {
+                    newEnemy.GetComponent<Enemy>().maxHealth = (int)((float)datas.healthCount[currentWaveIndexMain]* datas.multiplaerHealth[10]);
+                    newEnemy.GetComponent<EnemyMoving>().maxSpeed = datas.speedCount[currentWaveIndexMain] * datas.multiplaerSpeed[10];
+                    newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+                }
+                else if(newEnemy.GetComponent<EnemyMoving>().typeBoss == BossType.Imposter)
+                {
+                    newEnemy.GetComponent<Enemy>().maxHealth = (int)((float)datas.healthCount[currentWaveIndexMain]* datas.multiplaerHealth[8]);
+                    newEnemy.GetComponent<EnemyMoving>().maxSpeed = datas.speedCount[currentWaveIndexMain] * datas.multiplaerSpeed[8];
+                    newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+                }
+                else
+                {
+                    newEnemy.GetComponent<Enemy>().maxHealth = (int)((float)datas.healthCount[currentWaveIndexMain]* datas.multiplaerHealth[4]);
+                    newEnemy.GetComponent<EnemyMoving>().maxSpeed = datas.speedCount[currentWaveIndexMain] * datas.multiplaerSpeed[4];
+                    newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
+                }
+            }
             if (currentWaveIndexMain <= 10)
             {
                // newEnemy.GetComponent<Enemy>().goldGive = newEnemy.GetComponent<Enemy>().goldGive + (2 * currentWaveIndexMain);

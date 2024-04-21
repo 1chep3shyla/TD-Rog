@@ -28,6 +28,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   history: 
   has: 0
+  perkEvolveNo: {fileID: 0}
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}

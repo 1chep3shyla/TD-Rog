@@ -15,7 +15,7 @@ MonoBehaviour:
   indexChar: 9
   indexEvolve: 14
   buffs:
-  - 30
+  - 50
   - -10
   - -10
   - -10
@@ -28,6 +28,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 4f549f9ea61f73a4fac4ba00d972da3d, type: 3}
   history: THIS! IS! gladiator.
   has: 0
+  perkEvolveNo: {fileID: 11400000, guid: 1c166094c5d701d4eae9420bea860a78, type: 2}
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}
@@ -41,3 +42,5 @@ MonoBehaviour:
   - {fileID: 2056256240725061661, guid: 0f848e067fec08f478ddd98847e4478a, type: 3}
   - {fileID: 2056256240725061661, guid: bb8ad514de2f24f4aa5db5a88e1276bc, type: 3}
   - {fileID: 2056256240725061661, guid: e26f1c159ba66ec4998d10cfc1874ebd, type: 3}
+  - {fileID: 2056256240725061661, guid: 2645a30fc776980459df4af4ce9805ba, type: 3}
+  - {fileID: 2056256240725061661, guid: 1841953e77c79a54a9307ca9b7340cdd, type: 3}

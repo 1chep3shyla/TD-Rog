@@ -10,7 +10,7 @@ public class Default : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
 
-    private float attackCooldown = 10f;
+    public float attackCooldown = 10f;
      public List<Transform> enemiesInRange = new List<Transform>();
     public float slowPower;
     public int firePower;
@@ -55,6 +55,7 @@ public class Default : MonoBehaviour
 
     void Update()
     {
+        UpdateStatTwo();
         if (upHaveScript.Imposter)
         {
             damage = -upHaveScript.curDamage;
@@ -69,7 +70,7 @@ public class Default : MonoBehaviour
         {
             attackSpeed = upHaveScript.curAttackSpeed;
         }
-
+        currentTargets.RemoveAll(target => target == null);
 
         if (CanAttack() && currentTargets.Count > 0 && !upHaveScript.Muted)
         {
@@ -88,7 +89,7 @@ public class Default : MonoBehaviour
             {
                 Attack();
             }
-            else if (bulletPrefab.GetComponent<BulletController>() == null)
+            else if (bulletPrefab.GetComponent<BulletController>() == null )
             {
                 AttackLight();
             }
@@ -122,7 +123,24 @@ public class Default : MonoBehaviour
             chanceAssasin = (int)dt.lvlData[lvl, 16];
             attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));
         }
-        gameObject.GetComponent<CircleCollider2D>().radius = attackRadius - (attackRadius * 0.35f);
+        gameObject.GetComponent<CircleCollider2D>().radius = attackRadius - (attackRadius * 0.19f);
+    }
+    public void UpdateStatTwo()
+    {
+        slowPower = dt.lvlData[lvl, 5];
+        firePower = (int)dt.lvlData[lvl, 6];
+        poisonPower = (int)dt.lvlData[lvl, 7];
+        stanChance = (int)dt.lvlData[lvl, 8];
+        portalChange = (int)dt.lvlData[lvl, 9];
+        maxTargets = (int)dt.lvlData[lvl, 10];
+        thiefPower = (int)dt.lvlData[lvl, 11];
+        dmgBoom = (int)dt.lvlData[lvl, 12];
+        reduceArmor = dt.lvlData[lvl, 13];
+        chanceDivine = (int)dt.lvlData[lvl, 14];
+        dmgDivine = (int)dt.lvlData[lvl, 15];
+        magnatPower = dt.lvlData[lvl, 17];
+        Chain = (int)dt.lvlData[lvl, 17];
+        chanceAssasin = (int)dt.lvlData[lvl, 16];
     }
     public void UpdateImposter()
     {
@@ -162,15 +180,23 @@ public class Default : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D(Collider2D collider)
+   void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.CompareTag("Enemy"))
         {
             Transform enemyTransform = collider.transform;
 
-            // Удаляем врага из обоих списков
-            enemiesInRange.Remove(enemyTransform);
+            // Удаляем врага из списка currentTargets
             currentTargets.Remove(enemyTransform);
+
+            // Удаляем врага из списка enemiesInRange, если он есть
+            if (enemiesInRange.Contains(enemyTransform))
+            {
+                enemiesInRange.Remove(enemyTransform);
+            }
+
+            // Удаляем все null объекты из списка enemiesInRange
+            enemiesInRange.RemoveAll(target => target == null);
 
             // Проверяем, осталось ли меньше целей, чем maxTargets
             if (currentTargets.Count < maxTargets)
@@ -179,7 +205,6 @@ public class Default : MonoBehaviour
                 if (enemiesInRange.Count > 0)
                 {
                     currentTargets.Add(enemiesInRange[0]);
-                    enemiesInRange.Remove(enemiesInRange[0]);
                 }
             }
         }
@@ -191,7 +216,6 @@ public class Default : MonoBehaviour
         if (attackCooldown <= 0f)
         {
             HashSet<Transform> attackedTargets = new HashSet<Transform>();
-
             foreach (var target in currentTargets)
             {
                 if (target != null && !attackedTargets.Contains(target))
@@ -305,6 +329,11 @@ public class Default : MonoBehaviour
                             }
 
                         }
+                        else if(bulletController.type == TypeBull.gear)
+                        {
+                            bulletController.damage = damage + (int)((float)damage * (float)GetComponent<GearTower>().objectCount* 0.15f);
+                            attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100)) + (0.08f * (float)GetComponent<GearTower>().objectCount);
+                        }
                     }
                     else if (bulletCannonController != null)
                     {
@@ -326,6 +355,7 @@ public class Default : MonoBehaviour
                 }
             }
         }
+        
     }
     public void UpdateFlip(Transform target)
     {
@@ -363,15 +393,12 @@ public class Default : MonoBehaviour
                 BulletController bulletController = bullet.GetComponent<BulletController>();
                 CannonBull bulletCannonController = bullet.GetComponent<CannonBull>();
 
-                if (bulletController != null)
-                {
-                    bulletController.Initialize(target, damage);
-                }
-
+            
 
                 attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));
             }
         }
+        
     }
     void AttackLight()
     {
@@ -388,6 +415,14 @@ public class Default : MonoBehaviour
             for (int i = 0; i < maxTargets; i++)
             {
                 bulletScript.targetEnemies[i] = enemiesInRange[i];
+            }
+            if (GetComponent<UpHave>().id == 23)
+            {
+                int random = Random.Range(0, 100);
+                if (random <= chanceDivine)
+                {
+                    StartCoroutine(DivineAttack());
+                }
             }
             UpdateFlip(enemiesInRange[0]);
             attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));

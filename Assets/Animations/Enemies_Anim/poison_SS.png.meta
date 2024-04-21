@@ -101,6 +101,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -220,7 +232,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      poison_SS_27: -911714157
+      poison_SS_0: -1125689697
       poison_SS_39: -1945260133
       poison_SS_14: 234035985
       poison_SS_18: 64311541
@@ -251,13 +263,13 @@ TextureImporter:
       poison_SS_38: -276842699
       poison_SS_19: 80623320
       poison_SS_2: 966754204
-      poison_SS_7: 933339951
-      poison_SS_8: -34742322
-      poison_SS_30: -1425071466
       poison_SS_16: -1458972668
+      poison_SS_27: -911714157
+      poison_SS_30: -1425071466
+      poison_SS_7: 933339951
       poison_SS_22: -1885977457
       poison_SS_3: 587922757
-      poison_SS_0: -1125689697
+      poison_SS_8: -34742322
       poison_SS_10: 1985166584
       poison_SS_23: -1041970344
   spritePackingTag: 

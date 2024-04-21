@@ -231,6 +231,10 @@ public class GameManager : MonoBehaviour
     }
     public void AddMoney(int add)
     {
+        if(Gold > GameBack.Instance.gold)
+        {
+            GameBack.Instance.gold = Gold;
+        }
         Gold += add + (int)((float)add* (buff[4]/100));
         goldCount.text = Gold.ToString("");
     }
@@ -263,6 +267,7 @@ public class GameManager : MonoBehaviour
                 allTower[i].gameObject.GetComponent<UpHave>().Clear();
             }
         }
+        gameObject.GetComponent<PerkRoll>().costReroll = 300;
     }
     public void AddDamageByBulletType(TypeBull bulletType, int damage)
     {

@@ -23,6 +23,7 @@ public class Rolling : MonoBehaviour
     public TMP_Text costTowerText;
     public GameObject pressSpace;
     public GameObject cursor;
+    public GameObject radiusAttack;
     public GameObject newLvl;
     public GameObject info;
     public TMP_Text[] towerInfo; // 0 - name, 1 - disc, 2 - damage, 3 - lvl
@@ -146,10 +147,16 @@ public class Rolling : MonoBehaviour
 
     private void UpdateCursorVisibility()
     {
-        cursor.SetActive(choosing && towerPrefab != null);
+        cursor.SetActive(choosing && towerPrefab != null) ;
+        radiusAttack.SetActive(choosing && towerPrefab != null && towerPrefab.GetComponent<Default>() != null);
         if (choosing && towerPrefab != null)
         {
             cursor.transform.position = new Vector2(towerPrefab.transform.position.x, towerPrefab.transform.position.y +0.05f);
+            radiusAttack.transform.position = new Vector2(towerPrefab.transform.position.x, towerPrefab.transform.position.y );
+            if(towerPrefab.GetComponent<Default>() != null)
+            {
+                radiusAttack.transform.localScale = new Vector2(towerPrefab.GetComponent<Default>().attackRadius,towerPrefab.GetComponent<Default>().attackRadius);
+            }
         }
     }
     public void UpLevelAnim(Transform transform)

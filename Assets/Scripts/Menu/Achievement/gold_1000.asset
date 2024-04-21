@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0eb08f519ca13419389fe3509345e6, type: 3}
   m_Name: gold_1000
   m_EditorClassIdentifier: 
-  id: Middle class
+  id: goldAchievement_1000
   title: Middle class
   description: ACCUMULATE 1000 GOLD
+  nameData: gold
   Icon: {fileID: 21300000, guid: aedfb990ec421994fa253c59ce34334a, type: 3}
   isUnlocked: 0

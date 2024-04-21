@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1403505117b8488ee1d6de8670276, type: 3}
   m_Name: 4_Evolution_Boom
   m_EditorClassIdentifier: 
+  buffGlobal: 0
+  name: Boom Evolution
+  disc: Evolves a Fire Tower into a Boom Tower
+  indexOfBuff: 0
+  sprite: {fileID: -1318246313, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
   indexCur: 4
   changeGM: {fileID: 2056256240725061661, guid: a17ae2e7a25c3ec47b96b6d6efe03078, type: 3}
   evolveGM: {fileID: 2056256240725061661, guid: 58db632029793c441bbf432c5b581ce0, type: 3}
+  perkNo: {fileID: 11400000, guid: 3690d0c8ecbdcf64684bf41bc16807bb, type: 2}
   name: Boom Evolution
   disc: Evolves a Fire Tower into a Boom Tower
   sprite: {fileID: -1318246313, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

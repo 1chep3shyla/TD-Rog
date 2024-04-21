@@ -139,7 +139,7 @@ MonoBehaviour:
   attackSpeed: 0.7
   damage: 3
   firePoint: {fileID: 1615630990437246422}
-  bulletPrefab: {fileID: 6556074294206078149, guid: 5da019a345d5cf541ab4a4cb4ca87b9f, type: 3}
+  bulletPrefab: {fileID: 6556074294206078149, guid: 9f90c664a7337314dbef1e8f5d1f5da2, type: 3}
   enemiesInRange: []
   slowPower: 0
   firePower: 0

@@ -14,24 +14,34 @@ public class LoseWinScript : MonoBehaviour
     public Image icon;
     public Transform itemParent;
     public ItemOpenner itemOpenner;
+    public GameObject completeGM;
     public GameObject prefabItem;
     public GameObject backStat;
     public GameObject pauseGM;
 
     public void Result(bool which)
     {
+        GameBack.Instance.enemiesKilled += GameManager.Instance.whichEnemyKill;
         if(which)
         {
             Win();
+            GameBack.Instance.winGame++;
+            GameBack.Instance.gamePlayed++;
         }
         else
         {
             Lose();
+            if(GameManager.Instance.spawn.currentWaveIndexMain == 0)
+            {
+                GameBack.Instance.loseFirstWave = true;
+            }
+            GameBack.Instance.gamePlayed++;
         }
     }
 
     public void Win()
     {
+        completeGM.SetActive(true);
         titleWhich.text = "Stage Completed!";
         pauseGM.SetActive(false);
         backStat.SetActive(false);
@@ -49,6 +59,7 @@ public class LoseWinScript : MonoBehaviour
             GameObject newItem = Instantiate(prefabItem, transform.position, Quaternion.identity);
             newItem.transform.parent = itemParent; 
             newItem.transform.localScale = new Vector3(1, 1, 1);
+            newItem.transform.localPosition += new Vector3(0,0,110);
 
             Image imageComponent = newItem.transform.GetChild(0).GetComponent<Image>();
             if (imageComponent != null)
@@ -65,6 +76,7 @@ public class LoseWinScript : MonoBehaviour
     }
     public void Lose()
     {
+        completeGM.SetActive(true);
         titleWhich.text = "Stage Failed!";
         pauseGM.SetActive(false);
         backStat.SetActive(false);

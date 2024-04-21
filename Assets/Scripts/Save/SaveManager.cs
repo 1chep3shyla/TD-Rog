@@ -26,6 +26,19 @@ public class SaveManager : MonoBehaviour
         public PositionData[,] towerPositions = new PositionData[20, 7]; // Изменение типа массива
     }
 
+    [System.Serializable]
+    public class GameData
+    {
+        public int gold;
+        public int waveCount;
+        public int gamePlayed;
+        public int winGame;
+        public bool loseFirstWave;
+        public int enemiesKilled;
+        public float[] buff = new float[9];
+        public int getItem;
+        public int sellItem;
+    }
     // Класс для хранения позиции, который реализует интерфейс Serializable
     [System.Serializable]
     public class PositionData
@@ -56,6 +69,7 @@ public class SaveManager : MonoBehaviour
 
     void Start()
     {
+        LoadGameData();
     }
 
     private void Awake()
@@ -73,6 +87,7 @@ public class SaveManager : MonoBehaviour
 
     public void SaveData()
     {
+        SaveGameData();
         LevelData data = new LevelData();
         data.currentLevel = GameManager.Instance.spawn.currentWaveIndexMain;
         data.indexState = GameBack.Instance.indexState;
@@ -179,6 +194,53 @@ public class SaveManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Файл сохранения не найден");
+        }
+    }
+     public void SaveGameData()
+    {
+        GameData data = new GameData();
+
+        // Сохраняемые данные из GameBack.Instance
+        data.gold = GameBack.Instance.gold;
+        data.waveCount = GameBack.Instance.waveCount;
+        data.gamePlayed = GameBack.Instance.gamePlayed;
+        data.winGame = GameBack.Instance.winGame;
+        data.loseFirstWave = GameBack.Instance.loseFirstWave;
+        data.enemiesKilled = GameBack.Instance.enemiesKilled;
+        Array.Copy(GameBack.Instance.buff, data.buff, data.buff.Length);
+        data.getItem = GameBack.Instance.getItem;
+        data.sellItem = GameBack.Instance.sellItem;
+
+        BinaryFormatter formatter = new BinaryFormatter();
+        string filePath = Application.persistentDataPath + "/achivementData.dat";
+        FileStream stream = new FileStream(filePath, FileMode.Create);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+
+        Debug.Log("Данные сохранены");
+    }
+
+    // Функция для загрузки данных в GameBack.Instance
+    public void LoadGameData()
+    {
+    string filePath = Application.persistentDataPath + "/achivementData.dat";
+        if (File.Exists(filePath))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(filePath, FileMode.Open);
+
+            GameData data = formatter.Deserialize(stream) as GameData;
+            stream.Close();
+            GameBack.Instance.gold = data.gold;
+            GameBack.Instance.waveCount = data.waveCount;
+            GameBack.Instance.gamePlayed = data.gamePlayed;
+            GameBack.Instance.winGame = data.winGame;
+            GameBack.Instance.loseFirstWave = data.loseFirstWave;
+            GameBack.Instance.enemiesKilled = data.enemiesKilled;
+            Array.Copy(data.buff, GameBack.Instance.buff, GameBack.Instance.buff.Length);
+            GameBack.Instance.getItem = data.getItem;
+            GameBack.Instance.sellItem = data.sellItem;
         }
     }
 }

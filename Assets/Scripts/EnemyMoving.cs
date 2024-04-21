@@ -11,10 +11,27 @@ public enum EnemyType
     fast,
     reduction
 }
+public enum BossType
+{
+    Ogre,
+    Dragon,
+    Jerk,
+    Golem,
+    Imposter,
+    Muted,
+    Healboss,
+    RatKing,
+    Demon,
+    Snake,
+    Spider,
+    Cocon,
+}
+
 
 public class EnemyMoving : MonoBehaviour
 {
     public EnemyType typeEnemy;
+    public BossType typeBoss;
     public Transform[] waypoints;
     public int currentWaypoint;
     private float lastWaypointSwitchTime;

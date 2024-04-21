@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0eb08f519ca13419389fe3509345e6, type: 3}
   m_Name: gold_10000
   m_EditorClassIdentifier: 
-  id: Bourgeois?
+  id: goldAchievement_10000
   title: Bourgeois?
   description: ACCUMULATE 10000 GOLD
-  Icon: {fileID: 0}
+  nameData: gold
+  Icon: {fileID: 21300000, guid: bfe813d829343a546b913b4f1c7e522a, type: 3}
   isUnlocked: 0

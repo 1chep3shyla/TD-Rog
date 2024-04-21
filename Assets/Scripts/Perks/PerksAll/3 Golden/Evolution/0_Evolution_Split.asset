@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1403505117b8488ee1d6de8670276, type: 3}
   m_Name: 0_Evolution_Split
   m_EditorClassIdentifier: 
+  buffGlobal: 0
+  name: Split Evolution
+  disc: Evolves a Default Tower into a Split Tower
+  indexOfBuff: 0
+  sprite: {fileID: 2084314889, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
   indexCur: 0
   changeGM: {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}
   evolveGM: {fileID: 2056256240725061661, guid: 093526689197c3448b11a09e047d9323, type: 3}
+  perkNo: {fileID: 11400000, guid: bf4ef003a5233b5439c5305471e9dc3d, type: 2}
   name: Split Evolution
   disc: Evolves a Default Tower into a Split Tower
   sprite: {fileID: 2084314889, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

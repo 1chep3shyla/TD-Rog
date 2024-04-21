@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0eb08f519ca13419389fe3509345e6, type: 3}
   m_Name: Enemy_100
   m_EditorClassIdentifier: 
-  id: Murderer?
+  id: enemiesKilledAchievement_100
   title: Murderer?
-  description: Kill 100 enemies
-  Icon: {fileID: 0}
+  description: Kill {0}/100 enemies
+  nameData: enemiesKilled
+  Icon: {fileID: 21300000, guid: 424f5e18c1262864c87c639870cd0cd0, type: 3}
   isUnlocked: 0

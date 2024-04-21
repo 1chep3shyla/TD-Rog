@@ -7,12 +7,13 @@ public class PerkEvolve : Perks
       public int indexCur;
     public GameObject changeGM;
     public GameObject evolveGM;
+    public Perks perkNo;
     public string name;
     [TextArea]
     public string disc;
     public Sprite sprite;
 
-    public void ApplyPerk()
+    public override void ApplyPerk()
     {
         GameManager gameManager = GameManager.Instance;
         GameObject[] towers = gameManager.gameObject.GetComponent<Rolling>().towers;

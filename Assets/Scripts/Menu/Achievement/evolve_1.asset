@@ -15,4 +15,5 @@ MonoBehaviour:
   id: The Evolutionist
   title: The Evolutionist
   description: Get your first evolution
+  Icon: {fileID: 0}
   isUnlocked: 0

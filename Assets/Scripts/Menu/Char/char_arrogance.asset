@@ -12,21 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1c6c5330f00714cb17bd065e7a6a60, type: 3}
   m_Name: char_arrogance
   m_EditorClassIdentifier: 
+  indexChar: 0
   indexEvolve: -10
   buffs:
-  - 0
-  - 0
-  - 0
-  - -10
-  - 0
-  - 0
-  - 0
-  - 25
-  - 25
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
   name: Overlord
   icon: {fileID: 21300000, guid: b6bd2f2e0da61694aa06a4b449a667cd, type: 3}
   history: Pathetic...
   has: 0
+  perkEvolveNo: {fileID: 0}
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   - {fileID: 2056256240725061661, guid: 23d30aa6791d6ea4189fa4d591a0d02e, type: 3}
@@ -41,3 +43,5 @@ MonoBehaviour:
   - {fileID: 2056256240725061661, guid: bb8ad514de2f24f4aa5db5a88e1276bc, type: 3}
   - {fileID: 2056256240725061661, guid: 6aa15fafe15e2234fb34bee2a086839d, type: 3}
   - {fileID: 2056256240725061661, guid: e26f1c159ba66ec4998d10cfc1874ebd, type: 3}
+  - {fileID: 2056256240725061661, guid: 2645a30fc776980459df4af4ce9805ba, type: 3}
+  - {fileID: 2056256240725061661, guid: 1841953e77c79a54a9307ca9b7340cdd, type: 3}

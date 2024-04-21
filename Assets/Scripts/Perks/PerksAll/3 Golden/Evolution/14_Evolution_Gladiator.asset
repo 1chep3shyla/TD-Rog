@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1403505117b8488ee1d6de8670276, type: 3}
   m_Name: 14_Evolution_Gladiator
   m_EditorClassIdentifier: 
+  buffGlobal: 0
+  name: Gladiator Evolution
+  disc: Evolves an Ancient Tower into a Gladiator Tower
+  indexOfBuff: 0
+  sprite: {fileID: -313071445, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
   indexCur: 14
   changeGM: {fileID: 2056256240725061661, guid: 8ae1660fe55a5d2429431dddde259189, type: 3}
   evolveGM: {fileID: 2056256240725061661, guid: 01eb6cdc461a6574fa225fa1d5dace34, type: 3}
+  perkNo: {fileID: 11400000, guid: 1c166094c5d701d4eae9420bea860a78, type: 2}
   name: Gladiator Evolution
   disc: Evolves an Ancient Tower into a Gladiator Tower
   sprite: {fileID: -313071445, guid: c7bb81671c74c544083f49b04988e74e, type: 3}

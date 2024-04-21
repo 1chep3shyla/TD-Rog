@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0eb08f519ca13419389fe3509345e6, type: 3}
   m_Name: wave_500
   m_EditorClassIdentifier: 
-  id: Everything okay?
+  id: waveCountAchievement_500
   title: Everything okay?
-  description: Go through 500 waves
+  description: Go through {0}/500 waves
+  nameData: waveCount
   Icon: {fileID: 21300000, guid: 65b61860127bb084aa612a912ebee7c1, type: 3}
   isUnlocked: 0
