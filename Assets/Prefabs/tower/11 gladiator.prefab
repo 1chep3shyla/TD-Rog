@@ -58,7 +58,7 @@ MonoBehaviour:
   name: Gladiator Tower
   description: "\u0422\u043E \u0447\u0442\u043E \u043D\u0435 \u0443\u0431\u0438\u0432\u0430\u0435\u0442
     - \u0434\u0435\u043B\u0430\u0435\u0442 \u0435\u0433\u043E \u0421\u0418\u041B\u042C\u041D\u0415\u0415"
-  discInfo: 'Damage:'
+  discInfo: Damage:{0}
   curAttackSpeed: 0
   attackSpeed: 0.7
   damage: 4
@@ -140,6 +140,7 @@ MonoBehaviour:
   damage: 2
   firePoint: {fileID: 1615630990437246422}
   bulletPrefab: {fileID: 6556074294206078149, guid: b5fb950986f6a8149b8de3bf38320cd2, type: 3}
+  attackCooldown: 10
   enemiesInRange: []
   slowPower: 0
   firePower: 0

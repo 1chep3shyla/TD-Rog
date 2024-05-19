@@ -194,7 +194,14 @@ public class AchievementManager : MonoBehaviour
         {
             descriptionText.text = achievement.GetDesc();
             nameText.text = achievement.title;
-            icon.sprite = achievement.Icon;
+            if(achievement.isUnlocked)
+            {
+                icon.sprite = achievement.Icon;
+            }
+            else
+            {
+                icon.sprite = notUnlock;
+            }
         }
     }
 }

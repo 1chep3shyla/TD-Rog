@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Runtime.InteropServices;
-
+using System;
 public class DisplayDataChar : MonoBehaviour
 {
     public TextMeshProUGUI buffText;
@@ -17,7 +17,13 @@ public class DisplayDataChar : MonoBehaviour
     {
         charSet = charCur as ICharSet;
         // Access the character's stats using GetStat()
-        float[] buffs = charSet.GetStat();
+        float[] buffs = new float[charSet.GetStat().Length];
+        Array.Copy(charSet.GetStat(), buffs, buffs.Length);
+
+        for (int i = 0; i < GameBack.Instance.buffGlobal.Length; i++)
+        {
+            buffs[i] += GameBack.Instance.buffGlobal[i];
+        }
         string nameChar = charSet.GetStatName();
 
         // Format the buffs with tabulation
@@ -37,7 +43,13 @@ public class DisplayDataChar : MonoBehaviour
             // Attempt to cast charData to ICharSet
             if (GameBack.Instance.charData is ICharSet charSet)
             {
-                float[] buffs = charSet.GetStat();
+                float[] buffs = new float[charSet.GetStat().Length];
+                Array.Copy(charSet.GetStat(), buffs, buffs.Length);
+
+                for (int i = 0; i < GameBack.Instance.buffGlobal.Length; i++)
+                {
+                    buffs[i] += GameBack.Instance.buffGlobal[i];
+                }
                 string nameChar = charSet.GetStatName();
                 string history = charSet.GetHistory();
                 Sprite iconSprite = charSet.GetIcon();

@@ -27,13 +27,14 @@ public class VolumeChanger : MonoBehaviour
     {
         GameBack.Instance.volumeMusic = musicSlider.value;
         GameBack.Instance.volumeSFX = sfxSlider.value;
-        musicAs.volume = GameBack.Instance.volumeMusic;
-        sfxAs.volume = GameBack.Instance.volumeSFX/1.6f;
+        musicAs.volume = GameBack.Instance.volumeMusic/1.6f;
+        sfxAs.volume = GameBack.Instance.volumeSFX/2.5f;
     }
 
     public void ChangeVolumeGame()
     {
-        musicSlider.value = GameBack.Instance.volumeMusic;
-        sfxSlider.value = GameBack.Instance.volumeSFX;
+        musicSlider.value = GameBack.Instance.volumeMusic/1.6f;
+        sfxSlider.value = GameBack.Instance.volumeSFX/1.6f;
+        ChangeVolume();
     }
 }

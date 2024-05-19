@@ -56,8 +56,8 @@ MonoBehaviour:
   UpVersion: {fileID: 2056256240725061661, guid: aea5d6a0916126f40a7ee2d5661ae1dc, type: 3}
   baseOf: {fileID: 0}
   name: Castle Tower
-  description: "\u041F\u0440\u043E\u0441\u0442\u0430\u044F \u0431\u0430\u0448\u043D\u044F"
-  discInfo: 'Damage:'
+  description: Just Attack
+  discInfo: Damage:{0}
   curAttackSpeed: 0
   attackSpeed: 0.75
   damage: 5
@@ -139,6 +139,7 @@ MonoBehaviour:
   damage: 5
   firePoint: {fileID: 1615630990437246422}
   bulletPrefab: {fileID: 6556074294206078149, guid: 01ebbaef74323bf47ad0e4adc6ecc886, type: 3}
+  attackCooldown: 10
   enemiesInRange: []
   slowPower: 0
   firePower: 0

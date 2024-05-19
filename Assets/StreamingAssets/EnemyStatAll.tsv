@@ -1,20 +1,20 @@
 Моб	Волна	Хп	Скорость	Сопротивление дебафам	Летающие	Золото за убийство				Хп	Скорость	Золото за убийство
-Normal	1	50	1	0	0	20			Armored	1,2	0,75	
-Normal	2	90	1	0	0	20			Fast	0,8	1,25	
-Normal	3	160	1	0	0	20			Debuff	0,9	1	
-Normal	4	290	1	0	0	20			Fly	0,8	1	
-Normal	5	535	1	0	0	20			Ogre	25	0.8	
-Normal	6	950	1	0	0	20			Dragon	35	0.75	
-Normal	7	1710	1	0	0	20			Jerk(dino)	25	0.8	
-Normal	8	3080	1	0	0	20			Golem(immo)	30	0.7	
-Normal	9	5550	1	0	0	20			Imposter	20	0.8	
-Normal	10	10000	1	0	0	20			Muted	25	0.8	
-Normal	11	13495	1	0	0	20			Healboss	50	0.4	
-Normal	12	18215	1	0	0	20			RatKing	25	0.8	
-Normal	13	24565	1	0	0	20			Demon(Hp+from Small)	25	0.8	
-Normal	14	33145	1	0	0	20			Snake	25	0.8	
-Normal	15	44720	1	0	0	20			Spider	25	0.8	
-Normal	16	60340	1	0	0	20			Cocon	25	0.8	
+Normal	1	50	1	0	0	20			Armored	1.2	0.75	
+Normal	2	90	1	0	0	20			Fast	0.8	1.25	
+Normal	3	160	1	0	0	20			Debuff	0.9	1	
+Normal	4	290	1	0	0	20			Fly	0.8	1	
+Normal	5	535	1	0	0	20			Ogre	15	0.8	
+Normal	6	950	1	0	0	20			Dragon	20	0.75	
+Normal	7	1710	1	0	0	20			Jerk(dino)	15	0.8	
+Normal	8	3080	1	0	0	20			Golem(immo)	20	0.7	
+Normal	9	5550	1	0	0	20			Imposter	15	0.8	
+Normal	10	10000	1	0	0	20			Muted	15	0.8	
+Normal	11	13495	1	0	0	20			Healboss	15	0.4	
+Normal	12	18215	1	0	0	20			RatKing	15	0.8	
+Normal	13	24565	1	0	0	20			Demon(Hp+from Small)	15	0.8	
+Normal	14	33145	1	0	0	20			Snake	15	0.8	
+Normal	15	44720	1	0	0	20			Spider	15	0.8	
+Normal	16	60340	1	0	0	20			Cocon	15	0.8	
 Normal	17	81420	1	0	0	20						
 Normal	18	109865	1	0	0	20						
 Normal	19	148235	1	0	0	20						

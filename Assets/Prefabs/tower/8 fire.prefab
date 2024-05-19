@@ -56,9 +56,8 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Fire Tower
-  description: "\u041F\u043E\u0434\u0436\u0438\u0433\u0430\u0435\u0442 \u043F\u0443\u043A\u0430\u043D\u044B
-    \u0432\u0440\u0430\u0436\u0438\u043D"
-  discInfo: 'Damage:'
+  description: Sets fire to the enemy's ass and deals {0} damage
+  discInfo: Damage:{0}
   curAttackSpeed: 0
   attackSpeed: 0.75
   damage: 2
@@ -140,6 +139,7 @@ MonoBehaviour:
   damage: 2
   firePoint: {fileID: 1615630990437246422}
   bulletPrefab: {fileID: 6556074294206078149, guid: 7f2f3bdee1cf3b24f855f728f0d214de, type: 3}
+  attackCooldown: 10
   enemiesInRange: []
   slowPower: 0
   firePower: 25

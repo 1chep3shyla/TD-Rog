@@ -99,6 +99,12 @@ public class Spawner : MonoBehaviour
                     if(Beastiar.Instance.seeThis[currentWave[i].enemyPrefab[waveEnemySet[i]].GetComponent<Enemy>().index] == false)
                     {
                         whichEnemy.GetComponent<UnityEngine.UI.Image>().color = new Color(0,0,0);
+                        GameObject what = new GameObject("whatEnemy");
+                        what.transform.localScale = new Vector3(1f / 375, 1f / 375, 1f / 375);
+                        what.transform.localPosition = new Vector3(0,0,0); 
+                        what.AddComponent<UnityEngine.UI.Image>();
+                        what.GetComponent<UnityEngine.UI.Image>().sprite = GameManager.Instance.whatSprite;
+                        what.transform.SetParent(whichEnemy.transform);
                     }
                     whichEnemy.transform.SetParent(GameManager.Instance.enemyWhichGM);
                 }

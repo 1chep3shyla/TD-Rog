@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: winGameAchievement_10
   title: This world is absolutely clear to me.
-  description: WIN 10 TIME
+  description: WIN {0}/10 TIME
+  nameData: winGame
   Icon: {fileID: 21300000, guid: ef40844d3ac6ebd4c94f2b7cd4dad55d, type: 3}
   isUnlocked: 0

@@ -11,6 +11,7 @@ public class GameBack
     [SerializeField]
     public bool saveThis;
 
+    public int souls;
     public int gold;
     public int waveCount;
     public int gamePlayed;
@@ -18,6 +19,8 @@ public class GameBack
     public bool loseFirstWave;
     public int enemiesKilled;
     public float[] buff = new float[9];
+    public float[] buffGlobal = new float[9];
+    public bool[] boughtStat = new bool[32];
     public int getItem;
     public int sellItem;
     public static GameBack Instance

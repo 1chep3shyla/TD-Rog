@@ -45,7 +45,7 @@ public class Character : ScriptableObject, ICharSet
     {
         for (int i = 0; i < buffs.Length; i++)
         {
-            GameManager.Instance.buff[i] = buffs[i];
+            GameManager.Instance.buff[i] = buffs[i] + GameBack.Instance.buffGlobal[i];
         }
         if (indexEvolve != -10)
         {

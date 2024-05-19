@@ -39,15 +39,18 @@ public class TowerBase : MonoBehaviour
     public void OnMouseUpping()
     {
         Debug.Log("�����" + " " + gameObject.name);
-        if (rollBase.choosing && rollBase.towerPrefab != curGM && rollBase.towerPrefab != null && curGM != null)
+        if (rollBase.choosing && rollBase.towerPrefab != curGM && rollBase.towerPrefab != null && curGM != null
+        && rollBase.towerPrefab.GetComponent<UpHave>().LVL == curGM.GetComponent<UpHave>().LVL)
         {
             Up();
         }
-        else if (!CanPlaceMonster() && rollBase.towerPrefab != null && curGM != null && !rollBase.choosing)
+        else if (!CanPlaceMonster() && rollBase.towerPrefab != null && curGM != null && !rollBase.choosing 
+        && rollBase.towerPrefab.GetComponent<UpHave>().LVL == curGM.GetComponent<UpHave>().LVL)
         {
             Up();
         }
-        else if(rollBase.choosing && rollBase.towerPrefab != curGM && rollBase.towerPrefab.GetComponent<UpHave>().id != -2 && rollBase.towerPrefab != null)
+        else if(rollBase.choosing && rollBase.towerPrefab != curGM && rollBase.towerPrefab.GetComponent<UpHave>().id != -2 && rollBase.towerPrefab != null
+        && rollBase.towerPrefab.GetComponent<UpHave>().LVL == curGM.GetComponent<UpHave>().LVL)
         {
             Up();
         }
@@ -56,10 +59,28 @@ public class TowerBase : MonoBehaviour
             UpHave uh = curGM.GetComponent<UpHave>();
             rollBase.info.SetActive(true);
             rollBase.towerInfo[0].text = "" + uh.name;
-            rollBase.towerInfo[1].text = uh.description;
+            if(uh.description != null)
+            {
+                var replacementValueDEF = uh.towerDataCur.lvlData[uh.LVL, 1]; //0 - fire, 1 - poison, 2 -ice, 3 - stan, 4 - targets
+                var replacementValueIce = uh.towerDataCur.lvlData[uh.LVL, 5] + (uh.towerDataCur.lvlData[uh.LVL, 5]* (GameManager.Instance.buff[1]/100));
+                var replacementValueFire = uh.towerDataCur.lvlData[uh.LVL, 6] + (uh.towerDataCur.lvlData[uh.LVL, 6]* (GameManager.Instance.buff[2]/100));
+                var replacementValuePoison = uh.towerDataCur.lvlData[uh.LVL, 7] + (uh.towerDataCur.lvlData[uh.LVL, 7]* (GameManager.Instance.buff[3]/100));
+                var replacementValueStan = uh.towerDataCur.lvlData[uh.LVL, 8];
+                var replacementValueTarget = uh.towerDataCur.lvlData[uh.LVL, 10];
+                string coloredFire = $"<color=#FF0000>{replacementValueFire}</color>"; // Красный
+                string coloredPoison = $"<color=#00FF00>{replacementValuePoison}</color>"; // Зеленый
+                string coloredIce = $"<color=#00FFFF>{replacementValueIce}</color>"; // Голубой
+                string coloredStan = $"<color=#808080>{replacementValueStan}</color>"; // Серый
+
+                rollBase.towerInfo[1].text = string.Format(uh.description, coloredFire, 
+                coloredPoison,coloredIce,coloredStan, replacementValueTarget);
+            }
             if(uh.discInfo != null)
             {
-                rollBase.towerInfo[2].text = uh.discInfo  + uh.towerDataCur.lvlData[uh.LVL, 1];
+                var replacementValueDEF = uh.towerDataCur.lvlData[uh.LVL, 1];
+                var replacementValueGB = uh.towerDataCur.lvlData[uh.LVL, 1] +uh.towerDataCur.lvlData[uh.LVL, 1]* (GameManager.Instance.buff[0]/100); // global
+                var replacementValueMB = uh.towerDataCur.lvlData[uh.LVL, 1] + uh.towerDataCur.lvlData[uh.LVL, 1] * (GameManager.Instance.buff[4]/100); //money
+                rollBase.towerInfo[2].text = string.Format(uh.discInfo, replacementValueGB, replacementValueMB.ToString("0"),replacementValueDEF );
             }
             rollBase.towerInfo[3].text = "LVL:" + (uh.LVL + 1);
             rollBase.towerPrefab = curGM;

@@ -106,7 +106,7 @@ MonoBehaviour:
   baseOf: {fileID: 0}
   name: Crit Castle
   description: 
-  discInfo: 'Up Crit Chance: '
+  discInfo: 'Up Crit Chance: {2}'
   curAttackSpeed: 0
   attackSpeed: 0
   damage: 0

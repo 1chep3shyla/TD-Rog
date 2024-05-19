@@ -36,4 +36,8 @@ public class MenuController : MonoBehaviour
         aS.PlayOneShot(clip);
         aS.pitch = Random.Range(0.9f, 1.1f);
     }
+    public void SetZero(Transform trans)
+    {
+        trans.position = new Vector3(0,0,0);
+    }
 }

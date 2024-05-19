@@ -20,6 +20,7 @@ public class Rolling : MonoBehaviour
     public GameObject baseOfTower;
     public Tilemap tilemap;
     public TMP_Text[] nameOfTowerText;
+    public TMP_Text[] costOfTowerText;
     public TMP_Text costTowerText;
     public GameObject pressSpace;
     public GameObject cursor;
@@ -45,8 +46,48 @@ public class Rolling : MonoBehaviour
     }
     void Update()
     {
+        if (GameManager.Instance.curWave < 10)
+        {   
+            costTower = 150;
+            if(towerPrefab!=null)
+            {
+                towerPrefab.GetComponent<UpHave>().LVL = 0;
+            }
+        }
+        else if(GameManager.Instance.curWave >= 10 && GameManager.Instance.curWave < 15 )
+        {
+            costTower = 300;
+            if(towerPrefab!=null)
+            {
+                towerPrefab.GetComponent<UpHave>().LVL = 1;
+            }
+        }
+        else if(GameManager.Instance.curWave >= 15 && GameManager.Instance.curWave < 20)
+        {
+            costTower = 600;
+            if(towerPrefab!=null)
+            {
+                towerPrefab.GetComponent<UpHave>().LVL = 2;
+            }
+        }
+        else if(GameManager.Instance.curWave >= 20 && GameManager.Instance.curWave < 25)
+        {
+            costTower = 1200;
+            if(towerPrefab!=null)
+            {
+                towerPrefab.GetComponent<UpHave>().LVL = 3;
+            }
+        }
+        else if(GameManager.Instance.curWave >= 25)
+        {
+            costTower = 2400;
+            if(towerPrefab!=null)
+            {
+                towerPrefab.GetComponent<UpHave>().LVL = 4;
+            }
+        }
         //costTowerText.text = costTower.ToString("");
-        costTowerText.text = "300";
+        //costTowerText.text = "300";
         HandleMouseInput();
         HandleSpaceKey();
         UpdateCursorVisibility();
@@ -179,7 +220,7 @@ public class Rolling : MonoBehaviour
                 {
                     GameManager.Instance.gameObject.GetComponent<GameController>().OffBut(i);
                 }
-                GameManager.Instance.Gold -= 150;
+                GameManager.Instance.Gold -= costTower;
                 GameManager.Instance.ChangeMoney();
                 if (towerPrefab.GetComponent<UpHave>().id == 26)
                 {
@@ -265,6 +306,7 @@ public class Rolling : MonoBehaviour
             }
 
             lockerTower[randomId] = true;
+            costOfTowerText[i].text = costTower.ToString("");
             slots[i].id = randomId;
             slots[i].icon.sprite = imageidTower[slots[i].id];
             slots[i].tower = towers[randomId];
@@ -287,10 +329,28 @@ public class Rolling : MonoBehaviour
             UpHave uh = towerPrefab.GetComponent<UpHave>();
             sell.text = "Sell: " + (int)Math.Pow(100, uh.LVL+1);
             towerInfo[0].text  = "" + uh.name;
-            towerInfo[1].text = uh.description;
+            if(uh.description != null)
+            {
+                var replacementValueDEF = uh.towerDataCur.lvlData[uh.LVL, 1]; //0 - fire, 1 - poison, 2 -ice, 3 - stan, 4 - targets
+                var replacementValueIce = uh.towerDataCur.lvlData[uh.LVL, 5] + (uh.towerDataCur.lvlData[uh.LVL, 5]* (GameManager.Instance.buff[1]/100));
+                var replacementValueFire = uh.towerDataCur.lvlData[uh.LVL, 6] + (uh.towerDataCur.lvlData[uh.LVL, 6]* (GameManager.Instance.buff[2]/100));
+                var replacementValuePoison = uh.towerDataCur.lvlData[uh.LVL, 7] + (uh.towerDataCur.lvlData[uh.LVL, 7]* (GameManager.Instance.buff[3]/100));
+                var replacementValueStan = uh.towerDataCur.lvlData[uh.LVL, 8];
+                var replacementValueTarget = uh.towerDataCur.lvlData[uh.LVL, 10];
+                string coloredFire = $"<color=#FF0000>{replacementValueFire}</color>"; // Красный
+                string coloredPoison = $"<color=#00FF00>{replacementValuePoison}</color>"; // Зеленый
+                string coloredIce = $"<color=#00FFFF>{replacementValueIce}</color>"; // Голубой
+                string coloredStan = $"<color=#808080>{replacementValueStan}</color>"; // Серый
+
+                towerInfo[1].text = string.Format(uh.description, coloredFire, 
+                coloredPoison,coloredIce,coloredStan, replacementValueTarget);
+            }
             if(uh.discInfo != null)
             {
-                towerInfo[2].text = uh.discInfo + uh.towerDataCur.lvlData[uh.LVL, 1];
+                var replacementValueDEF = uh.towerDataCur.lvlData[uh.LVL, 1];
+                var replacementValueGB = uh.towerDataCur.lvlData[uh.LVL, 1] +uh.towerDataCur.lvlData[uh.LVL, 1]* (GameManager.Instance.buff[0]/100); // global
+                var replacementValueMB = uh.towerDataCur.lvlData[uh.LVL, 1] + uh.towerDataCur.lvlData[uh.LVL, 1] * (GameManager.Instance.buff[4]/100); //money
+                towerInfo[2].text = string.Format(uh.discInfo, replacementValueGB, replacementValueMB.ToString("0"),replacementValueDEF );
             }
             towerInfo[3].text = "LVL:" + (uh.LVL + 1);
             OrderUp();

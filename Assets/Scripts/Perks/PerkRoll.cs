@@ -32,7 +32,7 @@ public class PerkRoll : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine("StartGame");
+        //StartCoroutine("StartGame");
     }
     void Update()
     {
@@ -78,6 +78,7 @@ public class PerkRoll : MonoBehaviour
     }
     public void RollPerk()
     {
+        rerollText.text = costReroll.ToString("");
         PerkGM.SetActive(false);
         chancePerk[0] = 100 - (int)System.Math.Log(GameManager.Instance.curWave * GameManager.Instance.curWave, 1.1f);
         chancePerk[1] = 100 - (int)System.Math.Log(GameManager.Instance.curWave * GameManager.Instance.curWave, 1.4f);
@@ -152,7 +153,7 @@ public class PerkRoll : MonoBehaviour
         rollingEvolve = true;
         evolutionBool = true;
         List<ScriptableObject> availablePerks = new List<ScriptableObject>(allEvolutionPerks);  // Создаем копию списка
-
+        rerollText.text = costReroll.ToString("");
         for(int i = 0; i < availablePerks.Count; i++)
         {
             if (availablePerks[i] is PerkEvolve perk)

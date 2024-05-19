@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: winGameAchievement_5
   title: It's a little Light...
-  description: WIN 5 TIME
+  description: WIN {0}/5 TIME
+  nameData: winGame
   Icon: {fileID: 21300000, guid: d984bdda59696a74c87d3b2c369a8249, type: 3}
   isUnlocked: 0

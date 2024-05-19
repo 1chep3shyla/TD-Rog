@@ -59,7 +59,7 @@ MonoBehaviour:
   description: "\u041C\u043E\u0436\u043D\u043E \u043F\u043E\u043C\u0435\u043D\u044F\u0442\u044C
     \u043C\u0435\u0441\u0442\u0430\u043C\u0438 \u0441 \u043B\u044E\u0431\u043E\u0439
     \u0431\u0430\u0448\u043D\u0435\u0439 \u0442\u043E\u0433\u043E \u0436\u0435 \u0443\u0440\u043E\u0432\u043D\u044F"
-  discInfo: 'Damage:'
+  discInfo: Damage:{0}
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 2
@@ -141,6 +141,7 @@ MonoBehaviour:
   damage: 3
   firePoint: {fileID: 1615630990437246422}
   bulletPrefab: {fileID: 6556074294206078149, guid: 01ebbaef74323bf47ad0e4adc6ecc886, type: 3}
+  attackCooldown: 10
   enemiesInRange: []
   slowPower: 0
   firePower: 0

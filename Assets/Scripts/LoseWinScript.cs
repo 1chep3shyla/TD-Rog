@@ -22,6 +22,7 @@ public class LoseWinScript : MonoBehaviour
     public void Result(bool which)
     {
         GameBack.Instance.enemiesKilled += GameManager.Instance.whichEnemyKill;
+        GameBack.Instance.souls += (int)((float)GameManager.Instance.whichEnemyKill* Random.Range(0.8f,1.2f));
         if(which)
         {
             Win();
@@ -37,6 +38,7 @@ public class LoseWinScript : MonoBehaviour
             }
             GameBack.Instance.gamePlayed++;
         }
+        SaveManager.instance.SaveData();
     }
 
     public void Win()

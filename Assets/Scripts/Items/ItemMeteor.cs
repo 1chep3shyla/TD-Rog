@@ -47,7 +47,7 @@ public class ItemMeteor : Item
     public override void GetDescription()
     {
         base.GetDescription();
-        GameManager.Instance.DiscriptionText.text = string.Format( count.ToString(""));
+        GameManager.Instance.DiscriptionText.text = string.Format( disc, count.ToString(""));
     }
       public override string GetDescriptionItem()
     {

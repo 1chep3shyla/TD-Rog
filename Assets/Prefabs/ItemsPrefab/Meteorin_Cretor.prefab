@@ -58,7 +58,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   objectPrefab: {fileID: 2148635155925700755, guid: 93a01678a0bf17b4daf7cd14d55bd69d, type: 3}
-  numberOfObjects: 2
+  numberOfObjects: 0
   repeatBetweenPoints: 1
   delayBetweenGenerations: 0.4
   repeatFunction: 1

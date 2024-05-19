@@ -189,22 +189,20 @@ public class Default : MonoBehaviour
             // Удаляем врага из списка currentTargets
             currentTargets.Remove(enemyTransform);
 
-            // Удаляем врага из списка enemiesInRange, если он есть
-            if (enemiesInRange.Contains(enemyTransform))
-            {
-                enemiesInRange.Remove(enemyTransform);
-            }
+            // Удаляем врага из списка enemiesInRange
+            enemiesInRange.Remove(enemyTransform);
 
             // Удаляем все null объекты из списка enemiesInRange
             enemiesInRange.RemoveAll(target => target == null);
 
-            // Проверяем, осталось ли меньше целей, чем maxTargets
-            if (currentTargets.Count < maxTargets)
+            // Проверяем, если у нас меньше целей, чем maxTargets, то добавляем из enemiesInRange[0]
+            if (currentTargets.Count < maxTargets && enemiesInRange.Count > 0)
             {
-                // Если есть место, добавляем другого врага из области действия
-                if (enemiesInRange.Count > 0)
+                // Добавляем первый элемент из enemiesInRange в currentTargets, если он не уже в списке
+                Transform newTarget = enemiesInRange[0];
+                if (!currentTargets.Contains(newTarget))
                 {
-                    currentTargets.Add(enemiesInRange[0]);
+                    currentTargets.Add(newTarget);
                 }
             }
         }

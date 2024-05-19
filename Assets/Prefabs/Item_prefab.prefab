@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemIs: {fileID: 0}
-  offSet: {x: 0, y: -200, z: 0}
+  offSet: {x: -2.25, y: 2, z: 0}
 --- !u!1 &7687078085531555427
 GameObject:
   m_ObjectHideFlags: 0

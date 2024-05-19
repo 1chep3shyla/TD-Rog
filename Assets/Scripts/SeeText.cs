@@ -23,9 +23,9 @@ public class SeeText :  MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (descriptionObject != null && !need)
         {
             //descriptionObject.transform.SetParent(parentObject.transform);
-            descriptionObject.transform.localPosition = new Vector3(transform.localPosition.x - offSet.x, 
-            transform.localPosition.y - offSet.y, 
-            transform.localPosition.z + offSet.z);
+            descriptionObject.transform.position = new Vector3(transform.position.x - offSet.x, 
+            transform.position.y - offSet.y, 
+            transform.position.z + offSet.z);
         }
 
         UpdateDescriptionColor();

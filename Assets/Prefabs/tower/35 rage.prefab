@@ -58,7 +58,7 @@ MonoBehaviour:
   name: Rage Tower
   description: "\u041E\u043D \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u0431\u0435\u0437\u0443\u043C\u0435\u043D
     \u0431\u0435\u0433\u0438\u0442\u0435..."
-  discInfo: 'Damage:'
+  discInfo: Damage:{0}
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 2
@@ -140,6 +140,7 @@ MonoBehaviour:
   damage: 4
   firePoint: {fileID: 1615630990437246422}
   bulletPrefab: {fileID: 6556074294206078149, guid: f0face5862e73f9429a556a14f7edce8, type: 3}
+  attackCooldown: 10
   enemiesInRange: []
   slowPower: 0
   firePower: 0

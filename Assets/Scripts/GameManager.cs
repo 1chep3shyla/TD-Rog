@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
     public ParticleSystem takeDamagePS;
     public BoxCollider2D tilemapCollider;
     public BoxCollider2D[] collidersTile;
+    public Sprite whatSprite;
     [SerializeField]
     private int[] giveMoneyCheat;
 

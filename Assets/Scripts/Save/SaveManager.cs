@@ -30,11 +30,13 @@ public class SaveManager : MonoBehaviour
     public class GameData
     {
         public int gold;
+        public int soulsCount;
         public int waveCount;
         public int gamePlayed;
         public int winGame;
         public bool loseFirstWave;
         public int enemiesKilled;
+        public bool[] boughtStat = new bool[32];
         public float[] buff = new float[9];
         public int getItem;
         public int sellItem;
@@ -210,6 +212,11 @@ public class SaveManager : MonoBehaviour
         Array.Copy(GameBack.Instance.buff, data.buff, data.buff.Length);
         data.getItem = GameBack.Instance.getItem;
         data.sellItem = GameBack.Instance.sellItem;
+        data.soulsCount = GameBack.Instance.souls;
+        for(int i = 0; i < GameBack.Instance.boughtStat.Length; i++ )
+        {
+            data.boughtStat[i] = GameBack.Instance.boughtStat[i];
+        }
 
         BinaryFormatter formatter = new BinaryFormatter();
         string filePath = Application.persistentDataPath + "/achivementData.dat";
@@ -241,6 +248,11 @@ public class SaveManager : MonoBehaviour
             Array.Copy(data.buff, GameBack.Instance.buff, GameBack.Instance.buff.Length);
             GameBack.Instance.getItem = data.getItem;
             GameBack.Instance.sellItem = data.sellItem;
+            GameBack.Instance.souls = data.soulsCount;
+            for(int i = 0; i < GameBack.Instance.boughtStat.Length; i++ )
+            {
+                GameBack.Instance.boughtStat[i] = data.boughtStat[i];
+            }
         }
     }
 }

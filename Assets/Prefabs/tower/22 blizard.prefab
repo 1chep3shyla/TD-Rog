@@ -57,10 +57,8 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Blizzard Tower
-  description: "\u041C\u0430\u043B\u043E \u0442\u043E\u0433\u043E \u0447\u0442\u043E
-    \u0437\u0430\u043C\u043E\u0440\u0430\u0436\u0438\u0432\u0430\u0435\u0442, \u043D\u043E
-    \u0438 \u0441\u043E\u0437\u0434\u0430\u0435\u0442 \u0431\u0443\u0440\u0438"
-  discInfo: 'Damage:'
+  description: Slows down enemies by {2}% and creates Storms
+  discInfo: Damage:{0}
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 2
@@ -142,6 +140,7 @@ MonoBehaviour:
   damage: 3
   firePoint: {fileID: 1615630990437246422}
   bulletPrefab: {fileID: 6556074294206078149, guid: 01ebbaef74323bf47ad0e4adc6ecc886, type: 3}
+  attackCooldown: 10
   enemiesInRange: []
   slowPower: 0.25
   firePower: 0

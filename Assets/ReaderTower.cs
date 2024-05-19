@@ -43,15 +43,16 @@ public class ReaderTower : MonoBehaviour
 
                         for (int valueInd = 1; valueInd < values.Length; valueInd++)
                         {
+                            string normalizedValue = values[valueInd].Replace('.', ',');
                             if (float.TryParse(values[valueInd], out float parsedValue))
                             {
                                 Debug.Log(curIndex);
-                                Debug.Log("Для" + DataTowerName[k] + "задали значение" + values[0]);
+                                Debug.Log("пїЅпїЅпїЅ" + DataTowerName[k] + "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" + values[0]);
                                 allData[k].lvlData[curIndex, valueInd] = parsedValue;
                             }
                             else
                             {
-                                Debug.Log("не работает перевод в float" + values[valueInd]);
+                                Debug.Log("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ float" + values[valueInd]);
                             }
                         }
                         curIndex++;
@@ -68,8 +69,8 @@ public class ReaderTower : MonoBehaviour
     }
     bool SearchForWord(string input, string word)
     {
-        // Используем регулярное выражение для поиска слова с возможными изменениями
-        string pattern = @"\b" + Regex.Escape(word) + @"\w*"; // Ищем слово и любые дополнительные символы после него
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        string pattern = @"\b" + Regex.Escape(word) + @"\w*"; // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         MatchCollection matches = Regex.Matches(input, pattern, RegexOptions.IgnoreCase);
 
         return matches.Count > 0;

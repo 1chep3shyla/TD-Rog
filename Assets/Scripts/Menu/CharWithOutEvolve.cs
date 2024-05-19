@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 [CreateAssetMenu(fileName = "NewChar", menuName = "Character/CharWithOutEvolve")]
 public class CharWithOutEvolve : ScriptableObject, ICharSet
 {
@@ -30,9 +30,10 @@ public class CharWithOutEvolve : ScriptableObject, ICharSet
     {
         for (int i = 0; i < buffs.Length; i++)
         {
-            GameManager.Instance.buff[i] = buffs[i];
+            GameManager.Instance.buff[i] = buffs[i] + GameBack.Instance.buffGlobal[i];
         }
-        GameObject[] newArrayTowers = towerPull;
+        GameObject[] newArrayTowers = new GameObject[towerPull.Length];
+        Array.Copy(towerPull, newArrayTowers, towerPull.Length);
         GameManager.Instance.gameObject.GetComponent<Rolling>().towers = newArrayTowers;
         GameManager.Instance.gameObject.GetComponent<Rolling>().SetSprite();
         GameManager.Instance.gameObject.GetComponent<Rolling>().Roll();

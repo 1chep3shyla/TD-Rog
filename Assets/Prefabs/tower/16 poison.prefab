@@ -56,9 +56,9 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Poison Tower
-  description: "\u041E\u0442\u0440\u0430\u0432\u043B\u044F\u0435\u0442 \u043A\u043E\u043C\u0443-\u0442\u043E
-    \u0436\u0438\u0437\u043D\u044C"
-  discInfo: 'Damage:'
+  description: Poisons enemies lives and deals {1} damage, as well as slows them
+    down by {2}%
+  discInfo: Damage:{0}
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 2
@@ -140,6 +140,7 @@ MonoBehaviour:
   damage: 4
   firePoint: {fileID: 1615630990437246422}
   bulletPrefab: {fileID: 6556074294206078149, guid: 73041ae20d8dbd64b9562d2ee7a2c71a, type: 3}
+  attackCooldown: 10
   enemiesInRange: []
   slowPower: 0
   firePower: 0
