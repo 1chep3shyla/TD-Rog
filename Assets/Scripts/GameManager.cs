@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public GameObject menu;
     public GameObject con;
     public GameObject losing;
+    public GameObject startBut;
     private static GameManager instance;
     public List<GameObject> enemiesAll = new List<GameObject>();
     [SerializeField]
@@ -56,7 +57,12 @@ public class GameManager : MonoBehaviour
     public BoxCollider2D tilemapCollider;
     public BoxCollider2D[] collidersTile;
     public Sprite whatSprite;
+    public int healthBreak;
     [SerializeField]
+    public int damageAll;
+    public int currentWaveIndexMain;
+    public LightUsing lightUsing;
+    public Animator cardAnim;
     private int[] giveMoneyCheat;
 
     void Update()
@@ -90,7 +96,14 @@ public class GameManager : MonoBehaviour
             charData = GameBack.Instance.charData;
             charData.SetData();
             charIcon.sprite = GameBack.Instance.iconChar;
-            states[GameBack.Instance.indexState].SetActive(true);
+            if(!GameBack.Instance.saveThis)
+            {
+                states[GameBack.Instance.indexState].SetActive(true);
+            }
+            if(GameBack.Instance.saveThis == true)
+            {
+                SaveManager.instance.LoadData();
+            }
             tilemapCollider = collidersTile[GameBack.Instance.indexState];
             gameObject.GetComponent<Rolling>().tilemap = maps[GameBack.Instance.indexState];
         }
@@ -98,6 +111,7 @@ public class GameManager : MonoBehaviour
     }
     public void SetDataBack()
     {
+        Debug.Log("Выйди сообщение");
         charData = GameBack.Instance.charData;
         charData.SetData();
         charIcon.sprite = GameBack.Instance.iconChar;
@@ -121,11 +135,14 @@ public class GameManager : MonoBehaviour
           if (Health > dmg)
             {
                 Health -= dmg;
+                healthBreak+=dmg;
+                GameBack.Instance.healthBreak+=dmg;
             }
 
             else
             {
                 Health = 0;
+                healthBreak+=dmg;
                 Losing();
             }
     
@@ -309,6 +326,7 @@ public class GameManager : MonoBehaviour
     public void Starting()
     {
         spawn.StartingGame();
+        startBut.SetActive(false);
     }
 
     public void ChestClaim()

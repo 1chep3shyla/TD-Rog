@@ -97,10 +97,12 @@ public class Enemy : MonoBehaviour
             if (dmg > 0)
             {
                 GameManager.Instance.AddDamageByBulletType(damageType, dmg);
+                GameBack.Instance.damageAll+=dmg;
             }
             if (curhp <= 0)
             {
                 Death();
+                GameBack.Instance.damageAll+=health;
             }
             else
             {
@@ -122,10 +124,12 @@ public class Enemy : MonoBehaviour
             if (dmg > 0)
             {
                 GameManager.Instance.AddDamageByBulletType(damageType, (int)((float)dmg * armorReduce));
+                GameBack.Instance.damageAll+=(int)((float)dmg * armorReduce);
             }
             if (curhp <= 0)
             {
                 Death();
+                GameBack.Instance.damageAll +=health;
             }
             else
             {
@@ -200,6 +204,7 @@ public class Enemy : MonoBehaviour
             Debug.Log("�����");
             inFire = true;
             StartCoroutine(Burn(duration, damage));
+            GameBack.Instance.fireCount++;
         }
     }
 
@@ -209,7 +214,7 @@ public class Enemy : MonoBehaviour
          firePart.GetComponent<ParticleSystem>().Play();
         while (dur > 0)
         {
-            int addDMG = dmg * (int)(GameManager.Instance.buff[2] / 100);
+            int addDMG = dmg;
             int removeDMG = (int)((float)(dmg + addDMG) * resistance[1]/100);
             TakeDamage(dmg + addDMG - removeDMG);
             GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);
@@ -230,6 +235,7 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("��");
             StartCoroutine(Poisoned(duration, damage));
+            GameBack.Instance.poisonedCount++;
         }
     }
 
@@ -247,7 +253,7 @@ public class Enemy : MonoBehaviour
         poisonPart.GetComponent<ParticleSystem>().Play();
         while (dur > 0)
         {
-            int addDMG = dmg * (int)(GameManager.Instance.buff[3] / 100);
+            int addDMG = dmg;
             int removeDMG = (int)((float)(dmg + addDMG) * resistance[2]/100);
             TakeDamage(dmg + addDMG - removeDMG);
             GameObject dmgText = Instantiate(damageText.gameObject, transform.position, Quaternion.identity);

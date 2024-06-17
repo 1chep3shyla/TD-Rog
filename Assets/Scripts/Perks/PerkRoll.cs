@@ -27,6 +27,18 @@ public class PerkRoll : MonoBehaviour
     public GameObject iconPrefab;
     public Button rerollBut;
     public TMP_Text rerollText;
+    [Space]
+    public GameObject EvolveGM;
+    public Text[] nameEvolution;
+    public Text[] disEvolution;
+    
+    public Image[] spriteChar;
+    public ParticleSystem[] psChar;
+    public Text[] nameTextChar;
+
+    public Image[] spriteCharEvolve;
+    public ParticleSystem[] psCharEvolve;
+    public Text[] nameTextCharEvolve;
     [SerializeField]
     private GameObject[] icons = new GameObject[5];
 
@@ -75,6 +87,7 @@ public class PerkRoll : MonoBehaviour
         evolutionBool = false;
         rollingEvolve = false;
         PerkGM.SetActive(false);
+        EvolveGM.SetActive(false);
     }
     public void RollPerk()
     {
@@ -153,7 +166,6 @@ public class PerkRoll : MonoBehaviour
         rollingEvolve = true;
         evolutionBool = true;
         List<ScriptableObject> availablePerks = new List<ScriptableObject>(allEvolutionPerks);  // Создаем копию списка
-        rerollText.text = costReroll.ToString("");
         for(int i = 0; i < availablePerks.Count; i++)
         {
             if (availablePerks[i] is PerkEvolve perk)
@@ -180,16 +192,21 @@ public class PerkRoll : MonoBehaviour
             int randomPerk = Random.Range(0, availablePerks.Count);
             curPerks[i] = availablePerks[randomPerk];
             availablePerks.Remove(availablePerks[randomPerk]);
-            perkPS[i].startColor = colors[3];
-            cardBack[i].color = colors[3];
-            if (curPerks[i] is Perks perk)
+            if (curPerks[i] is PerkEvolve perk)
             {
                 // Call the ApplyPerk method on the concrete type
-                perkText[i].text = perk.SetData();
-                cardIcon[i].sprite = perk.GetData();
-                discription[i].text = perk.SetDataDis();
+                Sprite[] sprite = perk.GetDataSprites();
+                Color[] colors = perk.GetDataColors();
+                psChar[i].startColor = colors[0];
+                psCharEvolve[i].startColor = colors[1];
+                nameTextChar[i].text = perk.changeGM.GetComponent<UpHave>().name;
+                nameTextCharEvolve[i].text = perk.evolveGM.GetComponent<UpHave>().name;
+                nameEvolution[i].text = perk.SetData();
+                spriteChar[i].sprite = sprite[0];
+                spriteCharEvolve[i].sprite = sprite[1];
+                disEvolution[i].text = perk.SetDataDis();
             }
-            PerkGM.SetActive(true);
+            EvolveGM.SetActive(true);
         }
     }
     public void RerollPerk()

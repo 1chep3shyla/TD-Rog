@@ -23,6 +23,17 @@ public class GameBack
     public bool[] boughtStat = new bool[32];
     public int getItem;
     public int sellItem;
+    public int damageAll;
+
+    public int healthWin;
+    public int healthBreak;
+    public int towerSet;
+    public int poisonedCount;
+    public int fireCount;
+    public int iceCount;
+    public bool minSpeed;
+    public int hardWinning;
+    public int perfecto;
     public static GameBack Instance
     {
         get

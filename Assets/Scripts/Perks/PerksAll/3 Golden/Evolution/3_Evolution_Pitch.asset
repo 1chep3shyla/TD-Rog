@@ -24,3 +24,5 @@ MonoBehaviour:
   name: Pitch Evolution
   disc: Evolves a Fire Tower into a Pitch Tower
   sprite: {fileID: 1583188029, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  changeColor: {r: 1, g: 0.34117648, b: 0.33333334, a: 0.5882353}
+  changeColorEvolve: {r: 0.5943396, g: 0.15780208, b: 0, a: 0.5882353}

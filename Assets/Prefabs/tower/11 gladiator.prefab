@@ -56,8 +56,7 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Gladiator Tower
-  description: "\u0422\u043E \u0447\u0442\u043E \u043D\u0435 \u0443\u0431\u0438\u0432\u0430\u0435\u0442
-    - \u0434\u0435\u043B\u0430\u0435\u0442 \u0435\u0433\u043E \u0421\u0418\u041B\u042C\u041D\u0415\u0415"
+  description: What doesn't kill makes him STRONGER.
   discInfo: Damage:{0}
   curAttackSpeed: 0
   attackSpeed: 0.7
@@ -91,7 +90,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c43167401463ca745944056ff30a89fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

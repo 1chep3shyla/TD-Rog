@@ -18,11 +18,13 @@ public class GlobalSee : MonoBehaviour
     [Space]
     public GlobalUp[] allUps;
     public GlobalUp allUpsCur;
+    public int curIndex;
     void Start()
     {
         UpdateFillAmounts();
         for(int i =0; i < allUps.Length;i++)
         {
+            allUps[i].bought = GameBack.instance.boughtStat[i];
             if(allUps[i].bought)
             {
                 allUps[i].ApplyBuffSave();
@@ -37,6 +39,7 @@ public class GlobalSee : MonoBehaviour
     {
         UpdateFillAmounts();
         allUpsCur = allUps[index];
+        curIndex = index;
         nameText.text = allUps[index].name;
         iconImage.sprite = allUps[index].icon;
         descriptionText.text = string.Format(allUps[index].description, allUps[index].onWhichUp);
@@ -53,9 +56,8 @@ public class GlobalSee : MonoBehaviour
     }
     public void Buy()
     {
-        allUpsCur.ApplyBuff();
+        allUpsCur.ApplyBuff(curIndex);
         UpdateFillAmounts();
-        SaveManager.instance.SaveGameData();
     }
     void UpdateFillAmounts()
     {

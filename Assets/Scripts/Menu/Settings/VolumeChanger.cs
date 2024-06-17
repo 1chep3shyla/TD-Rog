@@ -4,14 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 public class VolumeChanger : MonoBehaviour
 {
-    public AudioSource musicAs;
-    public AudioSource sfxAs;
-    public Slider musicSlider;
-    public Slider sfxSlider;
-    public bool gameIs;
+   public AudioSource[] musicAudioSources; // Массив для музыкальных аудио
+    public AudioSource[] sfxAudioSources;   // Массив для звуковых эффектов аудио
+    public Slider musicSlider;              // Слайдер для управления громкостью музыки
+    public Slider sfxSlider;                // Слайдер для управления громкостью звуковых эффектов
+    public bool gameIs;                     // Флаг, указывающий, является ли игра активной
+
     void Start()
     {
-        if(!gameIs)
+        if (!gameIs)
         {
             ChangeVolume();
         }
@@ -19,22 +20,37 @@ public class VolumeChanger : MonoBehaviour
         {
             ChangeVolumeGame();
         }
-
     }
 
-    // Update is called once per frame
+    // Метод для изменения громкости звуков
     public void ChangeVolume()
     {
-        GameBack.Instance.volumeMusic = musicSlider.value;
-        GameBack.Instance.volumeSFX = sfxSlider.value;
-        musicAs.volume = GameBack.Instance.volumeMusic/1.6f;
-        sfxAs.volume = GameBack.Instance.volumeSFX/2.5f;
+        float musicVolume = musicSlider.value / 1.6f;
+        float sfxVolume = sfxSlider.value / 2.5f;
+
+        // Установка громкости для каждого AudioSource в массиве
+        foreach (AudioSource audioSource in musicAudioSources)
+        {
+            if (audioSource != null)
+            {
+                audioSource.volume = musicVolume;
+            }
+        }
+
+        foreach (AudioSource audioSource in sfxAudioSources)
+        {
+            if (audioSource != null)
+            {
+                audioSource.volume = sfxVolume;
+            }
+        }
     }
 
+    // Метод для установки громкости в игре
     public void ChangeVolumeGame()
     {
-        musicSlider.value = GameBack.Instance.volumeMusic/1.6f;
-        sfxSlider.value = GameBack.Instance.volumeSFX/1.6f;
+        musicSlider.value = GameBack.Instance.volumeMusic * 1.6f;
+        sfxSlider.value = GameBack.Instance.volumeSFX * 2.5f;
         ChangeVolume();
     }
 }

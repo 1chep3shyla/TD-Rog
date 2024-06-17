@@ -4,32 +4,48 @@ using UnityEngine;
 
 public class BatTower : MonoBehaviour
 {
-    public GameObject objectPrefab; // The prefab for the object with BatController component
-    public int numberOfObjects = 5; // Number of objects to create
-    public Transform orbitTarget; // The target around which objects will orbit
-    public float orbitRadius = 5f; // Radius of the orbit
-    public int damage;
-    public float speed;
-    public BatController[] allBats;
-    private UpHave uh;
+    public GameObject objectPrefab; // Префаб объекта с компонентом BatController
+    public Transform orbitTarget; // Цель, вокруг которой объекты будут вращаться
+    public float orbitRadius = 5f; // Радиус орбиты
+    public BatController[] allBats; // Массив всех контроллеров летучих мышей
+    private UpHave uh; // Ссылка на компонент UpHave
+
+    private int previousLevel = -1; // Переменная для хранения предыдущего уровня
+
+    void Start()
+    {
+        uh = GetComponent<UpHave>(); // Получаем компонент UpHave из текущего объекта
+        CreateObjects((int)GetComponent<UpHave>().towerDataCur.lvlData[GetComponent<UpHave>().LVL, 4]); // Создаем объекты при запуске
+    }
 
     void Update()
     {
-        damage = uh.curDamage;
-        speed = uh.attackSpeed;
+        int currentLevel = uh.LVL; // Получаем текущий уровень из UpHave
+
+        // Проверяем, изменился ли уровень
+        if (currentLevel != previousLevel)
+        {
+            // Удаляем все текущие объекты
+            DestroyAllObjects();
+
+            // Обновляем количество объектов на основе нового уровня
+            int numberOfObjects = (int)uh.towerDataCur.lvlData[currentLevel, 4];
+            CreateObjects(numberOfObjects); // Создаем новые объекты с обновленным количеством
+
+            // Обновляем предыдущий уровень
+            previousLevel = currentLevel;
+        }
+
+        // Обновляем параметры каждой летучей мыши
         for (int i = 0; i < allBats.Length; i++)
         {
-            allBats[i].orbitSpeed = gameObject.GetComponent<UpHave>().attackSpeed + gameObject.GetComponent<UpHave>().attackSpeed - gameObject.GetComponent<UpHave>().curAttackSpeed;
-            allBats[i].dmg = gameObject.GetComponent<UpHave>().curDamage;
+            allBats[i].orbitSpeed = uh.attackSpeed; // Установка скорости вращения
+            allBats[i].dmg = uh.curDamage; // Установка урона
         }
     }
-    private void Start()
-    {
-        uh = gameObject.GetComponent<UpHave>();
-        CreateObjects();
-    }
 
-    private void CreateObjects()
+    // Метод для создания объектов
+    private void CreateObjects(int numberOfObjects)
     {
         allBats = new BatController[numberOfObjects];
         for (int i = 0; i < numberOfObjects; i++)
@@ -46,15 +62,29 @@ public class BatTower : MonoBehaviour
             if (batController != null)
             {
                 allBats[i] = batController;
-                batController.SetTarget(orbitTarget);
-                batController.SetOrbitRadius(orbitRadius);
-                batController.SetOrbitAngle(angle); // Pass the angle to the BatController
-                batController.dmg = damage;
-                batController.orbitSpeed = speed;
+                batController.SetTarget(orbitTarget); // Устанавливаем цель вращения
+                batController.SetOrbitRadius(orbitRadius); // Устанавливаем радиус орбиты
+                batController.SetOrbitAngle(angle); // Устанавливаем угол орбиты
             }
         }
     }
 
+    // Метод для удаления всех текущих объектов
+    private void DestroyAllObjects()
+    {
+        if (allBats != null)
+        {
+            for (int i = 0; i < allBats.Length; i++)
+            {
+                if (allBats[i] != null)
+                {
+                    Destroy(allBats[i].gameObject);
+                }
+            }
+        }
+    }
+
+    // Отрисовка радиуса орбиты в редакторе
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;

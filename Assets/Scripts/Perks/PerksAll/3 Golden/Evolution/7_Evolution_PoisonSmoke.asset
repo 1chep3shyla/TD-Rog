@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1403505117b8488ee1d6de8670276, type: 3}
   m_Name: 7_Evolution_PoisonSmoke
   m_EditorClassIdentifier: 
+  buffGlobal: 0
+  name: Poison Smoke Evolution
+  disc: Evolves a Poison Tower into a Poison Smoke Tower
+  indexOfBuff: 0
+  sprite: {fileID: 464597178, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
   indexCur: 7
   changeGM: {fileID: 2056256240725061661, guid: 5f57e619bcce08a4ca5f532989e1746f, type: 3}
   evolveGM: {fileID: 2056256240725061661, guid: 30951b09f72fcc043bb24f0e76284f34, type: 3}
+  perkNo: {fileID: 0}
   name: Poison Smoke Evolution
   disc: Evolves a Poison Tower into a Poison Smoke Tower
   sprite: {fileID: 464597178, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  changeColor: {r: 0.12941177, g: 1, b: 0, a: 0.5882353}
+  changeColorEvolve: {r: 0.050980393, g: 0.40392157, b: 0, a: 0.5882353}

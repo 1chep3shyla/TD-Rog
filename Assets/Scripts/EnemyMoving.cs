@@ -114,6 +114,7 @@ public class EnemyMoving : MonoBehaviour
 
     private IEnumerator SlowCoroutine(float time, float slowPower, float powering)
     {
+        GameBack.Instance.minSpeed = true;
         if (powering < speed && powering > 0f)
         {
             speed = powering;

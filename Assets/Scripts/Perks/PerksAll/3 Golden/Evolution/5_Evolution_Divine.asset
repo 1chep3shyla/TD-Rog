@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1403505117b8488ee1d6de8670276, type: 3}
   m_Name: 5_Evolution_Divine
   m_EditorClassIdentifier: 
+  buffGlobal: 0
+  name: Divine Evolution
+  disc: Evolves a Light Tower into a Divine Tower
+  indexOfBuff: 0
+  sprite: {fileID: -1938932545, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
   indexCur: 5
   changeGM: {fileID: 2056256240725061661, guid: f6d48dcbb854b3d4e8d4e7e4e0916b08, type: 3}
   evolveGM: {fileID: 2056256240725061661, guid: 928107622ae7c7b4f89e69661f5ecd31, type: 3}
+  perkNo: {fileID: 0}
   name: Divine Evolution
   disc: Evolves a Light Tower into a Divine Tower
   sprite: {fileID: -1938932545, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  changeColor: {r: 0.972549, g: 1, b: 0.3529412, a: 0.5882353}
+  changeColorEvolve: {r: 1, g: 0.92156863, b: 0, a: 0.5882353}

@@ -38,11 +38,44 @@ public class LoseWinScript : MonoBehaviour
             }
             GameBack.Instance.gamePlayed++;
         }
+        if(GameManager.Instance.healthBreak >=GameBack.Instance.healthBreak)
+        {
+            GameBack.Instance.healthBreak = GameManager.Instance.healthBreak;
+        }
         SaveManager.instance.SaveData();
     }
 
     public void Win()
     {
+        if(GameManager.Instance.Health<GameBack.Instance.healthWin)
+        {
+            GameBack.Instance.healthWin = GameManager.Instance.Health;
+        }
+        bool canWork = true;
+        bool canWorkPerfecto = false;
+        for(int i = 0; i < GameManager.Instance.buff.Length;i++)
+        {
+            if(GameManager.Instance.buff[i] >= 0)
+            {
+                canWork = false;
+            }
+            if(GameManager.Instance.buff[i] != 100 && !canWorkPerfecto)
+            {
+                canWorkPerfecto = false;
+            }
+            else
+            {
+                canWorkPerfecto = true;
+            }
+        }
+        if(canWork)
+        {
+            GameBack.Instance.hardWinning = 1;
+        }
+        if(canWorkPerfecto)
+        {
+            GameBack.Instance.perfecto = 1;
+        }
         completeGM.SetActive(true);
         titleWhich.text = "Stage Completed!";
         pauseGM.SetActive(false);

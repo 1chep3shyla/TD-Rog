@@ -56,8 +56,7 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Rage Tower
-  description: "\u041E\u043D \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u0431\u0435\u0437\u0443\u043C\u0435\u043D
-    \u0431\u0435\u0433\u0438\u0442\u0435..."
+  description: He's too crazy to run...
   discInfo: Damage:{0}
   curAttackSpeed: 0
   attackSpeed: 1
@@ -91,7 +90,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c43167401463ca745944056ff30a89fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

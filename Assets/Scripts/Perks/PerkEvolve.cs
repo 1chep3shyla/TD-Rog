@@ -12,6 +12,8 @@ public class PerkEvolve : Perks
     [TextArea]
     public string disc;
     public Sprite sprite;
+    public Color changeColor; 
+    public Color changeColorEvolve;
 
     public override void ApplyPerk()
     {
@@ -43,5 +45,19 @@ public class PerkEvolve : Perks
     public Sprite GetData()
     {
         return sprite;
+    }
+    public Sprite[] GetDataSprites()
+    {
+        Sprite[] sprites = new Sprite[2];
+        sprites[0] = changeGM.GetComponent<SpriteRenderer>().sprite;
+        sprites[1] = evolveGM.GetComponent<SpriteRenderer>().sprite;
+        return sprites;
+    }
+        public Color[] GetDataColors()
+    {
+        Color[] colors = new Color[2];
+        colors[0] = changeColor;
+        colors[1] = changeColorEvolve;
+        return colors;
     }
 }

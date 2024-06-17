@@ -67,6 +67,11 @@ public class AchievementManager : MonoBehaviour
         CheckEnemiesKilledAchievements();
         CheckBuffAchievements();
         CheckGoldAchievements();
+        CheckDamageCountAchievements();
+        CheckHealthAchievements();
+        CheckHealthBreakAchievements();
+        CheckDotAchievements();
+        CheckHardWinAchievements();
     }
 
     public void UpdateAchi()
@@ -101,12 +106,54 @@ public class AchievementManager : MonoBehaviour
             Debug.LogWarning("Achievement with ID " + achievementID + " not found!");
         }
     }
+    private void CheckHealthAchievements()
+    {
+        if (GameBack.Instance.healthWin == 1 && GameBack.Instance.healthWin !=0) UnlockAchievement("winHp_1");
+        if (GameBack.Instance.healthWin <= 5 && GameBack.Instance.healthWin !=0 ) UnlockAchievement("winHp_5");
+        
+    }
+    private void CheckHealthBreakAchievements()
+    {
+        if (GameBack.Instance.healthBreak >= 100) UnlockAchievement("loseHeal_100");
+        
+    }
+    private void CheckTowerAchievements()
+    {
+        if (GameBack.Instance.towerSet >= 100) UnlockAchievement("putTower_200");
+        
+    }
+    private void CheckHardWinAchievements()
+    {
+        if (GameBack.Instance.hardWinning == 1) UnlockAchievement("hard_win");
+        if (GameBack.Instance.perfecto == 1) UnlockAchievement("perfecto_win_1");
+        
+    }
+    private void CheckDotAchievements()
+    {
+        if (GameBack.Instance.poisonedCount >= 100) UnlockAchievement("poisonEnemy_100");
+        if (GameBack.Instance.poisonedCount >= 1000) UnlockAchievement("poisonEnemy_1000");
+        if (GameBack.Instance.poisonedCount >= 10000) UnlockAchievement("poisonEnemy_10000");
+        if (GameBack.Instance.fireCount >= 100) UnlockAchievement("fireEnemy_100");
+        if (GameBack.Instance.fireCount >= 1000) UnlockAchievement("fireEnemy_1000");
+        if (GameBack.Instance.fireCount >= 10000) UnlockAchievement("fireEnemy_10000");  
+        if (GameBack.Instance.iceCount >= 100) UnlockAchievement("iceEnemy_100");
+        if (GameBack.Instance.iceCount >= 1000) UnlockAchievement("iceEnemy_1000");
+        if (GameBack.Instance.iceCount >= 10000) UnlockAchievement("iceEnemy_10000");
+        
+    }
      private void CheckWaveCountAchievements()
     {
         if (GameBack.Instance.waveCount >= 10) UnlockAchievement("waveCountAchievement_10");
         if (GameBack.Instance.waveCount >= 25) UnlockAchievement("waveCountAchievement_25");
         if (GameBack.Instance.waveCount >= 100) UnlockAchievement("waveCountAchievement_100");
         if (GameBack.Instance.waveCount >= 500) UnlockAchievement("waveCountAchievement_500");
+    }
+    private void CheckDamageCountAchievements()
+    {
+        if (GameBack.Instance.damageAll >= 1000) UnlockAchievement("damageAchievement_1000");
+        if (GameBack.Instance.damageAll >= 10000) UnlockAchievement("damageAchievement_10000");
+        if (GameBack.Instance.damageAll >= 100000) UnlockAchievement("damageAchievement_100000");
+        if (GameBack.Instance.damageAll >= 1000000) UnlockAchievement("damageAchievement_1000000");
     }
 
     private void CheckGamePlayedAchievements()

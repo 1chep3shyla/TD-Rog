@@ -24,3 +24,5 @@ MonoBehaviour:
   name: Split Evolution
   disc: Evolves a Default Tower into a Split Tower
   sprite: {fileID: 2084314889, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  changeColor: {r: 0.58431375, g: 1, b: 0.52156866, a: 0.5882353}
+  changeColorEvolve: {r: 0.41568628, g: 0.41568628, b: 0.41568628, a: 0.5882353}

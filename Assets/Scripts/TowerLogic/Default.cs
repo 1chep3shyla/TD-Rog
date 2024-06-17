@@ -108,8 +108,8 @@ public class Default : MonoBehaviour
             critChance = upHaveScript.critChance;
             attackRadius = dt.lvlData[lvl, 2];
             slowPower = dt.lvlData[lvl, 5];
-            firePower = (int)dt.lvlData[lvl, 6];
-            poisonPower = (int)dt.lvlData[lvl, 7];
+            firePower = damage * (int)((float)(dt.lvlData[lvl, 6] + GameManager.Instance.buff[2])/100);
+            poisonPower = damage *(int)((float)(dt.lvlData[lvl, 7]+ GameManager.Instance.buff[3])/100);
             stanChance = (int)dt.lvlData[lvl, 8];
             portalChange = (int)dt.lvlData[lvl, 9];
             maxTargets = (int)dt.lvlData[lvl, 10];
@@ -329,8 +329,8 @@ public class Default : MonoBehaviour
                         }
                         else if(bulletController.type == TypeBull.gear)
                         {
-                            bulletController.damage = damage + (int)((float)damage * (float)GetComponent<GearTower>().objectCount* 0.15f);
-                            attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100)) + (0.08f * (float)GetComponent<GearTower>().objectCount);
+                            bulletController.damage = damage;
+                            attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100)) + (Chain/100 * (float)GetComponent<GearTower>().objectCount);
                         }
                     }
                     else if (bulletCannonController != null)
@@ -400,20 +400,22 @@ public class Default : MonoBehaviour
     }
     void AttackLight()
     {
-        if (attackCooldown <= 0f && currentTargets.Count >= 3 && enemiesInRange.Count >= maxTargets)
+        if (attackCooldown <= 0f && enemiesInRange.Count > 0)
         {
             GameManager.Instance.aS.PlayOneShot(hitSFX);
             GameManager.Instance.aS.pitch = Random.Range(0.8f, 1.1f);
             animator.SetTrigger("Attacking");
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
             LightBull bulletScript = bullet.GetComponent<LightBull>();
-            bulletScript.targetEnemies = new Transform[maxTargets];
+            bulletScript.targetEnemies = new Transform[Mathf.Min(maxTargets, enemiesInRange.Count)]; // Initialize only necessary length
             bulletScript.damage = damage;
             bulletScript.critChance = critChance;
-            for (int i = 0; i < maxTargets; i++)
+
+            for (int i = 0; i < bulletScript.targetEnemies.Length; i++)
             {
                 bulletScript.targetEnemies[i] = enemiesInRange[i];
             }
+
             if (GetComponent<UpHave>().id == 23)
             {
                 int random = Random.Range(0, 100);
@@ -422,6 +424,7 @@ public class Default : MonoBehaviour
                     StartCoroutine(DivineAttack());
                 }
             }
+
             UpdateFlip(enemiesInRange[0]);
             attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));
         }

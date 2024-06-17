@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 using TMPro;
 using System;
+
 public class Rolling : MonoBehaviour
 {
     public Slot[] slots;
@@ -13,6 +14,7 @@ public class Rolling : MonoBehaviour
     public GameObject[] towers;
     public Button[] butChoose;
     public Sprite[] imageidTower;
+    public float[] chanceTower;
     public GameObject towerPrefab;
     public GameObject unPanel;
     public GameManager GameM;
@@ -46,46 +48,7 @@ public class Rolling : MonoBehaviour
     }
     void Update()
     {
-        if (GameManager.Instance.curWave < 10)
-        {   
-            costTower = 150;
-            if(towerPrefab!=null)
-            {
-                towerPrefab.GetComponent<UpHave>().LVL = 0;
-            }
-        }
-        else if(GameManager.Instance.curWave >= 10 && GameManager.Instance.curWave < 15 )
-        {
-            costTower = 300;
-            if(towerPrefab!=null)
-            {
-                towerPrefab.GetComponent<UpHave>().LVL = 1;
-            }
-        }
-        else if(GameManager.Instance.curWave >= 15 && GameManager.Instance.curWave < 20)
-        {
-            costTower = 600;
-            if(towerPrefab!=null)
-            {
-                towerPrefab.GetComponent<UpHave>().LVL = 2;
-            }
-        }
-        else if(GameManager.Instance.curWave >= 20 && GameManager.Instance.curWave < 25)
-        {
-            costTower = 1200;
-            if(towerPrefab!=null)
-            {
-                towerPrefab.GetComponent<UpHave>().LVL = 3;
-            }
-        }
-        else if(GameManager.Instance.curWave >= 25)
-        {
-            costTower = 2400;
-            if(towerPrefab!=null)
-            {
-                towerPrefab.GetComponent<UpHave>().LVL = 4;
-            }
-        }
+
         //costTowerText.text = costTower.ToString("");
         //costTowerText.text = "300";
         HandleMouseInput();
@@ -189,7 +152,9 @@ public class Rolling : MonoBehaviour
     private void UpdateCursorVisibility()
     {
         cursor.SetActive(choosing && towerPrefab != null) ;
-        radiusAttack.SetActive(choosing && towerPrefab != null && towerPrefab.GetComponent<Default>() != null);
+        radiusAttack.SetActive((choosing && towerPrefab != null)&& (towerPrefab.GetComponent<Default>() != null || 
+        towerPrefab.GetComponent<AttackBuff>() != null || 
+        towerPrefab.GetComponent<SpeedBuff>() != null));
         if (choosing && towerPrefab != null)
         {
             cursor.transform.position = new Vector2(towerPrefab.transform.position.x, towerPrefab.transform.position.y +0.05f);
@@ -197,6 +162,14 @@ public class Rolling : MonoBehaviour
             if(towerPrefab.GetComponent<Default>() != null)
             {
                 radiusAttack.transform.localScale = new Vector2(towerPrefab.GetComponent<Default>().attackRadius,towerPrefab.GetComponent<Default>().attackRadius);
+            }
+            else if(towerPrefab.GetComponent<AttackBuff>() != null)
+            {
+                radiusAttack.transform.localScale = new Vector2(towerPrefab.GetComponent<AttackBuff>().boostRadius,towerPrefab.GetComponent<AttackBuff>().boostRadius);
+            }
+            else if(towerPrefab.GetComponent<SpeedBuff>() != null)
+            {
+                radiusAttack.transform.localScale = new Vector2(towerPrefab.GetComponent<SpeedBuff>().boostRadius,towerPrefab.GetComponent<SpeedBuff>().boostRadius);
             }
         }
     }
@@ -213,6 +186,8 @@ public class Rolling : MonoBehaviour
         int rowIndex = vec3Int.y;
         if (towerPrefab != null && allBases[columnIndex + 10, rowIndex + 3] == null)
         {
+            int[] towerCosts = { 150, 900, 1800, 3600, 7200 };
+            costTower = towerCosts[towerPrefab.GetComponent<UpHave>().LVL];
             if (GameManager.Instance.Gold >= costTower)
             {
                 //GameManager.Instance.Gold -= costTower;
@@ -220,6 +195,7 @@ public class Rolling : MonoBehaviour
                 {
                     GameManager.Instance.gameObject.GetComponent<GameController>().OffBut(i);
                 }
+                GameBack.Instance.towerSet++;
                 GameManager.Instance.Gold -= costTower;
                 GameManager.Instance.ChangeMoney();
                 if (towerPrefab.GetComponent<UpHave>().id == 26)
@@ -281,6 +257,7 @@ public class Rolling : MonoBehaviour
             GameManager.Instance.Gold -= 300;
             GameManager.Instance.ChangeMoney();
             //costTower += 10;
+        GameManager.Instance.cardAnim.Play("card_animation", -1, 0f);
             Roll();
         }
         else
@@ -288,36 +265,116 @@ public class Rolling : MonoBehaviour
             GameManager.Instance.notEnought();
         }
     }
-    public void Roll()
+   public void Roll()
+{
+    GameManager.Instance.ChangeMoney();
+    pressSpace.SetActive(false);
+    choosing = false;
+    
+    int[] towerCosts = { 150, 900, 1800, 3600, 7200 };
+    float[] weights = new float[towerCosts.Length];
+
+    // Determine maximum available level based on gold amount
+    int maxLevel;
+
+    if (GameManager.Instance.Gold >= 6000)
     {
-        GameManager.Instance.ChangeMoney();
-        pressSpace.SetActive(false);
-        choosing = false;
-        bool[] lockerTower = new bool[towers.Length];
-
-        for (int i = 0; i < slots.Length; i++)
-        {
-            butChoose[i].interactable = true;
-            butChoose[i].gameObject.SetActive(true);
-            int randomId = UnityEngine.Random.Range(0, towers.Length);
-            while (lockerTower[randomId])
-            {
-                randomId = UnityEngine.Random.Range(0, towers.Length);
-            }
-
-            lockerTower[randomId] = true;
-            costOfTowerText[i].text = costTower.ToString("");
-            slots[i].id = randomId;
-            slots[i].icon.sprite = imageidTower[slots[i].id];
-            slots[i].tower = towers[randomId];
-            if (slots[i].tower != null)
-            {
-                nameOfTowerText[i].text = slots[i].tower.GetComponent<UpHave>().name;
-            }
-
-        }
+        maxLevel = 5;
+    }
+    else if (GameManager.Instance.Gold >= 3500)
+    {
+        maxLevel = 4;
+    }
+    else if (GameManager.Instance.Gold >= 1700)
+    {
+        maxLevel = 3;
+    }
+    else if (GameManager.Instance.Gold >= 700)
+    {
+        maxLevel = 2;
+    }
+    else 
+    {
+        maxLevel = 1; // Minimum level 1 if gold is less than 700
     }
 
+    // Initialize available levels array
+    int[] availableLevels = new int[maxLevel];
+    for (int i = 0; i < maxLevel; i++)
+    {
+        availableLevels[i] = i;
+    }
+
+    // Calculate weights for available levels and determine total weight
+    float totalWeight = 0;
+    for (int i = 0; i < maxLevel; i++)
+    {
+        weights[i] = Mathf.Log(GameManager.Instance.Gold / towerCosts[i] + 1);
+        totalWeight += weights[i];
+    }
+
+    // Display chances for each tower
+    for (int i = 0; i < weights.Length; i++)
+    {
+        float chance = weights[i] / totalWeight * 100f; // Calculate percentage chance
+        Debug.Log($"Chance for Tower {i + 1}: {chance:F2}%");
+        // You can display this chance in your UI or store it as needed
+    }
+
+    // Normalize weights to probabilities
+    float[] probabilities = new float[maxLevel];
+    for (int i = 0; i < maxLevel; i++)
+    {
+        probabilities[i] = weights[i] / totalWeight;
+    }
+
+    bool[] usedTowers = new bool[towers.Length];
+
+    for (int i = 0; i < slots.Length; i++)
+    {
+        butChoose[i].interactable = true;
+        butChoose[i].gameObject.SetActive(true);
+
+        // Select a tower randomly
+        int randomId = UnityEngine.Random.Range(0, towers.Length);
+        while (usedTowers[randomId])
+        {
+            randomId = UnityEngine.Random.Range(0, towers.Length);
+        }
+        usedTowers[randomId] = true;
+
+        // Select level based on probabilities
+        int randomLevel = GetRandomLevel(probabilities);
+
+        // Assign tower and level to slot
+        slots[i].id = randomId;
+        slots[i].icon.sprite = imageidTower[randomId];
+        slots[i].tower = towers[randomId];
+        slots[i].tower.GetComponent<UpHave>().LVL = availableLevels[randomLevel]; // Assign the actual level
+        costOfTowerText[i].text = towerCosts[availableLevels[randomLevel]].ToString();
+
+        if (slots[i].tower != null)
+        {
+            nameOfTowerText[i].text = slots[i].tower.GetComponent<UpHave>().name;
+        }
+    }
+}
+
+private int GetRandomLevel(float[] probabilities)
+{
+    float randomPoint = UnityEngine.Random.value;
+    float cumulative = 0.0f;
+
+    for (int i = 0; i < probabilities.Length; i++)
+    {
+        cumulative += probabilities[i];
+        if (randomPoint < cumulative)
+        {
+            return i;
+        }
+    }
+    return probabilities.Length - 1; // This should ideally not happen if probabilities sum to 1.
+}
     public void Choose(int i)
     {
         GameManager.Instance.DownLay();

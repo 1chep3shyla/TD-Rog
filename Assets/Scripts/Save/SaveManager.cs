@@ -23,6 +23,7 @@ public class SaveManager : MonoBehaviour
         public int[] indexTowerBut = new int[5];
         public int[,] towerLevels = new int[20, 7];
         public int[,] indexTower = new int[20, 7];
+        public int healthBreak;
         public PositionData[,] towerPositions = new PositionData[20, 7]; // Изменение типа массива
     }
 
@@ -40,6 +41,15 @@ public class SaveManager : MonoBehaviour
         public float[] buff = new float[9];
         public int getItem;
         public int sellItem;
+        public int damageAll;
+        public int healthBreak;
+        public int healthWin;
+        public int poisonedCount;
+        public int fireCount;
+        public int iceCount;
+        public int towerSet;
+        public int hardWinning;
+        public int perfecto;
     }
     // Класс для хранения позиции, который реализует интерфейс Serializable
     [System.Serializable]
@@ -69,10 +79,6 @@ public class SaveManager : MonoBehaviour
     public GameObject towerBase;
     public static SaveManager instance;
 
-    void Start()
-    {
-        LoadGameData();
-    }
 
     private void Awake()
     {
@@ -85,6 +91,7 @@ public class SaveManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        LoadGameData();
     }
 
     public void SaveData()
@@ -120,6 +127,7 @@ public class SaveManager : MonoBehaviour
                 }
             }
         }
+        data.healthBreak = GameManager.Instance.healthBreak;
 
         BinaryFormatter formatter = new BinaryFormatter();
         string filePath = Application.persistentDataPath + "/levelData.dat";
@@ -148,6 +156,8 @@ public class SaveManager : MonoBehaviour
             Rolling roll = GameManager.Instance.gameObject.GetComponent<Rolling>();
             GameBack.Instance.indexState = data.indexState;
             GameManager.Instance.SetDataBack();
+            GameManager.Instance.states[data.indexState].SetActive(true);
+            GameManager.Instance.spawn = GameObject.Find($"{GameManager.Instance.states[data.indexState].name}/Spawner").GetComponent<Spawner>();
             GameManager.Instance.spawn.currentWaveIndexMain = data.currentLevel;
             GameManager.Instance.Gold = data.gold;
             GameManager.Instance.Health = data.health;
@@ -190,6 +200,7 @@ public class SaveManager : MonoBehaviour
                 }
                 //items[iItem].count = data.countItem[iItem];
             }
+            GameManager.Instance.healthBreak = data.healthBreak;
 
             Debug.Log("Данные загружены");
         }
@@ -209,6 +220,7 @@ public class SaveManager : MonoBehaviour
         data.winGame = GameBack.Instance.winGame;
         data.loseFirstWave = GameBack.Instance.loseFirstWave;
         data.enemiesKilled = GameBack.Instance.enemiesKilled;
+        data.damageAll = GameBack.Instance.damageAll;
         Array.Copy(GameBack.Instance.buff, data.buff, data.buff.Length);
         data.getItem = GameBack.Instance.getItem;
         data.sellItem = GameBack.Instance.sellItem;
@@ -217,7 +229,14 @@ public class SaveManager : MonoBehaviour
         {
             data.boughtStat[i] = GameBack.Instance.boughtStat[i];
         }
-
+        data.healthBreak = GameBack.Instance.healthBreak;
+        data.healthWin = GameBack.Instance.healthWin;
+        data.poisonedCount = GameBack.Instance.poisonedCount;
+        data.fireCount = GameBack.Instance.fireCount;
+        data.iceCount = GameBack.Instance.iceCount;
+        data.towerSet = GameBack.Instance.towerSet;
+        data.hardWinning = GameBack.Instance.hardWinning;
+        data.perfecto = GameBack.Instance.perfecto;
         BinaryFormatter formatter = new BinaryFormatter();
         string filePath = Application.persistentDataPath + "/achivementData.dat";
         FileStream stream = new FileStream(filePath, FileMode.Create);
@@ -253,6 +272,15 @@ public class SaveManager : MonoBehaviour
             {
                 GameBack.Instance.boughtStat[i] = data.boughtStat[i];
             }
+            GameBack.Instance.damageAll = data.damageAll;
+            GameBack.Instance.healthBreak = data.healthBreak;
+            GameBack.Instance.healthWin = data.healthWin;
+            GameBack.Instance.poisonedCount = data.poisonedCount;
+            GameBack.Instance.fireCount = data.fireCount;
+            GameBack.Instance.iceCount = data.iceCount;
+            GameBack.Instance.towerSet = data.towerSet;
+            GameBack.Instance.hardWinning = data.hardWinning;
+            GameBack.Instance.perfecto = data.perfecto ;
         }
     }
 }

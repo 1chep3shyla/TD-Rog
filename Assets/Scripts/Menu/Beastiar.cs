@@ -17,8 +17,6 @@ public class Beastiar
             if (instance == null)
             {
                 instance = new Beastiar();
-                instance.seeThis[0] = true;
-                instance.seeThis[1] = true;
                 //instance.seeThis[2] = true;
             }
             return instance;

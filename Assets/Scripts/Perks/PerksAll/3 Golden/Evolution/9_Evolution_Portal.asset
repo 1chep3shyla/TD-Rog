@@ -24,3 +24,5 @@ MonoBehaviour:
   name: Storm Evolution
   disc: Evolves a Random Tower into a Portal Tower
   sprite: {fileID: 2000419361, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  changeColor: {r: 0.3019608, g: 0.3019608, b: 0.3019608, a: 0.5882353}
+  changeColorEvolve: {r: 0.75725114, g: 0, b: 0.7735849, a: 0.60784316}

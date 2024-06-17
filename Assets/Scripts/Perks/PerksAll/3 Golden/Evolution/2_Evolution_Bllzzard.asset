@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1403505117b8488ee1d6de8670276, type: 3}
   m_Name: 2_Evolution_Bllzzard
   m_EditorClassIdentifier: 
+  buffGlobal: 0
+  name: Blizzard Evolution
+  disc: Evolves an Ice Tower into a Split Tower
+  indexOfBuff: 0
+  sprite: {fileID: -1572688463, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
   indexCur: 2
   changeGM: {fileID: 2056256240725061661, guid: 69c3fdbe6d22e4a439aa781b30203258, type: 3}
   evolveGM: {fileID: 2056256240725061661, guid: d5cdd2cabaf6f474881a99fc695e3df3, type: 3}
+  perkNo: {fileID: 0}
   name: Blizzard Evolution
   disc: Evolves an Ice Tower into a Split Tower
   sprite: {fileID: -1572688463, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  changeColor: {r: 0.52156866, g: 1, b: 0.98039216, a: 0.5882353}
+  changeColorEvolve: {r: 0, g: 0.57254905, b: 1, a: 0.5882353}

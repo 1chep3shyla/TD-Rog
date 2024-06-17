@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1403505117b8488ee1d6de8670276, type: 3}
   m_Name: 11_Evolution_assasin
   m_EditorClassIdentifier: 
+  buffGlobal: 0
+  name: Assasin Evolution
+  disc: Evolves a Thief Tower into a Assasin Tower
+  indexOfBuff: 0
+  sprite: {fileID: -1008612840, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
   indexCur: 11
   changeGM: {fileID: 2056256240725061661, guid: 0f848e067fec08f478ddd98847e4478a, type: 3}
   evolveGM: {fileID: 2056256240725061661, guid: 72c365b42085e2f47ae86e7e5d7b549d, type: 3}
+  perkNo: {fileID: 0}
   name: Assasin Evolution
   disc: Evolves a Thief Tower into a Assasin Tower
   sprite: {fileID: -1008612840, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  changeColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 0.60784316}
+  changeColorEvolve: {r: 0.3301887, g: 0.18191527, b: 0.18191527, a: 0.60784316}

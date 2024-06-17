@@ -56,9 +56,7 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Sun Tower
-  description: "\u0414\u0443\u043C\u0430\u044E, \u044D\u0442\u043E\u0442 \u043A\u0443\u0441\u043E\u0447\u0435\u043A
-    \u0421\u043E\u043B\u043D\u0446\u0430 \u043D\u0435 \u043B\u044E\u0431\u0438\u0442
-    \u041B\u0443\u043D\u0443"
+  description: This Sun Worshipper doesn't like the Moon
   discInfo: Damage:{0}
   curAttackSpeed: 0
   attackSpeed: 1
@@ -92,7 +90,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c43167401463ca745944056ff30a89fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

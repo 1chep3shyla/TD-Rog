@@ -43,10 +43,7 @@ public class Spawner : MonoBehaviour
         }
         SetEnemyInWave();
         GameManager.Instance.spawn = this;
-        if(GameBack.Instance.saveThis == true)
-        {
-            SaveManager.instance.LoadData();
-        }
+
     }
 
     void Update()
@@ -141,9 +138,9 @@ public class Spawner : MonoBehaviour
         if(currentWaveIndexMain + 1 < wavesMass.Length)
         {
             StartCoroutine(ClaimReward());
-            Time.timeScale = 0;
+            Time.timeScale = 0f;
             yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
-            yield return new WaitUntil(()=> gameManager.itemOpenner.allOpen == true);
+            yield return new WaitUntil(()=> gameManager.itemOpenner.countChest == 0);
             currentWaveIndexMain++;
             currentWaveIndex = 0;
             if (currentWaveIndexMain < wavesMass.Length) // Добавлена проверка
@@ -153,7 +150,8 @@ public class Spawner : MonoBehaviour
             gameManager.ClearRounds();
             SetEnemyInWave();
             yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
-                    Time.timeScale = 1f;
+            Time.timeScale = 1f;
+            //GameManager.Instance.startBut.SetActive(true);
             timeCur = timeBetweenWaves;
             while(timeCur <=0f)
             {
@@ -163,6 +161,9 @@ public class Spawner : MonoBehaviour
             start = false;
             skip = false;
             yield return null;
+            GameManager.Instance.lightUsing.IncreaseIntensity(3f);
+            yield return new WaitForSeconds(5f);
+            StartingGame();
         }
         else if(GameManager.Instance.Health > 0)
         {
@@ -191,6 +192,8 @@ public class Spawner : MonoBehaviour
         }
         yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
         gameManager.itemOpenner.OpenChest();
+        //yield return new WaitUntil(() => gameManager.itemOpenner.countChest == 0);
+        GameManager.Instance.Starting();
     }
 
     private void SpawnEnemy(int RandomEnemy)
@@ -287,6 +290,7 @@ public class Spawner : MonoBehaviour
         if(!start)
         {
             start = true;
+            GameManager.Instance.lightUsing.DecreaseIntensity(3f);
         }
         else
         {

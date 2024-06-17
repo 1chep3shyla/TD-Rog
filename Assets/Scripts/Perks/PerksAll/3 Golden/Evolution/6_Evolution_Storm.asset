@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1403505117b8488ee1d6de8670276, type: 3}
   m_Name: 6_Evolution_Storm
   m_EditorClassIdentifier: 
+  buffGlobal: 0
+  name: Storm Evolution
+  disc: Evolves a Wind Tower into a Storm Tower
+  indexOfBuff: 0
+  sprite: {fileID: -1832518227, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
   indexCur: 6
   changeGM: {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}
   evolveGM: {fileID: 2056256240725061661, guid: f0d694f381eabde46aeaa3338fe8350e, type: 3}
+  perkNo: {fileID: 0}
   name: Storm Evolution
   disc: Evolves a Wind Tower into a Storm Tower
   sprite: {fileID: -1832518227, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  changeColor: {r: 0.8862745, g: 0.8862745, b: 0.8862745, a: 0.5882353}
+  changeColorEvolve: {r: 0.3529412, g: 0.7490196, b: 1, a: 0.5882353}

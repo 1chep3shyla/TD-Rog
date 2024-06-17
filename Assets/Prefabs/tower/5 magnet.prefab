@@ -54,9 +54,7 @@ MonoBehaviour:
   UpVersion: {fileID: 2056256240725061661, guid: 16ea796a0f111c244a94ef28a8330131, type: 3}
   baseOf: {fileID: 0}
   name: Magnet Tower
-  description: "\u0417\u0430\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0442 \u043A\u0440\u0443\u0442\u0438\u0442\u044C
-    \u0432\u043E\u043A\u0440\u0443\u0433 \u0441\u0435\u0431\u044F \u0432\u0441\u044F\u043A\u0438\u0435
-    \u0436\u0435\u043B\u0435\u0437\u044F\u043A\u0438"
+  description: Makes you spin all sorts of pieces of iron around yourself
   discInfo: Damage:{0}
   curAttackSpeed: 0
   attackSpeed: 45
@@ -90,7 +88,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c43167401463ca745944056ff30a89fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -135,11 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 6556074294206078149, guid: 9585a290825295a45aae6f9fe13140df, type: 3}
-  numberOfObjects: 3
   orbitTarget: {fileID: 7348218345031596754}
   orbitRadius: 1
-  damage: 5
-  speed: 0
   allBats: []
 --- !u!58 &8125275420129533002
 CircleCollider2D:

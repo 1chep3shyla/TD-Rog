@@ -87,8 +87,7 @@ MonoBehaviour:
   UpVersion: {fileID: 2056256240725061661, guid: 001838b43f971c24baefbb2735e6568e, type: 3}
   baseOf: {fileID: 0}
   name: Wind Tower
-  description: "\u0411\u044B\u0441\u0442\u0440\u043E \u0431\u044C\u0435\u0442, \u043D\u043E
-    \u043C\u0430\u043B\u043E \u0443\u0440\u043E\u043D\u0430"
+  description: It hits fast, but it does little damage
   discInfo: Damage:{0}
   curAttackSpeed: 0
   attackSpeed: 0.25
@@ -122,7 +121,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c43167401463ca745944056ff30a89fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -14,7 +14,7 @@ public class GlobalUp : ScriptableObject
     public bool bought;
     public float[] buffGlobaly = new float[9];
 
-    public void ApplyBuff()
+    public void ApplyBuff(int index)
     {
         if(GameBack.Instance.souls >= cost && !bought)
         {
@@ -24,6 +24,8 @@ public class GlobalUp : ScriptableObject
             {
                 GameBack.Instance.buffGlobal[i] += buffGlobaly[i];
             }
+            GameBack.instance.boughtStat[index] = true;
+            SaveManager.instance.SaveGameData();
         }
     }
     public void ApplyBuffSave()

@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1403505117b8488ee1d6de8670276, type: 3}
   m_Name: 12_Evolution_Bomb
   m_EditorClassIdentifier: 
+  buffGlobal: 0
+  name: Bomb Evolution
+  disc: Evolves a Stone Thrower Tower into a Bomb Tower
+  indexOfBuff: 0
+  sprite: {fileID: -1255506719, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
   indexCur: 12
   changeGM: {fileID: 2056256240725061661, guid: f76df1e501a76354c91f03aa18286075, type: 3}
   evolveGM: {fileID: 2056256240725061661, guid: c8b72a4173a9df44db3e1699759397d2, type: 3}
+  perkNo: {fileID: 0}
   name: Bomb Evolution
   disc: Evolves a Stone Thrower Tower into a Bomb Tower
   sprite: {fileID: -1255506719, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  changeColor: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 0.60784316}
+  changeColorEvolve: {r: 0.31132078, g: 0.22321531, b: 0.15389818, a: 0.60784316}

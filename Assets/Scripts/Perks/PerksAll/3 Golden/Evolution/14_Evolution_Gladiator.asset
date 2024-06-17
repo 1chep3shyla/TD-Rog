@@ -24,3 +24,5 @@ MonoBehaviour:
   name: Gladiator Evolution
   disc: Evolves an Ancient Tower into a Gladiator Tower
   sprite: {fileID: -313071445, guid: c7bb81671c74c544083f49b04988e74e, type: 3}
+  changeColor: {r: 0.43137255, g: 0.57254905, b: 0.8117647, a: 0.60784316}
+  changeColorEvolve: {r: 0.6698113, g: 0.30800632, b: 0.19841579, a: 0.60784316}
