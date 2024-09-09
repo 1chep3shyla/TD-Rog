@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1c6c5330f00714cb17bd065e7a6a60, type: 3}
   m_Name: char_water
   m_EditorClassIdentifier: 
+  isHave: 0
   indexChar: 20
   indexEvolve: 2
   buffs:
@@ -23,6 +24,13 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 0
+  lvlChar: 0
+  expPoint: 0
+  expPointBarrier:
+  - 1000
+  - 5000
+  - 10000
   - 0
   name: Tempest Summoner
   icon: {fileID: 21300000, guid: ffbca7331ee104e438b9627051e393c2, type: 3}

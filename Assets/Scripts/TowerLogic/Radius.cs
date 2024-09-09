@@ -11,9 +11,9 @@ public class Radius : MonoBehaviour
     public float explosionRadius = 2f;
     public GameObject particle;
 
-    void Start()
+    void Awake()
     {
-        GameObject boom = Instantiate(particle, transform.position, Quaternion.identity);
+        Instantiate(particle, transform.position, Quaternion.identity);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -35,7 +35,7 @@ public class Radius : MonoBehaviour
         int randomPoc = Random.Range(0, 100);
         if (randomPoc <= stanChance && stanChance !=0)
         {
-            enemyMove.Stun(1.5f);
+            enemyMove.Stun(1f);
         }
         if (fireDamage != 0)
         {

@@ -23,7 +23,7 @@ public class ShowStats : MonoBehaviour
     {
         for(int i = 0; i < textStat.Length;i++)
         {
-            textStat[i].text = GameManager.Instance.buff[i] + "%";
+            textStat[i].text = GameManager.Instance.buff[i].ToString("F1") + "%";
         }
     }
 }

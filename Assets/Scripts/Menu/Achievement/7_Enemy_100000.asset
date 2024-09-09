@@ -15,6 +15,8 @@ MonoBehaviour:
   id: enemiesKilledAchievement_100000
   title: Annihilator Gun!
   description: Kill {0}/100000 enemies
+  localDiscription: Kill 100000 enemies
   nameData: enemiesKilled
   Icon: {fileID: 21300000, guid: 7ae0b15c5b3354e44bc52f1f52790b28, type: 3}
   isUnlocked: 0
+  characterUnlock: {fileID: 0}

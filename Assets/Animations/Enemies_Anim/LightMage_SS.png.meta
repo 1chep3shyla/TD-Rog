@@ -101,6 +101,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -241,15 +265,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LightMage_SS_16: -1544476605
+      LightMage_SS_32: -453298518
       LightMage_SS_8: 2067263170
-      LightMage_SS_28: -1191051476
+      LightMage_SS_38: 1373743085
       LightMage_SS_10: -40190748
       LightMage_SS_7: -854143534
       LightMage_SS_13: 1284396364
-      LightMage_SS_32: -453298518
       LightMage_SS_36: -1139838848
-      LightMage_SS_38: 1373743085
+      LightMage_SS_14: 349919646
+      LightMage_SS_28: -1191051476
       LightMage_SS_0: -1515007999
       LightMage_SS_18: 1014619060
       LightMage_SS_31: 2019240671
@@ -280,7 +304,7 @@ TextureImporter:
       LightMage_SS_11: -132042354
       LightMage_SS_25: 2006474904
       LightMage_SS_4: -675962011
-      LightMage_SS_14: 349919646
+      LightMage_SS_16: -1544476605
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -101,6 +101,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -241,13 +265,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      assasin_SS_13: -1683866808
-      assasin_SS_22: 1474738278
+      assasin_SS_11: 1761687526
+      assasin_SS_25: 81711873
       assasin_SS_2: -1426788435
       assasin_SS_4: 1853022915
       assasin_SS_17: 2105834914
       assasin_SS_30: -291062994
-      assasin_SS_25: 81711873
+      assasin_SS_32: -1269099984
+      assasin_SS_13: -1683866808
       assasin_SS_9: 1084740828
       assasin_SS_18: 1460838394
       assasin_SS_39: -1301287088
@@ -262,9 +287,8 @@ TextureImporter:
       assasin_SS_12: 233642702
       assasin_SS_16: -1355547992
       assasin_SS_10: -456571594
-      assasin_SS_32: -1269099984
-      assasin_SS_20: 1897835174
       assasin_SS_37: -194815112
+      assasin_SS_20: 1897835174
       assasin_SS_35: 186840298
       assasin_SS_28: 2090907607
       assasin_SS_33: -611305933
@@ -280,7 +304,7 @@ TextureImporter:
       assasin_SS_15: 627052314
       assasin_SS_14: 1225345530
       assasin_SS_38: 2060816320
-      assasin_SS_11: 1761687526
+      assasin_SS_22: 1474738278
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

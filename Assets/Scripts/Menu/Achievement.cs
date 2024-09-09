@@ -9,9 +9,11 @@ public class Achievement : ScriptableObject
     public string id;
     public string title;
     public string description;
+    public string localDiscription;
     public string nameData;
     public Sprite Icon;
     public bool isUnlocked;
+    public ScriptableObject characterUnlock;
     
   public string GetDesc()
     {

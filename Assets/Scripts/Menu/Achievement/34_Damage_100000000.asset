@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0eb08f519ca13419389fe3509345e6, type: 3}
+  m_Name: 34_Damage_100000000
+  m_EditorClassIdentifier: 
+  id: damageAchievement_100000000
+  title: King of Pain
+  description: Deal {0}/100000000 damage
+  localDiscription: Deal 100000000 damage
+  nameData: damageAll
+  Icon: {fileID: 21300000, guid: 6c8530461ec887a4a88746360d064451, type: 3}
+  isUnlocked: 0
+  characterUnlock: {fileID: 0}

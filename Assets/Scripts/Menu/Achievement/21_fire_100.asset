@@ -15,6 +15,8 @@ MonoBehaviour:
   id: fireEnemy_100
   title: Fiery Character
   description: Set fire to {0}/100 enemies
+  localDiscription: Set fire to 100 enemies
   nameData: fireCount
   Icon: {fileID: 21300000, guid: ca2d7b2f3cbceee45829e65a51d3eca5, type: 3}
   isUnlocked: 0
+  characterUnlock: {fileID: 0}

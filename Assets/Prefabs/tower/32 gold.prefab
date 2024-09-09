@@ -105,8 +105,8 @@ MonoBehaviour:
   UpVersion: {fileID: 2056256240725061661, guid: 2427810ea9ef1494fbf98e64147f075e, type: 3}
   baseOf: {fileID: 0}
   name: Farm
-  description: He will get gold
-  discInfo: Gold Gives:{1}
+  description: He will get <sprite name="9_icon">Gold
+  discInfo: Give<sprite name="9_icon">:{1}
   curAttackSpeed: 0
   attackSpeed: 0
   damage: 0

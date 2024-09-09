@@ -698,6 +698,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Beholder_0
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 237
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb652e04abeb5147b3eebc87e97c5fd
+      internalID: -1982329441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -733,6 +754,7 @@ TextureImporter:
       Idle_2: 3234629978573100161
       Run_4: 2833043080597125133
       Run_0: 4944230376442633554
+      Beholder_0: -1982329441
       Run_5: -2217414122262695004
       Death_3: 1400002288684528572
   spritePackingTag: 

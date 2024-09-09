@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1c6c5330f00714cb17bd065e7a6a60, type: 3}
   m_Name: char_elf
   m_EditorClassIdentifier: 
+  isHave: 0
   indexChar: 6
   indexEvolve: 1
   buffs:
@@ -24,10 +25,17 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  lvlChar: 0
+  expPoint: 0
+  expPointBarrier:
+  - 1000
+  - 5000
+  - 10000
+  - 0
   name: Elven Sharpshooter
   icon: {fileID: 21300000, guid: b289ae25f10b4ca4fa8587224284a953, type: 3}
   history: Sometimes skill is talent.
-  has: 0
+  has: 1
   perkEvolveNo: {fileID: 11400000, guid: 39b48b0b941f2224387447d620430048, type: 2}
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}

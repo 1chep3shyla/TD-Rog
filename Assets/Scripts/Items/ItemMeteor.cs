@@ -17,6 +17,7 @@ public class ItemMeteor : Item
             GeneratingOnPath path =  meteorCon.GetComponent<GeneratingOnPath>();
             path.points = GameManager.Instance.spawn.waypoints[0].waypoints;
             InventoryController.Instance.things[indexThing] =  meteorCon;
+             InventoryController.Instance.things[indexThing].GetComponent<GeneratingOnPath>().numberOfObjects++;
         }
         else
         {

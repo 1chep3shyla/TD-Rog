@@ -17,12 +17,30 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: e48fd28d92b0025478576da7cdc66cd5, type: 3}
   cost: 100
   onWhichUp: 5
-  bought: 0
+  bought: 1
+  previosUp: {fileID: 0}
   buffGlobaly:
   - 0
   - 0
   - 0
   - 5
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  newBuffGlobaly:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   - 0
   - 0
   - 0

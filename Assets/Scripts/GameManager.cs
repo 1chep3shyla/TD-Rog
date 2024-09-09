@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
+using System.Linq;
 [System.Serializable]
 public class GameManager : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public int restoreHeal;
     public int whichEnemyKill;
+    public int GoldGivenPerWave;
+    public float enemyBuff = 1f;
     public SpriteRenderer[] allTower;
     public Image charIcon;
     public GameObject needMore;
@@ -37,11 +40,16 @@ public class GameManager : MonoBehaviour
     public GameObject con;
     public GameObject losing;
     public GameObject startBut;
+    public GameObject boomImpactCrit;
+    public GameObject boomIconGM;
     private static GameManager instance;
     public List<GameObject> enemiesAll = new List<GameObject>();
     [SerializeField]
     public float[] buff; // 0 - global damage, 1- ice buff, 2 - fire damage, 3 - poison, 4 - moneyMine, 5 - AttackSpeed, 6 - moneyThief+Enemy, 7 - crit DMG, 8 - crit Chance
     public float[] newBuff;
+    public float[] secondsBuff = new float[15]; 
+    // 0 - iceTime+, 1 - poisonTime+, 2 - fireTime+, 3 - iceDMG, 4 - poisonDMG+, 5 - fireDMG+, 6 - stanChance+, 
+    //7 - stanUp+, 8 - critBF+, 9 - critical Crit+, 10 - saleRoll+, 11 - moreSouls+, 12 - addRange+, 13 - addTarget+, 14 - add Gold After Wave+, 15 - goldEnemy+
     public Evolve[] allEvolution;
     public DMGTower[] allTowerDMG;
     public ICharSet charData;
@@ -54,6 +62,8 @@ public class GameManager : MonoBehaviour
     public AudioSource aS;
     public Item item;
     public ParticleSystem takeDamagePS;
+    public ParticleSystem healing;
+    public ParticleSystem goldParticle;
     public BoxCollider2D tilemapCollider;
     public BoxCollider2D[] collidersTile;
     public Sprite whatSprite;
@@ -63,6 +73,18 @@ public class GameManager : MonoBehaviour
     public int currentWaveIndexMain;
     public LightUsing lightUsing;
     public Animator cardAnim;
+    public GameObject thiefPart;
+    public GameObject difficultyGM;
+    [Space]
+    public AudioClip takeHPSFX;
+    public AudioClip creappyLaught;
+    public AudioClip clickTowerSFX;
+    public AudioClip upgradeTowerSFX;
+    [Space]
+    public Animator demonAnim;
+    [Space]
+    public Material goldMaterial;
+    private Coroutine[] typingCoroutine = new Coroutine[100]; // Переменная для отслеживания текущей корутины
     private int[] giveMoneyCheat;
 
     void Update()
@@ -99,6 +121,11 @@ public class GameManager : MonoBehaviour
             if(!GameBack.Instance.saveThis)
             {
                 states[GameBack.Instance.indexState].SetActive(true);
+                difficultyGM.SetActive(true);
+                for (int i = 0; i < GameBack.Instance.secondsBuff.Length; i++)
+                {
+                    secondsBuff[i] = GameBack.Instance.secondsBuff[i];
+                }
             }
             if(GameBack.Instance.saveThis == true)
             {
@@ -119,15 +146,43 @@ public class GameManager : MonoBehaviour
         tilemapCollider = collidersTile[GameBack.Instance.indexState];
         gameObject.GetComponent<Rolling>().tilemap = maps[GameBack.Instance.indexState];
     }
+
+    public void AfterWaveGoldGive()
+    {
+        if(secondsBuff[14]/100 > 0)
+        {
+            int goldNeedGive = (int)((float)GoldGivenPerWave * (secondsBuff[14]/100));
+            var emission = goldParticle.emission;
+            emission.rateOverTime = 30f+((float)goldNeedGive/10);
+            Gold+=goldNeedGive;
+            goldParticle.Play();
+            ChangeMoney();
+        }
+    }
+    public void PlaySFX(AudioClip clip)
+    {
+        aS.pitch = Random.Range(0.9f,1.1f);
+        aS.PlayOneShot(clip);
+    }
     public void Heal()
     {
         if (Health + restoreHeal > maxHealth)
         {
             Health = maxHealth;
+            healing.Play();
+            var emission = healing.emission;
+            emission.rateOverTime = 15f*restoreHeal;
+        }
+        else if(Health + restoreHeal > 0)
+        {
+            healing.Play();
+            var emission = healing.emission;
+            emission.rateOverTime = 15f*restoreHeal;
+            Health += restoreHeal;
         }
         else
         {
-            Health += restoreHeal;
+            Health = 1;
         }
     }
     public void TakeDamageHealth(int dmg)
@@ -136,9 +191,10 @@ public class GameManager : MonoBehaviour
             {
                 Health -= dmg;
                 healthBreak+=dmg;
+                UpItemsHit(dmg);
                 GameBack.Instance.healthBreak+=dmg;
+                aS.PlayOneShot(takeHPSFX);
             }
-
             else
             {
                 Health = 0;
@@ -146,6 +202,23 @@ public class GameManager : MonoBehaviour
                 Losing();
             }
     
+    }
+    public void UpItemsHit(int dmg)
+    {
+        if (itemOpenner.items.Contains(itemOpenner.rareItem[10]))
+        {
+            for(int i = 0; i < buff.Length; i++)
+                {
+                    buff[i] +=((1*itemOpenner.rareItem[10].count)*dmg);
+                }
+            demonAnim.gameObject.SetActive(true);
+            aS.PlayOneShot(creappyLaught);
+            demonAnim.Play("demonRing_anim", -1, 0f);
+        }
+        if (itemOpenner.items.Contains(itemOpenner.rareItem[9]))
+        {
+            maxHealth +=((1*itemOpenner.rareItem[9].count)*dmg);
+        }
     }
     public int Wave
     {
@@ -328,6 +401,10 @@ public class GameManager : MonoBehaviour
         spawn.StartingGame();
         startBut.SetActive(false);
     }
+    public void SetEnemyAddHealth(float addBuff)
+    {
+        enemyBuff += addBuff;
+    }
 
     public void ChestClaim()
     {
@@ -337,7 +414,88 @@ public class GameManager : MonoBehaviour
     {
        Destroy(GameManager.Instance.gameObject);
     }
+     // Функция для запуска корутины по отображению текста
+    public void StartTypingText(TMP_Text[] textComponents, string[] texts, float totalDuration)
+    {
+        // Остановка текущих корутин, если они запущены
+        for (int i = 0; i < typingCoroutine.Length; i++)
+        {
+            if (typingCoroutine[i] != null)
+            {
+                StopCoroutine(typingCoroutine[i]);
+                typingCoroutine[i] = null;
+            }
+        }
+
+        typingCoroutine[0] = StartCoroutine(TypeTextsSimultaneously(textComponents, texts, totalDuration));
+    }
+
+    // Корутина для поэтапного отображения текста одновременно во всех текстовых компонентах
+    public IEnumerator TypeTextsSimultaneously(TMP_Text[] textComponents, string[] texts, float totalDuration)
+    {
+        // Запуск корутин для каждого текстового компонента
+        for (int i = 0; i < textComponents.Length; i++)
+        {
+            if (i + 4 >= typingCoroutine.Length) // Проверка выхода за пределы массива
+            {
+                Debug.LogError("Размер массива typingCoroutine недостаточен");
+                yield break;
+            }
+
+            typingCoroutine[i + 4] = StartCoroutine(TypeText(textComponents[i], texts[i], totalDuration));
+        }
+
+        yield return null;
+    }
+
+    // Корутина для поэтапного отображения текста в одном текстовом компоненте
+    public IEnumerator TypeText(TMP_Text textComponent, string text, float totalDuration)
+    {
+        textComponent.text = "";
+        float delay = totalDuration / text.Length; // Задержка между символами
+        string processedText = ProcessTextWithColor(text);
+        int index = 0;
+
+        while (index < processedText.Length)
+        {
+            if (processedText[index] == '<')
+            {
+                while (processedText[index] != '>')
+                {
+                    textComponent.text += processedText[index];
+                    index++;
+                }
+                textComponent.text += '>';
+                index++;
+            }
+            else
+            {
+                textComponent.text += processedText[index];
+                index++;
+                if (totalDuration != 0)
+                {
+                    yield return new WaitForSecondsRealtime(delay);
+                }
+            }
+        }
+
+        // Убедитесь, что текст полностью отображен
+        textComponent.text = processedText;
+    }
+
+    private string ProcessTextWithColor(string text)
+    {
+        // Заменяем плейсхолдеры на цветной текст
+        string colorStartTag = "<color=#808080>";
+        string colorEndTag = "</color>";
+
+        // Замените эту строку на нужный вам текст
+        string replacementValueStan = "замененный текст";
+
+        return text.Replace("{replacementValueStan}", colorStartTag + replacementValueStan + colorEndTag);
+    }
 }
+
 [System.Serializable]
 public class Evolve
 {

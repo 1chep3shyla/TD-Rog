@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1c6c5330f00714cb17bd065e7a6a60, type: 3}
   m_Name: char_split
   m_EditorClassIdentifier: 
+  isHave: 0
   indexChar: 19
   indexEvolve: 0
   buffs:
@@ -24,6 +25,13 @@ MonoBehaviour:
   - 100
   - 100
   - 100
+  lvlChar: 0
+  expPoint: 0
+  expPointBarrier:
+  - 1000
+  - 5000
+  - 10000
+  - 0
   name: Dimension Voyager
   icon: {fileID: 21300000, guid: 2b7c8073d2f7d7741b5faba898c30b6d, type: 3}
   history: Forging armor all your life - you can find out all their weaknesses.

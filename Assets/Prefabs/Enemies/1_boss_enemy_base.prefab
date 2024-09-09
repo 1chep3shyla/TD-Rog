@@ -5085,12 +5085,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 4723107735738678597, guid: b55edc564f1b4955864cdd369d1f5a4c, type: 3}
+  m_Sprite: {fileID: -7763475090823894447, guid: b55edc564f1b4955864cdd369d1f5a4c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5132,9 +5132,9 @@ BoxCollider2D:
   m_Offset: {x: 0.09843159, y: 0.051946506}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.05}
+    pivot: {x: 0.5, y: 0.125}
     oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 2.56, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -5177,11 +5177,13 @@ MonoBehaviour:
   - 0
   damageType: 0
   EM: {fileID: 0}
-  deathPar: {fileID: 0}
+  deathPar: {fileID: 8437195482915574190, guid: e94cadfa154fbed4180642b61bd7b19f, type: 3}
   firePart: {fileID: 3821536495250259018}
   poisonPart: {fileID: 7033300054437551995}
   icePart: {fileID: 5496672889935789053}
   shieldBreak: {fileID: 6253670749776275632}
+  spriteBase: {fileID: 1159399629, guid: b55edc564f1b4955864cdd369d1f5a4c, type: 3}
+  modified: 1
 --- !u!50 &248614970749484257
 Rigidbody2D:
   serializedVersion: 4

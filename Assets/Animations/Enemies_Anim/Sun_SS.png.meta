@@ -101,6 +101,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -304,18 +328,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sun_SS_23: -1424861445
       Sun_SS_6: 1120218683
       Sun_SS_0: 1030542858
       Sun_SS_9: 792712294
       Sun_SS_10: 2130784572
-      Sun_SS_11: -841595305
+      Sun_SS_23: -1424861445
       Sun_SS_15: 1096167399
       Sun_SS_19: -484043888
+      Sun_SS_11: -841595305
       Sun_SS_2: -452303977
-      Sun_SS_37: 244769188
       Sun_SS_7: 1880250384
       Sun_SS_27: -1623067978
+      Sun_SS_37: 244769188
       Sun_SS_34: -1342922153
       Sun_SS_16: -1051453987
       Sun_SS_32: 107833352

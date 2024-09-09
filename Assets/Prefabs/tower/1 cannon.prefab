@@ -87,8 +87,9 @@ MonoBehaviour:
   UpVersion: {fileID: 2056256240725061661, guid: 56a782911b1796949b87831861f333af, type: 3}
   baseOf: {fileID: 0}
   name: Cannon
-  description: Does KABOOM and deals damage in the area
-  discInfo: Damage:{0}
+  description: Does KABOOM and deals <sprite name="0_icon">damage in the area, also
+    can stun with {3}% chance
+  discInfo: <sprite name="0_icon">:{0}  <sprite name="5_icon">:{3}
   curAttackSpeed: 0
   attackSpeed: 4.5
   damage: 7
@@ -192,9 +193,11 @@ MonoBehaviour:
   magnatPower: 0
   DivineAttackGM: {fileID: 0}
   dt: {fileID: 0}
+  lvl: 0
   chanceAssasin: 0
   Chain: 0
   critChance: 0
+  countAttackToTarget: 0
   hitSFX: {fileID: 8300000, guid: 6917b4d4ed60a4f8eb2f67a0ecd4eac1, type: 3}
 --- !u!58 &7856858149678934433
 CircleCollider2D:

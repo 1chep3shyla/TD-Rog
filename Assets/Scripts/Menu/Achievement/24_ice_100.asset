@@ -15,6 +15,8 @@ MonoBehaviour:
   id: iceEnemy_100
   title: Icy Character
   description: Freeze {0}/100 enemies
+  localDiscription: Freeze 100 enemies
   nameData: iceCount
   Icon: {fileID: 21300000, guid: ba00c417195d3274f9ec74813d65ef23, type: 3}
   isUnlocked: 0
+  characterUnlock: {fileID: 0}

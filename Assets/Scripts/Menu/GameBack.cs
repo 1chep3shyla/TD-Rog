@@ -20,7 +20,9 @@ public class GameBack
     public int enemiesKilled;
     public float[] buff = new float[9];
     public float[] buffGlobal = new float[9];
-    public bool[] boughtStat = new bool[32];
+    public float[] secondsBuff = new float[16];
+    public bool[] boughtStat = new bool[72]; // you need change this 
+    public int[] waveInStage = new int[14];
     public int getItem;
     public int sellItem;
     public int damageAll;
@@ -34,6 +36,7 @@ public class GameBack
     public bool minSpeed;
     public int hardWinning;
     public int perfecto;
+    public bool firstEvolve;
     public static GameBack Instance
     {
         get

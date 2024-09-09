@@ -23,7 +23,14 @@ public class CursorWork : MonoBehaviour
             buttons[i].onClick.AddListener(() => MoveObjectToButton(index));
         }
     }
-
+    public void SetMore()
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            int index = i; // Сохраняем индекс в замыкании
+            buttons[i].onClick.AddListener(() => MoveObjectToButton(index));
+        }
+    }
     public void MoveObjectToButton(int buttonIndex)
     {
         // ������� ��������� ������

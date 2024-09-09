@@ -18,13 +18,18 @@ public interface ICharSet : IChar
     public int GetIndexEvolve();
     public Sprite GetIcon();
     public void SetDataChar(int index, float count);
+    public float[] GetExp();
 }
 [CreateAssetMenu(fileName = "NewChar", menuName = "Character/Char")]
 public class Character : ScriptableObject, ICharSet
 {
+    public bool isHave;
     public int indexChar;
     public int indexEvolve; // 0 - split, 1 - elf, 2 - blizzard, 3 - Oil, 4 - Boom, 5 - divine, 6 - storm, 7 - poisonSmoke, 8 - rage, 9 - portal, 10 - gear, 11 - assasin, 12 - cannon, 13 - magnet, 14 - gladiator
     public float[] buffs;
+    public int lvlChar;
+    public float expPoint;
+    public float[] expPointBarrier; 
     public string name;
     public Sprite icon;
     [TextArea(15,20)]
@@ -36,6 +41,10 @@ public class Character : ScriptableObject, ICharSet
     {
         GameBack.Instance.charData = this;
         GameBack.Instance.iconChar = icon;
+    }
+      public float[] GetExp()
+    {
+        return new float[] { expPoint, expPointBarrier[lvlChar],(float)lvlChar };
     }
     public GameObject[] SetGameObject()
     {
@@ -60,6 +69,24 @@ public class Character : ScriptableObject, ICharSet
         GameManager.Instance.gameObject.GetComponent<Rolling>().towers = newArrayTowers;
         GameManager.Instance.gameObject.GetComponent<Rolling>().SetSprite();
         GameManager.Instance.gameObject.GetComponent<Rolling>().Roll();
+        if(!GameBack.Instance.saveThis)
+        {
+            if(lvlChar == 1)
+            {
+                GameManager.Instance.Gold+=150;
+                GameManager.Instance.ChangeMoney();
+            }
+            if(lvlChar == 2)
+            {
+                GameManager.Instance.maxHealth+=5;
+                GameManager.Instance.Health = GameManager.Instance.maxHealth;
+            }
+            if(lvlChar == 3)
+            {
+                GameManager.Instance.secondsBuff[10]+=15;
+            }
+            
+        }
     }
     public float[] GetStat()
     {

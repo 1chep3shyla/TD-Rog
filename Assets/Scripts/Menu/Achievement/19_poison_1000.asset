@@ -15,6 +15,8 @@ MonoBehaviour:
   id: poisonEnemy_1000
   title: Toxic Mind
   description: Poison {0}/1000 enemies
+  localDiscription: Poison 1000 enemies
   nameData: poisonedCount
   Icon: {fileID: 21300000, guid: 8cd68f4c4b69e4548a5c5fcf90bbc468, type: 3}
   isUnlocked: 0
+  characterUnlock: {fileID: 0}

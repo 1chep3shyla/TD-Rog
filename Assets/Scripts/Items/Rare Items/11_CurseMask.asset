@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7b1cd256407a848b447b382c0373ed, type: 3}
+  m_Name: 11_CurseMask
+  m_EditorClassIdentifier: 
+  name: Curse Mask
+  count: 0
+  Rarity: 1
+  icon: {fileID: 21300000, guid: 3804b70d47bfaf7458f9335e80e2fe3d, type: 3}
+  iconTrans: {fileID: 21300000, guid: 4978d54a36cadf3429c850b44ddb0600, type: 3}
+  buff:
+  - 20
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  disc: Increases Global Damage, but takes away {0} health
+  hpAdd: -5
+  hpPerRound: 0
+  maxHpAdd: 0

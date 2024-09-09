@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Beastiar 
 {
-    public bool[] seeThis = new bool[100];
+    public bool[] seeThis = new bool[50];
 
 
     private static Beastiar instance;

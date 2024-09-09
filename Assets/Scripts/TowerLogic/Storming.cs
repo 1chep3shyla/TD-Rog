@@ -34,7 +34,6 @@ public class Storming : MonoBehaviour
                 GameObject newGm = Instantiate(objectToSpawn, enemyTransform.position, Quaternion.identity);
                 newGm.GetComponent<StormScript>().slowPower = gameObject.GetComponent<Default>().slowPower;
                 yield return new WaitForSeconds(5);
-                Destroy(newGm);
             }
 
             isSpawning = false;

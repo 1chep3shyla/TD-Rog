@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7806868580786710936}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.733, z: 0}
+  m_LocalPosition: {x: 0, y: 0.776, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -236,7 +236,7 @@ BoxCollider2D:
   m_Offset: {x: 0.010524988, y: 0.14734322}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.09}
     oldSize: {x: 1.7777778, y: 1.7777778}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -281,11 +281,13 @@ MonoBehaviour:
   - 0
   damageType: 0
   EM: {fileID: 0}
-  deathPar: {fileID: 8428326108199200691, guid: adc5f05263a2b344790cb02f3d128f02, type: 3}
+  deathPar: {fileID: 8437195482915574190, guid: 6a22f736f9586904b98beeb1353394b1, type: 3}
   firePart: {fileID: 6345523163339211230}
   poisonPart: {fileID: 3142012877759919957}
   icePart: {fileID: 357872164160601643}
   shieldBreak: {fileID: 7806868580786710936}
+  spriteBase: {fileID: 1369882724, guid: 5bc16091f47e4e8498fff672edb4c440, type: 3}
+  modified: 1
 --- !u!50 &-8359303742989167059
 Rigidbody2D:
   serializedVersion: 4

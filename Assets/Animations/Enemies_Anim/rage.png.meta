@@ -113,6 +113,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -254,8 +266,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       rage_25: 712150314
-      rage_22: -1765324705
-      rage_28: 1328924709
+      rage_38: 540960221
       rage_21: -1146913202
       rage_12: 1736865840
       rage_24: -1506665841
@@ -263,6 +274,7 @@ TextureImporter:
       rage_30: -1265965438
       rage_16: -523595330
       rage_7: -1624089467
+      rage_31: -1166862834
       rage_6: 736648060
       rage_13: 1240667467
       rage_19: 1011731114
@@ -286,13 +298,13 @@ TextureImporter:
       rage_9: -635075058
       rage_29: 1388160384
       rage_20: 1383670659
+      rage_28: 1328924709
       rage_33: 1768533611
-      rage_34: 130360400
       rage_4: 239653388
-      rage_1: 2099311226
-      rage_31: -1166862834
+      rage_34: 130360400
       rage_14: 832139750
-      rage_38: 540960221
+      rage_22: -1765324705
+      rage_1: 2099311226
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

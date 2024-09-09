@@ -101,6 +101,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -304,9 +328,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Wind_SS_25: 1146582287
       Wind_SS_32: -1121343246
-      Wind_SS_33: -2093385821
+      Wind_SS_10: 1177703772
+      Wind_SS_18: 1046814819
       Wind_SS_39: 814222257
       Wind_SS_7: -938809660
       Wind_SS_0: 1421309839
@@ -340,10 +364,10 @@ TextureImporter:
       Wind_SS_4: -1840722421
       Wind_SS_17: 1638011085
       Wind_SS_30: 1721211093
-      Wind_SS_10: 1177703772
       Wind_SS_16: 1030674207
-      Wind_SS_18: 1046814819
+      Wind_SS_25: 1146582287
       Wind_SS_28: 2047941133
+      Wind_SS_33: -2093385821
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

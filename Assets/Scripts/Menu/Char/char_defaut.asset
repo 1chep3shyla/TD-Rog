@@ -24,6 +24,13 @@ MonoBehaviour:
   - 0
   - 0
   name: Great Knight
+  lvlChar: 3
+  expPoint: 0
+  expPointBarrier:
+  - 1000
+  - 5000
+  - 10000
+  - 0
   icon: {fileID: 21300000, guid: 02b9aa5cf89f34b46a46c792c4ff7865, type: 3}
   towerPull:
   - {fileID: 2056256240725061661, guid: e5d80f7bcd75e5d4ab3dff96deb08935, type: 3}

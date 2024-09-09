@@ -42,6 +42,7 @@ public class EnemyMoving : MonoBehaviour
     private int damageEnemy;
     private bool isStunned;
     private float stunDuration;
+    private Vector3 offSetting;
     void Start()
     {
         lastWaypointSwitchTime = Time.time;
@@ -68,11 +69,10 @@ public class EnemyMoving : MonoBehaviour
         }
         if (!isStunned)
         {
-            float distance = Vector3.Distance(transform.position, waypoints[currentWaypoint].transform.position);
+            float distance = Vector3.Distance(transform.position, waypoints[currentWaypoint].transform.position+ offSetting);
 
             float step = speed * Time.deltaTime;
-
-            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].transform.position, step);
+            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].transform.position + offSetting, step);
 
             if (distance < step)
             {
@@ -80,6 +80,7 @@ public class EnemyMoving : MonoBehaviour
                 {
                     // 3.a 
                     currentWaypoint++;
+                    offSetting = GetRandomOffset();
                     lastWaypointSwitchTime = Time.time;
                 }
                 else
@@ -108,11 +109,12 @@ public class EnemyMoving : MonoBehaviour
         float powering = maxSpeed - (maxSpeed * ((slowPower + GameManager.Instance.buff[1]) / 100));
         if (powering < speed)
         {
-            StartCoroutine(SlowCoroutine(time, slowPower,powering));
+            StartCoroutine(SlowCoroutine(time + GameManager.Instance.secondsBuff[0], slowPower,powering));
+            GameBack.Instance.iceCount++;
         }
     }
 
-    private IEnumerator SlowCoroutine(float time, float slowPower, float powering)
+    public IEnumerator SlowCoroutine(float time, float slowPower, float powering)
     {
         GameBack.Instance.minSpeed = true;
         if (powering < speed && powering > 0f)
@@ -163,5 +165,11 @@ public class EnemyMoving : MonoBehaviour
     private void OnDestroy()
     {
         GameManager.Instance.RemoveEnemyFromList(gameObject);
+    }
+    Vector3 GetRandomOffset()
+    {
+        float offsetX = Random.Range(-0.25f, 0.25f);
+        float offsetY = Random.Range(-0.25f, 0.25f);
+        return new Vector3(offsetX, offsetY, 0);
     }
 }

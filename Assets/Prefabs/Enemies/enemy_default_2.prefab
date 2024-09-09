@@ -236,7 +236,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -0.04295087}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.08}
+    pivot: {x: 0.5, y: 0.15}
     oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
@@ -281,11 +281,13 @@ MonoBehaviour:
   - 0
   damageType: 0
   EM: {fileID: 0}
-  deathPar: {fileID: 4785898893450429910, guid: b08ad19a8488bf947b648481e31c3f5b, type: 3}
+  deathPar: {fileID: 8437195482915574190, guid: 772aca2d0f582604db0daae513a7ceb0, type: 3}
   firePart: {fileID: 1642250456445961261}
   poisonPart: {fileID: 8647990913471626552}
   icePart: {fileID: 7458288109864154360}
   shieldBreak: {fileID: 331557172129011651}
+  spriteBase: {fileID: 1955035064, guid: 11e524f69a89461f88cbbc3cb943f986, type: 3}
+  modified: 1
 --- !u!50 &-8359303742989167059
 Rigidbody2D:
   serializedVersion: 4

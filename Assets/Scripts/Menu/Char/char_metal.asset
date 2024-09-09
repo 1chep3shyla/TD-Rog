@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1c6c5330f00714cb17bd065e7a6a60, type: 3}
   m_Name: char_metal
   m_EditorClassIdentifier: 
+  isHave: 0
   indexChar: 13
   indexEvolve: 11
   buffs:
@@ -24,6 +25,13 @@ MonoBehaviour:
   - 0
   - 25
   - 15
+  lvlChar: 0
+  expPoint: 0
+  expPointBarrier:
+  - 1000
+  - 5000
+  - 10000
+  - 0
   name: Assassin
   icon: {fileID: 21300000, guid: b1bcb09d72835f24ea05685537a7830a, type: 3}
   history: Many people saw his beautiful dagger, but few remembered it.

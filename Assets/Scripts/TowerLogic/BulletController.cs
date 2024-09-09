@@ -38,6 +38,7 @@ public enum TypeBull
 public class BulletController : MonoBehaviour
 {
     public TypeBull type;
+    public bool needRotate;
     public float speed = 10f;
     public int damage = 10;
     public GameObject hitEffectPrefab;
@@ -66,6 +67,17 @@ public class BulletController : MonoBehaviour
     {
         target = bulletTarget;
         damage = bulletDamage;
+        if (target != null && transform.childCount > 0 && needRotate)
+        {
+            // Direction from the object to the target
+            Vector3 direction = bulletTarget.position - transform.position;
+
+            // Calculate the angle between the forward direction and the target direction in the X-Y plane
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            // Apply the rotation only on the Z axis
+            transform.GetChild(0).rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 
     void FixedUpdate()
@@ -122,10 +134,10 @@ public class BulletController : MonoBehaviour
                 else if (type == TypeBull.stan)
                 {
                     int randomPoc = Random.Range(0, 100);
-                    if (randomPoc <= chanceStan)
+                    if (randomPoc < chanceStan)
                     {
                         enemyHealth.DefaultAttack(damage, (int)GameManager.Instance.buff[8]);
-                        enemyMove.Stun(1.5f);
+                        enemyMove.Stun(1f+GameManager.Instance.secondsBuff[7]);
                     }
                     else
                     {

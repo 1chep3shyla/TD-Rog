@@ -101,6 +101,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -220,13 +244,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Magnet_SS_10: 1598242847
       Magnet_SS_14: -1234601226
       Magnet_SS_18: 875386707
       Magnet_SS_5: 1302967337
       Magnet_SS_6: 1818142287
       Magnet_SS_12: 1427596867
       Magnet_SS_34: -1065675570
-      Magnet_SS_28: -180052796
       Magnet_SS_3: -845280923
       Magnet_SS_4: 1559475987
       Magnet_SS_37: 1119589036
@@ -259,7 +283,7 @@ TextureImporter:
       Magnet_SS_0: 1132230339
       Magnet_SS_26: -1490393617
       Magnet_SS_39: -1348977666
-      Magnet_SS_10: 1598242847
+      Magnet_SS_28: -180052796
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

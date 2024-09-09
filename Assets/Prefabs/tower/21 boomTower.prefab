@@ -56,9 +56,9 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Boom Tower
-  description: Sets fire to the enemy's ass and deals {0} damage, and at death, the
-    enemy explodes and deals damage
-  discInfo: Damage:{0}
+  description: Sets fire to the enemy's ass and deals <sprite name="2_icon">{0} damage,
+    and at death, the enemy explodes and deals damage
+  discInfo: <sprite name="0_icon">:{0}  <sprite name="5_icon">:{3}
   curAttackSpeed: 0
   attackSpeed: 1.1
   damage: 2
@@ -162,9 +162,11 @@ MonoBehaviour:
   magnatPower: 0
   DivineAttackGM: {fileID: 0}
   dt: {fileID: 0}
+  lvl: 0
   chanceAssasin: 0
   Chain: 0
   critChance: 0
+  countAttackToTarget: 0
   hitSFX: {fileID: 8300000, guid: 6917b4d4ed60a4f8eb2f67a0ecd4eac1, type: 3}
 --- !u!58 &6676964629699946377
 CircleCollider2D:

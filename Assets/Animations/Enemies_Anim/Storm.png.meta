@@ -101,6 +101,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -241,7 +265,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Storm_38: -557166438
       Storm_23: -1905770721
       Storm_3: -53707041
       Storm_8: 124360616
@@ -254,7 +277,6 @@ TextureImporter:
       Storm_10: -640807128
       Storm_4: 2070025294
       Storm_6: 405095739
-      Storm_33: 1975253933
       Storm_15: -1001351658
       Storm_18: 1880997029
       Storm_34: 1970081329
@@ -272,14 +294,16 @@ TextureImporter:
       Storm_1: -531139920
       Storm_27: -1721660489
       Storm_14: -361561271
+      Storm_33: 1975253933
       Storm_0: 70124475
-      Storm_9: -1875820287
+      Storm_38: -557166438
       Storm_2: -1110680544
-      Storm_25: 606277051
+      Storm_9: -1875820287
       Storm_37: -1993534909
-      Storm_31: 1085671667
+      Storm_25: 606277051
       Storm_35: -323608907
       Storm_28: -1063275751
+      Storm_31: 1085671667
       Storm_17: -1913957212
   spritePackingTag: 
   pSDRemoveMatte: 0

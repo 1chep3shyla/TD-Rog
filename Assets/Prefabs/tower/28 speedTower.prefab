@@ -106,8 +106,8 @@ MonoBehaviour:
   UpVersion: {fileID: 2056256240725061661, guid: 2e9374acb5491e4498d9c7eb83a824b6, type: 3}
   baseOf: {fileID: 0}
   name: Castle
-  description: Accelerates the attack of your friends
-  discInfo: Speed Give:{2}
+  description: Increases the <sprite name="5_icon">Attack Speed of friends
+  discInfo: Give <sprite name="5_icon">:{2}
   curAttackSpeed: 0
   attackSpeed: 0
   damage: 0

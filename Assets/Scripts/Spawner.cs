@@ -25,6 +25,7 @@ public class Spawner : MonoBehaviour
     public ReaderFile datas;
     public bool works;
     public bool skip;
+    
     private bool start;
     private int[] waveEnemySet;
 
@@ -52,7 +53,6 @@ public class Spawner : MonoBehaviour
         {
             works = true;
             StartCoroutine(StartWave());
-            SaveManager.instance.SaveData();
         }
 
         GameManager.Instance.curWave = currentWaveIndexMain + 1;
@@ -73,7 +73,7 @@ public class Spawner : MonoBehaviour
             if (i < currentWave.Length && currentWave[i].enemyPrefab.Length > 0) // Проверка, что мы не выходим за границы массива
             {
                 waveEnemySet[i] = UnityEngine.Random.Range(0, currentWave[i].enemyPrefab.Length); // Исправлено: использование полной длины массива
-                Sprite currentSprite = currentWave[i].enemyPrefab[waveEnemySet[i]].GetComponent<SpriteRenderer>().sprite;
+                Sprite currentSprite = currentWave[i].enemyPrefab[waveEnemySet[i]].GetComponent<Enemy>().spriteBase;
 
                 bool spriteExists = false;
                 foreach (Sprite sprite in allSprites)
@@ -87,12 +87,12 @@ public class Spawner : MonoBehaviour
 
                 if (!spriteExists)
                 {
-                    allSprites[i] = currentSprite;
+                    allSprites[i] = currentWave[i].enemyPrefab[waveEnemySet[i]].GetComponent<Enemy>().spriteBase;
 
                     GameObject whichEnemy = new GameObject("whichEnemy");
                     whichEnemy.transform.localScale = new Vector3(1f / 108f, 1f / 108f, 1f / 108f);
                     whichEnemy.AddComponent<UnityEngine.UI.Image>();
-                    whichEnemy.GetComponent<UnityEngine.UI.Image>().sprite = currentSprite;
+                    whichEnemy.GetComponent<UnityEngine.UI.Image>().sprite = currentWave[i].enemyPrefab[waveEnemySet[i]].GetComponent<Enemy>().spriteBase;
                     if(Beastiar.Instance.seeThis[currentWave[i].enemyPrefab[waveEnemySet[i]].GetComponent<Enemy>().index] == false)
                     {
                         whichEnemy.GetComponent<UnityEngine.UI.Image>().color = new Color(0,0,0);
@@ -140,7 +140,7 @@ public class Spawner : MonoBehaviour
             StartCoroutine(ClaimReward());
             Time.timeScale = 0f;
             yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
-            yield return new WaitUntil(()=> gameManager.itemOpenner.countChest == 0);
+            Time.timeScale = 1f;
             currentWaveIndexMain++;
             currentWaveIndex = 0;
             if (currentWaveIndexMain < wavesMass.Length) // Добавлена проверка
@@ -150,6 +150,7 @@ public class Spawner : MonoBehaviour
             gameManager.ClearRounds();
             SetEnemyInWave();
             yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
+            yield return new WaitUntil(()=> gameManager.itemOpenner.countChest == 0 && gameManager.itemOpenner.allOpen);
             Time.timeScale = 1f;
             //GameManager.Instance.startBut.SetActive(true);
             timeCur = timeBetweenWaves;
@@ -161,8 +162,12 @@ public class Spawner : MonoBehaviour
             start = false;
             skip = false;
             yield return null;
-            GameManager.Instance.lightUsing.IncreaseIntensity(3f);
-            yield return new WaitForSeconds(5f);
+            //GameManager.Instance.gameObject.GetComponent<FieldCleaner>().StartCleaning();
+            SaveManager.instance.SaveData();
+            //GameManager.Instance.gameObject.GetComponent<FieldCleaner>().StartCleaning();
+            GameManager.Instance.lightUsing.IncreaseIntensity(1f);
+            //GameManager.Instance.lightUsing.IncreaseIntensity(3f);
+            yield return new WaitForSeconds(15f);
             StartingGame();
         }
         else if(GameManager.Instance.Health > 0)
@@ -192,8 +197,10 @@ public class Spawner : MonoBehaviour
         }
         yield return new WaitUntil(() => gameManager.gameObject.GetComponent<PerkRoll>().rollingEvolve == false);
         gameManager.itemOpenner.OpenChest();
-        //yield return new WaitUntil(() => gameManager.itemOpenner.countChest == 0);
-        GameManager.Instance.Starting();
+        yield return new WaitUntil(() => gameManager.itemOpenner.panelOpen.activeSelf == false);
+        //GameManager.Instance.lightUsing.IncreaseIntensity(1f);
+        GameManager.Instance.AfterWaveGoldGive();
+        //GameManager.Instance.gameObject.GetComponent<FieldCleaner>().StartCleaning();
     }
 
     private void SpawnEnemy(int RandomEnemy)
@@ -203,9 +210,14 @@ public class Spawner : MonoBehaviour
             GameObject newEnemy = Instantiate(currentWave[currentWaveIndex].enemyPrefab[RandomEnemy], waypoints[i].waypoints[0].transform.position, Quaternion.identity);
             Beastiar.Instance.seeThis[newEnemy.GetComponent<Enemy>().index] = true;
             GameManager.Instance.AddEnemyToList(newEnemy);
+            int randomGoldIs = UnityEngine.Random.Range(0,100);
             newEnemy.GetComponent<EnemyMoving>().waypoints = waypoints[i].waypoints;
-            newEnemy.GetComponent<Enemy>().health = newEnemy.GetComponent<Enemy>().maxHealth;
-
+            newEnemy.GetComponent<Enemy>().health = (int)((float)newEnemy.GetComponent<Enemy>().maxHealth * GameManager.Instance.enemyBuff);
+            if((float)randomGoldIs<=GameManager.Instance.secondsBuff[15])
+            {
+                newEnemy.GetComponent<SpriteRenderer>().material = GameManager.Instance.goldMaterial;
+                newEnemy.GetComponent<Enemy>().modified += 3;
+            }
             //GameBack.Instance.curFormula = SubstituteVariables(GameBack.Instance.curFormula, newEnemy.GetComponent<Enemy>().maxHealth, currentWaveIndexMain);
 
             //float result = EvaluateFormula(GameBack.Instance.curFormula);

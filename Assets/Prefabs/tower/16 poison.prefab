@@ -56,9 +56,9 @@ MonoBehaviour:
   UpVersion: {fileID: 0}
   baseOf: {fileID: 0}
   name: Poison Tower
-  description: Poisons enemies lives and deals {1} damage, as well as slows them
-    down by {2}%
-  discInfo: Damage:{0}
+  description: Poisons enemies lives and deals <sprite name="3_icon">{1} damage,
+    as well as slows them down by <sprite name="1_icon">{2}%
+  discInfo: <sprite name="0_icon">:{0}  <sprite name="5_icon">:{3}
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 2
@@ -162,9 +162,11 @@ MonoBehaviour:
   magnatPower: 0
   DivineAttackGM: {fileID: 0}
   dt: {fileID: 0}
+  lvl: 0
   chanceAssasin: 0
   Chain: 0
   critChance: 0
+  countAttackToTarget: 0
   hitSFX: {fileID: 8300000, guid: 6917b4d4ed60a4f8eb2f67a0ecd4eac1, type: 3}
 --- !u!58 &6112222668244474409
 CircleCollider2D:

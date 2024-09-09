@@ -7,6 +7,7 @@ public class StormTower : MonoBehaviour
     public float boostDuration = 5f; // Duration of the attack speed boost
     public float boostInterval = 10f; // Interval between boosts
     public float boostMultiplier = 1.5f; // Amount to multiply the attack speed by during the boost
+    public GameObject particle;
 
     private Default tower;
     private float nextBoostTime;
@@ -29,6 +30,7 @@ public class StormTower : MonoBehaviour
     private void BoostAttackSpeed()
     {
         tower.charge = true;
+        particle.SetActive(true);
         tower.attackSpeed /= boostMultiplier;
         StartCoroutine(RemoveAttackSpeedBoost());
     }
@@ -36,6 +38,7 @@ public class StormTower : MonoBehaviour
     private IEnumerator RemoveAttackSpeedBoost()
     {
         yield return new WaitForSeconds(boostDuration);
+        particle.SetActive(false);
         tower.charge = false;
         tower.attackSpeed *= boostMultiplier;
     }

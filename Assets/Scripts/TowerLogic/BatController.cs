@@ -32,8 +32,8 @@ public class BatController : MonoBehaviour
             return;
         }
 
-        Vector2 targetPosition = target.position;
-        Vector2 orbitPosition = targetPosition + new Vector2(Mathf.Cos(orbitAngle * Mathf.Deg2Rad), Mathf.Sin(orbitAngle * Mathf.Deg2Rad)) * orbitRadius;
+        Vector3 targetPosition = target.position;
+        Vector3 orbitPosition = targetPosition + new Vector3(Mathf.Cos(orbitAngle * Mathf.Deg2Rad), Mathf.Sin(orbitAngle * Mathf.Deg2Rad),-1f) * orbitRadius;
 
         transform.position = orbitPosition;
         orbitAngle += orbitSpeed *75 * Time.deltaTime;

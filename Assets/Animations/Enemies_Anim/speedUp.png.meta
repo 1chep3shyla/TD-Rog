@@ -101,6 +101,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -956,6 +980,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       speedUp_4: 60586694
+      speedUp_10: 1955022863
       speedUp_23: 153197622
       speedUp_9: 86781715
       speedUp_28: -2140094850
@@ -963,7 +988,6 @@ TextureImporter:
       speedUp_19: -1948585500
       speedUp_16: -1385344150
       speedUp_39: -1581366664
-      speedUp_31: -1571524838
       speedUp_2: -141656805
       speedUp_33: 1314745215
       speedUp_3: -147841574
@@ -987,13 +1011,13 @@ TextureImporter:
       speedUp_14: 515916672
       speedUp_32: 958034150
       speedUp_29: 1466117291
-      speedUp_12: 490667831
       speedUp_26: 1696865944
-      speedUp_30: -72828998
-      speedUp_10: 1955022863
-      speedUp_21: 1413286140
-      speedUp_11: 866507075
       speedUp_34: 593824198
+      speedUp_30: -72828998
+      speedUp_12: 490667831
+      speedUp_21: 1413286140
+      speedUp_31: -1571524838
+      speedUp_11: 866507075
       speedUp_1: 996165647
   spritePackingTag: 
   pSDRemoveMatte: 0

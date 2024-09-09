@@ -776,6 +776,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: GreyRat_0
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 102
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358cf116a83ce844fab1c5bf46717024
+      internalID: -75913510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -797,6 +818,7 @@ TextureImporter:
       Attack_0: -7008412969330441016
       Ready_0: -2978808618200810919
       Death_0: 6991849013916550155
+      GreyRat_0: -75913510
       Idle_3: 6373048116405451881
       Death_4: -1891625820773287384
       Run_1: -2274363484027164459

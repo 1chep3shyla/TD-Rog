@@ -101,6 +101,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -242,7 +266,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       stoneThrow_SS_1: 296773604
-      stoneThrow_SS_26: -1077253015
+      stoneThrow_SS_4: 1120232566
       stoneThrow_SS_3: 893461210
       stoneThrow_SS_33: -757281089
       stoneThrow_SS_27: -305917376
@@ -280,7 +304,7 @@ TextureImporter:
       stoneThrow_SS_19: -1302148954
       stoneThrow_SS_34: 944171792
       stoneThrow_SS_37: -1202458104
-      stoneThrow_SS_4: 1120232566
+      stoneThrow_SS_26: -1077253015
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

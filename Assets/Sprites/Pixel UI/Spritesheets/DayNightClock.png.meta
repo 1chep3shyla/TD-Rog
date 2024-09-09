@@ -581,6 +581,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -589,7 +601,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -610,7 +622,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -631,7 +643,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -652,7 +664,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -673,7 +685,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -694,7 +706,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -715,7 +727,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -736,7 +748,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -757,7 +769,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -778,7 +790,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -799,7 +811,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -820,7 +832,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 352
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -841,7 +853,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -862,7 +874,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 416
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -883,7 +895,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -904,7 +916,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 288
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -925,7 +937,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -946,7 +958,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -967,7 +979,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -988,7 +1000,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1009,7 +1021,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1030,7 +1042,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1051,7 +1063,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1072,7 +1084,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1093,7 +1105,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1114,7 +1126,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1135,7 +1147,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1156,7 +1168,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 352
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1177,7 +1189,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1198,7 +1210,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 416
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1219,7 +1231,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1240,7 +1252,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 256
+        y: 288
         width: 32
         height: 32
       alignment: 0
@@ -1261,7 +1273,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1282,7 +1294,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1303,7 +1315,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1324,7 +1336,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1345,7 +1357,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1366,7 +1378,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1387,7 +1399,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1408,7 +1420,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1429,7 +1441,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1439,8 +1451,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07305410000000000800000000000000
-      internalID: 21300080
+      spriteID: 8bbb6d1f521ccda49ab9ad47b9a2f152
+      internalID: 327200811
       vertices: []
       indices: 
       edges: []
@@ -1450,7 +1462,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1460,8 +1472,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27305410000000000800000000000000
-      internalID: 21300082
+      spriteID: b7c2e1d9875876647a4b418c6f2d4a11
+      internalID: -1519941894
       vertices: []
       indices: 
       edges: []
@@ -1471,7 +1483,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1481,8 +1493,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47305410000000000800000000000000
-      internalID: 21300084
+      spriteID: 2eecb1724378a964ba0d35d7ae80fda2
+      internalID: -1279915053
       vertices: []
       indices: 
       edges: []
@@ -1492,7 +1504,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 352
-        y: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1502,8 +1514,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67305410000000000800000000000000
-      internalID: 21300086
+      spriteID: f417656fb87cbe54fb39e76583fced10
+      internalID: 1282801491
       vertices: []
       indices: 
       edges: []
@@ -1513,7 +1525,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1523,8 +1535,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87305410000000000800000000000000
-      internalID: 21300088
+      spriteID: 7d1bdc874946ba44a8027eb19805b7b0
+      internalID: -2078007380
       vertices: []
       indices: 
       edges: []
@@ -1534,7 +1546,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 416
-        y: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1544,8 +1556,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7305410000000000800000000000000
-      internalID: 21300090
+      spriteID: ceff35ef7b975fb46981cfa9ac320de9
+      internalID: 2025184847
       vertices: []
       indices: 
       edges: []
@@ -1555,7 +1567,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 224
+        y: 256
         width: 32
         height: 32
       alignment: 0
@@ -1565,8 +1577,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7305410000000000800000000000000
-      internalID: 21300092
+      spriteID: ac7738af8af91e141acd11f1c3f6a0c9
+      internalID: -250849317
       vertices: []
       indices: 
       edges: []
@@ -1576,6 +1588,27 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1145468fed3725944b3768e69c3a52cd
+      internalID: 483835198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_48
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 224
         width: 32
         height: 32
@@ -1586,29 +1619,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7305410000000000800000000000000
-      internalID: 21300094
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DayNightClock_48
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08305410000000000800000000000000
-      internalID: 21300096
+      spriteID: 19302f4f079564740b97918f5eee17ba
+      internalID: -2057379904
       vertices: []
       indices: 
       edges: []
@@ -1618,7 +1630,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 192
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1628,8 +1640,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28305410000000000800000000000000
-      internalID: 21300098
+      spriteID: 82475ef6d7c172b4ca1f6a14a84b5a9a
+      internalID: -1770271693
       vertices: []
       indices: 
       edges: []
@@ -1639,7 +1651,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 192
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1649,8 +1661,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48305410000000000800000000000000
-      internalID: 21300100
+      spriteID: 696a0f4bf2e32dd499427fe930a8b7f7
+      internalID: 1573801367
       vertices: []
       indices: 
       edges: []
@@ -1660,7 +1672,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 192
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1670,8 +1682,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68305410000000000800000000000000
-      internalID: 21300102
+      spriteID: 2d893610446a36e42baddf27868382c5
+      internalID: -1257048004
       vertices: []
       indices: 
       edges: []
@@ -1681,7 +1693,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 192
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1691,8 +1703,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88305410000000000800000000000000
-      internalID: 21300104
+      spriteID: 377abd8fe554eee4c9120bf9174fb0a7
+      internalID: -1436945756
       vertices: []
       indices: 
       edges: []
@@ -1702,7 +1714,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 192
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1712,8 +1724,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8305410000000000800000000000000
-      internalID: 21300106
+      spriteID: 80c9460d2ad77604c95e7ce87d81b8ee
+      internalID: 103216017
       vertices: []
       indices: 
       edges: []
@@ -1723,7 +1735,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 192
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1733,8 +1745,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8305410000000000800000000000000
-      internalID: 21300108
+      spriteID: 282174b9937104d4d9f6bf67bf387052
+      internalID: 395885929
       vertices: []
       indices: 
       edges: []
@@ -1744,7 +1756,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 192
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1754,8 +1766,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8305410000000000800000000000000
-      internalID: 21300110
+      spriteID: 65db8f4cc87953f48b059be016206910
+      internalID: -1173586037
       vertices: []
       indices: 
       edges: []
@@ -1765,7 +1777,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 192
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1775,8 +1787,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09305410000000000800000000000000
-      internalID: 21300112
+      spriteID: 13df2aeb272104b45963a824c29cb955
+      internalID: -815626382
       vertices: []
       indices: 
       edges: []
@@ -1786,7 +1798,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 192
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1796,8 +1808,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29305410000000000800000000000000
-      internalID: 21300114
+      spriteID: 165a498c7a1f1f84a9226c390912dcc3
+      internalID: 186879592
       vertices: []
       indices: 
       edges: []
@@ -1807,7 +1819,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 192
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1817,8 +1829,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49305410000000000800000000000000
-      internalID: 21300116
+      spriteID: 5432f64230f23584ea8c7458990faf01
+      internalID: 2002308029
       vertices: []
       indices: 
       edges: []
@@ -1828,7 +1840,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 352
-        y: 192
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1838,8 +1850,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69305410000000000800000000000000
-      internalID: 21300118
+      spriteID: 52f8226ad00144e4cb6f2bad25c7dad4
+      internalID: 2122483346
       vertices: []
       indices: 
       edges: []
@@ -1849,7 +1861,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 192
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1859,8 +1871,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89305410000000000800000000000000
-      internalID: 21300120
+      spriteID: bf0022e1324d5b444aa0cddb66dc91ed
+      internalID: -1631003314
       vertices: []
       indices: 
       edges: []
@@ -1870,7 +1882,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 416
-        y: 192
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1880,8 +1892,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9305410000000000800000000000000
-      internalID: 21300122
+      spriteID: 26b79a71b06694e47bd4954eea6d7730
+      internalID: -1928707796
       vertices: []
       indices: 
       edges: []
@@ -1891,7 +1903,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 192
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -1901,8 +1913,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9305410000000000800000000000000
-      internalID: 21300124
+      spriteID: 11d54b902f84c0f44b2a3ef3d4a5b7f5
+      internalID: 1251963686
       vertices: []
       indices: 
       edges: []
@@ -1912,6 +1924,27 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 543c55428d4ac6b4c9950423dc231128
+      internalID: -975707384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_64
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 192
         width: 32
         height: 32
@@ -1922,29 +1955,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9305410000000000800000000000000
-      internalID: 21300126
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DayNightClock_64
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a305410000000000800000000000000
-      internalID: 21300128
+      spriteID: a2964b3154a6095408e937a03f265aa8
+      internalID: 1896394380
       vertices: []
       indices: 
       edges: []
@@ -1954,7 +1966,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -1964,8 +1976,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a305410000000000800000000000000
-      internalID: 21300130
+      spriteID: b0d05e1857b488d448bb44e4b2fcd66f
+      internalID: -1300459
       vertices: []
       indices: 
       edges: []
@@ -1975,7 +1987,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -1985,8 +1997,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a305410000000000800000000000000
-      internalID: 21300132
+      spriteID: 6ccaec8694f773741a1a01d3729ea5fe
+      internalID: -1275012523
       vertices: []
       indices: 
       edges: []
@@ -1996,7 +2008,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2006,8 +2018,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a305410000000000800000000000000
-      internalID: 21300134
+      spriteID: 31454db455926224eb1883fcfddd4857
+      internalID: 1956635371
       vertices: []
       indices: 
       edges: []
@@ -2017,7 +2029,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2027,8 +2039,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a305410000000000800000000000000
-      internalID: 21300136
+      spriteID: 5b2224f7fd073ae40be42c617aeda3c5
+      internalID: 1992426057
       vertices: []
       indices: 
       edges: []
@@ -2038,7 +2050,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2048,8 +2060,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa305410000000000800000000000000
-      internalID: 21300138
+      spriteID: dca0b0c72974ca64c8914d040bb81ec3
+      internalID: 1178032551
       vertices: []
       indices: 
       edges: []
@@ -2059,7 +2071,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2069,8 +2081,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca305410000000000800000000000000
-      internalID: 21300140
+      spriteID: 4316b895a499f5e4e8846b5d11247e3b
+      internalID: 1881757353
       vertices: []
       indices: 
       edges: []
@@ -2080,7 +2092,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2090,8 +2102,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea305410000000000800000000000000
-      internalID: 21300142
+      spriteID: b61fa6fecebd6cc43a398a5db86822f7
+      internalID: 779861695
       vertices: []
       indices: 
       edges: []
@@ -2101,7 +2113,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2111,8 +2123,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b305410000000000800000000000000
-      internalID: 21300144
+      spriteID: b3683206759d1bf43894310f8ca1f899
+      internalID: -294303673
       vertices: []
       indices: 
       edges: []
@@ -2122,7 +2134,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2132,8 +2144,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b305410000000000800000000000000
-      internalID: 21300146
+      spriteID: e44a02f6e7ed24f4fa73cf1f5b85add4
+      internalID: 941729198
       vertices: []
       indices: 
       edges: []
@@ -2143,7 +2155,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2153,8 +2165,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b305410000000000800000000000000
-      internalID: 21300148
+      spriteID: be56e547de3137241be72e1c959eec92
+      internalID: -1930766602
       vertices: []
       indices: 
       edges: []
@@ -2164,7 +2176,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 352
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2174,8 +2186,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b305410000000000800000000000000
-      internalID: 21300150
+      spriteID: 14373b53716f1be4dad24a8885a22ffa
+      internalID: 1375726699
       vertices: []
       indices: 
       edges: []
@@ -2185,7 +2197,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2195,8 +2207,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b305410000000000800000000000000
-      internalID: 21300152
+      spriteID: cc824cff416989743b69d0705cbc0999
+      internalID: 1717905178
       vertices: []
       indices: 
       edges: []
@@ -2206,7 +2218,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 416
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2216,8 +2228,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab305410000000000800000000000000
-      internalID: 21300154
+      spriteID: ab634f5a991c9a04fa83e0d776eb7048
+      internalID: -18285913
       vertices: []
       indices: 
       edges: []
@@ -2227,7 +2239,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 160
+        y: 192
         width: 32
         height: 32
       alignment: 0
@@ -2237,8 +2249,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb305410000000000800000000000000
-      internalID: 21300156
+      spriteID: 131c91ff6d3819f49915e2fcebe7094a
+      internalID: -2096923392
       vertices: []
       indices: 
       edges: []
@@ -2248,6 +2260,27 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4365105152e65f4983f769d5632c284
+      internalID: -679736379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_80
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 160
         width: 32
         height: 32
@@ -2258,29 +2291,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb305410000000000800000000000000
-      internalID: 21300158
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DayNightClock_80
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c305410000000000800000000000000
-      internalID: 21300160
+      spriteID: 01b5ea8b396085f4a9c33d8df0547669
+      internalID: -1146716970
       vertices: []
       indices: 
       edges: []
@@ -2290,7 +2302,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -2300,8 +2312,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c305410000000000800000000000000
-      internalID: 21300162
+      spriteID: fbe1624dc8123634e9137190f8237590
+      internalID: -1906496314
       vertices: []
       indices: 
       edges: []
@@ -2311,7 +2323,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -2321,8 +2333,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c305410000000000800000000000000
-      internalID: 21300164
+      spriteID: 21b14b880f0a74442adf9c97dedef7c6
+      internalID: 1109156573
       vertices: []
       indices: 
       edges: []
@@ -2332,7 +2344,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -2342,8 +2354,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c305410000000000800000000000000
-      internalID: 21300166
+      spriteID: e69099829087d6846a9610cae7f197f0
+      internalID: -1193421489
       vertices: []
       indices: 
       edges: []
@@ -2353,7 +2365,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -2363,8 +2375,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c305410000000000800000000000000
-      internalID: 21300168
+      spriteID: 13047e52c6da54f4c8a2a81b5ed4dfa4
+      internalID: 898587768
       vertices: []
       indices: 
       edges: []
@@ -2374,7 +2386,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -2384,8 +2396,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac305410000000000800000000000000
-      internalID: 21300170
+      spriteID: 2a5920d6a4b27ae468687b0f7a33509c
+      internalID: 2066094617
       vertices: []
       indices: 
       edges: []
@@ -2395,7 +2407,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -2405,8 +2417,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc305410000000000800000000000000
-      internalID: 21300172
+      spriteID: 975d79b8f8200534e89df17aa5732bf1
+      internalID: 419846118
       vertices: []
       indices: 
       edges: []
@@ -2416,7 +2428,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -2426,8 +2438,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec305410000000000800000000000000
-      internalID: 21300174
+      spriteID: 3b0b2a85579d1214eb4985f86d666aa5
+      internalID: 363647778
       vertices: []
       indices: 
       edges: []
@@ -2437,7 +2449,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -2447,8 +2459,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d305410000000000800000000000000
-      internalID: 21300176
+      spriteID: 2d465656dc6a754418c680f96db2e201
+      internalID: 492803108
       vertices: []
       indices: 
       edges: []
@@ -2458,7 +2470,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -2468,8 +2480,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d305410000000000800000000000000
-      internalID: 21300178
+      spriteID: 446b81a63326ec84ca5cd3216e81c241
+      internalID: -892459731
       vertices: []
       indices: 
       edges: []
@@ -2479,7 +2491,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -2489,8 +2501,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d305410000000000800000000000000
-      internalID: 21300180
+      spriteID: 0a989cefc4ae62a4683ca735b0e15d3c
+      internalID: 608554681
       vertices: []
       indices: 
       edges: []
@@ -2500,7 +2512,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 352
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -2510,8 +2522,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d305410000000000800000000000000
-      internalID: 21300182
+      spriteID: 0583fa7995087e54c8788e01163a4e64
+      internalID: 1871940484
       vertices: []
       indices: 
       edges: []
@@ -2521,7 +2533,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -2531,8 +2543,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d305410000000000800000000000000
-      internalID: 21300184
+      spriteID: 350389fb5d0fd744098b5861e583f0fd
+      internalID: 2001256252
       vertices: []
       indices: 
       edges: []
@@ -2542,7 +2554,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 416
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -2552,8 +2564,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad305410000000000800000000000000
-      internalID: 21300186
+      spriteID: 81dc03380aafb4e47b6e843e1eae1948
+      internalID: -1000618334
       vertices: []
       indices: 
       edges: []
@@ -2563,7 +2575,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 128
+        y: 160
         width: 32
         height: 32
       alignment: 0
@@ -2573,8 +2585,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd305410000000000800000000000000
-      internalID: 21300188
+      spriteID: 180469e4317b00748904727ba8aedc14
+      internalID: -367415028
       vertices: []
       indices: 
       edges: []
@@ -2584,6 +2596,27 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b63c316189a8104fa7d2b15a14a661e
+      internalID: -949790022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_96
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 128
         width: 32
         height: 32
@@ -2594,29 +2627,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed305410000000000800000000000000
-      internalID: 21300190
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DayNightClock_96
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e305410000000000800000000000000
-      internalID: 21300192
+      spriteID: 5e7587b1876ec184bb5815c15600b435
+      internalID: 820007363
       vertices: []
       indices: 
       edges: []
@@ -2626,7 +2638,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2636,8 +2648,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e305410000000000800000000000000
-      internalID: 21300194
+      spriteID: a84d5b43810b01e498d5aefd5663913d
+      internalID: 1673578746
       vertices: []
       indices: 
       edges: []
@@ -2647,7 +2659,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2657,8 +2669,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e305410000000000800000000000000
-      internalID: 21300196
+      spriteID: d7a39a210f3ab8840a2cfc0580b4e1ae
+      internalID: 69627961
       vertices: []
       indices: 
       edges: []
@@ -2668,7 +2680,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2678,8 +2690,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e305410000000000800000000000000
-      internalID: 21300198
+      spriteID: 1650222b55cb6174f9d520330bf84d03
+      internalID: 1252174251
       vertices: []
       indices: 
       edges: []
@@ -2689,7 +2701,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2699,8 +2711,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e305410000000000800000000000000
-      internalID: 21300200
+      spriteID: 03cd63cb0b07714408d3dcce91a53484
+      internalID: -1073119399
       vertices: []
       indices: 
       edges: []
@@ -2710,7 +2722,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2720,8 +2732,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae305410000000000800000000000000
-      internalID: 21300202
+      spriteID: 762ef0fac154ed84c9b569584a51a12c
+      internalID: 1627358495
       vertices: []
       indices: 
       edges: []
@@ -2731,7 +2743,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2741,8 +2753,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce305410000000000800000000000000
-      internalID: 21300204
+      spriteID: 1cdf90e45d7d8ae4f9ea49adec2c748a
+      internalID: -1348068683
       vertices: []
       indices: 
       edges: []
@@ -2752,7 +2764,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2762,8 +2774,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee305410000000000800000000000000
-      internalID: 21300206
+      spriteID: 5ba531567b961354da6e35643918b371
+      internalID: -329023596
       vertices: []
       indices: 
       edges: []
@@ -2773,7 +2785,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2783,8 +2795,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f305410000000000800000000000000
-      internalID: 21300208
+      spriteID: 8bae41eed2b7ce04faf41ad7f957aae7
+      internalID: -693685287
       vertices: []
       indices: 
       edges: []
@@ -2794,7 +2806,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2804,8 +2816,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f305410000000000800000000000000
-      internalID: 21300210
+      spriteID: 8b7c181f7e606ca419ea6806115bee51
+      internalID: -803181013
       vertices: []
       indices: 
       edges: []
@@ -2815,7 +2827,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2825,8 +2837,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f305410000000000800000000000000
-      internalID: 21300212
+      spriteID: a3e4761714c6b7640945c5879f6b492d
+      internalID: -1020345310
       vertices: []
       indices: 
       edges: []
@@ -2836,7 +2848,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 352
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2846,8 +2858,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f305410000000000800000000000000
-      internalID: 21300214
+      spriteID: b71795482b2269740bef0947134cc566
+      internalID: 875457652
       vertices: []
       indices: 
       edges: []
@@ -2857,7 +2869,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2867,8 +2879,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f305410000000000800000000000000
-      internalID: 21300216
+      spriteID: 6ef0038c057beff42921101f83aaf49a
+      internalID: 2104862940
       vertices: []
       indices: 
       edges: []
@@ -2878,7 +2890,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 416
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2888,8 +2900,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af305410000000000800000000000000
-      internalID: 21300218
+      spriteID: 20cc965ac248ade4d988c7b1fb95db48
+      internalID: -432131592
       vertices: []
       indices: 
       edges: []
@@ -2899,7 +2911,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 96
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -2909,8 +2921,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf305410000000000800000000000000
-      internalID: 21300220
+      spriteID: fdc6ed6634c41614b868a92969b77e82
+      internalID: -1706232311
       vertices: []
       indices: 
       edges: []
@@ -2920,6 +2932,27 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f22889491fab854fb3e963c1fa5bf11
+      internalID: -67913114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_112
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 96
         width: 32
         height: 32
@@ -2930,29 +2963,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef305410000000000800000000000000
-      internalID: 21300222
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DayNightClock_112
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00405410000000000800000000000000
-      internalID: 21300224
+      spriteID: ceb6626154c2eaf459fb2cfb54d84b7d
+      internalID: 602302453
       vertices: []
       indices: 
       edges: []
@@ -2962,7 +2974,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -2972,8 +2984,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20405410000000000800000000000000
-      internalID: 21300226
+      spriteID: 9a8da65ff0a354f4f97bd9bdd892fde1
+      internalID: -1289730716
       vertices: []
       indices: 
       edges: []
@@ -2983,7 +2995,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -2993,8 +3005,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40405410000000000800000000000000
-      internalID: 21300228
+      spriteID: 1edef51c0f9afbd4db9d2685cab8cb47
+      internalID: -1177023016
       vertices: []
       indices: 
       edges: []
@@ -3004,7 +3016,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3014,8 +3026,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60405410000000000800000000000000
-      internalID: 21300230
+      spriteID: c281608f75da1fe4db66409c781874d1
+      internalID: -1168682323
       vertices: []
       indices: 
       edges: []
@@ -3025,7 +3037,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3035,8 +3047,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80405410000000000800000000000000
-      internalID: 21300232
+      spriteID: 2f4243bb8da96c7418a02f89a781b637
+      internalID: 670123285
       vertices: []
       indices: 
       edges: []
@@ -3046,7 +3058,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3056,8 +3068,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0405410000000000800000000000000
-      internalID: 21300234
+      spriteID: fb81ccfdf4c5b1d46b4fed597d49dab6
+      internalID: 17420133
       vertices: []
       indices: 
       edges: []
@@ -3067,7 +3079,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3077,8 +3089,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0405410000000000800000000000000
-      internalID: 21300236
+      spriteID: 5d21d86117e1c2f4199aef7343804188
+      internalID: 1831400905
       vertices: []
       indices: 
       edges: []
@@ -3088,7 +3100,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3098,8 +3110,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0405410000000000800000000000000
-      internalID: 21300238
+      spriteID: 2799654a2bfc35b498be59074653bc94
+      internalID: -1669148999
       vertices: []
       indices: 
       edges: []
@@ -3109,7 +3121,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3119,8 +3131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01405410000000000800000000000000
-      internalID: 21300240
+      spriteID: dc71a7d4adc4f22439e1c4696f032ce7
+      internalID: 2131416386
       vertices: []
       indices: 
       edges: []
@@ -3130,7 +3142,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3140,8 +3152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21405410000000000800000000000000
-      internalID: 21300242
+      spriteID: fa57518e1a370344498939d46d5abd41
+      internalID: -883592672
       vertices: []
       indices: 
       edges: []
@@ -3151,7 +3163,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3161,8 +3173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41405410000000000800000000000000
-      internalID: 21300244
+      spriteID: b80e04a2134e5a0429666179d2d0a11f
+      internalID: -1556036983
       vertices: []
       indices: 
       edges: []
@@ -3172,7 +3184,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 352
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3182,8 +3194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61405410000000000800000000000000
-      internalID: 21300246
+      spriteID: 6299e23db7ea316478945ce1dabaaaac
+      internalID: 1633876531
       vertices: []
       indices: 
       edges: []
@@ -3193,7 +3205,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3203,8 +3215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81405410000000000800000000000000
-      internalID: 21300248
+      spriteID: c94b0ce5b98409a43b61b1142b428b3d
+      internalID: 756397418
       vertices: []
       indices: 
       edges: []
@@ -3214,7 +3226,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 416
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3224,8 +3236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1405410000000000800000000000000
-      internalID: 21300250
+      spriteID: 64423798e26df2a4d868c95ca48116ab
+      internalID: 944489475
       vertices: []
       indices: 
       edges: []
@@ -3235,7 +3247,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -3245,8 +3257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1405410000000000800000000000000
-      internalID: 21300252
+      spriteID: b805b2401aa067241abe05acfca8057b
+      internalID: 1604613316
       vertices: []
       indices: 
       edges: []
@@ -3256,6 +3268,27 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef46cfd4b8dca3488a4ef7c75502a30
+      internalID: -505700080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_128
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 64
         width: 32
         height: 32
@@ -3266,29 +3299,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1405410000000000800000000000000
-      internalID: 21300254
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DayNightClock_128
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02405410000000000800000000000000
-      internalID: 21300256
+      spriteID: e13f6dc71bc3bc54f9a84e3de29fb1ef
+      internalID: 527450602
       vertices: []
       indices: 
       edges: []
@@ -3298,6 +3310,321 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be50891f996ec1d4085d739baa8604b8
+      internalID: -242702772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_130
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdbffdac647bdce418b012cf6a3337b2
+      internalID: -463790090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_131
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3209b7da45a4fbb43b6af4bbebed7d89
+      internalID: -996221878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_132
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f70a26e3bd8a04469f81a152b026074
+      internalID: 93259557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_133
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e06c53299ad144c9374a5526c2150a
+      internalID: -268255040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_134
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cad23e517b5dfac478da05575df8437c
+      internalID: -1516530883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_135
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5267f6d364e91948a48905445b16145
+      internalID: 1410474406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_136
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5caa30231ee82a440aaa9e5211b868fc
+      internalID: 1161205073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_137
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ab67c636143c343abd2a3bf3409292
+      internalID: 421260014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_138
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 231b6cd2a2bb1314686cc0d107870787
+      internalID: 225878046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_139
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c38345d7fd29643b739e7062378d1c
+      internalID: 2078168827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_140
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a8dd8f52da9e2479744307ed05d330
+      internalID: -1260084960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_141
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d251ac0e047607419fee4ae6ed7f344
+      internalID: 2023480427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_142
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef5d0a778ff442044b56ad44434487f9
+      internalID: 1594071998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_143
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45a7ace82b2b5b4fa3b65d8308d2d9c
+      internalID: 1006011655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_144
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 32
         width: 32
         height: 32
@@ -3308,14 +3635,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22405410000000000800000000000000
-      internalID: 21300258
+      spriteID: dc6973b7c86b0e84897bab55ef5def21
+      internalID: -1434871909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_130
+      name: DayNightClock_145
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f1043d39460c86448f9a6bff38fc31a
+      internalID: -1371464839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayNightClock_146
       rect:
         serializedVersion: 2
         x: 64
@@ -3329,14 +3677,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42405410000000000800000000000000
-      internalID: 21300260
+      spriteID: 8b9f523c388a2164b82df76bcd190cd5
+      internalID: 1991756760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_131
+      name: DayNightClock_147
       rect:
         serializedVersion: 2
         x: 96
@@ -3350,14 +3698,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62405410000000000800000000000000
-      internalID: 21300262
+      spriteID: 3e89dd03aba6e644f972d148dda5c83c
+      internalID: 1973857555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_132
+      name: DayNightClock_148
       rect:
         serializedVersion: 2
         x: 128
@@ -3371,14 +3719,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82405410000000000800000000000000
-      internalID: 21300264
+      spriteID: 8c90bd7a4ebde494da67f3a37d152ed8
+      internalID: 434738794
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_133
+      name: DayNightClock_149
       rect:
         serializedVersion: 2
         x: 160
@@ -3392,14 +3740,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2405410000000000800000000000000
-      internalID: 21300266
+      spriteID: 68de5db7636eb9243847583c6ddf62ba
+      internalID: -971723255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_134
+      name: DayNightClock_150
       rect:
         serializedVersion: 2
         x: 192
@@ -3413,14 +3761,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2405410000000000800000000000000
-      internalID: 21300268
+      spriteID: 77d38efcddfc0c14b8d0b80c4590a2d5
+      internalID: 184160517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_135
+      name: DayNightClock_151
       rect:
         serializedVersion: 2
         x: 224
@@ -3434,14 +3782,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2405410000000000800000000000000
-      internalID: 21300270
+      spriteID: 6053c0619264d23408007c251a4b599d
+      internalID: -111575330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_136
+      name: DayNightClock_152
       rect:
         serializedVersion: 2
         x: 256
@@ -3455,14 +3803,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03405410000000000800000000000000
-      internalID: 21300272
+      spriteID: 989e87ea244817842916161231c57a88
+      internalID: 377593750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_137
+      name: DayNightClock_153
       rect:
         serializedVersion: 2
         x: 288
@@ -3476,14 +3824,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23405410000000000800000000000000
-      internalID: 21300274
+      spriteID: 4a64d4037ba6b564cb113234a1aaad8e
+      internalID: 1857527525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_138
+      name: DayNightClock_154
       rect:
         serializedVersion: 2
         x: 320
@@ -3497,14 +3845,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43405410000000000800000000000000
-      internalID: 21300276
+      spriteID: 3996aa5518e3a21449b481161ca381c3
+      internalID: 313040291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_139
+      name: DayNightClock_155
       rect:
         serializedVersion: 2
         x: 352
@@ -3518,14 +3866,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63405410000000000800000000000000
-      internalID: 21300278
+      spriteID: e81a31060b818344aba919c2a2194dba
+      internalID: 1383850190
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_140
+      name: DayNightClock_156
       rect:
         serializedVersion: 2
         x: 384
@@ -3539,14 +3887,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83405410000000000800000000000000
-      internalID: 21300280
+      spriteID: a4ba029dcffbe104a92d16a0b7d28a72
+      internalID: 262269687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_141
+      name: DayNightClock_157
       rect:
         serializedVersion: 2
         x: 416
@@ -3560,14 +3908,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3405410000000000800000000000000
-      internalID: 21300282
+      spriteID: f0e039457b32f8a45962d04c151b13a6
+      internalID: 1789788908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_142
+      name: DayNightClock_158
       rect:
         serializedVersion: 2
         x: 448
@@ -3581,14 +3929,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3405410000000000800000000000000
-      internalID: 21300284
+      spriteID: 1b39f59c91a83cb47b156a787b6fca19
+      internalID: 386663792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_143
+      name: DayNightClock_159
       rect:
         serializedVersion: 2
         x: 480
@@ -3602,14 +3950,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3405410000000000800000000000000
-      internalID: 21300286
+      spriteID: f05d9d18fc680304e815e53022ea56f0
+      internalID: 1912350280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_144
+      name: DayNightClock_160
       rect:
         serializedVersion: 2
         x: 0
@@ -3623,14 +3971,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04405410000000000800000000000000
-      internalID: 21300288
+      spriteID: fb2c0490bb1e3924a946e419947f1d76
+      internalID: -1025425789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_145
+      name: DayNightClock_161
       rect:
         serializedVersion: 2
         x: 32
@@ -3644,14 +3992,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24405410000000000800000000000000
-      internalID: 21300290
+      spriteID: a69fb149ce150854f9e238bc22492289
+      internalID: 1754393655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_146
+      name: DayNightClock_162
       rect:
         serializedVersion: 2
         x: 64
@@ -3665,14 +4013,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44405410000000000800000000000000
-      internalID: 21300292
+      spriteID: 9022f8e2af8553a44b217cb68cf4359c
+      internalID: -1063610173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_147
+      name: DayNightClock_163
       rect:
         serializedVersion: 2
         x: 96
@@ -3686,14 +4034,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64405410000000000800000000000000
-      internalID: 21300294
+      spriteID: f290f7ccf84461743a39f13b93485ec1
+      internalID: -1265194774
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_148
+      name: DayNightClock_164
       rect:
         serializedVersion: 2
         x: 128
@@ -3707,14 +4055,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84405410000000000800000000000000
-      internalID: 21300296
+      spriteID: fec798669547d514eb9ba53baa0cb161
+      internalID: -1425236426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_149
+      name: DayNightClock_165
       rect:
         serializedVersion: 2
         x: 160
@@ -3728,14 +4076,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4405410000000000800000000000000
-      internalID: 21300298
+      spriteID: 1f43fd3145c095d4e8a831f8a6f0544e
+      internalID: -279966475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_150
+      name: DayNightClock_166
       rect:
         serializedVersion: 2
         x: 192
@@ -3749,14 +4097,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4405410000000000800000000000000
-      internalID: 21300300
+      spriteID: a1d17ee626d5c0b4f96659524178554a
+      internalID: -384358985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_151
+      name: DayNightClock_167
       rect:
         serializedVersion: 2
         x: 224
@@ -3770,14 +4118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4405410000000000800000000000000
-      internalID: 21300302
+      spriteID: cdb48b8f5394f4548bd46a2bce3f9a73
+      internalID: 1919666229
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_152
+      name: DayNightClock_168
       rect:
         serializedVersion: 2
         x: 256
@@ -3791,14 +4139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05405410000000000800000000000000
-      internalID: 21300304
+      spriteID: b0ef7dd90a97ea442bce00ffb4a6094a
+      internalID: 767177558
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_153
+      name: DayNightClock_169
       rect:
         serializedVersion: 2
         x: 288
@@ -3812,14 +4160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25405410000000000800000000000000
-      internalID: 21300306
+      spriteID: 540c1c8683c81a14f82f42ce4fa57126
+      internalID: 1835748630
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_154
+      name: DayNightClock_170
       rect:
         serializedVersion: 2
         x: 320
@@ -3833,14 +4181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45405410000000000800000000000000
-      internalID: 21300308
+      spriteID: 2380c5c8330379547bb38613ecfd42b0
+      internalID: 8998116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_155
+      name: DayNightClock_171
       rect:
         serializedVersion: 2
         x: 352
@@ -3854,14 +4202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65405410000000000800000000000000
-      internalID: 21300310
+      spriteID: 47a7deb7a97b15b489f19c963f16db77
+      internalID: -1983729131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_156
+      name: DayNightClock_172
       rect:
         serializedVersion: 2
         x: 384
@@ -3875,14 +4223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85405410000000000800000000000000
-      internalID: 21300312
+      spriteID: fa3b324183887054f9093efa28ff70c7
+      internalID: 1554178562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_157
+      name: DayNightClock_173
       rect:
         serializedVersion: 2
         x: 416
@@ -3896,14 +4244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5405410000000000800000000000000
-      internalID: 21300314
+      spriteID: 61ad3ec53ebf7dc40aa887c9f14ecd29
+      internalID: 752872250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_158
+      name: DayNightClock_174
       rect:
         serializedVersion: 2
         x: 448
@@ -3917,14 +4265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5405410000000000800000000000000
-      internalID: 21300316
+      spriteID: 145b1f9d5a06a844392f0587c13513a2
+      internalID: -354951037
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DayNightClock_159
+      name: DayNightClock_175
       rect:
         serializedVersion: 2
         x: 480
@@ -3938,8 +4286,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5405410000000000800000000000000
-      internalID: 21300318
+      spriteID: d92f37b46a17b8f45ac04847d53b0ca3
+      internalID: 549234851
       vertices: []
       indices: 
       edges: []
@@ -3947,7 +4295,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a4008fcdf04fb354a9e0ea1f9bc870a3
     internalID: 0
     vertices: []
     indices: 
@@ -3956,165 +4304,181 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       DayNightClock_39: 21300078
-      DayNightClock_96: 21300192
-      DayNightClock_40: 21300080
-      DayNightClock_125: 21300250
-      DayNightClock_138: 21300276
-      DayNightClock_121: 21300242
-      DayNightClock_78: 21300156
-      DayNightClock_56: 21300112
-      DayNightClock_12: 21300024
-      DayNightClock_155: 21300310
-      DayNightClock_142: 21300284
-      DayNightClock_158: 21300316
-      DayNightClock_154: 21300308
-      DayNightClock_89: 21300178
+      DayNightClock_96: 820007363
+      DayNightClock_40: 327200811
+      DayNightClock_138: 225878046
+      DayNightClock_26: 21300052
+      DayNightClock_78: -2096923392
+      DayNightClock_56: -815626382
+      DayNightClock_142: 1594071998
+      DayNightClock_158: 386663792
+      DayNightClock_154: 313040291
       DayNightClock_27: 21300054
       DayNightClock_32: 21300064
-      DayNightClock_26: 21300052
-      DayNightClock_68: 21300136
-      DayNightClock_150: 21300300
-      DayNightClock_16: 21300032
-      DayNightClock_97: 21300194
+      DayNightClock_150: 184160517
+      DayNightClock_164: -1425236426
       DayNightClock_17: 21300034
-      DayNightClock_112: 21300224
       DayNightClock_37: 21300074
-      DayNightClock_6: 21300012
-      DayNightClock_58: 21300116
-      DayNightClock_38: 21300076
-      DayNightClock_35: 21300070
-      DayNightClock_75: 21300150
-      DayNightClock_148: 21300296
-      DayNightClock_102: 21300204
+      DayNightClock_148: 434738794
       DayNightClock_22: 21300044
-      DayNightClock_76: 21300152
-      DayNightClock_141: 21300282
-      DayNightClock_49: 21300098
-      DayNightClock_100: 21300200
-      DayNightClock_111: 21300222
-      DayNightClock_113: 21300226
-      DayNightClock_86: 21300172
+      DayNightClock_141: 2023480427
+      DayNightClock_100: -1073119399
+      DayNightClock_111: -67913114
+      DayNightClock_113: -1289730716
       DayNightClock_18: 21300036
-      DayNightClock_123: 21300246
       DayNightClock_21: 21300042
-      DayNightClock_127: 21300254
-      DayNightClock_149: 21300298
-      DayNightClock_103: 21300206
-      DayNightClock_104: 21300208
-      DayNightClock_140: 21300280
-      DayNightClock_91: 21300182
-      DayNightClock_45: 21300090
-      DayNightClock_152: 21300304
-      DayNightClock_44: 21300088
-      DayNightClock_108: 21300216
-      DayNightClock_4: 21300008
+      DayNightClock_127: -505700080
+      DayNightClock_171: -1983729131
+      DayNightClock_103: -329023596
+      DayNightClock_104: -693685287
+      DayNightClock_140: -1260084960
+      DayNightClock_45: 2025184847
+      DayNightClock_108: 2104862940
+      DayNightClock_174: -354951037
       DayNightClock_33: 21300066
       DayNightClock_25: 21300050
-      DayNightClock_84: 21300168
-      DayNightClock_70: 21300140
+      DayNightClock_84: 898587768
       DayNightClock_24: 21300048
-      DayNightClock_47: 21300094
-      DayNightClock_62: 21300124
-      DayNightClock_55: 21300110
+      DayNightClock_47: 483835198
+      DayNightClock_55: -1173586037
+      DayNightClock_173: 752872250
       DayNightClock_19: 21300038
-      DayNightClock_92: 21300184
-      DayNightClock_119: 21300238
-      DayNightClock_153: 21300306
-      DayNightClock_51: 21300102
-      DayNightClock_93: 21300186
-      DayNightClock_43: 21300086
-      DayNightClock_2: 21300004
+      DayNightClock_119: -1669148999
+      DayNightClock_153: 1857527525
+      DayNightClock_51: -1257048004
+      DayNightClock_93: -1000618334
       DayNightClock_11: 21300022
-      DayNightClock_126: 21300252
-      DayNightClock_156: 21300312
-      DayNightClock_147: 21300294
-      DayNightClock_151: 21300302
-      DayNightClock_46: 21300092
-      DayNightClock_79: 21300158
-      DayNightClock_67: 21300134
-      DayNightClock_72: 21300144
-      DayNightClock_106: 21300212
-      DayNightClock_30: 21300060
-      DayNightClock_114: 21300228
-      DayNightClock_137: 21300274
-      DayNightClock_87: 21300174
-      DayNightClock_85: 21300170
-      DayNightClock_105: 21300210
+      DayNightClock_156: 262269687
+      DayNightClock_147: 1973857555
+      DayNightClock_151: -111575330
+      DayNightClock_79: -679736379
+      DayNightClock_67: 1956635371
+      DayNightClock_72: -294303673
+      DayNightClock_175: 549234851
+      DayNightClock_106: -1020345310
+      DayNightClock_114: -1177023016
+      DayNightClock_137: 421260014
+      DayNightClock_87: 363647778
+      DayNightClock_105: -803181013
       DayNightClock_23: 21300046
-      DayNightClock_80: 21300160
-      DayNightClock_48: 21300096
-      DayNightClock_144: 21300288
-      DayNightClock_128: 21300256
-      DayNightClock_131: 21300262
-      DayNightClock_36: 21300072
-      DayNightClock_71: 21300142
-      DayNightClock_99: 21300198
-      DayNightClock_130: 21300260
-      DayNightClock_117: 21300234
-      DayNightClock_42: 21300084
-      DayNightClock_122: 21300244
-      DayNightClock_157: 21300314
-      DayNightClock_41: 21300082
-      DayNightClock_107: 21300214
-      DayNightClock_8: 21300016
-      DayNightClock_115: 21300230
-      DayNightClock_90: 21300180
-      DayNightClock_116: 21300232
-      DayNightClock_118: 21300236
+      DayNightClock_80: -1146716970
+      DayNightClock_131: -996221878
+      DayNightClock_71: 779861695
+      DayNightClock_99: 1252174251
+      DayNightClock_157: 1789788908
+      DayNightClock_42: -1279915053
+      DayNightClock_165: -279966475
+      DayNightClock_41: -1519941894
+      DayNightClock_90: 608554681
+      DayNightClock_118: 1831400905
       DayNightClock_14: 21300028
-      DayNightClock_133: 21300266
-      DayNightClock_10: 21300020
-      DayNightClock_59: 21300118
-      DayNightClock_120: 21300240
-      DayNightClock_28: 21300056
-      DayNightClock_53: 21300106
-      DayNightClock_60: 21300120
-      DayNightClock_50: 21300100
-      DayNightClock_82: 21300164
-      DayNightClock_145: 21300290
-      DayNightClock_81: 21300162
-      DayNightClock_1: 21300002
-      DayNightClock_135: 21300270
-      DayNightClock_109: 21300218
-      DayNightClock_83: 21300166
-      DayNightClock_101: 21300202
-      DayNightClock_110: 21300220
-      DayNightClock_13: 21300026
+      DayNightClock_170: 8998116
+      DayNightClock_120: 2131416386
+      DayNightClock_53: 103216017
+      DayNightClock_60: -1631003314
+      DayNightClock_50: 1573801367
+      DayNightClock_145: -1371464839
+      DayNightClock_81: -1906496314
+      DayNightClock_135: 1410474406
+      DayNightClock_139: 2078168827
+      DayNightClock_101: 1627358495
+      DayNightClock_110: -1706232311
       DayNightClock_29: 21300058
-      DayNightClock_143: 21300286
-      DayNightClock_139: 21300278
-      DayNightClock_98: 21300196
-      DayNightClock_134: 21300268
-      DayNightClock_95: 21300190
       DayNightClock_7: 21300014
-      DayNightClock_146: 21300292
       DayNightClock_9: 21300018
       DayNightClock_3: 21300006
-      DayNightClock_65: 21300130
-      DayNightClock_52: 21300104
-      DayNightClock_77: 21300154
-      DayNightClock_61: 21300122
-      DayNightClock_64: 21300128
-      DayNightClock_94: 21300188
-      DayNightClock_124: 21300248
-      DayNightClock_34: 21300068
-      DayNightClock_63: 21300126
+      DayNightClock_52: -1436945756
+      DayNightClock_61: -1928707796
+      DayNightClock_162: -1063610173
       DayNightClock_15: 21300030
       DayNightClock_31: 21300062
-      DayNightClock_69: 21300138
-      DayNightClock_159: 21300318
-      DayNightClock_57: 21300114
-      DayNightClock_136: 21300272
-      DayNightClock_73: 21300146
+      DayNightClock_69: 1178032551
+      DayNightClock_136: 1161205073
+      DayNightClock_160: -1025425789
+      DayNightClock_73: 941729198
       DayNightClock_20: 21300040
       DayNightClock_5: 21300010
-      DayNightClock_54: 21300108
-      DayNightClock_88: 21300176
+      DayNightClock_54: 395885929
+      DayNightClock_88: 492803108
+      DayNightClock_66: -1275012523
+      DayNightClock_132: 93259557
+      DayNightClock_6: 21300012
+      DayNightClock_125: 944489475
+      DayNightClock_121: -883592672
+      DayNightClock_155: 1383850190
+      DayNightClock_89: -892459731
+      DayNightClock_68: 1992426057
+      DayNightClock_16: 21300032
+      DayNightClock_97: 1673578746
+      DayNightClock_172: 1554178562
+      DayNightClock_112: 602302453
+      DayNightClock_102: -1348068683
+      DayNightClock_58: 2002308029
+      DayNightClock_38: 21300076
+      DayNightClock_35: 21300070
+      DayNightClock_75: 1375726699
+      DayNightClock_76: 1717905178
+      DayNightClock_49: -1770271693
+      DayNightClock_86: 419846118
+      DayNightClock_123: 1633876531
+      DayNightClock_149: -971723255
+      DayNightClock_167: 1919666229
+      DayNightClock_91: 1871940484
+      DayNightClock_169: 1835748630
+      DayNightClock_152: 377593750
+      DayNightClock_44: -2078007380
+      DayNightClock_4: 21300008
+      DayNightClock_70: 1881757353
+      DayNightClock_62: 1251963686
+      DayNightClock_92: 2001256252
+      DayNightClock_43: 1282801491
+      DayNightClock_2: 21300004
+      DayNightClock_126: 1604613316
+      DayNightClock_166: -384358985
+      DayNightClock_46: -250849317
+      DayNightClock_85: 2066094617
+      DayNightClock_30: 21300060
+      DayNightClock_48: -2057379904
+      DayNightClock_144: -1434871909
+      DayNightClock_128: 527450602
+      DayNightClock_36: 21300072
+      DayNightClock_130: -463790090
+      DayNightClock_117: 17420133
+      DayNightClock_122: -1556036983
+      DayNightClock_107: 875457652
+      DayNightClock_8: 21300016
+      DayNightClock_115: -1168682323
+      DayNightClock_116: 670123285
+      DayNightClock_133: -268255040
+      DayNightClock_10: 21300020
+      DayNightClock_59: 2122483346
+      DayNightClock_28: 21300056
+      DayNightClock_82: 1109156573
+      DayNightClock_109: -432131592
+      DayNightClock_1: 21300002
+      DayNightClock_83: -1193421489
+      DayNightClock_13: 21300026
+      DayNightClock_143: 1006011655
+      DayNightClock_163: -1265194774
+      DayNightClock_98: 69627961
+      DayNightClock_134: -1516530883
+      DayNightClock_161: 1754393655
+      DayNightClock_95: -949790022
+      DayNightClock_146: 1991756760
+      DayNightClock_65: -1300459
+      DayNightClock_77: -18285913
+      DayNightClock_64: 1896394380
+      DayNightClock_94: -367415028
+      DayNightClock_124: 756397418
+      DayNightClock_168: 767177558
+      DayNightClock_34: 21300068
+      DayNightClock_63: -975707384
+      DayNightClock_159: 1912350280
+      DayNightClock_57: 186879592
+      DayNightClock_129: -242702772
       DayNightClock_0: 21300000
-      DayNightClock_66: 21300132
-      DayNightClock_129: 21300258
-      DayNightClock_132: 21300264
-      DayNightClock_74: 21300148
+      DayNightClock_12: 21300024
+      DayNightClock_74: -1930766602
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -35,12 +35,13 @@ public class Default : MonoBehaviour
     private GameObject DivineAttackGM;
     private Animator animator;
     public DataTower dt;
-    private int lvl;
+    public int lvl;
     private UpHave upHaveScript;
     private BulletController bc;
     public int chanceAssasin;
     public int Chain;
     public int critChance;
+    public int countAttackToTarget;
     public AudioClip hitSFX;
     void Start()
     {
@@ -106,14 +107,14 @@ public class Default : MonoBehaviour
         {
             attackSpeed = upHaveScript.curAttackSpeed;
             critChance = upHaveScript.critChance;
-            attackRadius = dt.lvlData[lvl, 2];
+            attackRadius = dt.lvlData[lvl, 2] + (dt.lvlData[lvl, 2] *GameManager.Instance.secondsBuff[12]/100);
             slowPower = dt.lvlData[lvl, 5];
             firePower = damage * (int)((float)(dt.lvlData[lvl, 6] + GameManager.Instance.buff[2])/100);
             poisonPower = damage *(int)((float)(dt.lvlData[lvl, 7]+ GameManager.Instance.buff[3])/100);
             stanChance = (int)dt.lvlData[lvl, 8];
             portalChange = (int)dt.lvlData[lvl, 9];
             maxTargets = (int)dt.lvlData[lvl, 10];
-            thiefPower = (int)dt.lvlData[lvl, 11];
+            thiefPower = (int)dt.lvlData[lvl, 11]+(int)(dt.lvlData[lvl, 11] * GameManager.Instance.buff[6]/100);
             dmgBoom = (int)dt.lvlData[lvl, 12];
             reduceArmor = dt.lvlData[lvl, 13];
             chanceDivine = (int)dt.lvlData[lvl, 14];
@@ -132,7 +133,7 @@ public class Default : MonoBehaviour
         poisonPower = (int)dt.lvlData[lvl, 7];
         stanChance = (int)dt.lvlData[lvl, 8];
         portalChange = (int)dt.lvlData[lvl, 9];
-        maxTargets = (int)dt.lvlData[lvl, 10];
+        maxTargets = (int)dt.lvlData[lvl, 10] + (int)(GameManager.Instance.secondsBuff[13] * ((int)(countAttackToTarget / 4)));
         thiefPower = (int)dt.lvlData[lvl, 11];
         dmgBoom = (int)dt.lvlData[lvl, 12];
         reduceArmor = dt.lvlData[lvl, 13];
@@ -213,6 +214,38 @@ public class Default : MonoBehaviour
        Debug.Log("ATTACK");
         if (attackCooldown <= 0f)
         {
+            bool upTargets = false;
+            int counter = 0;
+            countAttackToTarget++;
+            if (countAttackToTarget > 4)
+            {
+                upTargets = true;
+
+                // Добавляем новые цели до достижения maxTargets
+                while (currentTargets.Count < maxTargets && enemiesInRange.Count > 0)
+                {
+                    // Добавляем первую цель из enemiesInRange в currentTargets
+                    Transform newTarget = enemiesInRange[0];
+
+                    // Проверяем, есть ли новая цель в currentTargets
+                    if (!currentTargets.Contains(newTarget))
+                    {
+                        currentTargets.Add(newTarget);
+                    }
+
+                    // Удаляем добавленную цель из enemiesInRange
+                    enemiesInRange.RemoveAt(0);
+                }
+            }
+            else
+            {
+                // Удаляем лишние цели, если их количество больше maxTargets
+                while (currentTargets.Count > maxTargets)
+                {
+                    // Удаляем последний элемент из currentTargets, чтобы сохранить порядок
+                    currentTargets.RemoveAt(currentTargets.Count - 1);
+                }
+            }
             HashSet<Transform> attackedTargets = new HashSet<Transform>();
             foreach (var target in currentTargets)
             {
@@ -255,7 +288,7 @@ public class Default : MonoBehaviour
                         else if (bulletController.type == TypeBull.thief)
                         {
                             bulletController.ThiefPower = thiefPower;
-                            bulletController.thiefCount = thiefReward;
+                            bulletController.thiefCount = 10;
                         }
                         else if (bulletController.type == TypeBull.armorReduce)
                         {
@@ -330,7 +363,7 @@ public class Default : MonoBehaviour
                         else if(bulletController.type == TypeBull.gear)
                         {
                             bulletController.damage = damage;
-                            attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100)) + (Chain/100 * (float)GetComponent<GearTower>().objectCount);
+                            attackCooldown = attackSpeed /(1 + GameManager.Instance.buff[5] / 100+ (Chain/100 * (float)GetComponent<GearTower>().objectCount));
                         }
                     }
                     else if (bulletCannonController != null)
@@ -341,16 +374,22 @@ public class Default : MonoBehaviour
                         bulletCannonController.critChance = critChance;
                     }
 
-                    attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));
+                    attackCooldown =  attackSpeed /(1 + GameManager.Instance.buff[5] / 100);
+
                     if (bulletController != null)
                     {
                         if (bulletController.type == TypeBull.moon && GameManager.Instance.gameObject.GetComponent<SunMoonScript>().moonCount >= GameManager.Instance.gameObject.GetComponent<SunMoonScript>().sunCount)
                         {
-                            attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5]/100))/2;
+                            attackCooldown = attackSpeed /(1 + GameManager.Instance.buff[5] / 100)/2;
                         }
                     }
 
                 }
+            }
+            if(upTargets)
+            {
+                
+                countAttackToTarget = 0;
             }
         }
         
@@ -393,7 +432,7 @@ public class Default : MonoBehaviour
 
             
 
-                attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));
+                 attackCooldown =  attackSpeed /(1 + GameManager.Instance.buff[5] / 100);
             }
         }
         
@@ -402,6 +441,16 @@ public class Default : MonoBehaviour
     {
         if (attackCooldown <= 0f && enemiesInRange.Count > 0)
         {
+            bool upTargets = false;
+            int counter = 0;
+            countAttackToTarget++;
+            if(countAttackToTarget >=4)
+            {
+                maxTargets += (int)GameManager.Instance.secondsBuff[13];
+                counter = (int)GameManager.Instance.secondsBuff[13];
+                upTargets = true;
+                countAttackToTarget = 0;
+            }
             GameManager.Instance.aS.PlayOneShot(hitSFX);
             GameManager.Instance.aS.pitch = Random.Range(0.8f, 1.1f);
             animator.SetTrigger("Attacking");
@@ -415,7 +464,10 @@ public class Default : MonoBehaviour
             {
                 bulletScript.targetEnemies[i] = enemiesInRange[i];
             }
-
+            if(upTargets)
+            {
+                maxTargets -=counter;
+            }
             if (GetComponent<UpHave>().id == 23)
             {
                 int random = Random.Range(0, 100);
@@ -426,7 +478,7 @@ public class Default : MonoBehaviour
             }
 
             UpdateFlip(enemiesInRange[0]);
-            attackCooldown = 1 / (attackSpeed + (attackSpeed * GameManager.Instance.buff[5] / 100));
+             attackCooldown =  attackSpeed /(1 + GameManager.Instance.buff[5] / 100);
         }
     }
     void OnDrawGizmosSelected()

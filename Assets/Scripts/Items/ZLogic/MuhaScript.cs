@@ -10,7 +10,7 @@ public class MuhaScript : MonoBehaviour
     public float standTime = 1f; // Время стояния
     public float moveSpeed = 2f; // Скорость перемещения
 
-    private Vector3 targetPosition;
+    private Vector2 targetPosition;
     private bool isWalking = false;
     private Animator animator;
 
@@ -45,10 +45,10 @@ public class MuhaScript : MonoBehaviour
     private IEnumerator Walk()
     {
         // Пока не достигнута целевая позиция
-        while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
+        while (Vector2.Distance(transform.position, targetPosition) > 0.1f)
         {
             // Двигаем существо вперед
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
             yield return null;
             if(targetPosition.x < transform.position.x)
             {
@@ -68,9 +68,9 @@ public class MuhaScript : MonoBehaviour
     }
 
     // Возвращает случайную точку внутри коллайдера
-    private Vector3 RandomPointInCollider(Collider2D collider)
+    private Vector2 RandomPointInCollider(Collider2D collider)
     {
-        Vector3 randomPoint = collider.bounds.center + new Vector3(Random.Range(-collider.bounds.extents.x, collider.bounds.extents.x), Random.Range(-collider.bounds.extents.y, collider.bounds.extents.y), 0f);
+        Vector2 randomPoint = collider.bounds.center + new Vector3(Random.Range(-collider.bounds.extents.x, collider.bounds.extents.x), Random.Range(-collider.bounds.extents.y, collider.bounds.extents.y), 0f);
         return randomPoint;
     }
 }

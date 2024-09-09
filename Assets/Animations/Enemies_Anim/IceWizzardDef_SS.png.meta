@@ -101,6 +101,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -222,7 +246,7 @@ TextureImporter:
     nameFileIdTable:
       IceWizzardDef_SS_20: 799883193
       IceWizzardDef_SS_27: -1449426087
-      IceWizzardDef_SS_24: 1436782721
+      IceWizzardDef_SS_13: -910195434
       IceWizzardDef_SS_26: -819905798
       IceWizzardDef_SS_11: -563316263
       IceWizzardDef_SS_6: 1654360238
@@ -254,12 +278,12 @@ TextureImporter:
       IceWizzardDef_SS_12: 689517433
       IceWizzardDef_SS_0: 273450728
       IceWizzardDef_SS_16: -1510040689
-      IceWizzardDef_SS_10: -289556947
-      IceWizzardDef_SS_13: -910195434
-      IceWizzardDef_SS_7: -1753448991
       IceWizzardDef_SS_22: 607311774
-      IceWizzardDef_SS_19: -329047400
+      IceWizzardDef_SS_24: 1436782721
+      IceWizzardDef_SS_7: -1753448991
+      IceWizzardDef_SS_10: -289556947
       IceWizzardDef_SS_9: -569316706
+      IceWizzardDef_SS_19: -329047400
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

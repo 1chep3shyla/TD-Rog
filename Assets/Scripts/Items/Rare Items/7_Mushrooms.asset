@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2955a1e84a50c489f06741ec7170da, type: 3}
   m_Name: 7_Mushrooms
   m_EditorClassIdentifier: 
-  index: 11
   name: Strange Mushrooms
   count: 0
   Rarity: 1

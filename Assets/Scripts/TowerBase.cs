@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 [System.Serializable]
 public class TowerBase : MonoBehaviour
 {
@@ -31,6 +32,47 @@ public class TowerBase : MonoBehaviour
         }
         GetComponent<SpriteRenderer>().color = colors[monster.GetComponent<UpHave>().LVL];
     }
+    public void SetInfo()
+    {
+        UpHave uh = curGM.GetComponent<UpHave>();
+        GameManager.Instance.PlaySFX(GameManager.Instance.clickTowerSFX);
+         var replacementValueDEF = uh.towerDataCur.lvlData[uh.LVL, 1]; //0 - fire, 1 - poison, 2 -ice, 3 - stan, 4 - targets
+                var replacementValueIce = uh.towerDataCur.lvlData[uh.LVL, 5] + (uh.towerDataCur.lvlData[uh.LVL, 5]* (GameManager.Instance.buff[1]/100));
+                var replacementValueFire = uh.towerDataCur.lvlData[uh.LVL, 6] + (uh.towerDataCur.lvlData[uh.LVL, 6]* (GameManager.Instance.buff[2]/100));
+                var replacementValuePoison = uh.towerDataCur.lvlData[uh.LVL, 7] + (uh.towerDataCur.lvlData[uh.LVL, 7]* (GameManager.Instance.buff[3]/100));
+                var replacementValueStan = uh.towerDataCur.lvlData[uh.LVL, 8];
+                var replacementValueThief = uh.towerDataCur.lvlData[uh.LVL, 11] + uh.towerDataCur.lvlData[uh.LVL, 11] * (GameManager.Instance.buff[6]/100); 
+                var replacementValueTarget = uh.towerDataCur.lvlData[uh.LVL, 10];
+                var replacementValueDMG = uh.towerDataCur.lvlData[uh.LVL, 0] + (uh.towerDataCur.lvlData[uh.LVL, 0]* (GameManager.Instance.buff[0]/100));
+               
+                string coloredFire = $"<color=#FF0000>{replacementValueFire.ToString("0.00")}</color>"; // Красный
+                string coloredPoison = $"<color=#00FF00>{replacementValuePoison.ToString("0.00")}</color>"; // Зеленый
+                string coloredIce = $"<color=#00FFFF>{replacementValueIce.ToString("0.00")}</color>"; // Голубой
+                string coloredStan = $"<color=#333333>{replacementValueStan.ToString("0.00")}</color>"; // Серый
+                string coloredThief =  $"<color=#FFD700>{replacementValueThief.ToString("0.00")}</color>";
+                
+                var replacementValueGB = uh.curDamage +uh.towerDataCur.lvlData[uh.LVL, 1]* (GameManager.Instance.buff[0]/100); // global
+                var replacementValueMB = uh.towerDataCur.lvlData[uh.LVL, 1] + uh.towerDataCur.lvlData[uh.LVL, 1] * (GameManager.Instance.buff[4]/100); //money
+                var replacementValueAS =  uh.curAttackSpeed /(1 + GameManager.Instance.buff[5] / 100);
+                if(uh.curDamage < uh.damage)
+                {
+                    replacementValueGB = uh.damage +uh.towerDataCur.lvlData[uh.LVL, 1]* (GameManager.Instance.buff[0]/100); // global
+                    replacementValueAS =  uh.curAttackSpeed /(1 + GameManager.Instance.buff[5] / 100);
+                }
+            TMP_Text[] texts = new TMP_Text[4];
+            texts[0] = rollBase.towerInfo[0];
+            texts[1] = rollBase.towerInfo[1];
+            texts[2] = rollBase.towerInfo[2];
+            texts[3] = rollBase.towerInfo[3];
+            string[] textsStrings = new string[4];
+            textsStrings[0] = "" + uh.name;
+            textsStrings[1] = string.Format(uh.description, coloredFire, 
+            coloredPoison,coloredIce,coloredStan, replacementValueTarget, replacementValueThief);
+            textsStrings[2] = string.Format(uh.discInfo, replacementValueGB.ToString("0.00"), replacementValueMB.ToString("0"),replacementValueDEF
+            ,replacementValueAS.ToString("0.00"));
+            textsStrings[3] ="LVL:" + (uh.LVL + 1);
+            GameManager.Instance.StartTypingText(texts, textsStrings, 0f);
+    }
     public bool CanPlaceMonster()
     {
         return monster == null;
@@ -58,34 +100,10 @@ public class TowerBase : MonoBehaviour
         {
             UpHave uh = curGM.GetComponent<UpHave>();
             rollBase.info.SetActive(true);
-            rollBase.towerInfo[0].text = "" + uh.name;
-            if(uh.description != null)
-            {
-                var replacementValueDEF = uh.towerDataCur.lvlData[uh.LVL, 1]; //0 - fire, 1 - poison, 2 -ice, 3 - stan, 4 - targets
-                var replacementValueIce = uh.towerDataCur.lvlData[uh.LVL, 5] + (uh.towerDataCur.lvlData[uh.LVL, 5]* (GameManager.Instance.buff[1]/100));
-                var replacementValueFire = uh.towerDataCur.lvlData[uh.LVL, 6] + (uh.towerDataCur.lvlData[uh.LVL, 6]* (GameManager.Instance.buff[2]/100));
-                var replacementValuePoison = uh.towerDataCur.lvlData[uh.LVL, 7] + (uh.towerDataCur.lvlData[uh.LVL, 7]* (GameManager.Instance.buff[3]/100));
-                var replacementValueStan = uh.towerDataCur.lvlData[uh.LVL, 8];
-                var replacementValueTarget = uh.towerDataCur.lvlData[uh.LVL, 10];
-                string coloredFire = $"<color=#FF0000>{replacementValueFire}</color>"; // Красный
-                string coloredPoison = $"<color=#00FF00>{replacementValuePoison}</color>"; // Зеленый
-                string coloredIce = $"<color=#00FFFF>{replacementValueIce}</color>"; // Голубой
-                string coloredStan = $"<color=#808080>{replacementValueStan}</color>"; // Серый
-
-                rollBase.towerInfo[1].text = string.Format(uh.description, coloredFire, 
-                coloredPoison,coloredIce,coloredStan, replacementValueTarget);
-            }
-            if(uh.discInfo != null)
-            {
-                var replacementValueDEF = uh.towerDataCur.lvlData[uh.LVL, 1];
-                var replacementValueGB = uh.towerDataCur.lvlData[uh.LVL, 1] +uh.towerDataCur.lvlData[uh.LVL, 1]* (GameManager.Instance.buff[0]/100); // global
-                var replacementValueMB = uh.towerDataCur.lvlData[uh.LVL, 1] + uh.towerDataCur.lvlData[uh.LVL, 1] * (GameManager.Instance.buff[4]/100); //money
-                rollBase.towerInfo[2].text = string.Format(uh.discInfo, replacementValueGB, replacementValueMB.ToString("0"),replacementValueDEF );
-            }
-            rollBase.towerInfo[3].text = "LVL:" + (uh.LVL + 1);
             rollBase.towerPrefab = curGM;
             rollBase.choosing = true;
             rollBase.OrderUp();
+            rollBase.cursorTower.gameObject.SetActive(false);
         }
 
 
@@ -176,10 +194,6 @@ public class TowerBase : MonoBehaviour
                     rollBase.towerPrefab = curGM;
                     rollBase.choosing = true;
                     UpHave uh = curGM.GetComponent<UpHave>();
-                    rollBase.info.SetActive(true);
-                    rollBase.towerInfo[0].text = "" + uh.name;
-                    rollBase.towerInfo[2].text = "Damage:" + uh.towerDataCur.lvlData[uh.LVL, 1];
-                    rollBase.towerInfo[3].text = "LVL:" + (uh.LVL + 1);
 
                 }
             }
@@ -190,9 +204,6 @@ public class TowerBase : MonoBehaviour
             rollBase.choosing = true;
             UpHave uh = curGM.GetComponent<UpHave>();
             rollBase.info.SetActive(true);
-            rollBase.towerInfo[0].text = "" + uh.name;
-            rollBase.towerInfo[2].text = "Damage:" + uh.towerDataCur.lvlData[uh.LVL, 1];
-            rollBase.towerInfo[3].text = "LVL:" + (uh.LVL + 1);
 
         }
         rollBase.StartCoroutine(rollBase.Un());
@@ -223,7 +234,7 @@ public class TowerBase : MonoBehaviour
         if (GameManager.Instance.Gold >= GameManager.Instance.gameObject.GetComponent<Rolling>().costTower)// Здесь
         {
             UpHave uh = curGM.GetComponent<UpHave>();
-
+            GameManager.Instance.PlaySFX(GameManager.Instance.upgradeTowerSFX);
             Debug.Log("����� ������");
             curGM.GetComponent<UpHave>().LVL++;
             rollBase.AddTower(curGM.GetComponent<SpriteRenderer>());
@@ -270,6 +281,7 @@ public class TowerBase : MonoBehaviour
         {
             GameManager.Instance.gameObject.GetComponent<SunMoonScript>().sunCount -= 1;
         }
+        GameManager.Instance.PlaySFX(GameManager.Instance.upgradeTowerSFX);
         uh.LVL++;
         rollBase.AddTower(curGM.GetComponent<SpriteRenderer>());
         rollBase.towerPrefab.GetComponent<UpHave>().baseOf.monster = null;

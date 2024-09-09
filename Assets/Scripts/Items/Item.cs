@@ -35,9 +35,12 @@ public class Item : ScriptableObject
     }
     public virtual void GetDescription()
     {
+        GameManager.Instance.DiscriptionStatText[9].gameObject.transform.parent.gameObject.SetActive(false);
+        GameManager.Instance.DiscriptionStatText[10].gameObject.transform.parent.gameObject.SetActive(false);
+        GameManager.Instance.DiscriptionStatText[11].gameObject.transform.parent.gameObject.SetActive(false);
         GameManager.Instance.NameText.text = name;
         GameManager.Instance.DiscriptionText.text = disc;
-        for(int i = 0; i < GameManager.Instance.DiscriptionStatText.Length; i++)
+        for(int i = 0; i < buff.Length; i++)
         {
             if( buff[i]!=0f)
             {

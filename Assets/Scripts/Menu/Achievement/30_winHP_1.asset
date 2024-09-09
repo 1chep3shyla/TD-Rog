@@ -15,6 +15,8 @@ MonoBehaviour:
   id: winHp_1
   title: Deadly number
   description: Win the game with 1 health
+  localDiscription: Win the game with 1 health
   nameData: healthWin
   Icon: {fileID: 21300000, guid: 08cb02bcacc40084bbeb7eabc4374fa1, type: 3}
   isUnlocked: 0
+  characterUnlock: {fileID: 0}

@@ -17,9 +17,11 @@ public class SaveManager : MonoBehaviour
         public int maxHealth;
         public int indexChar;
         public int indexState;
-        public int[] countItem = new int[17];
+        public int[] countItem = new int[27];
         public float[] buffs;
         public bool[] interactableIs = new bool[5];
+        public int[] lvlTower = new int[5];
+        public bool[] evolutionGet = new bool[15];
         public int[] indexTowerBut = new int[5];
         public int[,] towerLevels = new int[20, 7];
         public int[,] indexTower = new int[20, 7];
@@ -37,8 +39,10 @@ public class SaveManager : MonoBehaviour
         public int winGame;
         public bool loseFirstWave;
         public int enemiesKilled;
-        public bool[] boughtStat = new bool[32];
+        public bool[] boughtStat = new bool[72];
+        public bool[] seeEnemy = new bool[50];
         public float[] buff = new float[9];
+        public float[] secondsBuff = new float [16];
         public int getItem;
         public int sellItem;
         public int damageAll;
@@ -50,6 +54,10 @@ public class SaveManager : MonoBehaviour
         public int towerSet;
         public int hardWinning;
         public int perfecto;
+        public bool firstEvolve;
+        public float sfxCount;
+        public float musicCount;
+        public int[] waveInStage = new int[14];
     }
     // Класс для хранения позиции, который реализует интерфейс Serializable
     [System.Serializable]
@@ -77,6 +85,7 @@ public class SaveManager : MonoBehaviour
     public Item[] items;
     public ScriptableObject[] character;
     public GameObject towerBase;
+    public GlobalSee globalSee;
     public static SaveManager instance;
 
 
@@ -99,13 +108,17 @@ public class SaveManager : MonoBehaviour
         SaveGameData();
         LevelData data = new LevelData();
         data.currentLevel = GameManager.Instance.spawn.currentWaveIndexMain;
+        for(int evolutionGetInt = 0; evolutionGetInt <15; evolutionGetInt++)
+        {
+            data.evolutionGet[evolutionGetInt] = GameManager.Instance.allEvolution[evolutionGetInt].work;
+        }
         data.indexState = GameBack.Instance.indexState;
         data.gold = GameManager.Instance.Gold;
         data.health = GameManager.Instance.Health;
         data.maxHealth = GameManager.Instance.maxHealth;
         data.buffs = GameManager.Instance.buff;
         data.indexChar = GameBack.Instance.charData.GetIndex();
-        for(int iItem = 0; iItem <17; iItem++)
+        for(int iItem = 0; iItem <data.countItem.Length; iItem++)
         {
             data.countItem[iItem] = items[iItem].count;
         }
@@ -113,6 +126,7 @@ public class SaveManager : MonoBehaviour
         {
             data.indexTowerBut[a] = GameManager.Instance.gameObject.GetComponent<Rolling>().slots[a].id;
             data.interactableIs[a] = GameManager.Instance.gameObject.GetComponent<Rolling>().butChoose[a].interactable;
+            data.lvlTower[a] = GameManager.Instance.gameObject.GetComponent<Rolling>().slots[a].tower.GetComponent<UpHave>().LVL;
         }
         for (int i = 0; i < 20; i++)
         {
@@ -164,6 +178,22 @@ public class SaveManager : MonoBehaviour
             GameManager.Instance.maxHealth = data.maxHealth;
             GameManager.Instance.buff = data.buffs;
             GameManager.Instance.ChangeMoney();
+            for(int evolutionGetInt = 0; evolutionGetInt <15; evolutionGetInt++)
+            {
+                GameManager.Instance.allEvolution[evolutionGetInt].work = data.evolutionGet[evolutionGetInt];
+                if(data.evolutionGet[evolutionGetInt])
+                {
+                    Rolling rolles =  GameManager.Instance.gameObject.GetComponent<Rolling>();
+                    for(int i =0; i < rolles.towers.Length; i++)
+                    {
+                        if(rolles.towers[i].GetComponent<UpHave>().id == GameManager.Instance.allEvolution[evolutionGetInt].index)
+                        {
+                            rolles.towers[i] =  GameManager.Instance.allEvolution[evolutionGetInt].EvolveScript;
+                            rolles.imageidTower[i] = GameManager.Instance.allEvolution[evolutionGetInt].EvolveScript.GetComponent<SpriteRenderer>().sprite;
+                        }
+                    }
+                }
+            }
             for(int a = 0; a < 5; a++)
             {
                 GameManager.Instance.gameObject.GetComponent<Rolling>().slots[a].id = data.indexTowerBut[a];
@@ -171,7 +201,9 @@ public class SaveManager : MonoBehaviour
                 roll.slots[a].tower = roll.towers[data.indexTowerBut[a]];
                 roll.nameOfTowerText[a].text = roll.slots[a].tower.GetComponent<UpHave>().name;
                 roll.butChoose[a].interactable = data.interactableIs[a];
+                roll.slots[a].tower.GetComponent<UpHave>().LVL = data.lvlTower[a];
             }
+            roll.UpdateInfoBut();
             for (int i = 0; i < 20; i++)
             {
                 for (int io = 0; io < 7; io++)
@@ -191,7 +223,7 @@ public class SaveManager : MonoBehaviour
                     }
                 }
             }
-            for(int iItem = 0; iItem <17; iItem++)
+            for(int iItem = 0; iItem <data.countItem.Length; iItem++)
             {
                 for(int o = 0; o < data.countItem[iItem]; o++)
                 {
@@ -218,10 +250,21 @@ public class SaveManager : MonoBehaviour
         data.waveCount = GameBack.Instance.waveCount;
         data.gamePlayed = GameBack.Instance.gamePlayed;
         data.winGame = GameBack.Instance.winGame;
+        for(int i = 0; i < data.waveInStage.Length; i++)
+        {
+            data.waveInStage[i] = GameBack.Instance.waveInStage[i];
+        }
+        for(int seeEnemyLocal = 0; seeEnemyLocal <data.seeEnemy.Length; seeEnemyLocal++)
+        {
+            data.seeEnemy[seeEnemyLocal] = Beastiar.Instance.seeThis[seeEnemyLocal];
+        }
         data.loseFirstWave = GameBack.Instance.loseFirstWave;
         data.enemiesKilled = GameBack.Instance.enemiesKilled;
         data.damageAll = GameBack.Instance.damageAll;
+        data.sfxCount = GameBack.Instance.volumeSFX;
+        data.musicCount = GameBack.Instance.volumeMusic;
         Array.Copy(GameBack.Instance.buff, data.buff, data.buff.Length);
+        Array.Copy(GameBack.Instance.secondsBuff, data.secondsBuff, data.secondsBuff.Length);
         data.getItem = GameBack.Instance.getItem;
         data.sellItem = GameBack.Instance.sellItem;
         data.soulsCount = GameBack.Instance.souls;
@@ -237,6 +280,7 @@ public class SaveManager : MonoBehaviour
         data.towerSet = GameBack.Instance.towerSet;
         data.hardWinning = GameBack.Instance.hardWinning;
         data.perfecto = GameBack.Instance.perfecto;
+        data.firstEvolve = GameBack.Instance.firstEvolve;
         BinaryFormatter formatter = new BinaryFormatter();
         string filePath = Application.persistentDataPath + "/achivementData.dat";
         FileStream stream = new FileStream(filePath, FileMode.Create);
@@ -262,12 +306,18 @@ public class SaveManager : MonoBehaviour
             GameBack.Instance.waveCount = data.waveCount;
             GameBack.Instance.gamePlayed = data.gamePlayed;
             GameBack.Instance.winGame = data.winGame;
+            GameBack.Instance.volumeSFX = data.sfxCount;
+            GameBack.Instance.volumeMusic = data.musicCount;
             GameBack.Instance.loseFirstWave = data.loseFirstWave;
             GameBack.Instance.enemiesKilled = data.enemiesKilled;
-            Array.Copy(data.buff, GameBack.Instance.buff, GameBack.Instance.buff.Length);
+            Array.Copy(data.secondsBuff, GameBack.Instance.secondsBuff, GameBack.Instance.secondsBuff.Length);
             GameBack.Instance.getItem = data.getItem;
             GameBack.Instance.sellItem = data.sellItem;
             GameBack.Instance.souls = data.soulsCount;
+            for(int seeEnemyLocal = 0; seeEnemyLocal <data.seeEnemy.Length; seeEnemyLocal++)
+            {
+                Beastiar.Instance.seeThis[seeEnemyLocal] = data.seeEnemy[seeEnemyLocal];
+            }
             for(int i = 0; i < GameBack.Instance.boughtStat.Length; i++ )
             {
                 GameBack.Instance.boughtStat[i] = data.boughtStat[i];
@@ -281,6 +331,11 @@ public class SaveManager : MonoBehaviour
             GameBack.Instance.towerSet = data.towerSet;
             GameBack.Instance.hardWinning = data.hardWinning;
             GameBack.Instance.perfecto = data.perfecto ;
+            for(int i = 0;data.waveInStage != null && i < data.waveInStage.Length; i++)
+            {
+                GameBack.Instance.waveInStage[i] = data.waveInStage[i];
+            }
+            GameBack.Instance.firstEvolve = data.firstEvolve;
         }
     }
 }

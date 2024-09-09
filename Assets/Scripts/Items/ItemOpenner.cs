@@ -35,6 +35,9 @@ public class ItemOpenner : MonoBehaviour
 
     public Item curItem;
 
+    [Space]
+    public AudioClip openSFX;
+
     private Animator chestAnimator;
     private Animator iconAnimator;
 
@@ -88,9 +91,12 @@ public class ItemOpenner : MonoBehaviour
 
     public void OpenChest()
     {
-        chestAnimatorObject.SetActive(false);
-        claimButton.gameObject.SetActive(false);
-        sellButton.gameObject.SetActive(false);
+        if(!claimReward)
+        {
+            chestAnimatorObject.SetActive(false);
+            claimButton.gameObject.SetActive(false);
+            sellButton.gameObject.SetActive(false);
+        }
 
         if (countChest > 0)
         {
@@ -102,7 +108,7 @@ public class ItemOpenner : MonoBehaviour
         if (countChest > 0 && !openning && !claimReward)
         {
             StartCoroutine(OpenChestCoroutine());
-            countChest -= 1;
+            GameManager.Instance.aS.PlayOneShot(openSFX);
             allOpen = false;
         }
         else if (openning && !claimReward)
@@ -115,7 +121,7 @@ public class ItemOpenner : MonoBehaviour
             discriptionGM.SetActive(true);
             discriptionGM.GetComponent<Animator>().Play("dis_anim");
             discriptionText.text = selectedItem.GetDescriptionItem();
-            for (int i = 0; i < statText.Length; i++)
+            for (int i = 0; i < selectedItem.buff.Length; i++)
             {
                 if (selectedItem.buff[i] == 0)
                 {
@@ -126,6 +132,18 @@ public class ItemOpenner : MonoBehaviour
                     statText[i].gameObject.transform.parent.gameObject.SetActive(true);
                     statText[i].text = selectedItem.buff[i] + "%";
                 }
+            }
+            if (selectedItem is ItemHealthRemove hpItem)
+            {
+                UpdateHealthStatText(hpItem.maxHpAdd, statText[9], "");
+                UpdateHealthStatText(hpItem.hpAdd, statText[10], "");
+                UpdateHealthStatText(hpItem.hpPerRound, statText[11], "");
+            }
+            else
+            {
+                 UpdateHealthStatText(0, statText[9], "");
+                UpdateHealthStatText(0, statText[10], "");
+                UpdateHealthStatText(0, statText[11], "");
             }
             iconImage.sprite = selectedItem.iconTrans;
             nameText.text = selectedItem.name;
@@ -156,6 +174,7 @@ public class ItemOpenner : MonoBehaviour
 
     IEnumerator OpenChestCoroutine()
     {
+        countChest -= 1;
         discriptionGM.SetActive(false);
         claimButton.gameObject.SetActive(false);
         sellButton.gameObject.SetActive(false);
@@ -192,7 +211,7 @@ public class ItemOpenner : MonoBehaviour
             discriptionGM.SetActive(true);
             discriptionGM.GetComponent<Animator>().Play("dis_anim");
             discriptionText.text = selectedItem.GetDescriptionItem();
-            for (int i = 0; i < statText.Length; i++)
+            for (int i = 0; i < selectedItem.buff.Length; i++)
             {
                 if (selectedItem.buff[i] == 0)
                 {
@@ -203,6 +222,18 @@ public class ItemOpenner : MonoBehaviour
                     statText[i].gameObject.transform.parent.gameObject.SetActive(true);
                     statText[i].text = selectedItem.buff[i] + "%";
                 }
+            }
+            if (selectedItem is ItemHealthRemove hpItem)
+            {
+                UpdateHealthStatText(hpItem.maxHpAdd, statText[9], "");
+                UpdateHealthStatText(hpItem.hpAdd, statText[10], "");
+                UpdateHealthStatText(hpItem.hpPerRound, statText[11], "");
+            }
+            else
+            {
+                 UpdateHealthStatText(0, statText[9], "");
+                UpdateHealthStatText(0, statText[10], "");
+                UpdateHealthStatText(0, statText[11], "");
             }
             iconImage.sprite = selectedItem.iconTrans;
             nameText.text = selectedItem.name;
@@ -245,6 +276,7 @@ public class ItemOpenner : MonoBehaviour
         if (countChest == 0)
         {
             panelOpen.SetActive(false);
+            allOpen = true;
         }
         else
         {
@@ -284,6 +316,7 @@ public class ItemOpenner : MonoBehaviour
         if (countChest == 0)
         {
             panelOpen.SetActive(false);
+            allOpen = true;
         }
         else
         {
@@ -354,5 +387,17 @@ public class ItemOpenner : MonoBehaviour
             return rareItem[Random.Range(0, rareItem.Length)];
         else // 15% chance for epic item
             return epicItem[Random.Range(0, epicItem.Length)];
+    }
+    void UpdateHealthStatText(float value, TMP_Text textComponent, string prefix)
+    {
+        if (value == 0)
+        {
+            textComponent.gameObject.transform.parent.gameObject.SetActive(false);
+        }
+        else
+        {
+            textComponent.gameObject.transform.parent.gameObject.SetActive(true);
+            textComponent.text = prefix + value;
+        }
     }
 }

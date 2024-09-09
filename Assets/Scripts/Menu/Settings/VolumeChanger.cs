@@ -12,6 +12,7 @@ public class VolumeChanger : MonoBehaviour
 
     void Start()
     {
+
         if (!gameIs)
         {
             ChangeVolume();
@@ -44,6 +45,7 @@ public class VolumeChanger : MonoBehaviour
                 audioSource.volume = sfxVolume;
             }
         }
+
     }
 
     // Метод для установки громкости в игре
@@ -53,4 +55,6 @@ public class VolumeChanger : MonoBehaviour
         sfxSlider.value = GameBack.Instance.volumeSFX * 2.5f;
         ChangeVolume();
     }
+
+    // Метод для загрузки настроек громкости при старте
 }

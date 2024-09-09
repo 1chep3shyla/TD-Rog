@@ -10,9 +10,13 @@ public class GlobalUp : ScriptableObject
     [Space]
     public Sprite icon;
     public int cost;
-    public int onWhichUp;
+    public float onWhichUp;
     public bool bought;
+    public GlobalUp previosUp;
+     public GlobalUp[] allUpNeed = new GlobalUp[1]; // Инициализация массива
     public float[] buffGlobaly = new float[9];
+    public float[] newBuffGlobaly = new float[15];
+    public Character charAllow;
 
     public void ApplyBuff(int index)
     {
@@ -24,6 +28,14 @@ public class GlobalUp : ScriptableObject
             {
                 GameBack.Instance.buffGlobal[i] += buffGlobaly[i];
             }
+            for(int i =0; i < GameBack.Instance.secondsBuff.Length;i++)
+            {
+                GameBack.Instance.secondsBuff[i] += newBuffGlobaly[i];
+            }
+            if(charAllow !=null)
+            {
+                charAllow.isHave = true;
+            }
             GameBack.instance.boughtStat[index] = true;
             SaveManager.instance.SaveGameData();
         }
@@ -34,5 +46,23 @@ public class GlobalUp : ScriptableObject
             {
                 GameBack.Instance.buffGlobal[i] += buffGlobaly[i];
             }
+            //for(int i =0; i < GameBack.Instance.secondsBuff.Length;i++)
+            //{
+                //GameBack.Instance.secondsBuff[i] += newBuffGlobaly[i];
+            //}
+            if(charAllow !=null)
+            {
+                charAllow.isHave = true;
+            }
+            Debug.Log("ДЕБАЖИИИМ СУКА");
+    }
+  private void OnValidate()
+    {
+        // Этот метод вызывается при изменении значений в инспекторе
+        // Убедимся, что 0 элемент всегда будет previosUp
+        if (previosUp != null)
+        {
+            allUpNeed[0] = previosUp;
+        }
     }
 }

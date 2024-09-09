@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -7919619151945116803}
   - component: {fileID: 3016397611324220774}
   - component: {fileID: 6045580122850143842}
+  - component: {fileID: 2682857611130989782}
   m_Layer: 0
   m_Name: Storm
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -10.862, y: 0.507, z: 0}
   m_LocalScale: {x: 0.15813759, y: 0.15813759, z: 0.15813759}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -121,3 +122,16 @@ MonoBehaviour:
   slowPower: 0
   freezeRadius: 1.11
   enemiesInRange: []
+--- !u!114 &2682857611130989782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463427103113876071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f5a4380ca4904343a8eca6b299beffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTime: 1

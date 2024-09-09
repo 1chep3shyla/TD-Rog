@@ -260,11 +260,13 @@ MonoBehaviour:
   - 0
   damageType: 0
   EM: {fileID: 0}
-  deathPar: {fileID: 6767275772941406469, guid: 1effd9b62f2cf7a4bb75c82546c5733e, type: 3}
+  deathPar: {fileID: 8437195482915574190, guid: fd47811db3442bf4e85b08362a4389e7, type: 3}
   firePart: {fileID: 7058608012553506827}
   poisonPart: {fileID: 2227101765870724990}
   icePart: {fileID: 8755541270671712474}
   shieldBreak: {fileID: 8617164922103899488}
+  spriteBase: {fileID: -75913510, guid: 0e5f7102f7cf401ab50ad1856733bc08, type: 3}
+  modified: 1
 --- !u!50 &3706052355551002415
 Rigidbody2D:
   serializedVersion: 4

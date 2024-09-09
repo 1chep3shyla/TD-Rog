@@ -57,7 +57,7 @@ MonoBehaviour:
   baseOf: {fileID: 0}
   name: Fury Tower
   description: Hits harder with each blow
-  discInfo: Damage:{0}
+  discInfo: <sprite name="0_icon">:{0}  <sprite name="5_icon">:{3}
   curAttackSpeed: 0
   attackSpeed: 1
   damage: 2
@@ -161,9 +161,11 @@ MonoBehaviour:
   magnatPower: 0
   DivineAttackGM: {fileID: 6910336767071730326, guid: f05517c337cc12f47a75e2b3510bcd2f, type: 3}
   dt: {fileID: 0}
+  lvl: 0
   chanceAssasin: 0
   Chain: 0
   critChance: 0
+  countAttackToTarget: 0
   hitSFX: {fileID: 8300000, guid: 6917b4d4ed60a4f8eb2f67a0ecd4eac1, type: 3}
 --- !u!58 &5796266392278502760
 CircleCollider2D:

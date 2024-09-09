@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0eb08f519ca13419389fe3509345e6, type: 3}
   m_Name: 2_Damage_100000
   m_EditorClassIdentifier: 
-  id: damageAchievement_100000
+  id: damageAchievement_1000000
   title: Wound
-  description: Deal {0}/100000 damage
+  description: Deal {0}/1000000 damage
+  localDiscription: Deal 1000000 damage
   nameData: damageAll
   Icon: {fileID: 21300000, guid: b4386ccfbff26b549b4a7fa9ac9ecfe2, type: 3}
   isUnlocked: 0
+  characterUnlock: {fileID: 11400000, guid: fdd1a8c2e1b32f1469f503459b79c9c3, type: 2}

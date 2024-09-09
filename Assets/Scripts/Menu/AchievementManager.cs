@@ -16,8 +16,12 @@ public class AchievementManager : MonoBehaviour
     public Transform trans;
     public GameObject[] achievementsPrefabs;
     public Sprite notUnlock;
+    public MenuController controller;
+    public AudioClip sfxClipBut;
 
     public List<Achievement> achievements; // Список достижений
+
+    public AchievementWorker achievementWorker;
 
     private Dictionary<string, Achievement> achievementsDictionary = new Dictionary<string, Achievement>();
 
@@ -48,6 +52,14 @@ public class AchievementManager : MonoBehaviour
             {
                 achievementsDictionary.Add(achievement.id, achievement);
             }
+            if(achievement.characterUnlock !=null && achievement.isUnlocked )
+                {
+                    if (achievement.characterUnlock is Character character)
+                    {
+                        character.isHave = true;
+                    }
+
+                }
         }
 
         // Создаем ачивки
@@ -72,6 +84,7 @@ public class AchievementManager : MonoBehaviour
         CheckHealthBreakAchievements();
         CheckDotAchievements();
         CheckHardWinAchievements();
+        CheckEvolution();
     }
 
     public void UpdateAchi()
@@ -89,7 +102,6 @@ public class AchievementManager : MonoBehaviour
         }
     }
     // Методы проверки достижений опущены для краткости
-
     public void UnlockAchievement(string achievementID)
     {
         if (achievementsDictionary.TryGetValue(achievementID, out Achievement achievement))
@@ -97,6 +109,18 @@ public class AchievementManager : MonoBehaviour
             if (!achievement.isUnlocked)
             {
                 achievement.isUnlocked = true;
+                if(achievement.characterUnlock !=null)
+                {
+                    if (achievement.characterUnlock is Character character)
+                    {
+                        character.isHave = true;
+                    }
+
+                }
+                if(achievementWorker!=null)
+                {
+                    achievementWorker.allAchievements.Add(achievement);
+                }
                 Debug.Log("Unlocked Achievement: " + achievement.title);
                 OnAchievementUnlocked?.Invoke(achievement);
             }
@@ -106,7 +130,11 @@ public class AchievementManager : MonoBehaviour
             Debug.LogWarning("Achievement with ID " + achievementID + " not found!");
         }
     }
-    private void CheckHealthAchievements()
+    private void CheckEvolution()
+    {
+        if(GameBack.Instance.firstEvolve) UnlockAchievement("TheEvolutionist");
+    }
+    private void CheckHealthAchievements() 
     {
         if (GameBack.Instance.healthWin == 1 && GameBack.Instance.healthWin !=0) UnlockAchievement("winHp_1");
         if (GameBack.Instance.healthWin <= 5 && GameBack.Instance.healthWin !=0 ) UnlockAchievement("winHp_5");
@@ -150,10 +178,12 @@ public class AchievementManager : MonoBehaviour
     }
     private void CheckDamageCountAchievements()
     {
-        if (GameBack.Instance.damageAll >= 1000) UnlockAchievement("damageAchievement_1000");
         if (GameBack.Instance.damageAll >= 10000) UnlockAchievement("damageAchievement_10000");
         if (GameBack.Instance.damageAll >= 100000) UnlockAchievement("damageAchievement_100000");
         if (GameBack.Instance.damageAll >= 1000000) UnlockAchievement("damageAchievement_1000000");
+        if (GameBack.Instance.damageAll >= 10000000) UnlockAchievement("damageAchievement_10000000");
+        if (GameBack.Instance.damageAll >= 100000000) UnlockAchievement("damageAchievement_100000000");
+        
     }
 
     private void CheckGamePlayedAchievements()
@@ -223,6 +253,7 @@ public class AchievementManager : MonoBehaviour
             if (button != null)
             {
                 button.onClick.AddListener(() => SetAchievementInfo(achievement));
+                button.onClick.AddListener(() => controller.PlaySFX(sfxClipBut));
             }
 
             AchiContainer ac = achievementPrefab.GetComponent<AchiContainer>();
@@ -239,15 +270,16 @@ public class AchievementManager : MonoBehaviour
     {
         if (achievement != null)
         {
-            descriptionText.text = achievement.GetDesc();
             nameText.text = achievement.title;
             if(achievement.isUnlocked)
             {
                 icon.sprite = achievement.Icon;
+                descriptionText.text = achievement.localDiscription;
             }
             else
             {
                 icon.sprite = notUnlock;
+                descriptionText.text = achievement.GetDesc();
             }
         }
     }

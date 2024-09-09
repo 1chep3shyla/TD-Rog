@@ -18,6 +18,7 @@ MonoBehaviour:
   cost: 10000
   onWhichUp: 50
   bought: 0
+  previosUp: {fileID: 11400000, guid: dfb69a2139e396140adddd65b2358eb5, type: 2}
   buffGlobaly:
   - 0
   - 0
@@ -26,5 +27,22 @@ MonoBehaviour:
   - 0
   - 0
   - 50
+  - 0
+  - 0
+  newBuffGlobaly:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   - 0
   - 0

@@ -101,6 +101,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -247,7 +271,6 @@ TextureImporter:
       moving_SS_10: -638313098
       moving_SS_19: -1139058770
       moving_SS_15: -1129363809
-      moving_SS_35: -1119667332
       moving_SS_8: 2138166835
       moving_SS_30: -1820639852
       moving_SS_39: 1793476742
@@ -260,19 +283,20 @@ TextureImporter:
       moving_SS_14: 1794825169
       moving_SS_23: -630321910
       moving_SS_22: 1019232388
-      moving_SS_34: -1691692439
+      moving_SS_35: -1119667332
       moving_SS_16: 1022905379
       moving_SS_32: -2121570616
       moving_SS_6: -1321028858
+      moving_SS_34: -1691692439
       moving_SS_20: 1149011875
-      moving_SS_28: -1549120892
       moving_SS_27: 1174732289
+      moving_SS_28: -1549120892
       moving_SS_3: -825720250
-      moving_SS_26: -621837774
       moving_SS_29: -969837334
+      moving_SS_26: -621837774
       moving_SS_33: 1937895500
-      moving_SS_37: 1732543620
       moving_SS_36: -74400332
+      moving_SS_37: 1732543620
       moving_SS_0: -15013690
       moving_SS_24: 2016929948
       moving_SS_4: -786546305

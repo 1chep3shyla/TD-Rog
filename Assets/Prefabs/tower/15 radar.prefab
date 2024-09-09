@@ -57,7 +57,7 @@ MonoBehaviour:
   baseOf: {fileID: 0}
   name: Radar Tower
   description: Likes to hit harder than frozen enemies
-  discInfo: Damage:{0}
+  discInfo: <sprite name="0_icon">:{0}  <sprite name="5_icon">:{3}
   curAttackSpeed: 0
   attackSpeed: 0.7
   damage: 4
@@ -161,9 +161,11 @@ MonoBehaviour:
   magnatPower: 0
   DivineAttackGM: {fileID: 0}
   dt: {fileID: 0}
+  lvl: 0
   chanceAssasin: 0
   Chain: 0
   critChance: 0
+  countAttackToTarget: 0
   hitSFX: {fileID: 8300000, guid: 6917b4d4ed60a4f8eb2f67a0ecd4eac1, type: 3}
 --- !u!58 &-1307694363899681565
 CircleCollider2D:

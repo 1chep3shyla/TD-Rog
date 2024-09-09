@@ -19,6 +19,7 @@ public class PerkEvolve : Perks
     {
         GameManager gameManager = GameManager.Instance;
         GameObject[] towers = gameManager.gameObject.GetComponent<Rolling>().towers;
+        GameBack.Instance.firstEvolve = true;
 
         for (int i = 0; i < towers.Length; i++)
         {

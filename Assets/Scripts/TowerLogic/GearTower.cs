@@ -6,6 +6,7 @@ public class GearTower : MonoBehaviour
 {
     public string targetTag = "YourTargetTag"; // The tag to search for
     public float searchRadius = 5f; // The radius to search within
+    public GameObject part;
 
     public int objectCount = 0;
 
@@ -15,6 +16,14 @@ public class GearTower : MonoBehaviour
         GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag(targetTag);
 
         // Iterate through the tagged objects and count the ones within the search radius
+        if(objectCount >0)
+        {
+            part.SetActive(true);
+        }
+        else
+        {
+            part.SetActive(false);
+        }
         objectCount = 0;
         foreach (var taggedObject in taggedObjects)
         {
